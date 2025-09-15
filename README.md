@@ -4,6 +4,10 @@
 
 ## Team Members
 - Sam Easton
+- Conrad Chaffee
+- Carl Browning
+- Thor Frostick
+- Render Turner
 
 ## Repo Organization
 
