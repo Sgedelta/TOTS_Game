@@ -1,4 +1,4 @@
-# **Paper Detective** by TOTS
+# **CthuLeuLeu** by TOTS
 ## Course number: IGME 601
 ## Fall 2025
 
@@ -6,9 +6,8 @@
 - Sam Easton
 
 ## Repo Organization
-- [Sample2DProject/](Sample2DProject/) - A template 2D Unity project already configured to correctly build to WebGL for GitHub pages deployment.
-- [build/](build/) - Where to build to for GH pages to deploy it.
+
 
 ## Other Resources
-- [Task management Board](TBD)
-- [Google Project Doc](TBD)
+- [Task management Board](https://igme-601-tots.atlassian.net/jira/software/projects/SCRUM/boards/1)
+- [Google Project Doc](https://docs.google.com/document/d/1Qaj0X636ghlxQ_Nc5b8T3fti_ouPssTbR4UeZjSZS4M/edit?tab=t.0)
