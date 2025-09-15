@@ -13,14 +13,7 @@
 * Render Turner
 
 ## Repo Organization
-<<<<<<< HEAD
 
-eyuwcohfuioamhduixhw894y893045723498c0x,.iw\[efafsdlf,smcxhwpjioqzw,efuq34mh78rcy389x987fng2t65987cx,j89qpjd.wzej,d,uwehfuxjm,ifjui3rxhjoz.,ju3irghgfuijernfqiuph
-
-
-=======
-According to all known laws of aviation
->>>>>>> b616d987a2af61305f92ba37d21e05c3ca12f228
 
 ## Other Resources
 
