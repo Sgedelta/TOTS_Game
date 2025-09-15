@@ -1,17 +1,24 @@
 # **CthuLeuLeu** by TOTS
+
 ## Course number: IGME 601
+
 ## Fall 2025
 
 ## Team Members
-- Sam Easton
-- Conrad Chaffee
-- Carl Browning
-- Thor Frostick
-- Render Turner
+
+* Sam Easton
+* Conrad Chaffee
+* Carl Browning
+* Thor Frostick
+* Render Turner
 
 ## Repo Organization
 
+eyuwcohfuioamhduixhw894y893045723498c0x,.iw\[efafsdlf,smcxhwpjioqzw,efuq34mh78rcy389x987fng2t65987cx,j89qpjd.wzej,d,uwehfuxjm,ifjui3rxhjoz.,ju3irghgfuijernfqiuph
+
+
 
 ## Other Resources
-- [Task management Board](https://igme-601-tots.atlassian.net/jira/software/projects/SCRUM/boards/1)
-- [Google Project Doc](https://docs.google.com/document/d/1Qaj0X636ghlxQ_Nc5b8T3fti_ouPssTbR4UeZjSZS4M/edit?tab=t.0)
+
+* [Task management Board](https://igme-601-tots.atlassian.net/jira/software/projects/SCRUM/boards/1) 
+* [Google Project Doc](https://docs.google.com/document/d/1Qaj0X636ghlxQ_Nc5b8T3fti_ouPssTbR4UeZjSZS4M/edit?tab=t.0)
