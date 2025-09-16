@@ -505,8 +505,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0eb70b33dc99f4dba886266d8659cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 3
   rb: {fileID: 1625858655}
+  spinSpeed: 0.5
+  maxWalkAngle: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
