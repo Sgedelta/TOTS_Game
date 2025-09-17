@@ -1,0 +1,20 @@
+﻿title: StartTest
+---
+User: You start the dialogue test.
+System: Wowzers! This is a dialogue test!
+
+-> Holy Moly
+    System: Omg right?
+-> ts lk ahh
+    System: Fuck you dude. 
+-> Neat!
+    System: That's what I'm saying!
+<<jump  EndTest>>
+Anyway, we're gaming now oh yeah
+===
+
+title: EndTest
+---
+User: Wow! That's super easy!
+System: Anyway yeah that's it
+===
