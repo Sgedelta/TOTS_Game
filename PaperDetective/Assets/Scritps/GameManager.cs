@@ -56,17 +56,37 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //Get the scene that we start off with.
+        currentScene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Ensure we keep track of the current active scene.
-        currentScene = SceneManager.GetActiveScene();
+        //If the current scene does not match the currentActiveScene, update all data.
+        if(currentScene != SceneManager.GetActiveScene())
+        {
+            //Call the method to change the level.
+            ChangeLevel();
+        }
 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    void ChangeLevel()
+    {
+        //Update the current active scene.
+        currentScene = SceneManager.GetActiveScene();
+
+        ////Get the player object in this scene and update them with the current inventory.
+        //playerObject = Find the current player gameobject
+        //playerObject.inventory = inventory;
+
+        ////Update the LevelManager to show the current objective.
+        //levelManagers<currentScene>.objective = currentObjective;
+    }
 
 
     void AddToInventory()
