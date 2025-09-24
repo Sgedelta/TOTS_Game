@@ -1,6 +1,7 @@
 /** Carl Browning
  *  Summary: This script handles all input from the player as it relates to movement
  */
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PLayerController : MonoBehaviour
@@ -12,10 +13,13 @@ public class PLayerController : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
 
+    [SerializeField] private GameObject sprite;
+
     private float horizontal;
     private float vertical;
 
     private float spinDirection = 1;
+    private float currentAngle = 0;
 
     /// <summary>
     /// How fast the walk animation is
@@ -50,22 +54,32 @@ public class PLayerController : MonoBehaviour
         //If player is moving, do the rotation
         if (rb.linearVelocity.x != 0 || rb.linearVelocityY != 0)
         {
-            if (Mathf.Abs(rb.rotation) > maxWalkAngle)
+           if (Mathf.Abs(currentAngle) > maxWalkAngle)
+            {
                 spinDirection *= -1;
-            rb.rotation += spinDirection * spinSpeed;
+            }
+            currentAngle += spinDirection * spinSpeed;
+            sprite.transform.Rotate( new Vector3(0,0,spinDirection * spinSpeed));
         }
         //Otherwise slowly return the player to the upright position
-        else if (Mathf.Abs(rb.rotation) > spinSpeed)
+        else if (Mathf.Abs(sprite.transform.rotation.z) > spinSpeed)
         {
-            if(rb.rotation < 0)
-                rb.rotation += spinSpeed;
+            if (sprite.transform.rotation.z < 0)
+            {
+                currentAngle += spinSpeed;
+                sprite.transform.Rotate(new Vector3(0, 0, spinSpeed));
+            }
             else
-                rb.rotation -= spinSpeed;
+            {
+                currentAngle -= spinSpeed;
+                sprite.transform.Rotate(new Vector3(0, 0, -spinSpeed));
+            }
         }
         //This was added to prevent a bug where a non-moving player kept twitching between 1 spinSpeed unit of rotation and 0 rotation
         else
         {
-            rb.rotation = 0;
+            sprite.transform.rotation = new Quaternion(0, 0, 0, 0);
+            currentAngle = 0;
         }
     }
 }
