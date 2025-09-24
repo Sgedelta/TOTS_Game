@@ -2,7 +2,18 @@ using System.Collections.Generic;
 //using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Runtime.CompilerServices;
 
+/// <summary>
+/// The state the game is in at any given time
+/// </summary>
+public enum GameStates
+{
+    MainMenu,
+    Gameplay,
+    Pause,
+    Options
+}
 public class GameManager : MonoBehaviour
 {
     //We will utilize a Singleton for our GameManager, so only one instance will exist across the entire game.
@@ -15,8 +26,8 @@ public class GameManager : MonoBehaviour
     ////Store all the individual LevelManagers in a dictionary so we can call upon them.
     //private Dictionary<Scene, LevelManager> levelManagers;
 
-    ////We will keep an array of the player's inventory to track across scenes.
-    //private Item[] inventory;
+    ////We will keep track of the inventory, which is kept in a separate InventoryManager
+    //private InventoryManager inventory;
 
     /* -------------------------------------- */
 
@@ -26,6 +37,9 @@ public class GameManager : MonoBehaviour
 
     //Keep track of the player's objective across scenes.
     private string currentObjective;
+
+    //Determine what state the player is in at all times.
+    private GameStates currentState;
 
 
 
@@ -43,6 +57,10 @@ public class GameManager : MonoBehaviour
 
             //This method informs Unity to retain the object this script is attached to when changing scenes.
             DontDestroyOnLoad(this.gameObject);
+
+            //Start the game in the gameplay mode
+            // -- THIS CAN BE CHANGED IF NEEDED --
+            currentState = GameStates.Gameplay;
         }
 
         else
@@ -70,10 +88,37 @@ public class GameManager : MonoBehaviour
             ChangeLevel();
         }
 
+        checkGameState();
     }
 
     /// <summary>
-    /// 
+    /// Check the state of the game and activate the associated behaviors.
+    /// </summary>
+    private void checkGameState()
+    {
+        switch (currentState)
+        {
+            //If we are in the Main Menu state, [ do the Main Menu behaviors ]
+            case GameStates.MainMenu:
+
+                break;
+            //If the game is in the main gameplay, [ allow player control and interaction ]
+            case GameStates.Gameplay:
+
+                break;
+            //If the pause button is clicked, freeze the world and open the pause menu.
+            case GameStates.Pause:
+
+                break;
+            //If the options are opened up, allow the players to change the game options.
+            case GameStates.Options:
+
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Update the current level and carry over key information across scenes.
     /// </summary>
     void ChangeLevel()
     {
@@ -86,17 +131,6 @@ public class GameManager : MonoBehaviour
 
         ////Update the LevelManager to show the current objective.
         //levelManagers<currentScene>.objective = currentObjective;
-    }
-
-
-    void AddToInventory()
-    {
-
-    }
-
-    void RemoveFromInventory()
-    {
-
     }
 
     /// <summary>
