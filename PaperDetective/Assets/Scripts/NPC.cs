@@ -12,16 +12,26 @@ public class NPC : MonoBehaviour
     /// and ending at the nth index.
     /// </summary>
     [SerializeField] private List<Vector2> moveTo;
+
+    /// <summary>
+    /// Whether or not the NPC should go to its next move location.
+    /// </summary>
+    [SerializeField] private bool moving;
+
+    /// <summary>
+    /// How close the NPC has to move to the given moveTo location before it goes to the next one
+    /// </summary>
+    [SerializeField] private float closeEnoughRadius;
     
 
     // Update is called once per frame
     void Update()
     {
-        if(moveTo.Count > 0)
+        if(moveTo.Count > 0 && moving)
         {
             rb.linearVelocity = (moveTo[0] - rb.position).normalized * speed;
 
-            if ((moveTo[0] - rb.position).magnitude < 1)
+            if ((moveTo[0] - rb.position).magnitude < closeEnoughRadius)
             {
                 moveTo.RemoveAt(0);
             }
