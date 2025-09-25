@@ -38,7 +38,7 @@ public class PLayerController : MonoBehaviour
     /// <summary>
     /// Whenever the player presses a WASD key, this method updates the direction they move accordingly
     /// </summary>
-    /// <param name="context">The key pressed event invoked by the Player Input system</param>
+    /// <param id="context">The key pressed event invoked by the Player Input system</param>
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
