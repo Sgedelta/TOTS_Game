@@ -21,6 +21,9 @@
 **PaperDetective/[Ll]ogs/
 **PaperDetective/[Uu]ser[Ss]ettings/
 
+PaperDetective/Logs
+
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 **/[Mm]emoryCaptures/
