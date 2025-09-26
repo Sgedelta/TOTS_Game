@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class NPC : MonoBehaviour
 {
@@ -22,7 +23,11 @@ public class NPC : MonoBehaviour
     /// How close the NPC has to move to the given moveTo location before it goes to the next one
     /// </summary>
     [SerializeField] private float closeEnoughRadius;
-    
+
+    [SerializeField] private DialogueRunner dialogueRunner;
+
+    [SerializeField] private string startNode;
+
 
     // Update is called once per frame
     void Update()
@@ -44,5 +49,25 @@ public class NPC : MonoBehaviour
         
     }
 
-    
+    public void queueMove(Vector2 move)
+    {
+        moveTo.Add(move);
+    }
+
+    public void Talk()
+    {
+        dialogueRunner.StartDialogue(startNode);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.rigidbody.gameObject.GetComponent<PLayerController>())
+        {
+            Debug.Log("Here");
+
+            Talk();
+        }
+    }
+
+
 }
