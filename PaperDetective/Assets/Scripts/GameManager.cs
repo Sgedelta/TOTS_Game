@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
     /* -------------- TO DO ----------------- */
 
     ////Store all the individual LevelManagers in a dictionary so we can call upon them.
-    //private Dictionary<Scene, LevelManager> levelManagers;
+    //// Sam: I'm changing this to a String so that it's easier for us to track. Each Level Manager can have a string that ids the Scene it's for
+    ////       We can switch the id based on the actual loading of the scene
+    //private Dictionary<string, LevelManager> levelManagers;
 
     ////We will keep track of the inventory, which is kept in a separate InventoryManager
     //private InventoryManager inventory;
@@ -34,6 +36,11 @@ public class GameManager : MonoBehaviour
 
     //Track the current scene.
     private Scene currentScene;
+
+    /// <summary>
+    /// A reference to the current Scene's String ID.
+    /// </summary>
+    private string currentSceneID;
 
     //Keep track of the player's objective across scenes.
     private string currentObjective;
