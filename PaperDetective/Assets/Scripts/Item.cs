@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    private ItemTemplate template;
+    [SerializeField] private ItemTemplate template;
     ItemTemplate Template { get { return template; } } //getter because we don't want other things overwriting what item this is
 
     public float amount; //for certain items, it will make sense for the player to have more than one of the item, or even fractional items. 
+    [SerializeField] private float startAmount = -1;
     public bool mouseBound;
     public Vector3 sourcePos;
     public Vector3 targetPos;
@@ -17,6 +18,9 @@ public class Item : MonoBehaviour
     {
         sourcePos = transform.position;
         mask = LayerMask.GetMask("Interactable");
+        InitAs(template, 1);
+        if (startAmount > 0)
+            amount = startAmount;
     }
 
     // Update is called once per frame
