@@ -2,6 +2,8 @@
  *  Summary: This script handles all input from the player as it relates to movement
  */
 using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PLayerController : MonoBehaviour
@@ -32,6 +34,11 @@ public class PLayerController : MonoBehaviour
     /// </summary>
     [SerializeField] private float maxWalkAngle;
 
+    /// <summary>
+    /// How close the player has to be to an NPC to talk to them
+    /// </summary>
+    [SerializeField] private float talkRadius;
+
     // Update is called once per frame
     void Update()
     {
@@ -48,6 +55,35 @@ public class PLayerController : MonoBehaviour
         vertical = context.ReadValue<Vector2>().y;
     }
 
+
+    public void Interact(InputAction.CallbackContext context)
+    {
+        List<Collider2D> colliders = new List<Collider2D>();
+        ContactFilter2D contactFilter = new ContactFilter2D();
+        contactFilter.layerMask = LayerMask.GetMask("Talk");
+        contactFilter.useLayerMask = true;
+
+        //Get all the things you can talk to within talkRadius
+        Physics2D.OverlapCircle(transform.position, talkRadius, contactFilter, colliders);
+
+        if (colliders.Count == 0)
+            return;
+        //Find the closest NPC
+        Collider2D closest = colliders[0];
+        float closestDistance = Mathf.Abs((transform.position - colliders[0].transform.position).magnitude);
+        for (int i = 1; i < colliders.Count; i++)
+        {
+            if (Mathf.Abs((transform.position - colliders[i].transform.position).magnitude) < closestDistance)
+            {
+                closest = colliders[i];
+                closestDistance = Mathf.Abs((transform.position - colliders[i].transform.position).magnitude);
+            }
+        }
+
+        //Talk to said closest NPC
+        closest.gameObject.GetComponent<NPC>().Talk();
+
+    }
     public void WalkAnimation()
     {
         //If player is moving, do the rotation
