@@ -1,27 +1,10 @@
-/** Carl Browning
- *  Summary: This script handles all input from the player as it relates to movement
- */
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
-public class PLayerController : MonoBehaviour
-{
-    /// <summary>
-    /// How fast the player moves
-    /// </summary>
-    [SerializeField] private float speed;
 
+public class Walk : MonoBehaviour
+{
     [SerializeField] private Rigidbody2D rb;
 
-    [SerializeField] private GameObject sprite;
-
-    private float horizontal;
-    private float vertical;
-
-    
-    private float spinDirection = 1;
-    private float currentAngle = 0;
-
+    [SerializeField] private SpriteRenderer sprite;
     /// <summary>
     /// How fast the walk animation is
     /// </summary>
@@ -32,33 +15,21 @@ public class PLayerController : MonoBehaviour
     /// </summary>
     [SerializeField] private float maxWalkAngle;
 
+    private float spinDirection = 1;
+
+    private float currentAngle;
     // Update is called once per frame
     void Update()
-    {
-        rb.linearVelocity = new Vector2(horizontal * speed, vertical * speed);
-    }
-
-    /// <summary>
-    /// Whenever the player presses a WASD key, this method updates the direction they move accordingly
-    /// </summary>
-    /// <param name="context">The key pressed event invoked by the Player Input system</param>
-    public void Move(InputAction.CallbackContext context)
-    {
-        horizontal = context.ReadValue<Vector2>().x;
-        vertical = context.ReadValue<Vector2>().y;
-    }
-
-    public void WalkAnimation()
     {
         //If player is moving, do the rotation
         if (rb.linearVelocity.x != 0 || rb.linearVelocityY != 0)
         {
-           if (Mathf.Abs(currentAngle) > maxWalkAngle)
+            if (Mathf.Abs(currentAngle) > maxWalkAngle)
             {
                 spinDirection *= -1;
             }
             currentAngle += spinDirection * spinSpeed;
-            sprite.transform.Rotate( new Vector3(0,0,spinDirection * spinSpeed));
+            sprite.transform.Rotate(new Vector3(0, 0, spinDirection * spinSpeed));
         }
         //Otherwise slowly return the player to the upright position
         else if (Mathf.Abs(sprite.transform.rotation.z) > spinSpeed)
