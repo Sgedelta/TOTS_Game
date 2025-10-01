@@ -1,7 +1,8 @@
 using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
-using Yarn.Unity.Editor;
+//using Yarn.Unity.Editor;
 
 public class FileManager : MonoBehaviour
 {
@@ -43,9 +44,21 @@ public class FileManager : MonoBehaviour
 
         //string path = "Assets/InternalLogs/playtest_logs_1.json";
 
-        Debug.Log(jsonData);
+        //Debug.Log(jsonData);
 
-        Debug.Log(Application.persistentDataPath);
+        //Debug.Log(Application.persistentDataPath);
+
+        //Attempt to write a file to the web data storage.
+        string filePath = Path.Combine(Application.persistentDataPath, "playerData.json");
+        File.WriteAllText(filePath, jsonData);
+
+        //Test reading from the file.
+        string readData = File.ReadAllText(filePath);
+
+        readData = JsonUtility.FromJson<string>(readData);
+
+        Debug.Log(readData);
+
 
         //System.IO.File.WriteAllText(path, jsonData);
     }
