@@ -51,9 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5109568870604189069}
   speed: 2
-  moveTo:
-  - {x: 5, y: 0}
-  - {x: -5, y: 0}
+  moveTo: []
   moving: 0
   closeEnoughRadius: 1
   dialogueRunner: {fileID: 0}
