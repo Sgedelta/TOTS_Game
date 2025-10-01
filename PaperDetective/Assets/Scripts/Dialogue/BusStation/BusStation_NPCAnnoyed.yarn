@@ -1,0 +1,12 @@
+﻿title: BusStation_NPCAnnoyed
+---
+Narrator: This man is grumbling and scowling, he's clearly annoyed.
+Agitated Man: What do you want?
+-> You: Can you help me find my bus?
+    Agitated Man: Ugh. You lost or something? Fine. What one?
+    -> You: Okay geez, nevermind.
+        <<stop>>
+    -> You: The one to Connerie. You know about it?
+        Agitated Man: I don't know, I think that one had an animal or whatever. You done bothering me?
+        -> You: Yeah...
+===
