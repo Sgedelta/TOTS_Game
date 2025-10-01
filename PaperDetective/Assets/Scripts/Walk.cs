@@ -51,5 +51,10 @@ public class Walk : MonoBehaviour
             sprite.transform.rotation = new Quaternion(0, 0, 0, 0);
             currentAngle = 0;
         }
+
+        if(transform.rotation.z != 0)
+        {
+            transform.rotation = Quaternion.identity;
+        }
     }
 }
