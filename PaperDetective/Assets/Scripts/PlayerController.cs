@@ -13,6 +13,8 @@ public class PLayerController : MonoBehaviour
     /// </summary>
     [SerializeField] private float speed;
 
+    [SerializeField] private bool canMove = true;
+
     [SerializeField] private Rigidbody2D rb;
 
     [SerializeField] private GameObject sprite;
@@ -39,10 +41,22 @@ public class PLayerController : MonoBehaviour
     /// </summary>
     [SerializeField] private float talkRadius;
 
+    /// <summary>
+    /// The NPC you are currently talking to.
+    /// </summary>
+    [SerializeField] private NPC talkPartner;
+
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocity = new Vector2(horizontal * speed, vertical * speed);
+        if(canMove)
+            rb.linearVelocity = new Vector2(horizontal * speed, vertical * speed);
+
+        //If you walk away from the npc, you stop talking
+        if(talkPartner != null && (talkPartner.gameObject.transform.position - transform.position).magnitude > talkRadius){
+            talkPartner.Silence();
+            talkPartner = null;
+        }
     }
 
     /// <summary>
@@ -81,8 +95,11 @@ public class PLayerController : MonoBehaviour
         }
 
         //Talk to said closest NPC
-        closest.gameObject.GetComponent<NPC>().Talk();
-
+        if (closest != null)
+        {
+            talkPartner = closest.gameObject.GetComponent<NPC>();
+            talkPartner.Talk();
+        }
     }
     public void WalkAnimation()
     {

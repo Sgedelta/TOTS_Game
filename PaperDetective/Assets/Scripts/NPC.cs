@@ -60,13 +60,10 @@ public class NPC : MonoBehaviour
             dialogueRunner.StartDialogue(startNode);
     }
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    public void Silence()
     {
-        if (collision.rigidbody.gameObject.GetComponent<PLayerController>())
-        {
-            Talk();
-        }
-    }*/
+        dialogueRunner.Stop();
+    }
 
 
 }
