@@ -87,7 +87,19 @@ MonoBehaviour:
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8494899887171604644}
+        m_TargetAssemblyTypeName: PLayerController, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
@@ -213,7 +225,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -241,10 +253,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  canMove: 1
   rb: {fileID: 346672412732654398}
   sprite: {fileID: 8677638611674141719}
   spinSpeed: 0.5
   maxWalkAngle: 15
+  talkRadius: 2
+  talkPartner: {fileID: 0}
 --- !u!114 &1637042475152581769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,10 +272,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198a25748d3cea342bf6b922cf10726b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  sprite: {fileID: 0}
-  spinSpeed: 0
-  maxWalkAngle: 0
+  rb: {fileID: 346672412732654398}
+  sprite: {fileID: 6095575024516259353}
+  spinSpeed: 1
+  maxWalkAngle: 15
 --- !u!1 &8677638611674141719
 GameObject:
   m_ObjectHideFlags: 0

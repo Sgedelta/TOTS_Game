@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3433870744164131743}
   - component: {fileID: 5109568870604189069}
   - component: {fileID: 8938547112238842808}
-  m_Layer: 0
+  - component: {fileID: 74237067495517155}
+  m_Layer: 3
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,9 +55,9 @@ MonoBehaviour:
   - {x: 5, y: 0}
   - {x: -5, y: 0}
   moving: 0
-  closeEnoughRadius: 0
+  closeEnoughRadius: 1
   dialogueRunner: {fileID: 0}
-  startNode: 
+  startNode: StartTest
 --- !u!61 &3433870744164131743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -146,6 +147,41 @@ MonoBehaviour:
   sprite: {fileID: 3986882389298224111}
   spinSpeed: 0.5
   maxWalkAngle: 15
+--- !u!114 &74237067495517155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5001933956224091421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yarnProject: {fileID: 0}
+  variableStorage: {fileID: 0}
+  lineProvider: {fileID: 0}
+  saliencyStrategy: 0
+  dialoguePresenters: []
+  autoStart: 0
+  startNode: Start
+  runSelectedOptionAsLine: 0
+  onNodeStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onNodeComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnhandledCommand:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8777831367189620845
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 560522035353912913}
   - component: {fileID: 3986882389298224111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: NPCSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
