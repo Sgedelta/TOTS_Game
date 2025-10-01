@@ -52,12 +52,19 @@ public class FileManager : MonoBehaviour
         string filePath = Path.Combine(Application.persistentDataPath, "playerData.json");
         File.WriteAllText(filePath, jsonData);
 
-        //Test reading from the file.
-        string readData = File.ReadAllText(filePath);
+        Debug.Log("File Path: " + filePath + "\n" + "Data: " + jsonData);
 
-        readData = JsonUtility.FromJson<string>(readData);
+        if (!File.Exists(filePath))
+        {
+            Debug.Log("The file isnt here, stupid");
+        }
 
-        Debug.Log(readData);
+        ////Test reading from the file.
+        //string readData = File.ReadAllText(filePath);
+
+        //readData = JsonUtility.FromJson<string>(readData);
+
+        //Debug.Log(readData);
 
 
         //System.IO.File.WriteAllText(path, jsonData);
