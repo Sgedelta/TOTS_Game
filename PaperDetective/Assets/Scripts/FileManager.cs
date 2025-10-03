@@ -57,14 +57,21 @@ public class FileManager : MonoBehaviour
         //Include "true" to make the format readable.
         string jsonData = JsonUtility.ToJson(userData, true);
 
-        //text.text = jsonData;
+        text.text = jsonData;
+#if UNITY_EDITOR
         UnityEditor.EditorGUIUtility.systemCopyBuffer = jsonData;
+#endif
     }
 
     public void SetPlaytestButton(Button newButton)
     {
         button = newButton;
         button.onClick.AddListener(SaveFile);
+    }
+
+    public void UpdatePlaytestText(TMP_Text text)
+    {
+        this.text = text;
     }
 }
 
