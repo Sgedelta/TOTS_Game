@@ -22,15 +22,6 @@ public class PLayerController : MonoBehaviour
     private float horizontal;
     private float vertical;
 
-    /// <summary>
-    /// How fast the walk animation is
-    /// </summary>
-    [SerializeField] private float spinSpeed;
-
-    /// <summary>
-    /// How far the player will rotate suring one "step" before rotating the other way
-    /// </summary>
-    [SerializeField] private float maxWalkAngle;
 
     /// <summary>
     /// How close the player has to be to an NPC to talk to them
