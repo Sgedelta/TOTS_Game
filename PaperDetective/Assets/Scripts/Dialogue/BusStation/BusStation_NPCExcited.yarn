@@ -1,0 +1,13 @@
+﻿title: BusStation_NPCExcited
+---
+Narrator:This man is clearly excited. Something has him smiling ear to ear.
+Excited Man: Oh good morning! Great day isn't it?
+-> You: I guess. Can you help me?
+-> You: Sure is. Can you do me a favor?
+Excited Man: Sure can, what do you need help with?
+    -> You: I'm looking for the bus to Connerie, you know which one that is?
+        Excited Man: Oh, I don't remember the name, but it leaves pretty soon, so you should hurry!
+            -> Thanks for the help
+                Excited Man: No problem! Have a good day!
+    -> You: In second thought, nevermind.
+===
