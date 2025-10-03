@@ -1,5 +1,6 @@
 ﻿title: BusStation_NPCDumpster
 ---
+<<Interact drunk>>
 Narrator: This man is mumbling to himself will a paper bagged bottle in his hand.
 Druken Man: Hrghm- huh? What do you-hic-want?
 -> What's your deal?

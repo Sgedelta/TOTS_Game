@@ -1,5 +1,6 @@
 ﻿title: BusStation_Board
 ---
+<<Interact board>>
 Narrator: The bus station's departure board shows the following information
     -> 1: Goldfish: 9:45
     -> 2: The Lantern: 9:45

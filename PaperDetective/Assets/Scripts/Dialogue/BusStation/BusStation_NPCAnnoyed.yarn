@@ -1,5 +1,6 @@
 ﻿title: BusStation_NPCAnnoyed
 ---
+<<Interact annoyed>>
 Narrator: This man is grumbling and scowling, he's clearly annoyed.
 Agitated Man: What do you want?
 -> You: Can you help me find my bus?

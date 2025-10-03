@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Runtime.CompilerServices;
+using Yarn.Unity;
 
 /// <summary>
 /// The state the game is in at any given time
@@ -170,6 +171,7 @@ public class GameManager : MonoBehaviour
     /// Sends data when the game ends.
     /// </summary>
     /// <param name="correctEnd">Check if the player got the correct bus or not.</param>
+    [YarnCommand("EndTest")]
     void EndTest(bool correctEnd)
     {
         //If the player got the wrong bus, send the bad end.
@@ -182,6 +184,7 @@ public class GameManager : MonoBehaviour
     /// Call when the player interacts with an NPC
     /// </summary>
     /// <param name="npc">The name of the NPC</param>
+    [YarnCommand("Interact")]
     void Interact(string npc)
     {
         npcList[currentNPC] = npc;

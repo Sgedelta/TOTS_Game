@@ -1,5 +1,6 @@
 ﻿title: BusStation_NPCExcited
 ---
+<<Interact excited>>
 Narrator:This man is clearly excited. Something has him smiling ear to ear.
 Excited Man: Oh good morning! Great day isn't it?
 -> You: I guess. Can you help me?

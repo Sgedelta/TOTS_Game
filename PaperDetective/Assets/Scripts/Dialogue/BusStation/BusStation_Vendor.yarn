@@ -1,5 +1,6 @@
 ﻿title: BusStation_Vendor
 ---
+<<Interact Vendor>>
 Narrator: This employee looks like he's barely an adult. Acts like it too, he's practically falling asleep while talking to you.
 Terminal Employee: Good morning. How can I help you.
 -> You: I'm looking for the bus to Connerie. Can you help me out?
@@ -13,6 +14,7 @@ Terminal Employee: Good morning. How can I help you.
 ===
 title: BusStation_BuyingTicket
 ---
+<<Interact Ticket_Attempt>>
 Terminal Employee: What line?
         -> 1: Goldfish: 9:45
             Resolution: You selected the wrong answer and failed the puzzle. You can always try again though!
@@ -26,6 +28,7 @@ Terminal Employee: What line?
             Resolution: You selected the wrong answer and failed the puzzle. You can always try again though!
         -> 6: Whiterun: 10:20
             Resolution: You've selected the correct answer! Congrats and thank you for playtesting! :3
+            <<EndTest true>>
         -> 7: The Yellow Comet: 10:25
             Resolution: You selected the wrong answer and failed the puzzle. You can always try again though!
         -> 8: Fantrak: 10:30
