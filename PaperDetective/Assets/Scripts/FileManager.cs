@@ -22,7 +22,7 @@ public class FileManager : MonoBehaviour
     private Button button;
 
     //Get the text asset we will display information on.
-    //[SerializeField]
+    [SerializeField]
     private TMP_Text text;
 
 
@@ -46,9 +46,6 @@ public class FileManager : MonoBehaviour
         //Convert our user data into JSON format.
         //Include "true" to make the format readable.
         string jsonData = JsonUtility.ToJson(userData, true);
-
-        //Find a Text object to display our data.
-        text = GetComponentInChildren<TMP_Text>();
 
         text.text = jsonData;
     }
