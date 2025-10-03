@@ -26,6 +26,13 @@ public class FileManager : MonoBehaviour
     private TMP_Text text;
 
 
+
+    //Get the GameManager to check endings
+    public bool ending;
+
+    public string[] npcs;
+
+
     private void Start()
     {
         button.onClick.AddListener(SaveFile);
@@ -42,6 +49,8 @@ public class FileManager : MonoBehaviour
     private void SaveFile()
     {
         userData.playTime = $"{time}";
+        userData.ending = ending;
+        userData.npcList = npcs;
 
         //Convert our user data into JSON format.
         //Include "true" to make the format readable.
@@ -56,4 +65,6 @@ public class FileManager : MonoBehaviour
 public class UserData
 {
     public string playTime;
+    public bool ending;
+    public string[] npcList;
 }

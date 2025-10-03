@@ -50,6 +50,18 @@ public class GameManager : MonoBehaviour
 
 
 
+    // -- Playtesting -- 
+    private bool goodEnding = false;
+
+    [SerializeField]
+    private FileManager fManager;
+
+    //The series of NPCs the player interacted with.
+    private string[] npcList = new string[100];
+    private int currentNPC = 0;
+
+
+
 
     /// <summary>
     /// This determines the singular instance of GameManager that will exist across all scenes.
@@ -148,5 +160,31 @@ public class GameManager : MonoBehaviour
     {
         //Assign the newObjective to be the currentObjective.
         currentObjective = newObjective;
+    }
+
+
+
+    // -- Playtesting --
+
+    /// <summary>
+    /// Sends data when the game ends.
+    /// </summary>
+    /// <param name="correctEnd">Check if the player got the correct bus or not.</param>
+    void EndTest(bool correctEnd)
+    {
+        //If the player got the wrong bus, send the bad end.
+        fManager.ending = correctEnd;
+
+        fManager.npcs = npcList;
+    }
+
+    /// <summary>
+    /// Call when the player interacts with an NPC
+    /// </summary>
+    /// <param name="npc">The name of the NPC</param>
+    void Interact(string npc)
+    {
+        npcList[currentNPC] = npc;
+        currentNPC++;
     }
 }
