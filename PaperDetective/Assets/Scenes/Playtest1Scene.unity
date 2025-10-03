@@ -547,7 +547,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &394317742
@@ -667,10 +667,6 @@ PrefabInstance:
     - target: {fileID: 3986882389298224111, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Color.r
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986882389298224111, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5001933956224091421, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Name
@@ -1352,71 +1348,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 347727466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &624201690
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619982359991409331, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1931825129}
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
---- !u!4 &624201691 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 655750436941671460, guid: 5bc8fc8952da4024a95004b7af00aef4, type: 3}
-  m_PrefabInstance: {fileID: 624201690}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &632383969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7915649117956963617, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
@@ -1798,10 +1729,6 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3986882389298224111, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5001933956224091421, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Name
       value: UsefulNPC1
@@ -1982,7 +1909,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1169098932
@@ -2093,10 +2020,6 @@ PrefabInstance:
     - target: {fileID: 3986882389298224111, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Color.r
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986882389298224111, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5001933956224091421, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Name
@@ -2321,10 +2244,6 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3986882389298224111, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5001933956224091421, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Name
       value: GenericNPC1
@@ -2418,10 +2337,6 @@ PrefabInstance:
     - target: {fileID: 3986882389298224111, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Color.r
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3986882389298224111, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5001933956224091421, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Name
@@ -2830,10 +2745,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6095575024516259353, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6141526061966840513, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2938,7 +2849,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1878263037
@@ -3002,37 +2913,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 12.62, y: 2.997746}
   m_EdgeRadius: 0
---- !u!1 &1931825128
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1931825129}
-  m_Layer: 0
-  m_Name: FileManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1931825129
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931825128}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 624201691}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1934275694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3328,10 +3208,6 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3986882389298224111, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5001933956224091421, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Name
       value: UsefulNPC2
@@ -3398,7 +3274,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 624201690}
   - {fileID: 694642551}
   - {fileID: 1366015678}
   - {fileID: 1767853076}

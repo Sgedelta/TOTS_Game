@@ -18,6 +18,10 @@ public class Walk : MonoBehaviour
     private float spinDirection = 1;
 
     private float currentAngle;
+
+    [SerializeField] private bool playSound;
+
+    [SerializeField] private AudioSource stepPlayer;
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +31,10 @@ public class Walk : MonoBehaviour
             if (Mathf.Abs(currentAngle) > maxWalkAngle)
             {
                 spinDirection *= -1;
+                if (playSound)
+                {
+                    stepPlayer.Play();
+                }
             }
             currentAngle += spinDirection * spinSpeed;
             sprite.transform.Rotate(new Vector3(0, 0, spinDirection * spinSpeed));
@@ -50,6 +58,11 @@ public class Walk : MonoBehaviour
         {
             sprite.transform.rotation = new Quaternion(0, 0, 0, 0);
             currentAngle = 0;
+        }
+
+        if(transform.rotation.z != 0)
+        {
+            transform.rotation = Quaternion.identity;
         }
     }
 }
