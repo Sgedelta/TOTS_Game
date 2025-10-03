@@ -35,7 +35,8 @@ public class FileManager : MonoBehaviour
 
     private void Start()
     {
-        button.onClick.AddListener(SaveFile);
+
+
     }
 
 
@@ -56,9 +57,17 @@ public class FileManager : MonoBehaviour
         //Include "true" to make the format readable.
         string jsonData = JsonUtility.ToJson(userData, true);
 
-        text.text = jsonData;
+        //text.text = jsonData;
+        UnityEditor.EditorGUIUtility.systemCopyBuffer = jsonData;
+    }
+
+    public void SetPlaytestButton(Button newButton)
+    {
+        button = newButton;
+        button.onClick.AddListener(SaveFile);
     }
 }
+
 
 
 [System.Serializable]

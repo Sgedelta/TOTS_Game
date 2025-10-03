@@ -24,10 +24,15 @@ public class NPC : MonoBehaviour
     /// </summary>
     [SerializeField] private float closeEnoughRadius;
 
-    [SerializeField] private DialogueRunner dialogueRunner;
+    private DialogueRunner dialogueRunner;
 
     [SerializeField] private string startNode;
 
+
+    private void Start()
+    {
+        dialogueRunner = GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>();
+    }
 
     // Update is called once per frame
     void Update()

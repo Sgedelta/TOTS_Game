@@ -54,7 +54,7 @@ MonoBehaviour:
   moveTo: []
   moving: 0
   closeEnoughRadius: 1
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 74237067495517155}
   startNode: StartTest
 --- !u!61 &3433870744164131743
 BoxCollider2D:
@@ -145,6 +145,8 @@ MonoBehaviour:
   sprite: {fileID: 3986882389298224111}
   spinSpeed: 0.5
   maxWalkAngle: 15
+  playSound: 0
+  stepPlayer: {fileID: 0}
 --- !u!114 &74237067495517155
 MonoBehaviour:
   m_ObjectHideFlags: 0
