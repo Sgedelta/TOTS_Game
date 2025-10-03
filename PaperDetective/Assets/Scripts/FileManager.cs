@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 //using Yarn.Unity.Editor;
 
 public class FileManager : MonoBehaviour
@@ -19,6 +20,10 @@ public class FileManager : MonoBehaviour
     //Get the testing button
     [SerializeField]
     private Button button;
+
+    //Get the text asset we will display information on.
+    //[SerializeField]
+    private TMP_Text text;
 
 
     private void Start()
@@ -42,32 +47,10 @@ public class FileManager : MonoBehaviour
         //Include "true" to make the format readable.
         string jsonData = JsonUtility.ToJson(userData, true);
 
-        //string path = "Assets/InternalLogs/playtest_logs_1.json";
+        //Find a Text object to display our data.
+        text = GetComponentInChildren<TMP_Text>();
 
-        //Debug.Log(jsonData);
-
-        //Debug.Log(Application.persistentDataPath);
-
-        //Attempt to write a file to the web data storage.
-        string filePath = Path.Combine(Application.persistentDataPath, "playerData.json");
-        File.WriteAllText(filePath, jsonData);
-
-        Debug.Log("File Path: " + filePath + "\n" + "Data: " + jsonData);
-
-        if (!File.Exists(filePath))
-        {
-            Debug.Log("The file isnt here, stupid");
-        }
-
-        ////Test reading from the file.
-        //string readData = File.ReadAllText(filePath);
-
-        //readData = JsonUtility.FromJson<string>(readData);
-
-        //Debug.Log(readData);
-
-
-        //System.IO.File.WriteAllText(path, jsonData);
+        text.text = jsonData;
     }
 }
 
