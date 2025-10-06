@@ -23,7 +23,7 @@ public class FileManager : MonoBehaviour
 
     //Get the text asset we will display information on.
     [SerializeField]
-    private TMP_Text text;
+    private TMP_InputField text;
 
 
 
@@ -69,8 +69,9 @@ public class FileManager : MonoBehaviour
         button.onClick.AddListener(SaveFile);
     }
 
-    public void UpdatePlaytestText(TMP_Text text)
+    public void UpdatePlaytestText(TMP_InputField text)
     {
+        text.text = text.text;
         this.text = text;
     }
 }

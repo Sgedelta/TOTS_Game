@@ -36,21 +36,21 @@ public class Walk : MonoBehaviour
                     stepPlayer.Play();
                 }
             }
-            currentAngle += spinDirection * spinSpeed;
-            sprite.transform.Rotate(new Vector3(0, 0, spinDirection * spinSpeed));
+            currentAngle += spinDirection * spinSpeed * Time.deltaTime * 100;
+            sprite.transform.Rotate(new Vector3(0, 0, spinDirection * spinSpeed * Time.deltaTime * 100));
         }
         //Otherwise slowly return the player to the upright position
         else if (Mathf.Abs(sprite.transform.rotation.z) > spinSpeed)
         {
             if (sprite.transform.rotation.z < 0)
             {
-                currentAngle += spinSpeed;
-                sprite.transform.Rotate(new Vector3(0, 0, spinSpeed));
+                currentAngle += spinSpeed * Time.deltaTime * 100;
+                sprite.transform.Rotate(new Vector3(0, 0, spinSpeed * Time.deltaTime * 100));
             }
             else
             {
-                currentAngle -= spinSpeed;
-                sprite.transform.Rotate(new Vector3(0, 0, -spinSpeed));
+                currentAngle -= spinSpeed * Time.deltaTime * 100;
+                sprite.transform.Rotate(new Vector3(0, 0, -spinSpeed * Time.deltaTime * 100));
             }
         }
         //This was added to prevent a bug where a non-moving player kept twitching between 1 spinSpeed unit of rotation and 0 rotation

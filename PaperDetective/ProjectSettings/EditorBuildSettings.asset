@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/ManagerScene.unity
-    guid: 768df1b44717aa041948709652fd52ad
-  - enabled: 1
     path: Assets/Scenes/Playtest1Scene.unity
     guid: 2d2cc503efaf6704b931069c2367fa7b
   - enabled: 1
     path: Assets/Scenes/PlaytestResult.unity
     guid: 2d6209b0a9606294684d3f211858c044
+  - enabled: 1
+    path: Assets/Scenes/ManagerScene.unity
+    guid: 768df1b44717aa041948709652fd52ad
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
