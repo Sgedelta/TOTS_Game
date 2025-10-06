@@ -59,6 +59,9 @@ public class PLayerController : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
+
+
+
         List<Collider2D> colliders = new List<Collider2D>();
         ContactFilter2D contactFilter = new ContactFilter2D();
         contactFilter.layerMask = LayerMask.GetMask("Talk");

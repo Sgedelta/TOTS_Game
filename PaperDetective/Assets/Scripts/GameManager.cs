@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Runtime.CompilerServices;
+using Yarn.Unity;
 
 /// <summary>
 /// The state the game is in at any given time
@@ -19,6 +20,9 @@ public class GameManager : MonoBehaviour
     //We will utilize a Singleton for our GameManager, so only one instance will exist across the entire game.
     //This is why we label this instance "static", as this one variable is shared across all possible GameManager scripts.
     public static GameManager instance;
+
+    //TODO: fix this, this is a temporary solution that won't scale when we exapnd to multiple scenes - Sam
+    [SerializeField] public GameObject DialogueSystem;
 
 
     /* -------------- TO DO ----------------- */
@@ -55,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private FileManager fManager;
+    public FileManager FileManager { get { return fManager; } }
 
     //The series of NPCs the player interacted with.
     private string[] npcList = new string[100];
@@ -170,20 +175,25 @@ public class GameManager : MonoBehaviour
     /// Sends data when the game ends.
     /// </summary>
     /// <param name="correctEnd">Check if the player got the correct bus or not.</param>
-    void EndTest(bool correctEnd)
+    [YarnCommand("EndTest")]
+    public void EndTest(bool correctEnd)
     {
         //If the player got the wrong bus, send the bad end.
         fManager.ending = correctEnd;
 
         fManager.npcs = npcList;
+
+        SceneManager.LoadScene("PlaytestResult");
     }
 
     /// <summary>
     /// Call when the player interacts with an NPC
     /// </summary>
     /// <param name="npc">The name of the NPC</param>
-    void Interact(string npc)
+    [YarnCommand("Interact")]
+    public void Interact(string npc)
     {
+        Debug.Log("Interacted with " + npc);
         npcList[currentNPC] = npc;
         currentNPC++;
     }

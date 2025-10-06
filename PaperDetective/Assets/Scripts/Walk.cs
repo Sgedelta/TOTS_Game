@@ -44,12 +44,12 @@ public class Walk : MonoBehaviour
         {
             if (sprite.transform.rotation.z < 0)
             {
-                currentAngle += spinSpeed * Time.deltaTime;
+                currentAngle += spinSpeed * Time.deltaTime * 100;
                 sprite.transform.Rotate(new Vector3(0, 0, spinSpeed * Time.deltaTime * 100));
             }
             else
             {
-                currentAngle -= spinSpeed;
+                currentAngle -= spinSpeed * Time.deltaTime * 100;
                 sprite.transform.Rotate(new Vector3(0, 0, -spinSpeed * Time.deltaTime * 100));
             }
         }
