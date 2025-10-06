@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - FileManager
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Talk
   - Water
   - UI
   - 
