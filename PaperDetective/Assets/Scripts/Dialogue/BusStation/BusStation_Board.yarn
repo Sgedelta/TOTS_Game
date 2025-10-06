@@ -1,15 +1,6 @@
 ﻿title: BusStation_Board
 ---
 Narrator: The bus station's departure board shows the following information
-    -> 1: Goldfish: 9:45
-    -> 2: The Lantern: 9:45
-    -> 3: Nightrunner: 10:00
-    -> 4: Grayhound: 10:10
-    -> 5: Rusty Badger: 10:15
-    -> 6: Whiterun: 10:20
-    -> 7: The Yellow Comet: 10:25
-    -> 8: Fantrak: 10:30
-    -> 9: Crimson Goat: 10:30
-    -> 10: Bronze Beetle: 11:00
+    Bus Board: Goldfish: 9:45 <br>The Lantern: 9:45<br>Nightrunner: 10:00<br>Grayhound: 10:10<br>Rusty Badger: 10:15<br>Whiterun: 10:20<br>The Yellow Comet: 10:25<br>Fantrak: 10:30<br>Crimson Goat: 10:30<br>Bronze Beetle: 11:00
 
 ===
