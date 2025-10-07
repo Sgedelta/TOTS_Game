@@ -17,7 +17,7 @@ public class PLayerController : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
 
-    [SerializeField] private GameObject sprite;
+    [SerializeField] private Animator anim;
 
     private float horizontal;
     private float vertical;
@@ -36,11 +36,25 @@ public class PLayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canMove)
+        if (canMove)
+        {
             rb.linearVelocity = new Vector2(horizontal * speed, vertical * speed);
+        }
+            
+        if(rb.linearVelocity.magnitude > 0)
+        {
+            anim.enabled = true;
+        }
+        else
+        {
+            anim.Play(anim.GetCurrentAnimatorClipInfo(0)[0].clip.name, 0, 0);
+            anim.enabled = false;
+            
+        }
 
         //If you walk away from the npc, you stop talking
-        if(talkPartner != null && (talkPartner.gameObject.transform.position - transform.position).magnitude > talkRadius){
+        if (talkPartner != null && (talkPartner.gameObject.transform.position - transform.position).magnitude > talkRadius)
+        {
             talkPartner.Silence();
             talkPartner = null;
         }
@@ -59,9 +73,6 @@ public class PLayerController : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-
-
-
         List<Collider2D> colliders = new List<Collider2D>();
         ContactFilter2D contactFilter = new ContactFilter2D();
         contactFilter.layerMask = LayerMask.GetMask("Talk");
