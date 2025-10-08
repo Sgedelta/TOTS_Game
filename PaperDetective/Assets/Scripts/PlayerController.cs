@@ -40,8 +40,9 @@ public class PLayerController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(horizontal * speed, vertical * speed);
         }
-            
-        if(rb.linearVelocity.magnitude > 0)
+
+        anim.SetFloat("Velocity", rb.linearVelocity.magnitude);
+        /*if(rb.linearVelocity.magnitude > 0)
         {
             anim.enabled = true;
         }
@@ -50,7 +51,7 @@ public class PLayerController : MonoBehaviour
             anim.Play(anim.GetCurrentAnimatorClipInfo(0)[0].clip.name, 0, 0);
             anim.enabled = false;
             
-        }
+        }*/
 
         //If you walk away from the npc, you stop talking
         if (talkPartner != null && (talkPartner.gameObject.transform.position - transform.position).magnitude > talkRadius)
