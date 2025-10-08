@@ -23,7 +23,7 @@ public class FileManager : MonoBehaviour
 
     //Get the text asset we will display information on.
     [SerializeField]
-    private TMP_Text text;
+    private TMP_InputField text;
 
 
 
@@ -35,7 +35,8 @@ public class FileManager : MonoBehaviour
 
     private void Start()
     {
-        button.onClick.AddListener(SaveFile);
+
+
     }
 
 
@@ -57,8 +58,24 @@ public class FileManager : MonoBehaviour
         string jsonData = JsonUtility.ToJson(userData, true);
 
         text.text = jsonData;
+#if UNITY_EDITOR
+        UnityEditor.EditorGUIUtility.systemCopyBuffer = jsonData;
+#endif
+    }
+
+    public void SetPlaytestButton(Button newButton)
+    {
+        button = newButton;
+        button.onClick.AddListener(SaveFile);
+    }
+
+    public void UpdatePlaytestText(TMP_InputField text)
+    {
+        text.text = text.text;
+        this.text = text;
     }
 }
+
 
 
 [System.Serializable]
