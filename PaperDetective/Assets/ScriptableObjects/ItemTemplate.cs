@@ -6,6 +6,7 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "ItemTemplate", menuName = "Scriptable Objects/ItemTemplate")]
 public class ItemTemplate : ScriptableObject
 {
+    public Sprite itemSprite;
     /// <summary>
     /// The Internal ID of the ItemTemplate, to be used for all internal checks
     /// </summary>
@@ -35,8 +36,4 @@ public class ItemTemplate : ScriptableObject
     /// A list of items that this is used in. 
     /// </summary>
     public List<ItemTemplate> usedIn; 
-
-
-
-
 }

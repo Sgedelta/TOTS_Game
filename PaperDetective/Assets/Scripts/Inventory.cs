@@ -9,16 +9,15 @@ using System.Linq;
 public class Inventory : MonoBehaviour
 {
     List<Item> inventory = new List<Item>();
-    Vector3[] invPos = new Vector3[10];
+    Vector2[] invPos = new Vector2[10];
 
     private void Start()
     {
         float x = -6.25f;
         for (int i = 0; i < 10; i++)
         {
-            invPos[i] = new Vector3(x, transform.position.y, 0);
+            invPos[i] = new Vector3(x, transform.position.y);
             x += 1.39f;
-            print(invPos[i]);
         }
     }
 
@@ -36,7 +35,7 @@ public class Inventory : MonoBehaviour
         if (hit && hit.collider.gameObject.CompareTag("Item"))
         {
             Item hitItem = hit.collider.gameObject.GetComponent<Item>();
-            // if mouseDown
+            // if the left mouse button is clicked
             if (context.performed)
             {
                 // Item follows cursor
@@ -45,18 +44,11 @@ public class Inventory : MonoBehaviour
                 // Remove item from inventory
                 if (inventory.Contains(hitItem))
                 {
-                    for (int i = 0;i < invPos.Length; i++)
-                    {
-                        if ((Vector2)hitItem.gameObject.transform.position == (Vector2)invPos[i])
-                        {
-                            invPos[i].z = 0;
-                            break;
-                        }
-                    }
                     inventory.Remove(hitItem);
                 }
             }
-            // if mouseUp
+
+            // if left mouse button is released
             else if (context.canceled)
             {
                 // item stops following cursor and returns to the inventory box if the interaction failed
@@ -65,19 +57,9 @@ public class Inventory : MonoBehaviour
                 {
                     // Flash red to suggest failed interaction?
 
-                    // Find the first empty inventory slot and move the item there
                     if (inventory.Count < 10)
                     {
                         inventory.Add(hitItem);
-                        for (int i = 0; i < invPos.Length; i++)
-                        {
-                            if (invPos[i].z == 0)
-                            {
-                                invPos[i].z = 1;
-                                hitItem.targetPos = invPos[i];
-                                break;
-                            }
-                        }
                     }
                     // if there are none, return it to where it was
                     else
@@ -85,8 +67,45 @@ public class Inventory : MonoBehaviour
                         hitItem.targetPos = hitItem.sourcePos;
                     }
                 }
+                else
+                {
+                    if (hitItem.amount <= 0)
+                    {
+                        inventory.Remove(hitItem);
+                        Destroy(hitItem);
+                    }
+                    else
+                    {
+                        inventory.Add(hitItem);
+                    }
+                }
             }
         }
 
+        Sort();
+    }
+
+    public void Add(Item item)
+    {
+        inventory.Add(item);
+        Sort();
+    }
+
+    public void Remove(Item item)
+    {
+        if (inventory.Contains(item))
+            inventory.Remove(item);
+        else
+            Debug.Log("That item doesn't exist in inventory");
+        Sort();
+    }
+
+    public void Sort()
+    {
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            inventory[i].targetPos = invPos[i];
+            Debug.Log("sorting " + i + " " + inventory[i].name + " " + invPos[i]);
+        }
     }
 }

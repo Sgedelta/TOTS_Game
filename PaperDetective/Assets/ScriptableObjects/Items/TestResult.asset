@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b0926bca2b59f49a0fe06644c75234, type: 3}
   m_Name: TestResult
   m_EditorClassIdentifier: 
+  itemSprite: {fileID: 8203965518831835111, guid: c1b7f28324b872b46bd468f68f7484f5, type: 3}
   id: res1
   displayName: I'm a resulting item!
   defaultAmount: 3
@@ -21,5 +22,4 @@ MonoBehaviour:
   madeFromAmounts:
   - 1
   - 1
-  usedIn:
-  - {fileID: 0}
+  usedIn: []
