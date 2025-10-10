@@ -1,0 +1,12 @@
+﻿title: VendingMachine
+---
+<<declare $currency = 0.00>>
+
+Vending Machine: What would you like to buy?
+-> Frantch to English Dictionary - 4.99 Frencs
+<<if $currency >= 4.99>>
+    Vending Machine: Sure thing, bucko.
+<<else>>
+    Vending Machine: Come back when you're a little, hmm, richer.
+<<endif>>
+===
