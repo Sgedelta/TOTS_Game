@@ -42,6 +42,7 @@ public class PLayerController : MonoBehaviour
         }
 
         anim.SetFloat("Velocity", rb.linearVelocity.magnitude);
+        anim.SetFloat("HorizontalVelocity", rb.linearVelocity.x);
         /*if(rb.linearVelocity.magnitude > 0)
         {
             anim.enabled = true;
