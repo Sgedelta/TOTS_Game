@@ -1,19 +1,18 @@
 ﻿title: BusStation_NPCDumpster
 ---
 <<Interact GameManager drunk>>
-Narrator: This man is mumbling to himself will a paper bagged bottle in his hand.
-Druken Man: Hrghm- huh? What do you-hic-want?
+Narrator: The man is mumbling to himself with a paper bagged bottle in his hand.
+Druken Man: Hrghm- huh? What do you *hic* want?
 -> What's your deal?
-    Drunken Man: Missed the last-hic-bus. Issssss there someth'n you need?
+    Drunken Man: Missed the last *hic* bus. Issssss there someth'n you need?
     -> You: Can you help me find my bus?
-        Drunken Man: S-hic-sure why not, wuhh-where you goin'?
+        Drunken Man: S- *hic* sure why not, wuhh-where you goin'?
             -> You: Connerie.
-                Drunken Man: Oh yeahhhh. That bus had a-hic-pretty short name. I don't remember which one.
+                Drunken Man: Oh yeahhhh. That bus had a *hic* a pretty short name. One uhhh one word one.
                 You: Thanks.
-                Drunken Man: And watch out for the ddddick with the glasses. He'll say anything to-hic-make you go away!
+                Drunken Man: And watch out for the diiiiick in glasses. He'll say anything to *hic* make you go away!
             -> Actually, nevermind
                 <<stop>>
     -> You: Oh, nevermind.
         <<stop>>
-
 ===
