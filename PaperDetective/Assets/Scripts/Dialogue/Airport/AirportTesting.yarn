@@ -1,4 +1,12 @@
 title: AirportTesting
 ---
-Narrator: wow you did it you troglydite.
+
+///Determine if the player has the dictionary or not
+<<declare $hasDict = false>>
+
+<<if $hasDict == true>>
+Narrator: wow you did it you troglodyte
+<<else>>
+Narrator: lorem ipsum gibberish
+<<endif>>
 ===
