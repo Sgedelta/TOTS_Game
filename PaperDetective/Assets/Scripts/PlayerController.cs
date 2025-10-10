@@ -40,19 +40,14 @@ public class PLayerController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(horizontal * speed, vertical * speed);
         }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
 
         anim.SetFloat("Velocity", rb.linearVelocity.magnitude);
         anim.SetFloat("HorizontalVelocity", rb.linearVelocity.x);
-        /*if(rb.linearVelocity.magnitude > 0)
-        {
-            anim.enabled = true;
-        }
-        else
-        {
-            anim.Play(anim.GetCurrentAnimatorClipInfo(0)[0].clip.name, 0, 0);
-            anim.enabled = false;
-            
-        }*/
+
 
         //If you walk away from the npc, you stop talking
         if (talkPartner != null && (talkPartner.gameObject.transform.position - transform.position).magnitude > talkRadius)
@@ -60,6 +55,8 @@ public class PLayerController : MonoBehaviour
             talkPartner.Silence();
             talkPartner = null;
         }
+
+        
     }
 
     /// <summary>
@@ -85,6 +82,7 @@ public class PLayerController : MonoBehaviour
 
         if (colliders.Count == 0)
             return;
+
         //Find the closest NPC
         Collider2D closest = colliders[0];
         float closestDistance = Mathf.Abs((transform.position - colliders[0].transform.position).magnitude);
@@ -94,6 +92,7 @@ public class PLayerController : MonoBehaviour
             {
                 closest = colliders[i];
                 closestDistance = Mathf.Abs((transform.position - colliders[i].transform.position).magnitude);
+                
             }
         }
 
@@ -102,6 +101,8 @@ public class PLayerController : MonoBehaviour
         {
             talkPartner = closest.gameObject.GetComponent<NPC>();
             talkPartner.Talk();
+            
+            canMove = false;
         }
     }
 }
