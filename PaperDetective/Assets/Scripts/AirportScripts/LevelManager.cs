@@ -12,7 +12,10 @@ public class LevelManager : MonoBehaviour
 
     //Track the amount of currency the player has.
     private float money;
-    
+
+    //Get the dialogue runner object in the scene.
+    DialogueRunner runner;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +23,8 @@ public class LevelManager : MonoBehaviour
         hasDict = false;
 
         money = 0.00f;
+
+        runner = GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>();
     }
 
     // Update is called once per frame
@@ -40,7 +45,7 @@ public class LevelManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
-            AddMoney(4.99f);
+            AddMoney(3.00f);
         }
 
         
@@ -56,26 +61,23 @@ public class LevelManager : MonoBehaviour
     [YarnCommand("has_Dict")]
     private void DictionaryGot()
     {
-        //Get the dialogue runner object in the scene.
-        DialogueRunner runner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
 
         //If we have the dialogue runner(if we don't something is wrong), update the global "hasDict" variable to true.
-        if(runner != null)
+        if (runner != null)
         {
             runner.VariableStorage.SetValue("$hasDict", true);
         }
     }
 
-    [YarnCommand("moreMoney")]
-    private void AddMoney(float newMoney)
+    [YarnCommand("AddMoney")]
+    public void AddMoney(float newMoney)
     {
-        //Get the dialogue runner object in the scene.
-        DialogueRunner runner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
 
         //If we have the dialogue runner, increase the currency that yarn has.
         if (runner != null)
         {
             runner.VariableStorage.SetValue("$currency", money + newMoney);
+            money = newMoney;
         }
     }
 }

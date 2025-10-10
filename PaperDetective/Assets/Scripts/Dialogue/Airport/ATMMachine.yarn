@@ -1,0 +1,19 @@
+﻿title: ATMMachine
+---
+ATM Machine: Welcome to the ATM! What would you like to do?
+-> Exchange currency.
+    <<jump Exchange>>
+-> die.
+    ATM Machine: Well have fun with that!
+===
+
+title: Exchange
+---
+ATM Machine: We can exchange dollars for Frencs here.
+-> Exchange for Frencs.
+    ATM Machine: Here are your 4.99 Frencs.
+    <<AddMoney 4.99>>
+    ATM Machine: Have a pleasant stay!
+-> die.
+    ATM Machine: Well have fun with that!
+===

@@ -182,11 +182,11 @@ PrefabInstance:
       objectReference: {fileID: 235843992}
     - target: {fileID: 327238854279389408, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: startNode
-      value: AirportTesting
+      value: ATMMachine
       objectReference: {fileID: 0}
     - target: {fileID: 5001933956224091421, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Name
-      value: NPC
+      value: ATM Machine
       objectReference: {fileID: 0}
     - target: {fileID: 7915649117956963617, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_LocalPosition.x

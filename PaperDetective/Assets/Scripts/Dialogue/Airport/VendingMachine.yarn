@@ -2,11 +2,13 @@
 ---
 <<declare $currency = 0.00>>
 
-Vending Machine: What would you like to buy?
+Vending Machine: A Vending Machine for books.
+Vending Machine: There's one Frantch to English Dictionary left for only 4.99 Frencs.
 -> Frantch to English Dictionary - 4.99 Frencs
 <<if $currency >= 4.99>>
     Vending Machine: Sure thing, bucko.
 <<else>>
+    Vending Machine: You only have {$currency} Frencs, loser.
     Vending Machine: Come back when you're a little, hmm, richer.
 <<endif>>
 ===
