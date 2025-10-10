@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Yarn;
+using Yarn.Unity;
 public class PLayerController : MonoBehaviour
 {
     /// <summary>
@@ -49,12 +51,7 @@ public class PLayerController : MonoBehaviour
         anim.SetFloat("HorizontalVelocity", rb.linearVelocity.x);
 
 
-        //If you walk away from the npc, you stop talking
-        if (talkPartner != null && (talkPartner.gameObject.transform.position - transform.position).magnitude > talkRadius)
-        {
-            talkPartner.Silence();
-            talkPartner = null;
-        }
+        
 
         
     }
@@ -104,5 +101,10 @@ public class PLayerController : MonoBehaviour
             
             canMove = false;
         }
+    }
+
+    public void EndDialogue()
+    {
+        canMove = true;
     }
 }
