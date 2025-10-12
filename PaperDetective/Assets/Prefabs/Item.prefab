@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d55fdb5185ca523488b4739183819d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newItem: {fileID: 767714649553243708}
+  newItem: {fileID: 0}
   template: {fileID: 0}
   amount: 1
   startAmount: -1

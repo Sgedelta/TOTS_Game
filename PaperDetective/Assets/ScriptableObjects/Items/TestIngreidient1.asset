@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b0926bca2b59f49a0fe06644c75234, type: 3}
   m_Name: TestIngreidient1
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -1825584190441627544, guid: 1db662c820473ff4eba54762c15d4506, type: 3}
   id: ing1
   displayName: I'm an Ingredient!
   defaultAmount: 1

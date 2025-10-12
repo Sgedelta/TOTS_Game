@@ -11,6 +11,9 @@ public class Inventory : MonoBehaviour
     List<Item> inventory = new List<Item>();
     Vector2[] invPos = new Vector2[10];
 
+    [SerializeField] private GameObject newItemPrefab;
+    public GameObject NewItemPrefab { get { return newItemPrefab; } }
+
     private void Start()
     {
         float x = -6.25f;
@@ -69,15 +72,7 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    if (hitItem.amount <= 0)
-                    {
-                        inventory.Remove(hitItem);
-                        Destroy(hitItem);
-                    }
-                    else
-                    {
-                        inventory.Add(hitItem);
-                    }
+                    inventory.Add(hitItem);
                 }
             }
         }
@@ -105,7 +100,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < inventory.Count; i++)
         {
             inventory[i].targetPos = invPos[i];
-            Debug.Log("sorting " + i + " " + inventory[i].name + " " + invPos[i]);
+            //Debug.Log("sorting " + i + " " + inventory[i].name + " " + invPos[i]);
         }
     }
 }

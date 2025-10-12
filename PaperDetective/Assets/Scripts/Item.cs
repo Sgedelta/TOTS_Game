@@ -3,7 +3,6 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     Inventory inventory;
-    [SerializeField] private GameObject newItem;
     [SerializeField] private ItemTemplate template;
     ItemTemplate Template { get { return template; } } //getter because we don't want other things overwriting what item this is
 
@@ -46,7 +45,7 @@ public class Item : MonoBehaviour
         {
             inventory.Remove(this);
             inventory.Sort();
-            Debug.Log("GET REKT SCRUB" + this.name);
+            Debug.Log("GET REKT SCRUB: " + this.name);
             Destroy(this.gameObject);
         }
     }
@@ -58,17 +57,22 @@ public class Item : MonoBehaviour
     /// </summary>
     public void InitAs(ItemTemplate itemTemplate, int amountToMake)
     {
+        if (itemTemplate == null) return; //we cannot init when we don't have a template
+
         template = itemTemplate;
         amount = template.defaultAmount * amountToMake;
+        if (template.itemSprite)
+            GetComponent<SpriteRenderer>().sprite = GetComponent<Item>().template.itemSprite;
+        gameObject.name = template.displayName;
     }
 
     public bool CheckInteraction()
     {
-        Debug.Log(mask);
+        //Debug.Log(mask);
         // Check if the item is touching another item
         if (this.gameObject.GetComponent<BoxCollider2D>().IsTouchingLayers(mask))
         {
-            Debug.Log("Layers check successful");
+            //Debug.Log("Layers check successful");
             // Find the object that is closest to the item and return whether a combination was successful
 
             // Get an array of all objects the item is overlapping
@@ -158,27 +162,24 @@ public class Item : MonoBehaviour
                 if (result.madeFromItems[i] == template)
                 {
                     amount -= amountToMake * result.madeFromAmounts[i];
-                    Debug.Log(amount);
+                    Debug.Log(name + " amount is " + amount);
                 }
                 else
                 {
                     other.amount -= amountToMake * result.madeFromAmounts[i];
-                    Debug.Log(other.amount);
+                    Debug.Log(other.name + " amount is " + other.amount);
                 }
             }
         }
 
         // Instantiate new Item (in the proper amount) and place into inventory.
-        Instantiate(newItem);
-        Debug.Log(newItem.name);
-        newItem.GetComponent<Item>().InitAs(result, amountToMake);
-
-        // assign sprite
-        if (newItem.GetComponent<Item>().template.itemSprite)
-            newItem.GetComponent<SpriteRenderer>().sprite = newItem.GetComponent<Item>().template.itemSprite;
-
-        inventory.Add(newItem.GetComponent<Item>());
+        GameObject madeItem = Instantiate(inventory.NewItemPrefab);
+        Debug.Log("New Item is: " + madeItem.name);
+        madeItem.GetComponent<Item>().InitAs(result, amountToMake);
+        inventory.Add(madeItem.GetComponent<Item>());
         inventory.Sort();
+
+        
         return 1;
     }
 
