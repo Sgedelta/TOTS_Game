@@ -59,7 +59,7 @@ public class LevelManager : MonoBehaviour
     /// Send a message to the Yarn scripts that the player has the dictionary.
     /// </summary>
     [YarnCommand("has_Dict")]
-    private void DictionaryGot()
+    public void DictionaryGot()
     {
 
         //If we have the dialogue runner(if we don't something is wrong), update the global "hasDict" variable to true.

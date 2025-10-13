@@ -12,7 +12,7 @@ title: Exchange
 ATM Machine: We can exchange dollars for Frencs here.
 -> Exchange for Frencs.
     ATM Machine: Here are your 4.99 Frencs.
-    <<AddMoney 4.99>>
+    <<AddMoney LevelManager 4.99>>
     ATM Machine: Have a pleasant stay!
 -> die.
     ATM Machine: Well have fun with that!
