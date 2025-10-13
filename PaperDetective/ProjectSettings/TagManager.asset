@@ -4,15 +4,16 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - FileManager
+  - Item
+  - Inventory
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Talk
+  - 
   - Water
   - UI
-  - Player
+  - Item
   - 
   - 
   - 

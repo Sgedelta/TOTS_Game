@@ -162,6 +162,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5871f2a2-10a9-4727-950f-f37de5c817cf
+    m_ActionName: 'Player/Release[/Mouse/press]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3fa47f30-acb2-409e-a133-3a90da7247ce
+    m_ActionName: 'Player/Drag[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7269b606-f53a-477f-ad38-048d8871185e
+    m_ActionName: 'Player/Acquire[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7d375114-081d-4cb7-b739-3a04ca2423e0
+    m_ActionName: 'UI/Item[/Mouse/press,/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
