@@ -1,0 +1,10 @@
+﻿title: PeopleDialogue
+---
+<<declare $hasDict = false>>
+
+<<if $hasDict == false>>
+Frantch Person: lorem ipsum gibberish
+<<else>>
+Frantch Person: Oh hey, you speak our language, you absolute loser?
+<<endif>>
+===

@@ -1,12 +1,17 @@
 ﻿title: VendingMachine
 ---
 <<declare $currency = 0.00>>
+<<declare $hasUmbrella = false>>
 
 Vending Machine: A Vending Machine for books.
 Vending Machine: There's one Frantch to English Dictionary left for only 4.99 Frencs.
 -> Frantch to English Dictionary - 4.99 Frencs
 <<if $currency >= 4.99>>
-    Vending Machine: Sure thing, bucko.
+    Narrator: Whoops, the book got stuck.
+    Narrator: Why don't you grab something to get the book out, moron?
+<<else if $currency >= 4.99 && hasUmbrella == true>>
+    Narrator: You managed to get the dictionary out of the Vending Machine. Well done!
+    <<GetDictionary LevelManager>>
 <<else>>
     Vending Machine: You only have {$currency} Frencs, loser.
     Vending Machine: Come back when you're a little, hmm, richer.

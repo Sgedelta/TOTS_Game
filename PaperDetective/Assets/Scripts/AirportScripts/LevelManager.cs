@@ -58,7 +58,7 @@ public class LevelManager : MonoBehaviour
     /// <summary>
     /// Send a message to the Yarn scripts that the player has the dictionary.
     /// </summary>
-    [YarnCommand("has_Dict")]
+    [YarnCommand("GetDictionary")]
     public void DictionaryGot()
     {
 
@@ -66,6 +66,7 @@ public class LevelManager : MonoBehaviour
         if (runner != null)
         {
             runner.VariableStorage.SetValue("$hasDict", true);
+            hasDict = true;
         }
     }
 
@@ -78,6 +79,16 @@ public class LevelManager : MonoBehaviour
         {
             runner.VariableStorage.SetValue("$currency", money + newMoney);
             money = newMoney;
+        }
+    }
+
+    [YarnCommand("GetUmbrella")]
+    public void UmbrellaGot()
+    {
+        //Check the dialogue runner and tell it that the player has an umbrella.
+        if(runner != null)
+        {
+            runner.VariableStorage.SetValue("$hasUmbrella", true);
         }
     }
 }
