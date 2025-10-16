@@ -106,5 +106,6 @@ public class PLayerController : MonoBehaviour
     public void EndDialogue()
     {
         canMove = true;
+        talkPartner = null;
     }
 }
