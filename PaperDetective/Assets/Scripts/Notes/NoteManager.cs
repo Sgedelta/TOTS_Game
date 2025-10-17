@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NoteManager : MonoBehaviour
 {
     public static NoteManager Instance { get; private set; }
+    public bool saved = false;
 
     private void Awake()
     {
@@ -13,6 +15,7 @@ public class NoteManager : MonoBehaviour
         }
         else
         {
+            Instance.saved = true;
             Destroy(gameObject);
         }
     }
