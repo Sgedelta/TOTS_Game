@@ -5,6 +5,7 @@ public class NoteManager : MonoBehaviour
 {
     public static NoteManager Instance { get; private set; }
     public bool saved = false;
+    Dictionary<string, string> notes = new Dictionary<string, string>();
 
     private void Awake()
     {
