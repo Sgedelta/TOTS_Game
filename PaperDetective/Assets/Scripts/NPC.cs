@@ -24,10 +24,15 @@ public class NPC : MonoBehaviour
     /// </summary>
     [SerializeField] private float closeEnoughRadius;
 
-    [SerializeField] private DialogueRunner dialogueRunner;
+    private DialogueRunner dialogueRunner;
 
     [SerializeField] private string startNode;
 
+
+    private void Start()
+    {
+        dialogueRunner = GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -49,24 +54,20 @@ public class NPC : MonoBehaviour
         
     }
 
-    public void queueMove(Vector2 move)
+    public void QueueMove(Vector2 move)
     {
         moveTo.Add(move);
     }
 
     public void Talk()
     {
-        dialogueRunner.StartDialogue(startNode);
+        if (!dialogueRunner.IsDialogueRunning)
+            dialogueRunner.StartDialogue(startNode);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void Silence()
     {
-        if (collision.rigidbody.gameObject.GetComponent<PLayerController>())
-        {
-            Debug.Log("Here");
-
-            Talk();
-        }
+        dialogueRunner.Stop();
     }
 
 

@@ -1,0 +1,6 @@
+﻿title: BusStation_Board
+---
+<<Interact GameManager board>>
+Narrator: The bus station's departure board shows the following information.
+    Departure times: 09:45   Goldfish[br/]09:45   Nightrunner[br/]10:10   Grayhound[br/]10:15   Rusty Badger[br/]10:20   Whiterun[br/]10:25   The Yellow Comet[br/]10:30   Fantrak[br/]11:00   Bronze Beetle 
+===

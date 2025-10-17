@@ -6,15 +6,18 @@ TagManager:
   tags:
   - Item
   - Inventory
+  - FileManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Talk
   - Water
   - UI
   - Item
   - 
+  - Player
+  - Prop
   - 
   - 
   - 
