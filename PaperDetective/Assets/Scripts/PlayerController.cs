@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Yarn;
+using Yarn.Unity;
 public class PLayerController : MonoBehaviour
 {
     /// <summary>
@@ -17,20 +19,11 @@ public class PLayerController : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
 
-    [SerializeField] private GameObject sprite;
+    [SerializeField] private Animator anim;
 
     private float horizontal;
     private float vertical;
 
-    /// <summary>
-    /// How fast the walk animation is
-    /// </summary>
-    [SerializeField] private float spinSpeed;
-
-    /// <summary>
-    /// How far the player will rotate suring one "step" before rotating the other way
-    /// </summary>
-    [SerializeField] private float maxWalkAngle;
 
     /// <summary>
     /// How close the player has to be to an NPC to talk to them
@@ -45,14 +38,22 @@ public class PLayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canMove)
+        if (canMove)
+        {
             rb.linearVelocity = new Vector2(horizontal * speed, vertical * speed);
-
-        //If you walk away from the npc, you stop talking
-        if(talkPartner != null && (talkPartner.gameObject.transform.position - transform.position).magnitude > talkRadius){
-            talkPartner.Silence();
-            talkPartner = null;
         }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+
+        anim.SetFloat("Velocity", rb.linearVelocity.magnitude);
+        anim.SetFloat("HorizontalVelocity", rb.linearVelocity.x);
+
+
+        
+
+        
     }
 
     /// <summary>
@@ -68,9 +69,6 @@ public class PLayerController : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-
-
-
         List<Collider2D> colliders = new List<Collider2D>();
         ContactFilter2D contactFilter = new ContactFilter2D();
         contactFilter.layerMask = LayerMask.GetMask("Talk");
@@ -81,6 +79,7 @@ public class PLayerController : MonoBehaviour
 
         if (colliders.Count == 0)
             return;
+
         //Find the closest NPC
         Collider2D closest = colliders[0];
         float closestDistance = Mathf.Abs((transform.position - colliders[0].transform.position).magnitude);
@@ -90,6 +89,7 @@ public class PLayerController : MonoBehaviour
             {
                 closest = colliders[i];
                 closestDistance = Mathf.Abs((transform.position - colliders[i].transform.position).magnitude);
+                
             }
         }
 
@@ -98,6 +98,13 @@ public class PLayerController : MonoBehaviour
         {
             talkPartner = closest.gameObject.GetComponent<NPC>();
             talkPartner.Talk();
+            
+            canMove = false;
         }
+    }
+
+    public void EndDialogue()
+    {
+        canMove = true;
     }
 }
