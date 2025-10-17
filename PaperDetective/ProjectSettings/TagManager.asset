@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - FileManager
+  - Item
+  - Inventory
   layers:
   - Default
   - TransparentFX
@@ -13,6 +15,7 @@ TagManager:
   - Water
   - UI
   - Player
+  - Item
   - 
   - 
   - 
