@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - FileManager
   - Item
   - Inventory
+  - FileManager
   layers:
   - Default
   - TransparentFX
@@ -14,9 +14,10 @@ TagManager:
   - Talk
   - Water
   - UI
-  - Player
   - Item
   - 
+  - Player
+  - Prop
   - 
   - 
   - 
