@@ -1,5 +1,7 @@
 using UnityEngine;
+using Yarn;
 using Yarn.Unity;
+using UnityEngine.Events;
 
 public class AudioManager : MonoBehaviour
 {
@@ -7,6 +9,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private DialogueRunner dialogueRunner;
 
     [SerializeField] private AudioSource speechPlayer;
+
+    Vector2 tempPitchBounds = new Vector2 (4.0f, 5.0f);
+
+    private void OnEnable()
+    {
+        BasicTypewriter.CharacterTyped += SpeechCharacterTyped;
+    }
     void Start()
     {
         
@@ -15,15 +24,15 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dialogueRunner.IsDialogueRunning)
-        {
-            if(!speechPlayer.isPlaying)
-                SpeechStart();
-        }
-        else
-        {
-            SpeechStop();
-        }
+        //if(dialogueRunner.IsDialogueRunning)
+        //{
+        //    if(!speechPlayer.isPlaying)
+        //        SpeechStart();
+        //}
+        //else
+        //{
+        //    SpeechStop();
+        //}
     }
 
     public void SpeechStart()
@@ -33,7 +42,13 @@ public class AudioManager : MonoBehaviour
     }
 
     public void SpeechStop()
-    { 
+    {  
         speechPlayer.Stop();
+    }
+
+    public void SpeechCharacterTyped()
+    {
+        speechPlayer.pitch = Random.Range(tempPitchBounds.x, tempPitchBounds.y);
+        speechPlayer.Play();
     }
 }
