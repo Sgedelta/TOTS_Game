@@ -10,15 +10,28 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource speechPlayer;
 
-    Vector2 tempPitchBounds = new Vector2 (4.0f, 5.0f);
+    Vector2 tempPitchBounds = new Vector2(1.0f, 1.5f);
+
+    private Vector2 pitchBounds;
+    public Vector2 PitchBounds
+    {
+        get { return pitchBounds; }
+        set { pitchBounds = value; }
+    }
+
+    AudioManager instance;
 
     private void OnEnable()
     {
-        BasicTypewriter.CharacterTyped += SpeechCharacterTyped;
+        CustomTypewriter.CharacterTyped += SpeechCharacterTyped;
+    }
+    void Awake()
+    {
+        if (instance == null) instance = this;      
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -35,16 +48,16 @@ public class AudioManager : MonoBehaviour
         //}
     }
 
-    public void SpeechStart()
-    {
-        speechPlayer.time = 1;
-        speechPlayer.Play();
-    }
+    //public void SpeechStart()
+    //{
+    //    speechPlayer.time = 1;
+    //    speechPlayer.Play();
+    //}
 
-    public void SpeechStop()
-    {  
-        speechPlayer.Stop();
-    }
+    //public void SpeechStop()
+    //{  
+    //    speechPlayer.Stop();
+    //}
 
     public void SpeechCharacterTyped()
     {
