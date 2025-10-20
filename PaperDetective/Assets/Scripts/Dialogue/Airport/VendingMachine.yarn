@@ -1,19 +1,45 @@
 ﻿title: VendingMachine
 ---
-<<declare $currency = 0.00>>
+<<declare $purchased = false>>
 <<declare $hasUmbrella = false>>
+<<declare $hasDict = false>>
 
-<color="red">Vending Machine: <color="red">A Vending Machine for books.</color>
-Vending Machine: There's one Frantch to English Dictionary left for only <color="green">4.99 Frencs</color>.
--> Frantch to English Dictionary - 4.99 Frencs
-<<if $currency >= 4.99>>
-    Narrator: Whoops, the book got stuck.
-    Narrator: Why don't you grab something to get the book out, moron?
-<<elseif $currency >= 4.99 && $hasUmbrella == true>>
-    Narrator: You managed to get the dictionary out of the Vending Machine. Well done!
-    <<GetDictionary LevelManager>>
+<<if $purchased == false>>
+Narrator: A Vending Machine, it holds several knick knacks, food items, and some books.
+Narrator: There is a <color="red">Frantch-to-English Dictionary</color> available for only <color="green">5 Frencs</color>.
+Vending Machine: What would you like to buy?
+-> Frantch-to-English Dictionary.
+    <<jump BuyDictionary>>
+-> Nothing.
+    Narrator: You leave the vending machine behind.
+
+<<elseif $hasUmbrella == false>>
+Narrator: The dictionary is still stuck in the machine.
+Narrator: Maybe a long object could knock the book free?
+
+<<elseif $hasUmbrella == true>>
+Narrator: You lean in with the umbrella and bat at the book. Eventually, it falls down, allowing you to take it out.
+Narrator: You now have the dictionary. Now you will be able to understand the Frantch people and vice versa!
+
+// Instead of this, call a method to add the dictionary item to the Player's inventory.
+<<set $hasDict = true>>
+
+<<endif>>
+===
+
+title: BuyDictionary
+---
+<<if $frencs < 5>>
+Vending Machine: Please deposit 5 Frencs.
+Narrator: You scavenge your pockets, but only find dollars and some loose lint, neither of which the machine accepts.
+Narrator: With your head held low, you leave the book behind for now in search of local currency.
+
 <<else>>
-    Vending Machine: You only have {$currency} Frencs, loser.
-    Vending Machine: Come back when you're a little, hmm, richer.
+Vending Machine: Sufficient Frencs deposited. Enjoy!
+<<set $purchased = true>>
+Narrator: As the machine whirs to give you your purchase, the book leans forward and hits the glass with a thunderous [i]donk[/i].
+Narrator: The dictionary is now stuck, no matter how much you curse or shake the machine.
+Narrator: Your arm isnt long enough to dislodge it either. You have no choice but to leave, temporarily defeated.
+
 <<endif>>
 ===
