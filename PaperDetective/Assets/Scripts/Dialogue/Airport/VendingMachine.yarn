@@ -9,7 +9,7 @@ Vending Machine: There's one Frantch to English Dictionary left for only 4.99 Fr
 <<if $currency >= 4.99>>
     Narrator: Whoops, the book got stuck.
     Narrator: Why don't you grab something to get the book out, moron?
-<<else if $currency >= 4.99 && hasUmbrella == true>>
+<<elseif $currency >= 4.99 && $hasUmbrella == true>>
     Narrator: You managed to get the dictionary out of the Vending Machine. Well done!
     <<GetDictionary LevelManager>>
 <<else>>
