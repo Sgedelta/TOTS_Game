@@ -1,13 +1,16 @@
 ﻿title: BusStation_NPCAnnoyed
 ---
 <<Interact GameManager annoyed>>
-Narrator: This man is grumbling and scowling, he's clearly annoyed.
+Narrator: The man is grumbling and scowling, he's clearly annoyed.
 Agitated Man: What do you want?
 -> You: Can you help me find my bus?
-    Agitated Man: Ugh. You lost or something? Fine. What one?
-    -> You: Okay geez, nevermind.
+    Agitated Man: Ugh. You lost or something? Not my problem.
+    -> You: Okay fine, nevermind then.
         <<stop>>
-    -> You: The one to Connerie. You know about it?
-        Agitated Man: I don't know, I think that one had an animal or whatever. You done bothering me?
+    -> You: Do you know about the bus to Connerie?
+        Agitated Man: No, I don't know. You done bothering me?
         -> You: Yeah...
+        -> You: You really can't think of anything?
+            Agitated Man: You persistent little- Fine. It has an <i>animal</i> in the name.
+            Narrator: He seems very pleased with his answer as you finally walk away.
 ===

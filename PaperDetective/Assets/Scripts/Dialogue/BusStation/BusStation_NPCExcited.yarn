@@ -1,14 +1,15 @@
-﻿title: BusStation_NPCExcited
+title: BusStation_NPCExcited
 ---
 <<Interact GameManager excited>>
-Narrator:This man is clearly excited. Something has him smiling ear to ear.
-Excited Man: Oh good morning! Great day isn't it?
--> You: I guess. Can you help me?
--> You: Sure is. Can you do me a favor?
-Excited Man: Sure can, what do you need help with?
+Narrator:The man is clearly excited. Something has him smiling ear to ear.
+Excited Man:Oh good morning! Great day isn't it? Even that rude guy with the beret can't spoil my mood!
+-> You: If you say so. Can you help me?
+-> You: Sure is! Could you do me a favor?
+Excited Man: Sure can! What do you need?
     -> You: I'm looking for the bus to Connerie, you know which one that is?
         Excited Man: Oh, I don't remember the name, but it leaves pretty soon, so you should hurry!
             -> Thanks for the help
                 Excited Man: No problem! Have a good day!
-    -> You: In second thought, nevermind.
+    -> You: On second thought, nevermind.
+        Excited Man: Have a good day!
 ===
