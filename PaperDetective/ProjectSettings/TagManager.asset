@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - Item
+  - Inventory
   - FileManager
   layers:
   - Default
@@ -12,8 +14,10 @@ TagManager:
   - Talk
   - Water
   - UI
-  - Player
+  - Item
   - 
+  - Player
+  - Prop
   - 
   - 
   - 

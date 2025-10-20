@@ -35,6 +35,7 @@ public class Walk : MonoBehaviour
                 {
                     stepPlayer.Play();
                 }
+                
             }
             currentAngle += spinDirection * spinSpeed * Time.deltaTime * 100;
             sprite.transform.Rotate(new Vector3(0, 0, spinDirection * spinSpeed * Time.deltaTime * 100));
@@ -52,12 +53,6 @@ public class Walk : MonoBehaviour
                 currentAngle -= spinSpeed * Time.deltaTime * 100;
                 sprite.transform.Rotate(new Vector3(0, 0, -spinSpeed * Time.deltaTime * 100));
             }
-        }
-        //This was added to prevent a bug where a non-moving player kept twitching between 1 spinSpeed unit of rotation and 0 rotation
-        else
-        {
-            sprite.transform.rotation = new Quaternion(0, 0, 0, 0);
-            currentAngle = 0;
         }
 
         if(transform.rotation.z != 0)
