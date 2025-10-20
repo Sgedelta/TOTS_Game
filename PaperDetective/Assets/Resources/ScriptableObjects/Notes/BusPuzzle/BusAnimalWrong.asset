@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20efca09b39eb9b4c809c39d28bab1ef, type: 3}
-  m_Name: BusColor
+  m_Name: BusAnimalWrong
   m_EditorClassIdentifier: 
   isVisible: 0
   isUsed: 0
-  noteID: Bus Color
-  noteContent: The bus has a color in its name
-  parentInstance: {fileID: 11400000, guid: 1a85d83223303284e90ba0b8436caa23, type: 2}
+  noteID: busAnimalWrong
+  noteContent: 
+  parentInstance: {fileID: 0}
+  noteOrder: 1
