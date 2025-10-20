@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource speechPlayer;
     void Start()
     {
-        
+        dialogueRunner = GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>();
     }
 
     // Update is called once per frame
