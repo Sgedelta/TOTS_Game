@@ -476,6 +476,34 @@ PrefabInstance:
       propertyPath: yarnProject
       value: 
       objectReference: {fileID: 7545569452688597077, guid: 0cf37b2e5bbccae4798c566754b69982, type: 3}
+    - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 804941975}
+    - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PLayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -684,6 +712,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 852307378}
     m_Modifications:
+    - target: {fileID: 2966674089203968675, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3675746467028819174, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: startNode
       value: VendingMachine
@@ -735,6 +767,10 @@ PrefabInstance:
     - target: {fileID: 8493384463771419391, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Name
       value: NPC (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493384463771419391, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1343,6 +1379,10 @@ PrefabInstance:
       propertyPath: talkRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8494899887171604644, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
+      propertyPath: talkPartner
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8677638611674141719, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1357,6 +1397,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5713521548945097669, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
   m_PrefabInstance: {fileID: 804941973}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &804941975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8494899887171604644, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
+  m_PrefabInstance: {fileID: 804941973}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0eb70b33dc99f4dba886266d8659cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &852307377
 GameObject:
   m_ObjectHideFlags: 0

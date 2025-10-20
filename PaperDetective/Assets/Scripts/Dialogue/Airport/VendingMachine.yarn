@@ -3,8 +3,8 @@
 <<declare $currency = 0.00>>
 <<declare $hasUmbrella = false>>
 
-Vending Machine: A Vending Machine for books.
-Vending Machine: There's one Frantch to English Dictionary left for only 4.99 Frencs.
+<color="red">Vending Machine: <color="red">A Vending Machine for books.</color>
+Vending Machine: There's one Frantch to English Dictionary left for only <color="green">4.99 Frencs</color>.
 -> Frantch to English Dictionary - 4.99 Frencs
 <<if $currency >= 4.99>>
     Narrator: Whoops, the book got stuck.
