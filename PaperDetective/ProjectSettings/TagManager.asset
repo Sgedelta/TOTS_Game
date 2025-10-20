@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - Inventory
+  - FileManager
   layers:
   - Default
   - TransparentFX
@@ -15,6 +16,8 @@ TagManager:
   - UI
   - Item
   - 
+  - Player
+  - Prop
   - 
   - 
   - 
