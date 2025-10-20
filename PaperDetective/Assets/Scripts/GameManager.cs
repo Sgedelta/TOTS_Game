@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
 
     // -- Playtesting -- 
-    private bool goodEnding = false;
+    //private bool goodEnding = false;
 
     [SerializeField]
     private FileManager fManager;
