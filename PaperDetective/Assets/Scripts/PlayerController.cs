@@ -35,6 +35,11 @@ public class PLayerController : MonoBehaviour
     /// </summary>
     [SerializeField] private NPC talkPartner;
 
+    private void Start()
+    {
+        GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+    }
+
     // Update is called once per frame
     void Update()
     {
