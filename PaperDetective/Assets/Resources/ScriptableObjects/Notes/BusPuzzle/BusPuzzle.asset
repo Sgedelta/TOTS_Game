@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20efca09b39eb9b4c809c39d28bab1ef, type: 3}
   m_Name: BusPuzzle
   m_EditorClassIdentifier: 
-  isVisible: 1
+  isVisible: 0
   isUsed: 0
   noteID: busParent
   noteContent: I have to get to Connerie. A bus can take me there.
   parentInstance: {fileID: 0}
+  noteOrder: 0

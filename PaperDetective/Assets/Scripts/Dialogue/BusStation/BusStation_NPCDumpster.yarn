@@ -9,8 +9,10 @@ Druken Man: Hrghm- huh? What do you *hic* want?
         Drunken Man: S- *hic* sure why not, wuhh-where you goin'?
             -> You: Connerie.
                 Drunken Man: Oh yeahhhh. That bus had a *hic* a pretty short name. One uhhh one word one.
+                <<RevealNote MenuManager busTime>>
                 You: Thanks.
                 Drunken Man: And watch out for the diiiiick in glasses. He'll say anything to *hic* make you go away!
+                <<RevealNote MenuManager busAnimalWrong>>
             -> Actually, nevermind
                 <<stop>>
     -> You: Oh, nevermind.

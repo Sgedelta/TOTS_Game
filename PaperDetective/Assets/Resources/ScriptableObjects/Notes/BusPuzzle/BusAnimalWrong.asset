@@ -15,6 +15,6 @@ MonoBehaviour:
   isVisible: 0
   isUsed: 0
   noteID: busAnimalWrong
-  noteContent: 
+  noteContent: The man in the glasses is supposedly untrustworthy
   parentInstance: {fileID: 0}
   noteOrder: 1

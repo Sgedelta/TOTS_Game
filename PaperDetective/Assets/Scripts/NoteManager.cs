@@ -63,11 +63,19 @@ public class NoteManager : MonoBehaviour
     [YarnCommand("RevealNote")]
     public void RevealNote(string ID)
     {
-        Debug.Log("hi)");
-        notes[ID].IsVisible = true;        
+        notes[ID].IsVisible = true;  
+        //Optional, adds unicode for bullet point
+        noteDisplayText.text += "\u2022 ";
         noteDisplayText.text += notes[ID].NoteContent;
-        //Optional
-        noteDisplayText.text += "<br>";
-        Debug.Log(notes[ID].NoteContent);
+        //Optional, spaces the entries by one empty line
+        noteDisplayText.text += "<br><br>";
+    }
+    //When the game is closed, reset all clues
+    private void OnApplicationQuit()
+    {
+        foreach (NoteInstance note in notes.Values)
+        {
+            ResetNote(note);
+        }
     }
 }
