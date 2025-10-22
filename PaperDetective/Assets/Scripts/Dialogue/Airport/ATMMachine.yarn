@@ -20,7 +20,7 @@ Narrator: The ATM sits menacingly, hungry for more currency.
 title: Exchange
 ---
 Narrator: You put your credit card into the ATM, and it whirs to life.
-Narrator: After entering 5 dollars, the machine spits out your card and <color="green">5 Frencs</color>.
+Narrator: After entering 5 dollars, the machine spits out your card and <color="blue">5 Frencs</color>.
 
 // Instead of this, call a method to add 5 Frencs to the player's inventory.
 // <<set $frencs = 5>>

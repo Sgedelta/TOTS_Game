@@ -6,7 +6,7 @@
 
 <<if $purchased == false>>
 Narrator: A Vending Machine, it holds several knick knacks, food items, and some books.
-Narrator: There is a <color="red">Frantch-to-English Dictionary</color> available for only <color="green">5 Frencs</color>.
+Narrator: There is a <color="blue">Frantch-to-English Dictionary</color> available for only <color="blue">5 Frencs</color>.
 Vending Machine: What would you like to buy?
 -> Frantch-to-English Dictionary.
     <<jump BuyDictionary>>
@@ -19,10 +19,10 @@ Narrator: Maybe a long object could knock the book free?
 
 <<elseif $hasUmbrella == true>>
 Narrator: You lean in with the umbrella and bat at the book. Eventually, it falls down, allowing you to take it out.
-Narrator: You now have the dictionary. Now you will be able to understand the Frantch people and vice versa!
+Narrator: You now have the <color="blue">dictionary</color>. Now you will be able to understand the Frantch people and vice versa!
 
 // Instead of this, call a method to add the dictionary item to the Player's inventory.
-<<set $hasDict = true>>
+//<<set $hasDict = true>>
 
 <<endif>>
 ===
@@ -30,7 +30,7 @@ Narrator: You now have the dictionary. Now you will be able to understand the Fr
 title: BuyDictionary
 ---
 <<if $frencs < 5>>
-Vending Machine: Please deposit 5 Frencs.
+Vending Machine: Please deposit <color="blue">5 Frencs</color>.
 Narrator: You scavenge your pockets, but only find dollars and some loose lint, neither of which the machine accepts.
 Narrator: With your head held low, you leave the book behind for now in search of local currency.
 
@@ -38,7 +38,7 @@ Narrator: With your head held low, you leave the book behind for now in search o
 Vending Machine: Sufficient Frencs deposited. Enjoy!
 <<set $purchased = true>>
 Narrator: As the machine whirs to give you your purchase, the book leans forward and hits the glass with a thunderous [i]donk[/i].
-Narrator: The dictionary is now stuck, no matter how much you curse or shake the machine.
+Narrator: The <color="blue">dictionary is now stuck</color>, no matter how much you curse or shake the machine.
 Narrator: Your arm isnt long enough to dislodge it either. You have no choice but to leave, temporarily defeated.
 
 <<endif>>
