@@ -14,12 +14,6 @@ public class PlaySounds : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PlaySound(string name)
     {
         audioManager.PlaySound(name);
