@@ -48,27 +48,52 @@ public class NoteManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Resets a given note's visibility and use state.
+    /// </summary>
+    /// <param name="note"></param>
     public void ResetNote(NoteInstance note)
     {
         note.IsUsed = false;
         note.IsVisible = false;
     }
-
+    /// <summary>
+    /// Uses a note, making its text striken through and drastically increases its NoteOrder and updating the display
+    /// </summary>
+    /// <param name="ID"></param>
+    [YarnCommand("UseNote")]
     public void UseNote(string ID)
     {
         notes[ID].IsUsed = true;
+        notes[ID].NoteOrder += 1000;
+        UpdateDisplay();
     }
 
-
+    /// <summary>
+    /// Reveals a note, making it visible and updating the display
+    /// </summary>
+    /// <param name="ID"></param>
     [YarnCommand("RevealNote")]
     public void RevealNote(string ID)
     {
-        notes[ID].IsVisible = true;  
-        //Optional, adds unicode for bullet point
-        noteDisplayText.text += "\u2022 ";
-        noteDisplayText.text += notes[ID].NoteContent;
-        //Optional, spaces the entries by one empty line
-        noteDisplayText.text += "<br><br>";
+        notes[ID].IsVisible = true;
+        UpdateDisplay();
+    }
+    
+    /// <summary>
+    /// Updates the display text for the note tab depending on the visible and used notes.
+    /// </summary>
+    private void UpdateDisplay()
+    {
+        noteDisplayText.text = string.Empty;
+        foreach (NoteInstance note in sortedNotes.Values)
+        {
+            //If the note is visible, display it, and if the note is used, then make it strikethrough text 
+            if (note.IsVisible)
+            {
+                noteDisplayText.text += (note.IsUsed) ? $"\u2022 <s>{note.NoteContent}</s>" : $"\u2022 {note.NoteContent}<br><br>";
+            }
+        }
     }
     //When the game is closed, reset all clues
     private void OnApplicationQuit()
