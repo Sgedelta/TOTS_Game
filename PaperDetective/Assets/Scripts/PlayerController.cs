@@ -18,9 +18,6 @@ public class PLayerController : MonoBehaviour
     [SerializeField] private bool canMove = true;
 
     [SerializeField] private Rigidbody2D rb;
-
-    [SerializeField] private Animator anim;
-
     private float horizontal;
     private float vertical;
 
@@ -50,15 +47,8 @@ public class PLayerController : MonoBehaviour
         else
         {
             rb.linearVelocity = Vector2.zero;
-        }
-
-        anim.SetFloat("Velocity", rb.linearVelocity.magnitude);
-        anim.SetFloat("HorizontalVelocity", rb.linearVelocity.x);
-
-
-        
-
-        
+        }    
+    
     }
 
     /// <summary>
