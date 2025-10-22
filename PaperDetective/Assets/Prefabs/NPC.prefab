@@ -281,9 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2411648068865137642}
   speed: 1
-  moveTo:
-  - {x: 10, y: -6}
-  - {x: 4, y: -6}
-  moving: 1
+  moveTo: []
+  moving: 0
   closeEnoughRadius: 2
   startNode: BusStation_NPCDumpster

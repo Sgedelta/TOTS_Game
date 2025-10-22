@@ -413,7 +413,6 @@ MonoBehaviour:
   speed: 3
   canMove: 1
   rb: {fileID: 346672412732654398}
-  anim: {fileID: 0}
   talkRadius: 3
   talkPartner: {fileID: 0}
 --- !u!114 &6109371150928402377

@@ -390,6 +390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 854082430}
+  audioSource:
+  - {fileID: 986573574}
   speechPlayer: {fileID: 417007242}
 --- !u!4 &343365280
 Transform:
@@ -535,6 +537,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &622379746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6023357711872055060, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
+  m_PrefabInstance: {fileID: 1167417875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &622379749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622379746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91cc22dd59eedc74ba12794c787de842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 343365279}
+  audioSource:
+  - {fileID: 986573574}
 --- !u!4 &670314534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8705239283756223563, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
@@ -1144,7 +1166,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6023357711872055060, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 622379749}
   m_SourcePrefab: {fileID: 100100000, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
 --- !u!4 &1167417876 stripped
 Transform:
@@ -1933,5 +1958,5 @@ SceneRoots:
   - {fileID: 1603248183}
   - {fileID: 1544591702}
   - {fileID: 1167417875}
-  - {fileID: 4847045963099026307}
   - {fileID: 1788052035}
+  - {fileID: 4847045963099026307}
