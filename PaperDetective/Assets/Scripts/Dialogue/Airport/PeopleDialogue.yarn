@@ -1,4 +1,4 @@
-﻿title: PeopleDialogue
+﻿title: SnackVendor
 ---
 <<if $hasDict == false>>
 Snacks Vendor: lorem ipsum gibberish.
