@@ -126,6 +126,7 @@ public class Inventory : MonoBehaviour
         Sort();
     }
 
+    [YarnCommand("TransformItem")]
     public void TransformItem(string ogItem, string newItem)
     {
         ItemTemplate it = new ItemTemplate();
