@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20efca09b39eb9b4c809c39d28bab1ef, type: 3}
-  m_Name: AirportTestingObject
+  m_Name: AirportUnderstand
   m_EditorClassIdentifier: 
   isVisible: 0
   isUsed: 0
-  noteID: AirportStuff
-  noteContent: The bus has an animal in its name
-  parentInstance: {fileID: 11400000, guid: 1a85d83223303284e90ba0b8436caa23, type: 2}
+  noteID: airportUnderstand
+  noteContent: I need to find a way to understand the people around me
+  parentInstance: {fileID: 11400000, guid: 01b688e172c01ee43b32504e01b2c369, type: 2}
   noteOrder: 0

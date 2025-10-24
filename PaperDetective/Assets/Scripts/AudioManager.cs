@@ -2,13 +2,19 @@ using UnityEngine;
 using Yarn;
 using Yarn.Unity;
 using UnityEngine.Events;
+using UnityEngine.Audio;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private DialogueRunner dialogueRunner;
 
+    [SerializeField] private List<AudioSource> audioSource;
     [SerializeField] private AudioSource speechPlayer;
+
+
 
     Vector2 tempPitchBounds = new Vector2(1.0f, 1.5f);
 
@@ -19,7 +25,7 @@ public class AudioManager : MonoBehaviour
         set { pitchBounds = value; }
     }
 
-    AudioManager instance;
+    public static AudioManager instance;
 
     private void OnEnable()
     {
@@ -27,11 +33,15 @@ public class AudioManager : MonoBehaviour
     }
     void Awake()
     {
-        if (instance == null) instance = this;      
+        if (instance == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            instance = this;
+        }
     }
     void Start()
     {
-
+        dialogueRunner = GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>();
     }
 
     // Update is called once per frame
@@ -63,5 +73,16 @@ public class AudioManager : MonoBehaviour
     {
         speechPlayer.pitch = Random.Range(tempPitchBounds.x, tempPitchBounds.y);
         speechPlayer.Play();
+    }
+
+    public void PlaySound(string name)
+    {
+        foreach (AudioSource source in audioSource)
+        {
+            if (source.clip.name == name)
+            {
+                source.Play();
+            }
+        }
     }
 }
