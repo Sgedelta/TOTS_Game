@@ -18,7 +18,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject newItemPrefab;
     public GameObject NewItemPrefab { get { return newItemPrefab; } }
 
-    private DialogueRunner dialogue = FindFirstObjectByType<DialogueRunner>();
+    private DialogueRunner dialogue;
 
     private void Start()
     {
@@ -36,6 +36,8 @@ public class Inventory : MonoBehaviour
                 inventory.Add(item.Template.id, item);
             }
         }
+
+        dialogue = FindFirstObjectByType<DialogueRunner>();
     }
 
     void Update()

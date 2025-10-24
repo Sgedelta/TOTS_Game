@@ -1,6 +1,7 @@
 ﻿title: ATMMachine
 ---
 <<declare $firstATM = false>>
+<<declare $hasFrencs = false>>
 
 <<if $firstATM == false>>
 Narrator: An ATM, it has a built-in currency converter.
@@ -23,7 +24,7 @@ Narrator: After entering 5 dollars, the machine spits out your card and <color="
 
 // Call the AddItem method, which comes from the Player game object with the inventory,
 // and add the Frencs game object to their inventory.
-<<AddItem Player Frencs>>
+<<AddItem Inventory Frencs>>
 
 <<set $firstATM = true>>
 ===

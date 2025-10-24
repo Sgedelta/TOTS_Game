@@ -1,6 +1,6 @@
 ﻿title: SnackVendor
 ---
-<<Check Player "Dictionary">>
+<<Check Inventory "Dictionary">>
 
 <<if $hasDictionary == false>>
 Snacks Vendor: lorem ipsum gibberish.
