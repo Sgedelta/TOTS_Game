@@ -1,13 +1,15 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Item : MonoBehaviour
 {
     Inventory inventory;
     [SerializeField] private ItemTemplate template;
-    ItemTemplate Template { get { return template; } } //getter because we don't want other things overwriting what item this is
+    public ItemTemplate Template { get { return template; } } //getter because we don't want other things overwriting what item this is
 
     public float amount = 1; //for certain items, it will make sense for the player to have more than one of the item, or even fractional items. 
-    [SerializeField] private float startAmount = -1;
+    [SerializeField] private float worldAmount = -1;
     public bool mouseBound;
     public Vector3 sourcePos;
     public Vector3 targetPos;
@@ -19,10 +21,11 @@ public class Item : MonoBehaviour
     {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         sourcePos = transform.position;
+        targetPos = transform.position;
         mask = LayerMask.GetMask("Item");
         InitAs(template, 1);
-        if (startAmount > 0)
-            amount = startAmount;
+        if (worldAmount > 0)
+            amount = worldAmount;
     }
 
     // Update is called once per frame
@@ -30,8 +33,14 @@ public class Item : MonoBehaviour
     {
         if (mouseBound)
         {
-            targetPos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            /*targetPos*/ transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
+        else if (inventory.CheckItem(template.id))
+        {
+            transform.position = targetPos;
+        }
+
+        /*
         if (targetPos != transform.position)
         {
             time += Time.deltaTime;
@@ -39,7 +48,7 @@ public class Item : MonoBehaviour
         }
         else
             time = 0;
-
+        */
 
         if (amount <= 0)
         {
@@ -80,7 +89,7 @@ public class Item : MonoBehaviour
             float distance = 100000;
             Collider2D hitItem = null;
 
-            // Find which object the Item is closest to and check the item combinability with that
+            // Find which object the Item is closest to
             if (hitColliders.Length > 2)
             {
                 for (int i = 0; i < hitColliders.Length; i++)
@@ -96,6 +105,7 @@ public class Item : MonoBehaviour
             {
                 hitItem = hitColliders[1];
             }
+            // check the item combinability with that
             if (hitColliders.Length > 1 && hitItem)
             {
                 Debug.Log("Trying to combine");
@@ -179,7 +189,6 @@ public class Item : MonoBehaviour
         inventory.Add(madeItem.GetComponent<Item>());
         inventory.Sort();
 
-        
         return 1;
     }
 
