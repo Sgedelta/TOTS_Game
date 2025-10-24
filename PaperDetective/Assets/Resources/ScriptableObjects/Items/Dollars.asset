@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b0926bca2b59f49a0fe06644c75234, type: 3}
+  m_Name: Dollars
+  m_EditorClassIdentifier: 
+  itemSprite: {fileID: 9064496728675099545, guid: 0515acb198af9fb43aac5123447a4bc3, type: 3}
+  id: Dollars
+  displayName: Dollars
+  defaultAmount: 5
+  madeFromItems:
+  - {fileID: 0}
+  - {fileID: 0}
+  madeFromAmounts:
+  - 0
+  - 0
+  usedIn: []
