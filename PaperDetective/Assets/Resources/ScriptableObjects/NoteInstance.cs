@@ -1,8 +1,10 @@
 using NUnit.Framework;
+using System;
+using System.Collections;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NoteInstance", menuName = "Scriptable Objects/NoteInstance")]
-public class NoteInstance : ScriptableObject
+public class NoteInstance : ScriptableObject, IComparable<NoteInstance>
 {
 
     [SerializeField] private bool isVisible;
@@ -59,7 +61,7 @@ public class NoteInstance : ScriptableObject
     /// </summary>
     /// <param name="other">The note to compare to</param>
     /// <returns>-11 if this note preceeds the other note, 1 if the other note preceeds this note or the other note is null, and 0 if they are equal</returns>
-    public int CompareOrder(NoteInstance other)
+    public int CompareTo(NoteInstance other)
     {
         if (other == null) return 1;
 
@@ -67,7 +69,5 @@ public class NoteInstance : ScriptableObject
         if(other.NoteOrder > noteOrder) return 1;
         
         return noteContent.ToLower().CompareTo(other.NoteContent.ToLower());
-
-    }
-    
+    }  
 }
