@@ -21,15 +21,18 @@ Narrator: Maybe a long object could knock the book free?
 Narrator: You lean in with the umbrella and bat at the book. Eventually, it falls down, allowing you to take it out.
 Narrator: You now have the <color="blue">dictionary</color>. Now you will be able to understand the Frantch people and vice versa!
 
-// Instead of this, call a method to add the dictionary item to the Player's inventory.
-//<<set $hasDict = true>>
+// Call the AddItem method, which is attached to Player object,
+// and add the Dictionary GameObject to their inventory.
+<<AddItem Player Dictionary>>
 
 <<endif>>
 ===
 
 title: BuyDictionary
 ---
-<<if $frencs < 5>>
+//<<if $frencs < 5>>
+// Check if the player has the Frencs in their inventory.
+<<if Check Player Frencs>>
 Vending Machine: Please deposit <color="blue">5 Frencs</color>.
 Narrator: You scavenge your pockets, but only find dollars and some loose lint, neither of which the machine accepts.
 Narrator: With your head held low, you leave the book behind for now in search of local currency.

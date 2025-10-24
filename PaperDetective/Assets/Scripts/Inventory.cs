@@ -5,6 +5,8 @@ using UnityEditor.Timeline.Actions;
 using System;
 using NUnit.Framework;
 using System.Linq;
+using Yarn;
+using Yarn.Unity;
 
 public class Inventory : MonoBehaviour
 {
@@ -90,6 +92,7 @@ public class Inventory : MonoBehaviour
 
     }
 
+    [YarnCommand("AddItem")]
     public void Add(Item item)
     {
         inventory.Add(item.Template.id, item);
@@ -137,7 +140,8 @@ public class Inventory : MonoBehaviour
         }
         TransformItem(i, it);
     }
-    
+
+    [YarnCommand("Check")]
     public bool CheckItem(string itemName)
     {
         return inventory.ContainsKey(itemName);      

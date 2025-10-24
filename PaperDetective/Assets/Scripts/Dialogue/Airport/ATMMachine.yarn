@@ -22,8 +22,9 @@ title: Exchange
 Narrator: You put your credit card into the ATM, and it whirs to life.
 Narrator: After entering 5 dollars, the machine spits out your card and <color="blue">5 Frencs</color>.
 
-// Instead of this, call a method to add 5 Frencs to the player's inventory.
-// <<set $frencs = 5>>
+// Call the AddItem method, which comes from the Player game object with the inventory,
+// and add the Frencs game object to their inventory.
+<<AddItem Player Frencs>>
 
 <<set $firstATM = true>>
 ===
