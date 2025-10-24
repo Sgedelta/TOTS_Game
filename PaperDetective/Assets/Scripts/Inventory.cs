@@ -8,25 +8,35 @@ using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
-    List<Item> inventory = new List<Item>();
+    SortedList<string, Item> inventory = new SortedList<string, Item>();
+    [SerializeField] private List<Item> itemsInInv;
     Vector2[] invPos = new Vector2[10];
+    Camera cam;
 
     [SerializeField] private GameObject newItemPrefab;
     public GameObject NewItemPrefab { get { return newItemPrefab; } }
 
     private void Start()
     {
-        float x = -6.25f;
+        cam = Camera.main;
+        float x = -8f;
         for (int i = 0; i < 10; i++)
         {
-            invPos[i] = new Vector3(x, transform.position.y);
-            x += 1.39f;
+            invPos[i] = new Vector3(x, -4.1f + cam.transform.position.y);
+            x += 1.76f;
+        }
+        if (itemsInInv != null)
+        {
+            foreach (Item item in itemsInInv)
+            {
+                inventory.Add(item.Template.id, item);
+            }
         }
     }
 
     void Update()
     {
-
+        Sort();
     }
 
     public void OnClick(InputAction.CallbackContext context)
@@ -45,9 +55,9 @@ public class Inventory : MonoBehaviour
                 hit.collider.gameObject.GetComponent<Item>().mouseBound = true;
 
                 // Remove item from inventory
-                if (inventory.Contains(hitItem))
+                if (inventory.ContainsKey(hitItem.Template.id))
                 {
-                    inventory.Remove(hitItem);
+                    inventory.Remove(hitItem.Template.id);
                 }
             }
 
@@ -62,7 +72,7 @@ public class Inventory : MonoBehaviour
 
                     if (inventory.Count < 10)
                     {
-                        inventory.Add(hitItem);
+                        inventory.Add(hitItem.Template.id, hitItem);
                     }
                     // if there are none, return it to where it was
                     else
@@ -72,24 +82,24 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    inventory.Add(hitItem);
+                    inventory.Add(hitItem.Template.id, hitItem);
                 }
             }
+            Sort();
         }
 
-        Sort();
     }
 
     public void Add(Item item)
     {
-        inventory.Add(item);
+        inventory.Add(item.Template.id, item);
         Sort();
     }
 
     public void Remove(Item item)
     {
-        if (inventory.Contains(item))
-            inventory.Remove(item);
+        if (inventory.ContainsKey(item.Template.id))
+            inventory.Remove(item.Template.id);
         else
             Debug.Log("That item doesn't exist in inventory");
         Sort();
@@ -99,8 +109,37 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < inventory.Count; i++)
         {
-            inventory[i].targetPos = invPos[i];
+            invPos[i] = new Vector2(invPos[i].x, -4.1f + cam.transform.position.y);
+            inventory.Values[i].targetPos = invPos[i];
             //Debug.Log("sorting " + i + " " + inventory[i].name + " " + invPos[i]);
         }
+    }
+
+    public void TransformItem(Item existingItem, ItemTemplate newItem)
+    {
+        inventory.Remove(existingItem.Template.id);
+        existingItem.InitAs(newItem, 1);
+        inventory.Add(existingItem.Template.id, existingItem);
+        Sort();
+    }
+
+    public void TransformItem(string ogItem, string newItem)
+    {
+        ItemTemplate it = new ItemTemplate();
+        Item i = new Item();
+        GameObject[] items = GameObject.FindGameObjectsWithTag("Item");
+        foreach (GameObject item in items)
+        {
+            if (item.GetComponent<Item>().Template.id == newItem)
+                it = item.GetComponent<Item>().Template;
+            else if (item.GetComponent<Item>().Template.id == ogItem)
+                i = item.GetComponent<Item>();
+        }
+        TransformItem(i, it);
+    }
+    
+    public bool CheckItem(string itemName)
+    {
+        return inventory.ContainsKey(itemName);      
     }
 }
