@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7518581930985206041}
+  m_Father: {fileID: 2611346224189600085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &220210420427715653
 SpriteRenderer:
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2623534288041482301, guid: 3023487ce197d86479c2c0aeb9b0e0fa, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 2735953689926727655, guid: 3023487ce197d86479c2c0aeb9b0e0fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,6 +87,61 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4596861033178956634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2611346224189600085}
+  - component: {fileID: 5794366781868672482}
+  m_Layer: 3
+  m_Name: NPCAnimator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2611346224189600085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596861033178956634}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1622393730212551130}
+  m_Father: {fileID: 7518581930985206041}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &5794366781868672482
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596861033178956634}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70ce77596a350864bb0d2c21ba75e9bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8493384463771419391
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,10 +153,9 @@ GameObject:
   - component: {fileID: 7518581930985206041}
   - component: {fileID: 6545328518761378052}
   - component: {fileID: 2411648068865137642}
-  - component: {fileID: 6068692284223357352}
   - component: {fileID: 3641459093785799600}
   - component: {fileID: 3675746467028819174}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,11 +171,11 @@ Transform:
   m_GameObject: {fileID: 8493384463771419391}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.368169, y: -6.8853755, z: -0.0387927}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7313, y: 0.7313, z: 0.7313}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1622393730212551130}
+  - {fileID: 2611346224189600085}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6545328518761378052
@@ -197,41 +251,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6068692284223357352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8493384463771419391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yarnProject: {fileID: 7545569452688597077, guid: 0cf37b2e5bbccae4798c566754b69982, type: 3}
-  variableStorage: {fileID: 0}
-  lineProvider: {fileID: 0}
-  saliencyStrategy: 0
-  dialoguePresenters: []
-  autoStart: 0
-  startNode: Start
-  runSelectedOptionAsLine: 0
-  onNodeStart:
-    m_PersistentCalls:
-      m_Calls: []
-  onNodeComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onDialogueStart:
-    m_PersistentCalls:
-      m_Calls: []
-  onDialogueComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onUnhandledCommand:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3641459093785799600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,11 +264,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2411648068865137642}
-  sprite: {fileID: 220210420427715653}
-  spinSpeed: 1
-  maxWalkAngle: 15
   playSound: 0
   stepPlayer: {fileID: 0}
+  anim: {fileID: 5794366781868672482}
 --- !u!114 &3675746467028819174
 MonoBehaviour:
   m_ObjectHideFlags: 0

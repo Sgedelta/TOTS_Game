@@ -18,9 +18,6 @@ public class PLayerController : MonoBehaviour
     [SerializeField] private bool canMove = true;
 
     [SerializeField] private Rigidbody2D rb;
-
-    [SerializeField] private Animator anim;
-
     private float horizontal;
     private float vertical;
 
@@ -35,6 +32,11 @@ public class PLayerController : MonoBehaviour
     /// </summary>
     [SerializeField] private NPC talkPartner;
 
+    private void Start()
+    {
+        GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -45,15 +47,8 @@ public class PLayerController : MonoBehaviour
         else
         {
             rb.linearVelocity = Vector2.zero;
-        }
-
-        anim.SetFloat("Velocity", rb.linearVelocity.magnitude);
-        anim.SetFloat("HorizontalVelocity", rb.linearVelocity.x);
-
-
-        
-
-        
+        }    
+    
     }
 
     /// <summary>
@@ -106,5 +101,6 @@ public class PLayerController : MonoBehaviour
     public void EndDialogue()
     {
         canMove = true;
+        talkPartner = null;
     }
 }
