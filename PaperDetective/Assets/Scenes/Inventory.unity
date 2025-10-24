@@ -802,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 767714649553243708, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2278708758410405953, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_LocalPosition.x
@@ -810,7 +810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2278708758410405953, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.76
+      value: -27.01
       objectReference: {fileID: 0}
     - target: {fileID: 2278708758410405953, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1171,7 +1171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 767714649553243708, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2278708758410405953, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_LocalScale.x
@@ -1191,7 +1191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2278708758410405953, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.96
+      value: -27.11
       objectReference: {fileID: 0}
     - target: {fileID: 2278708758410405953, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2447,7 +2447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 767714649553243708, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2278708758410405953, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2455,7 +2455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2278708758410405953, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.43
+      value: -28.2
       objectReference: {fileID: 0}
     - target: {fileID: 2278708758410405953, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_LocalPosition.z

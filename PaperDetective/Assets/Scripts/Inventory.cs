@@ -51,7 +51,6 @@ public class Inventory : MonoBehaviour
             // if the left mouse button is clicked
             if (context.performed)
             {
-                Debug.Log("CLICK");
                 // Item follows cursor
                 hit.collider.gameObject.GetComponent<Item>().mouseBound = true;
 
@@ -65,7 +64,6 @@ public class Inventory : MonoBehaviour
             // if left mouse button is released
             else if (context.canceled)
             {
-                Debug.Log("UNCLICK");
                 // item stops following cursor and returns to the inventory box if the interaction failed
                 hitItem.mouseBound = false;
                 if (!hitItem.CheckInteraction())
@@ -125,6 +123,21 @@ public class Inventory : MonoBehaviour
         Sort();
     }
 
+    public void TransformItem(string ogItem, string newItem)
+    {
+        ItemTemplate it = new ItemTemplate();
+        Item i = new Item();
+        GameObject[] items = GameObject.FindGameObjectsWithTag("Item");
+        foreach (GameObject item in items)
+        {
+            if (item.GetComponent<Item>().Template.id == newItem)
+                it = item.GetComponent<Item>().Template;
+            else if (item.GetComponent<Item>().Template.id == ogItem)
+                i = item.GetComponent<Item>();
+        }
+        TransformItem(i, it);
+    }
+    
     public bool CheckItem(string itemName)
     {
         return inventory.ContainsKey(itemName);      
