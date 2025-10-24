@@ -31,7 +31,7 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
-        dialogueRunner = GameManager.instance.GetComponent<DialogueRunner>();
+        dialogueRunner = SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>();
     }
 
     // Update is called once per frame
