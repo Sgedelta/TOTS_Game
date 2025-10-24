@@ -1,8 +1,8 @@
 ﻿title: VendingMachine
 ---
 <<declare $purchased = false>>
+<<declare $hasDictionary = false>>
 <<declare $hasUmbrella = false>>
-<<declare $hasDict = false>>
 
 <<if $purchased == false>>
 Narrator: A Vending Machine, it holds several knick knacks, food items, and some books.
@@ -14,8 +14,10 @@ Vending Machine: What would you like to buy?
     Narrator: You leave the vending machine behind.
 
 <<else>>
+<<Check Player "Umbrella">>
+
 // Check if the Player has the Umbrella game object
-<<Check Player "Umbrella" == false>>
+<<if $hasUmbrella == false>>
 Narrator: The dictionary is still stuck in the machine.
 Narrator: Maybe a long object could knock the book free?
 
@@ -26,7 +28,7 @@ Narrator: You now have the <color="blue">dictionary</color>. Now you will be abl
 
 // Call the AddItem method, which is attached to Player object,
 // and add the Dictionary GameObject to their inventory.
-<<AddItem Player Dictionary>>
+//<<AddItem Player Dictionary>>
 
 <<endif>>
 ===

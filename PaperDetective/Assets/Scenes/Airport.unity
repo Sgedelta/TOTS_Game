@@ -392,6 +392,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6315226147305372938, guid: 3228383d2f6b10c4183c161de7e2f99a, type: 3}
+    - target: {fileID: 3675746467028819174, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
+      propertyPath: startNode
+      value: VendingMachine
+      objectReference: {fileID: 0}
     - target: {fileID: 7518581930985206041, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8766426
@@ -865,6 +869,10 @@ PrefabInstance:
     - target: {fileID: 2411648068865137642, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Constraints
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675746467028819174, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
+      propertyPath: startNode
+      value: ATMMachine
       objectReference: {fileID: 0}
     - target: {fileID: 7518581930985206041, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4572,6 +4580,10 @@ PrefabInstance:
     - target: {fileID: 1622393730212551130, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675746467028819174, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
+      propertyPath: startNode
+      value: SnackVendor
       objectReference: {fileID: 0}
     - target: {fileID: 7518581930985206041, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_LocalScale.x

@@ -18,6 +18,8 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject newItemPrefab;
     public GameObject NewItemPrefab { get { return newItemPrefab; } }
 
+    private DialogueRunner dialogue = FindFirstObjectByType<DialogueRunner>();
+
     private void Start()
     {
         cam = Camera.main;
@@ -145,6 +147,11 @@ public class Inventory : MonoBehaviour
     [YarnCommand("Check")]
     public bool CheckItem(string itemName)
     {
+        if (inventory.ContainsKey(itemName))
+        {
+            dialogue.VariableStorage.SetValue($"$has{itemName}", true);
+        }
+
         return inventory.ContainsKey(itemName);      
     }
 }
