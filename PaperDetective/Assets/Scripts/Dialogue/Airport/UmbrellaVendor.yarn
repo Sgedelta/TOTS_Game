@@ -1,5 +1,18 @@
 ﻿title: UmbrellaVendor
 ---
-Vendor: Here's an umbrella, moron.
+<<if $hasUmbrella == false>>
+Vendor: Oh, hello. Name of yore self?
+You: Good afternoon, I'm Jeff.
+Vendor: Ooh, you must be internationally worldwide detective, Jeff!
+You: No, that's not-
+Vendor: Worry not! Please, umbrella take good sir!
+You: ...uh, thank you?
+Narrator: Out of the naive kindness of some random Frantch folksman, you got yourself an umbrella.
 <<AddItem Inventory Umbrella>>
+
+<<else>>
+Vendor: Oh, sorry, cannot give umbrella more.
+Vendor: Have good day, please!
+
+<<endif>>
 ===
