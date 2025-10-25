@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     //TODO: fix this, this is a temporary solution that won't scale when we exapnd to multiple scenes - Sam
     [SerializeField] public GameObject DialogueSystem;
 
+    [SerializeField] public List<Item> items;
+
 
     /* -------------- TO DO ----------------- */
 

@@ -22,12 +22,13 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        //itemsInInv = GameManager.instance.items;
         cam = Camera.main;
-        float x = -8f;
+        float x = -10.5f;
         for (int i = 0; i < 10; i++)
         {
-            invPos[i] = new Vector3(x, -4.1f + cam.transform.position.y);
-            x += 1.76f;
+            invPos[i] = new Vector3(x, -5.3f + cam.transform.position.y);
+            x += 2.4f;
         }
         if (itemsInInv != null)
         {
@@ -47,16 +48,19 @@ public class Inventory : MonoBehaviour
 
     public void OnClick(InputAction.CallbackContext context)
     {
+        Debug.Log("click1");
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(0, 1), 0.01f);
 
         // if player clicked on an item
         if (hit && hit.collider.gameObject.CompareTag("Item"))
         {
+            Debug.Log("CHACHA REAL SMOOTH");
             Item hitItem = hit.collider.gameObject.GetComponent<Item>();
             // if the left mouse button is clicked
             if (context.performed)
             {
+                Debug.Log("Tap dat");
                 // Item follows cursor
                 hit.collider.gameObject.GetComponent<Item>().mouseBound = true;
 
@@ -70,6 +74,7 @@ public class Inventory : MonoBehaviour
             // if left mouse button is released
             else if (context.canceled)
             {
+                Debug.Log("gtfo");
                 // item stops following cursor and returns to the inventory box if the interaction failed
                 hitItem.mouseBound = false;
                 if (!hitItem.CheckInteraction())
@@ -101,6 +106,7 @@ public class Inventory : MonoBehaviour
     {
         inventory.Add(item.Template.id, item);
         itemsInInv.Add(item);
+        //GameManager.instance.items = itemsInInv;
         Sort();
     }
 
@@ -108,6 +114,7 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item)
     {
         if (itemsInInv.Contains(item)) { itemsInInv.Remove(item); }
+        //GameManager.instance.items = itemsInInv;
 
         if (inventory.ContainsKey(item.Template.id))
             inventory.Remove(item.Template.id);
@@ -120,8 +127,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < inventory.Count; i++)
         {
-            invPos[i] = new Vector2(invPos[i].x, -4.1f + cam.transform.position.y);
-            inventory.Values[i].targetPos = invPos[i];
+            inventory.Values[i].targetPos = new Vector2(invPos[i].x + cam.transform.position.x, -5.3f + cam.transform.position.y);
             //Debug.Log("sorting " + i + " " + inventory[i].name + " " + invPos[i]);
         }
     }
@@ -134,7 +140,7 @@ public class Inventory : MonoBehaviour
         Sort();
     }
 
-    [YarnCommand("TransformItem")]
+    //[YarnCommand("TransformItem")]
     public void TransformItem(string ogItem, string newItem)
     {
         ItemTemplate it = new ItemTemplate();
@@ -156,7 +162,7 @@ public class Inventory : MonoBehaviour
     {
         if (inventory.ContainsKey(itemName))
         {
-            dialogue.VariableStorage.SetValue($"$has{itemName}", true);
+            //dialogue.VariableStorage.SetValue($"$has{itemName}", true);
         }
 
         return inventory.ContainsKey(itemName);      
