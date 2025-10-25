@@ -103,6 +103,7 @@ public class Inventory : MonoBehaviour
         Sort();
     }
 
+    [YarnCommand("RemoveItem")]
     public void Remove(Item item)
     {
         if (inventory.ContainsKey(item.Template.id))

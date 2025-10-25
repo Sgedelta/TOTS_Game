@@ -15,9 +15,10 @@ Vending Machine: What would you like to buy?
     <<stop>>
 
 <<Check Inventory "Umbrella">>
+<<Check Inventory "Dictionary">>
 
 // Check if the Inventory has the Umbrella game object
-<<elseif $hasUmbrella == false>>
+<<elseif $hasUmbrella == false && $hasDictionary == false>>
 Narrator: The dictionary is still stuck in the machine.
 Narrator: Maybe a long object could knock the book free?
 <<stop>>
@@ -26,10 +27,16 @@ Narrator: Maybe a long object could knock the book free?
 Narrator: You lean in with the umbrella and bat at the book. Eventually, it falls down, allowing you to take it out.
 Narrator: You now have the <color="blue">dictionary</color>. Now you will be able to understand the Frantch people and vice versa!
 <<TransformItem Inventory "Umbrella" "Dictionary">>
+<<set $hasUmbrella = false>>
 
 // Call the AddItem method, which is attached to Inventory object,
 // and add the Dictionary GameObject to their inventory.
-//<<AddItem Player Dictionary>>
+//<<AddItem Inventory Dictionary>>
+
+<<elseif $hasUmbrella == false && $hasDictionary == true>>
+Narrator: The Vending Machine sits, waiting for another weary soul to do business with.
+Narrator: You decide to leave it be, it has nothing else useful for you.
+<<stop>>
 
 <<endif>>
 ===
@@ -42,6 +49,7 @@ title: BuyDictionary
 <<if $hasFrencs == true>>
 Vending Machine: Sufficient Frencs deposited. Enjoy!
 <<set $purchased = true>>
+<<RemoveItem Inventory Frencs>>
 Narrator: As the machine whirs to give you your purchase, the book leans forward and hits the glass with a thunderous [i]donk[/i].
 Narrator: The <color="blue">dictionary is now stuck</color>, no matter how much you curse or shake the machine.
 Narrator: Your arm isnt long enough to dislodge it either. You have no choice but to leave, temporarily defeated.
