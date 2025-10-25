@@ -34,7 +34,7 @@ public class PLayerController : MonoBehaviour
 
     private void Start()
     {
-       // GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+       GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
     }
 
     // Update is called once per frame

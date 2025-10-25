@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        //itemsInInv = GameManager.instance.items;
+        itemsInInv = GameManager.instance.items;
         cam = Camera.main;
         float x = -10.5f;
         for (int i = 0; i < 10; i++)
@@ -106,7 +106,7 @@ public class Inventory : MonoBehaviour
     {
         inventory.Add(item.Template.id, item);
         itemsInInv.Add(item);
-        //GameManager.instance.items = itemsInInv;
+        GameManager.instance.items = itemsInInv;
         Sort();
     }
 
@@ -114,7 +114,7 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item)
     {
         if (itemsInInv.Contains(item)) { itemsInInv.Remove(item); }
-        //GameManager.instance.items = itemsInInv;
+        GameManager.instance.items = itemsInInv;
 
         if (inventory.ContainsKey(item.Template.id))
             inventory.Remove(item.Template.id);
@@ -140,7 +140,7 @@ public class Inventory : MonoBehaviour
         Sort();
     }
 
-    //[YarnCommand("TransformItem")]
+    [YarnCommand("TransformItem")]
     public void TransformItem(string ogItem, string newItem)
     {
         ItemTemplate it = new ItemTemplate();
@@ -162,7 +162,7 @@ public class Inventory : MonoBehaviour
     {
         if (inventory.ContainsKey(itemName))
         {
-            //dialogue.VariableStorage.SetValue($"$has{itemName}", true);
+            dialogue.VariableStorage.SetValue($"$has{itemName}", true);
         }
 
         return inventory.ContainsKey(itemName);      
