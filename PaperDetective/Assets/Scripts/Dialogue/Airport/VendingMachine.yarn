@@ -7,6 +7,7 @@
 <<if $purchased == false>>
 Narrator: A Vending Machine, holding a lone book, the other shelves having been long since cleared out.
 Narrator: There is a <color="blue">Frantch-to-English Dictionary</color> available for only <color="blue">5 Frencs</color>.
+<<RevealNote MenuManager airportNeedMoney>>
 Vending Machine: What would you like to buy?
 -> Frantch-to-English Dictionary.
     <<jump BuyDictionary>>
@@ -21,6 +22,7 @@ Vending Machine: What would you like to buy?
 <<elseif $hasUmbrella == false && $hasDictionary == false>>
 Narrator: The dictionary is still stuck in the machine.
 Narrator: Maybe a long object could knock the book free?
+<<RevealNote MenuManager airportUmbrella>>
 <<stop>>
 
 <<elseif $hasUmbrella == true>>

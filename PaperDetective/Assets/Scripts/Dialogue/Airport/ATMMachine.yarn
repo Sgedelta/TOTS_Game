@@ -2,9 +2,13 @@
 ---
 <<declare $firstATM = false>>
 <<declare $hasFrencs = false>>
+<<declare $hasDollars = false>>
+
+
 
 <<if $firstATM == false>>
 Narrator: An ATM, it has a built-in currency converter.
+<<RevealNote MenuManager airportExchange>>
 Narrator: Would you like to <color="blue">exchange your money for Frencs</color>?
 -> Yes.
     <<jump Exchange>>
@@ -19,12 +23,18 @@ Narrator: The ATM sits menacingly, hungry for more currency.
 
 title: Exchange
 ---
-Narrator: You put your credit card into the ATM, and it whirs to life.
-Narrator: After entering 5 dollars, the machine spits out your card and <color="blue">5 Frencs</color>.
+<<Check Inventory "Dollars">>
+<<if $hasDollars == true>>
+    Narrator: You put your money into the ATM, and it whirs to life.
+    Narrator: After entering 5 dollars, the machine spits out your <color="blue">5 Frencs</color>.
 
 // Call the AddItem method, which comes from the Player game object with the inventory,
 // and add the Frencs game object to their inventory.
-<<AddItem Inventory Frencs>>
+    <<AddItem Inventory Frencs>>
+    <<RemoveItem Inventory Dollars>>
 
-<<set $firstATM = true>>
+    <<set $firstATM = true>>
+<<else>>
+    Narrator: Unfortunately, you don't have any money. Maybe there's some lying around you can grab?
+<<endif>>
 ===

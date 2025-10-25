@@ -71,7 +71,7 @@ public class PLayerController : MonoBehaviour
         contactFilter.useLayerMask = true;
 
         //Get all the things you can talk to within talkRadius
-        Physics2D.OverlapCircle(transform.position, talkRadius, contactFilter, colliders);
+        Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), talkRadius, contactFilter, colliders);
 
         if (colliders.Count == 0)
             return;

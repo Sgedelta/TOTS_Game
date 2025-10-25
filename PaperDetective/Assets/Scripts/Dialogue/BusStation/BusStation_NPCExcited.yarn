@@ -8,7 +8,7 @@ Excited Man:Oh good morning! Great day isn't it? Even that rude guy with the ber
 Excited Man: Sure can! What do you need?
     -> You: I'm looking for the bus to Connerie, you know which one that is?
         Excited Man: Oh, I don't remember the name, but it leaves pretty soon, so you should hurry! 
-        <<RevealNote NoteManager busTime>>
+        <<RevealNote MenuManager busTime>>
             -> Thanks for the help
                 Excited Man: No problem! Have a good day!
     -> You: On second thought, nevermind.

@@ -1,7 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEditor.Timeline.Actions;
 using System;
 using NUnit.Framework;
 using System.Linq;
@@ -110,7 +109,7 @@ public class Inventory : MonoBehaviour
         Sort();
     }
 
-    [YarnCommand("RemoveItem")]
+
     public void Remove(Item item)
     {
         if (itemsInInv.Contains(item)) { itemsInInv.Remove(item); }
@@ -120,6 +119,23 @@ public class Inventory : MonoBehaviour
             inventory.Remove(item.Template.id);
         else
             Debug.Log("That item doesn't exist in inventory");
+        Sort();
+    }
+
+    [YarnCommand("RemoveItem")]
+    public void RemoveAndDestroy(Item item)
+    {
+        if (itemsInInv.Contains(item)) { itemsInInv.Remove(item); }
+        GameManager.instance.items = itemsInInv;
+
+        if (inventory.ContainsKey(item.Template.id))
+            inventory.Remove(item.Template.id);
+        else
+            Debug.Log("That item doesn't exist in inventory");
+
+
+        item.amount = 0;
+
         Sort();
     }
 
