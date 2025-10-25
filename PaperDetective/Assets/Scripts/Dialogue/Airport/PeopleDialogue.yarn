@@ -13,6 +13,7 @@ Narrator: If only you had a way to <color="blue">translate Frantch</color>...
 Snacks Vendor: Hello! Would you like to buy some snacks?
 Narrator: You decide to pass on the snacks, instead asking how to find your luggage.
 Snacks Vendor: Ah, just head down to the sign <color="orange">near the terminal entrance</color>.
+<<KillWall InvisWalls>>
 
 <<endif>>
 ===
