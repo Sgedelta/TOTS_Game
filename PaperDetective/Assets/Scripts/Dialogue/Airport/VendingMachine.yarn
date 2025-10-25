@@ -5,7 +5,7 @@
 <<declare $hasUmbrella = false>>
 
 <<if $purchased == false>>
-Narrator: A Vending Machine, it holds several knick knacks, food items, and some books.
+Narrator: A Vending Machine, holding a lone book, the other shelves having been long since cleared out.
 Narrator: There is a <color="blue">Frantch-to-English Dictionary</color> available for only <color="blue">5 Frencs</color>.
 Vending Machine: What would you like to buy?
 -> Frantch-to-English Dictionary.
