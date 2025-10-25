@@ -1,6 +1,6 @@
 ﻿title: UmbrellaVendor
 ---
-<<if $hasUmbrella == false>>
+<<once>>
 Vendor: Oh, hello. Name of yore self?
 You: Good afternoon, I'm Jeff.
 Vendor: Ooh, you must be internationally worldwide detective, Jeff!
@@ -14,5 +14,5 @@ Narrator: Out of the naive kindness of some random Frantch folksman, you got you
 Vendor: Oh, sorry, cannot give umbrella more.
 Vendor: Have good day, please!
 
-<<endif>>
+<<endonce>>
 ===
