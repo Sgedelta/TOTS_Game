@@ -17,6 +17,7 @@ Narrator: You leave this person alone so you can find your luggage.
 ===
 
 title: Vendor_TheHorrors
+---
 <<once>>
     Narrator: You stare into the vendor's eyes. Something swirls in their depths, a deep mystery of something that feels... off.
     Narrator: The offness draws you in, entrancing you. 
@@ -27,3 +28,4 @@ title: Vendor_TheHorrors
 <<else>>
     Narrator: He has beautiful, blue eyes. The man is staring at you, confused.
 <<endonce>>
+===
