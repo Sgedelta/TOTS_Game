@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
 
     public void OnClick(InputAction.CallbackContext context)
     {
-        Debug.Log("click1");
+        //Debug.Log("click1");
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(0, 1), 0.01f);
 
