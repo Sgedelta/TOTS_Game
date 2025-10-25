@@ -93,11 +93,14 @@ public class Inventory : MonoBehaviour
     public void Add(Item item)
     {
         inventory.Add(item.Template.id, item);
+        itemsInInv.Add(item);
         Sort();
     }
 
     public void Remove(Item item)
     {
+        if (itemsInInv.Contains(item)) { itemsInInv.Remove(item); }
+
         if (inventory.ContainsKey(item.Template.id))
             inventory.Remove(item.Template.id);
         else
@@ -138,6 +141,8 @@ public class Inventory : MonoBehaviour
         TransformItem(i, it);
     }
     
+
+
     public bool CheckItem(string itemName)
     {
         return inventory.ContainsKey(itemName);      
