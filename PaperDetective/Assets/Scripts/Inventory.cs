@@ -155,9 +155,9 @@ public class Inventory : MonoBehaviour
         }
         TransformItem(i, it);
     }
-    
 
 
+    [YarnCommand("Check")]
     public bool CheckItem(string itemName)
     {
         if (inventory.ContainsKey(itemName))
