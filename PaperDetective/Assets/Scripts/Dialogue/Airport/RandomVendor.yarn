@@ -1,12 +1,12 @@
-﻿title: FillerNPC1
+﻿title: RandomVendor
 ---
 <<if $hasDict == false>>
 Frantch Person: lorem ipsum gibberish
 Narrator: The Frantch language is a vile tounge, hence its incomprehensibility to any rational person.
 
 <<else>>
-Frantch Person: It seems it's going to rain today. Perfect time to take my kite out for a spin!
-Narrator: People never cease to amaze you, but the wishes of fools are unimportant right now.
+Frantch Person: It seems it's going to rain today. Perfect weather to take these kites for a spin, only 9 Frencs!
+Narrator: People never cease to amaze you, but the words of the foolish are unimportant right now.
 Narrator: You leave this person alone so you can find your luggage.
 
 <<endif>>

@@ -29,10 +29,6 @@ Narrator: You now have the <color="blue">dictionary</color>. Now you will be abl
 <<TransformItem Inventory "Umbrella" "Dictionary">>
 <<set $hasUmbrella = false>>
 
-// Call the AddItem method, which is attached to Inventory object,
-// and add the Dictionary GameObject to their inventory.
-//<<AddItem Inventory Dictionary>>
-
 <<elseif $hasUmbrella == false && $hasDictionary == true>>
 Narrator: The Vending Machine sits, waiting for another weary soul to do business with.
 Narrator: You decide to leave it be, it has nothing else useful for you.
