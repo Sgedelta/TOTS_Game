@@ -1,0 +1,15 @@
+﻿title: TerminalClerk
+---
+<<if $hasDictionary == false>>
+Clerk: lorem ipsum gibberish
+Narrator: The clerk also speaks in Frantch, his words sliding together in an inconceivable manner.
+Narrator: If only you had a way to <color="blue">translate Frantch</color>...
+<<stop>>
+
+<<else>>
+Clerk: Sir, please exit the terminal if you do not have a ticket.
+Narrator: It appears the clerk merely wishes to be left alone, and you have more pressing matters than to pester him further.
+Narrator: You decide to leave the poor chap by his lonesome.
+
+<<endif>>
+===

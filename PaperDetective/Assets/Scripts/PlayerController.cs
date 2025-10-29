@@ -34,7 +34,7 @@ public class PLayerController : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+       GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
     }
 
     // Update is called once per frame
@@ -64,13 +64,14 @@ public class PLayerController : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
+        Debug.Log("interact");
         List<Collider2D> colliders = new List<Collider2D>();
         ContactFilter2D contactFilter = new ContactFilter2D();
         contactFilter.layerMask = LayerMask.GetMask("Talk");
         contactFilter.useLayerMask = true;
 
         //Get all the things you can talk to within talkRadius
-        Physics2D.OverlapCircle(transform.position, talkRadius, contactFilter, colliders);
+        Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), talkRadius, contactFilter, colliders);
 
         if (colliders.Count == 0)
             return;

@@ -25,12 +25,12 @@ public class ItemTemplate : ScriptableObject
     /// <summary>
     /// An array (keep the size to 2, we do not have a system for combining more than 2 items at once) of the items that this is made of
     /// </summary>
-    public ItemTemplate[] madeFromItems = new ItemTemplate[2];
+    public ItemTemplate[] madeFromItems;
 
     /// <summary>
     /// An array (keep the size to 2) of the amounts of items from madeFromItems that this is made from
     /// </summary>
-    public float[] madeFromAmounts = new float[2];
+    public float[] madeFromAmounts;
 
     /// <summary>
     /// A list of items that this is used in. 

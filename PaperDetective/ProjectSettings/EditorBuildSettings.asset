@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/Jetway.unity
+    guid: bd057253c638394438f74e5a9599cc5c
+  - enabled: 1
     path: Assets/Scenes/Playtest1Scene.unity
     guid: 2d2cc503efaf6704b931069c2367fa7b
   - enabled: 1
