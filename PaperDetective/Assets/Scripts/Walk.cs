@@ -11,7 +11,7 @@ public class Walk : MonoBehaviour
     [SerializeField] private Animator anim;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //If player is moving, do the rotation
         anim.SetFloat("Velocity", rb.linearVelocity.magnitude);
