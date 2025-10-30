@@ -85,7 +85,6 @@ public class PLayerController : MonoBehaviour
             {
                 closest = colliders[i];
                 closestDistance = Mathf.Abs((transform.position - colliders[i].transform.position).magnitude);
-                
             }
         }
 
