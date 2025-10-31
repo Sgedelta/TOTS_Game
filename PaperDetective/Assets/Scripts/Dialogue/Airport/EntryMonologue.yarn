@@ -1,8 +1,9 @@
 ﻿title: EntryMonologue
 ---
-Narrator: You step off the plane in to take your Vacation in Frants.
+Narrator: You step off the plane to your vacation in Frants.
 <<RevealNote MenuManager airportPuzzle>>
 Narrator: Before you can do anything, you must <color="blue">find your luggage</color>.
 Narrator: Unfortunately, you dont understand where the baggage claim is.
 <<RevealNote MenuManager airportUnderstand>>
 ===
+

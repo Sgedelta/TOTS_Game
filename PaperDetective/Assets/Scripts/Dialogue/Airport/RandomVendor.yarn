@@ -9,7 +9,7 @@ Narrator: You leave this person alone so you can find your luggage.
 
 <<else>>
 Frantch Person: lorem ipsum gibberish
-Narrator: The Frantch language is a vile tounge, hence its incomprehensibility to any rational person.
+Narrator: The Frantch language is a vile tongue, hence its incomprehensibility to any rational person.
 -> Stare into his eyes.
     <<jump Vendor_TheHorrors>>
 -> Leave.
@@ -24,7 +24,7 @@ title: Vendor_TheHorrors
     Narrator: You stare into the vendor's eyes. Something swirls in their depths, a deep mystery of something that feels... off.
     Narrator: The offness draws you in, entrancing you. 
     Narrator: Time seems to slow around you.
-    Narrator: Darkness enroaches on the side of your vision.
+    Narrator: Darkness encroaches on the side of your vision.
     ? ? ?: . . .
     Narrator: You blink and the effect is gone. The man is staring at you, confused.
 <<else>>
