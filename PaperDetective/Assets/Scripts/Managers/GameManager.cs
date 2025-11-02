@@ -99,6 +99,9 @@ public class GameManager : MonoBehaviour
             //This ensures that only one instance of the GameManager exists across all scenes.
             Destroy(this.gameObject);
         }
+
+        //this needs to exist for other Start methods (persistentDataCheckers)
+        allPersistentData = new Dictionary<string, PersistentData>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -107,7 +110,7 @@ public class GameManager : MonoBehaviour
         //Get the scene that we start off with.
         currentScene = SceneManager.GetActiveScene();
 
-        allPersistentData = new Dictionary<string, PersistentData>();
+        
     }
 
     // Update is called once per frame
