@@ -6,14 +6,24 @@ using UnityEngine.Events;
 
 public class PersistentDataChecker : MonoBehaviour
 {
-
+    /// <summary>
+    /// A unique identifier for this object
+    /// </summary>
     [SerializeField] private string ObjectID = "";
 
+    /// <summary>
+    /// the data holder for this in game object
+    /// </summary>
     [SerializeField] private PersistentData data;
 
+    /// <summary>
+    /// The PersistentData data holder for this in game GameObject
+    /// </summary>
     public PersistentData Data { get { return data; } }
 
-
+    /// <summary>
+    /// A public event for loading from a given state
+    /// </summary>
     public UnityEvent<string> LoadState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
