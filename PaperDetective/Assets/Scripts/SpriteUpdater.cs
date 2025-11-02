@@ -7,7 +7,7 @@ using UnityEngine;
 /// A class that is put on an object with a SpriteRenderer. Has a internal state, as well as a dictionary of states and sprites. 
 /// Can update state and sprite associated. When state is updated, if state is not valid, will push warning and go to sprite the GameObject has in editor
 /// </summary>
-public class SpriteManager : MonoBehaviour
+public class SpriteUpdater : MonoBehaviour
 {
     private const string DEFAULT_SPRITE_KEY = "DEFAULT_SPRITE";
 
@@ -65,7 +65,7 @@ public class SpriteManager : MonoBehaviour
             }
             StateSprites.Add(states[i], sprites[i]);
         }
-        for (int i = states.Count - 1; i <  sprites.Count; i++)
+        for (int i = states.Count; i <  sprites.Count; i++)
         {
             Debug.LogWarning($"Sprite Updater on {gameObject.name} has sprite named {sprites[i].name}, but does not have associated state. adding state with sprite name instead.");
             StateSprites.Add(sprites[i].name, sprites[i]);
