@@ -32,7 +32,7 @@ public class PersistentDataChecker : MonoBehaviour
         //this is not set up correctly
         if(ObjectID == null || ObjectID == "")
         {
-            Debug.LogWarning($"Game Object \"{gameObject.name}\" has a PersistentDataChecker but Object ID is not set correctly. Destroying the Persistent Data.");
+            Debug.LogError($"Game Object \"{gameObject.name}\" has a PersistentDataChecker but Object ID is not set correctly. Destroying the Persistent Data.");
             Destroy(this);
             return;
         }
