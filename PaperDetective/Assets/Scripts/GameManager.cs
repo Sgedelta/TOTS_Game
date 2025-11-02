@@ -48,6 +48,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private string currentSceneID;
 
+    private Dictionary<string, PersistentData> allPersistentData;
+    public Dictionary<string, PersistentData> AllPersistentData {  get { return allPersistentData; } }  
+
+
     //Keep track of the player's objective across scenes.
     private string currentObjective;
 
@@ -102,6 +106,8 @@ public class GameManager : MonoBehaviour
     {
         //Get the scene that we start off with.
         currentScene = SceneManager.GetActiveScene();
+
+        allPersistentData = new Dictionary<string, PersistentData>();
     }
 
     // Update is called once per frame
