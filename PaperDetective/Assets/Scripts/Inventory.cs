@@ -66,17 +66,15 @@ public class Inventory : MonoBehaviour
         }
         //Debug.Log("click1");
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(0, 1), 0.01f);
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(0, 1), 0.01f, LayerMask.GetMask("Item"));
 
         // if player clicked on an item
         if (hit && hit.collider.gameObject.CompareTag("Item"))
         {
-            Debug.Log("CHACHA REAL SMOOTH");
             Item hitItem = hit.collider.gameObject.GetComponent<Item>();
             // if the left mouse button is clicked
             if (context.performed)
             {
-                Debug.Log("Tap dat");
                 // Item follows cursor
                 hit.collider.gameObject.GetComponent<Item>().mouseBound = true;
 
@@ -90,7 +88,7 @@ public class Inventory : MonoBehaviour
             // if left mouse button is released
             else if (context.canceled)
             {
-                Debug.Log("gtfo");
+                Debug.Log("unclick");
                 // item stops following cursor and returns to the inventory box if the interaction failed
                 hitItem.mouseBound = false;
                 if (!hitItem.CheckInteraction())
