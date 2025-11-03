@@ -26,6 +26,9 @@ public class NPC : MonoBehaviour
 
     private DialogueRunner dialogueRunner;
 
+    /// <summary>
+    /// Where the NPC's dialogue will start when interacted with
+    /// </summary>
     [SerializeField] private string startNode;
 
     /// <summary>
@@ -37,6 +40,8 @@ public class NPC : MonoBehaviour
     {
 
     }
+    [SerializeField] private Vector2 bitRange;
+
 
     // Update is called once per frame
     void Update()
@@ -55,9 +60,12 @@ public class NPC : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }
 
-
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="move"></param>
     public void QueueMove(Vector2 move)
     {
         moveTo.Add(move);
