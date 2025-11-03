@@ -16,6 +16,10 @@ public class PLayerController : MonoBehaviour
     [SerializeField] private float speed;
 
     [SerializeField] private bool canMove = true;
+    public bool CanMove { 
+        get { return canMove; } 
+        set { canMove = value; }
+    }
 
     [SerializeField] private Rigidbody2D rb;
     private float horizontal;
