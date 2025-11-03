@@ -50,7 +50,7 @@ public class SpriteUpdater : MonoBehaviour
         //check if we found it/it was set
         if (sr == null)
         {
-            Debug.LogError($"Sprite Updater on {gameObject.name} cannot find SpriteRenderer component. Is it on an object with a Sprite Renderer or have sr set? Destroying SpriteManager.");
+            Debug.LogError($"Sprite Updater on {gameObject.name} cannot find SpriteRenderer component. Is it on an object with a Sprite Renderer or have sr set? Destroying SpriteUpdater.");
             Destroy(this);
             return;
         }
