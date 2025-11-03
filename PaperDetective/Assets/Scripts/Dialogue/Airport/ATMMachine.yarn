@@ -23,18 +23,7 @@ Narrator: The ATM sits menacingly, hungry for more currency.
 
 title: Exchange
 ---
-<<Check Inventory "Dollars">>
-<<if $hasDollars == true>>
     Narrator: You put your money into the ATM, and it whirs to life.
     Narrator: After entering 5 dollars, the machine spits out your <color="blue">5 Frencs</color>.
-
-// Call the AddItem method, which comes from the Player game object with the inventory,
-// and add the Frencs game object to their inventory.
-    <<AddItem Inventory Frencs>>
-    <<RemoveItem Inventory Dollars>>
-
     <<set $firstATM = true>>
-<<else>>
-    Narrator: Unfortunately, you don't have any money. Maybe there's some lying around you can grab?
-<<endif>>
 ===

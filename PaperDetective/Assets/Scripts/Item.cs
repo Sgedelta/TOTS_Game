@@ -1,6 +1,8 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using Yarn.Unity;
 
 public class Item : MonoBehaviour
 {
@@ -13,7 +15,8 @@ public class Item : MonoBehaviour
     public bool mouseBound;
     public Vector3 sourcePos;
     public Vector3 targetPos;
-    LayerMask mask;
+    LayerMask itemMask;
+    LayerMask triggerMask;
     float time;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,7 +25,8 @@ public class Item : MonoBehaviour
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         sourcePos = transform.position;
         targetPos = transform.position;
-        mask = LayerMask.GetMask("Item");
+        itemMask = LayerMask.GetMask("Item");
+        triggerMask = LayerMask.GetMask("Item Trigger");
         InitAs(template, 1);
         if (worldAmount > 0)
             amount = worldAmount;
@@ -79,13 +83,13 @@ public class Item : MonoBehaviour
     {
         //Debug.Log(mask);
         // Check if the item is touching another item
-        if (this.gameObject.GetComponent<BoxCollider2D>().IsTouchingLayers(mask))
+        if (this.gameObject.GetComponent<BoxCollider2D>().IsTouchingLayers(itemMask))
         {
             //Debug.Log("Layers check successful");
             // Find the object that is closest to the item and return whether a combination was successful
 
             // Get an array of all objects the item is overlapping
-            Collider2D[] hitColliders = Physics2D.OverlapBoxAll(gameObject.transform.position, transform.localScale, mask);
+            Collider2D[] hitColliders = Physics2D.OverlapBoxAll(gameObject.transform.position, transform.localScale, itemMask);
             float distance = 100000;
             Collider2D hitItem = null;
 
@@ -115,6 +119,24 @@ public class Item : MonoBehaviour
                 else
                     return true;
             }
+        }
+        else if (this.gameObject.GetComponent<BoxCollider2D>().IsTouchingLayers(triggerMask))
+        {
+            Debug.Log("YOOOOO TRIGGERED");
+            Collider2D trigger = Physics2D.OverlapBox(gameObject.transform.position, transform.localScale, triggerMask);
+            TriggerTemplate trigTemp = trigger.GetComponent<Trigger>().template;
+            if (trigTemp.madeItem && trigTemp.deleteHeld)
+            {
+                InitAs(trigTemp.madeItem, 1);
+            }
+            else if(trigTemp.madeItem && !trigTemp.deleteHeld)
+            {
+                CreateItem(trigTemp.madeItem, 1);
+            }
+
+            // Prompt Dialogue
+                if (!SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().IsDialogueRunning)
+                    SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().StartDialogue(trigTemp.dialogueNode);
         }
         return false;
     }
@@ -183,15 +205,20 @@ public class Item : MonoBehaviour
         }
 
         // Instantiate new Item (in the proper amount) and place into inventory.
-        GameObject madeItem = Instantiate(inventory.NewItemPrefab);
-        Debug.Log("New Item is: " + madeItem.name);
-        madeItem.GetComponent<Item>().InitAs(result, amountToMake);
-        inventory.Add(madeItem.GetComponent<Item>());
-        inventory.Sort();
+        CreateItem(result, amountToMake);
 
         return 1;
     }
 
+    public void CreateItem(ItemTemplate temp, int amount)
+    {
+        // Instantiate new Item (in the proper amount) and place into inventory.
+        GameObject madeItem = Instantiate(inventory.NewItemPrefab);
+        Debug.Log("New Item is: " + madeItem.name);
+        madeItem.GetComponent<Item>().InitAs(temp, amount);
+        inventory.Add(madeItem.GetComponent<Item>());
+        inventory.Sort();
+    }
 
     /// <summary>
     /// checks if this item can combine with another given item template. Does NOT check if there are the correct amounts of each item, just if a valid recipe exists
