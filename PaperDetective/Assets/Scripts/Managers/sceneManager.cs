@@ -32,13 +32,20 @@ public class sceneManager : MonoBehaviour
     private bool fadeIn;
 
     private string nextScene;
-    
+
+    private bool debugMode = true;
+
     /// <summary>
     /// Singleton time
     /// </summary>
     public static sceneManager instance;
     public void Start()
     {
+        if(instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         SceneManager.sceneLoaded += FadeIn;
         DontDestroyOnLoad(this.gameObject);
     }
@@ -82,6 +89,14 @@ public class sceneManager : MonoBehaviour
             nextScene = sceneName;
         }
             
+    }
+
+    public void DebugSceneChange(string sceneName)
+    {
+        if(debugMode)
+        {
+            ChangeScene(sceneName);
+        }
     }
 
     /// <summary>
