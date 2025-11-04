@@ -71,7 +71,7 @@ public class AudioManager : MonoBehaviour
 
     public void SpeechCharacterTyped()
     {
-        speechPlayer.pitch = Random.Range(tempPitchBounds.x, tempPitchBounds.y);
+        speechPlayer.pitch = Random.Range(pitchBounds.x, pitchBounds.y);
         speechPlayer.Play();
     }
 
