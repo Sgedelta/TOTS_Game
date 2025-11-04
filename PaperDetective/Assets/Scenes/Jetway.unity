@@ -1281,7 +1281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5256912733986672066, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeScene
+      value: DebugSceneChange
       objectReference: {fileID: 0}
     - target: {fileID: 5256912733986672066, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
       propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1338,14 +1338,6 @@ PrefabInstance:
     - target: {fileID: 6141526061966840513, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141526061966840513, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8494899887171604644, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
-      propertyPath: talkRadius
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

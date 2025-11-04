@@ -24,6 +24,15 @@ public class CutsceneManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Changes the target the camera is following during a cutscene
+    /// </summary>
+    /// <param name="newTarget">The new transform the camera is meant to follow</param>
+    public void SwapTarget(Transform newTarget)
+    {
+        cinemachineCamera.Follow = newTarget;
+    }
+
+    /// <summary>
     /// Ends the cutscene by setting the camera to follow the player and enabling player movement
     /// </summary>
     public void StopCutscene()
