@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 //Author: Sam Easton
 
@@ -94,6 +95,7 @@ public class SpriteUpdater : MonoBehaviour
     /// Updates State Property with var. used for unity events. i.e. in PersistentDataCheckers
     /// </summary>
     /// <param name="newState"></param>
+    [YarnCommand("UpdateSprite")]
     public void UpdateState(string newState)
     {
         State = newState;
