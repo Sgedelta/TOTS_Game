@@ -171,6 +171,8 @@ GameObject:
   - component: {fileID: 346672412732654398}
   - component: {fileID: 8494899887171604644}
   - component: {fileID: 6109371150928402377}
+  - component: {fileID: 1464733111983757561}
+  - component: {fileID: 1088662526198430361}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -446,3 +448,37 @@ MonoBehaviour:
   playSound: 0
   stepPlayer: {fileID: 0}
   anim: {fileID: 6709783143378685408}
+--- !u!114 &1464733111983757561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141526061966840513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d19701f1a2edcf4ca8208dae9fd1c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectID: player
+  data:
+    KeepOnLoad: 1
+    CurrentObjectState: 
+  LoadState:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1088662526198430361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141526061966840513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44019f92d70a8e48b950df8e255d779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: []
+  positions: []
+  PersistentDataID: player
