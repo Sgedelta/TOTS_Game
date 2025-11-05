@@ -21,6 +21,8 @@ public class CutsceneManager : MonoBehaviour
     {
         cinemachineCamera.Follow = newTarget;
         playerController.CanMove = false;
+        playerController.CanInteract = false;
+        Inventory.instance.canInteract = false;
     }
 
     /// <summary>
@@ -39,5 +41,7 @@ public class CutsceneManager : MonoBehaviour
     {
         cinemachineCamera.Follow = playerController.gameObject.transform;
         playerController.CanMove = true;
+        playerController.CanInteract = true;
+        Inventory.instance.canInteract = true;
     }
 }
