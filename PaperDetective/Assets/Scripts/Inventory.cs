@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     private void Start()
     {
-        if(instance != null)
+        if(instance != null && instance != this)
         {
             Destroy(this.gameObject);
             return;
