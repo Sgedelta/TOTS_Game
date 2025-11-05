@@ -32,7 +32,7 @@ public class SpriteUpdater : MonoBehaviour
     [SerializeField] private List<Sprite> sprites;
 
 
-    public Dictionary<string, Sprite> StateSprites = new Dictionary<string, Sprite>();
+    private Dictionary<string, Sprite> stateSprites = new Dictionary<string, Sprite>();
 
     /// <summary>
     /// The sprite renderer for this to update. only needed to set if this is not on an object with a Sprite Renderer
@@ -64,16 +64,16 @@ public class SpriteUpdater : MonoBehaviour
                 Debug.LogWarning($"Sprite Updater on {gameObject.name} has state \"{states[i]}\", but associated sprite is null. skipping!");
                 continue;
             }
-            StateSprites.Add(states[i], sprites[i]);
+            stateSprites.Add(states[i], sprites[i]);
         }
         for (int i = states.Count; i <  sprites.Count; i++)
         {
             Debug.LogWarning($"Sprite Updater on {gameObject.name} has sprite named {sprites[i].name}, but does not have associated state. adding state with sprite name instead.");
-            StateSprites.Add(sprites[i].name, sprites[i]);
+            stateSprites.Add(sprites[i].name, sprites[i]);
         }
 
         //add default as well
-        StateSprites.Add(DEFAULT_SPRITE_KEY, sr.sprite);
+        stateSprites.Add(DEFAULT_SPRITE_KEY, sr.sprite);
     }
 
     /// <summary>
@@ -81,13 +81,13 @@ public class SpriteUpdater : MonoBehaviour
     /// </summary>
     public void UpdateSprite()
     {
-        if (StateSprites.ContainsKey(state))
+        if (stateSprites.ContainsKey(state))
         {
-            sr.sprite = StateSprites[state];
+            sr.sprite = stateSprites[state];
         }
         else
         {
-            sr.sprite = StateSprites[DEFAULT_SPRITE_KEY];
+            sr.sprite = stateSprites[DEFAULT_SPRITE_KEY];
         }
     }
 
