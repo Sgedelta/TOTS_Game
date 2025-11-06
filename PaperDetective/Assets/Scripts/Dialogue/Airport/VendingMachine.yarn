@@ -8,28 +8,16 @@
 Narrator: A Vending Machine, holding a lone book, the other shelves having been long since cleared out.
 Narrator: There is a <color="blue">Frantch-to-English Dictionary</color> available for only <color="blue">5 Frencs</color>.
 <<RevealNote MenuManager airportNeedMoney>>
-Vending Machine: What would you like to buy?
--> Frantch-to-English Dictionary.
-    <<jump BuyDictionary>>
--> Nothing.
-    Narrator: You leave the vending machine behind.
-    <<stop>>
 
 <<Check Inventory "Umbrella">>
 <<Check Inventory "Dictionary">>
 
-// Check if the Inventory has the Umbrella game object
-<<elseif $hasUmbrella == false && $hasDictionary == false>>
+// Check if the Inventory has the Dictionary game object
+<<elseif $hasDictionary == false>>
 Narrator: The dictionary is still stuck in the machine.
 Narrator: Maybe a long object could knock the book free?
 <<RevealNote MenuManager airportUmbrella>>
 <<stop>>
-
-<<elseif $hasUmbrella == true>>
-Narrator: You lean in with the umbrella and bat at the book. Eventually, it falls down, allowing you to take it out.
-Narrator: You now have the <color="blue">dictionary</color>. Now you will be able to understand the Frantch people and vice versa!
-<<TransformItem Inventory "Umbrella" "Dictionary">>
-<<set $hasUmbrella = false>>
 
 <<elseif $hasUmbrella == false && $hasDictionary == true>>
 Narrator: The Vending Machine sits, waiting for another weary soul to do business with.
@@ -41,14 +29,11 @@ Narrator: You decide to leave it be, it has nothing else useful for you.
 
 title: BuyDictionary
 ---
-// Check if the player has the Frencs in their inventory.
-<<Check Inventory "Frencs">>
 
-<<if $hasFrencs == true>>
+<<if $purchased == false>>
 Vending Machine: Sufficient Frencs deposited. Enjoy!
 <<set $purchased = true>>
-<<RemoveItem Inventory Frencs>>
-Narrator: As the machine whirs to give you your purchase, the book leans forward and hits the glass with a thunderous [i]donk[/i].
+Narrator: As the machine whirs to give you your purchase, the book leans forward and hits the glass with a thunderous [b]donk[/b].
 Narrator: The <color="blue">dictionary is now stuck</color>, no matter how much you curse or shake the machine.
 Narrator: Your arm isnt long enough to dislodge it either. You have no choice but to leave, temporarily defeated.
 
@@ -58,4 +43,12 @@ Narrator: You scavenge your pockets, but only find dollars and some loose lint, 
 Narrator: With your head held low, you leave the book behind for now in search of local currency.
 
 <<endif>>
+===
+
+title: HookDictionary
+---
+Narrator: You lean in with the umbrella and bat at the book. Eventually, it falls down, allowing you to take it out.
+Narrator: You now have the <color="blue">dictionary</color>. Now you will be able to understand the Frantch people and vice versa!
+<<set $hasUmbrella = false>>
+<<set $hasDictionary = true>>
 ===

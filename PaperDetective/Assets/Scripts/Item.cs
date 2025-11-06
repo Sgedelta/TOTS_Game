@@ -81,11 +81,9 @@ public class Item : MonoBehaviour
 
     public bool CheckInteraction()
     {
-        //Debug.Log(mask);
         // Check if the item is touching another item
         if (this.gameObject.GetComponent<BoxCollider2D>().IsTouchingLayers(itemMask))
         {
-            //Debug.Log("Layers check successful");
             // Find the object that is closest to the item and return whether a combination was successful
 
             // Get an array of all objects the item is overlapping
@@ -105,6 +103,7 @@ public class Item : MonoBehaviour
                     }
                 }
             }
+            // if there's only two hitcolliders then take the second one (the first one is a self-report)
             else if (hitColliders.Length == 2)
             {
                 hitItem = hitColliders[1];
@@ -120,23 +119,40 @@ public class Item : MonoBehaviour
                     return true;
             }
         }
+        // Trigger an event because item got dropped onto a trigger box
         else if (this.gameObject.GetComponent<BoxCollider2D>().IsTouchingLayers(triggerMask))
         {
-            Debug.Log("YOOOOO TRIGGERED");
+            // Get the trigger template
             Collider2D trigger = Physics2D.OverlapBox(gameObject.transform.position, transform.localScale, triggerMask);
             TriggerTemplate trigTemp = trigger.GetComponent<Trigger>().template;
-            if (trigTemp.madeItem && trigTemp.deleteHeld)
+            Debug.Log(trigTemp.triggerItem.id + " " + template.id);
+            if (trigTemp.triggerItem == template)
             {
-                InitAs(trigTemp.madeItem, 1);
-            }
-            else if(trigTemp.madeItem && !trigTemp.deleteHeld)
-            {
-                CreateItem(trigTemp.madeItem, 1);
-            }
-
-            // Prompt Dialogue
+                if (trigTemp.madeItem && trigTemp.deleteHeld)
+                {
+                    Debug.Log("switching");
+                    InitAs(trigTemp.madeItem, 1);
+                }
+                else if (trigTemp.madeItem && !trigTemp.deleteHeld)
+                {
+                    Debug.Log("making");
+                    CreateItem(trigTemp.madeItem, 1);
+                }
+                else if (trigTemp.deleteHeld)
+                {
+                    Debug.Log("deleting");
+                    amount = 0;
+                }
+                // Prompt Dialogue
                 if (!SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().IsDialogueRunning)
                     SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().StartDialogue(trigTemp.dialogueNode);
+                
+                Destroy(trigger.gameObject);
+            }
+            else
+            {
+                Debug.Log("Nothing Happens");
+            }
         }
         return false;
     }

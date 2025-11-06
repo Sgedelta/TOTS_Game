@@ -16,9 +16,4 @@ public class Trigger : MonoBehaviour
     {
         
     }
-
-    public void OnClick(InputAction.CallbackContext context)
-    {
-        Debug.Log("trigger box jsdfhk");
-    }
 }

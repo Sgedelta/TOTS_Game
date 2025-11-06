@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb433bd5773ac14cae93feeb06e546a, type: 3}
-  m_Name: ATMtrigger
+  m_Name: VendTrigger
   m_EditorClassIdentifier: 
-  id: ATM
-  triggerItem: {fileID: 11400000, guid: acda9fdf4aca9f7418648bc183d46a3d, type: 2}
-  madeItem: {fileID: 11400000, guid: 0585df2464986d241b2f040d4d82cac5, type: 2}
-  dialogueNode: Exchange
+  id: Vend
+  triggerItem: {fileID: 11400000, guid: 0585df2464986d241b2f040d4d82cac5, type: 2}
+  madeItem: {fileID: 0}
+  dialogueNode: BuyDictionary
   deleteHeld: 1
