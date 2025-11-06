@@ -9,7 +9,10 @@ public class TriggerTemplate : ScriptableObject
 {
     // internal ID
     public string id;
-    
+
+    // what item triggers the reaction
+    public ItemTemplate triggerItem;
+
     // what item to give to the player
     public ItemTemplate madeItem;
 
