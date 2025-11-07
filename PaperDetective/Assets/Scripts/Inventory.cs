@@ -10,9 +10,13 @@ using Yarn.Unity;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] Sprite square;
+    [SerializeField] private int capacity;
+    [SerializeField] private GameObject slotPrefab;
+    [SerializeField] private float slotPaddingMin = 25;
     SortedList<string, Item> inventory = new SortedList<string, Item>();
     [SerializeField] private List<Item> itemsInInv;
     Vector2[] invPos = new Vector2[10];
+    private List<GameObject> invSlots = new List<GameObject>();
     [SerializeField] SpriteRenderer[] invSquares = new SpriteRenderer[10];
     Camera cam;
 
@@ -48,6 +52,26 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        RectTransform trans = GetComponent<RectTransform>();
+
+        //clamp capacity
+        capacity = (int)Mathf.Clamp(capacity, 0, trans.rect.width / (slotPrefab.GetComponent<RectTransform>().rect.width + slotPaddingMin * 2));
+
+        //calculate box width
+        float boxWidth = trans.rect.width / capacity;
+
+
+        //create slots
+        for(int i = 0; i < capacity; i++)
+        {
+            GameObject slot = Instantiate(slotPrefab, trans);
+            
+            invSlots.Add(slot);
+
+            slot.GetComponent<RectTransform>().localPosition = new Vector3(boxWidth * (i - (capacity / 2) + 0.5f), 0, 0); //note: might have to update z for order
+
+        }
+
         itemsInInv = GameManager.instance.items;
         cam = Camera.main;
         float x = -10.5f;
