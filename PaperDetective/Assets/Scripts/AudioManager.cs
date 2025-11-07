@@ -14,9 +14,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private List<AudioSource> audioSource;
     [SerializeField] private AudioSource speechPlayer;
 
+    [SerializeField] private Vector2 narratorPitch = new Vector2(1.0f, 1.5f);
+    [SerializeField] private Vector2 npcPitch = new Vector2(1.0f, 1.5f);
+    public Vector2 NpcPitch
+    {
+        get { return npcPitch; }
+    }   
 
-
-    Vector2 tempPitchBounds = new Vector2(1.0f, 1.5f);
 
     private Vector2 pitchBounds;
     public Vector2 PitchBounds
@@ -84,5 +88,16 @@ public class AudioManager : MonoBehaviour
                 source.Play();
             }
         }
+    }
+
+    public void SetPitchNarrator()
+    {
+        pitchBounds = narratorPitch;
+    }
+
+    public void SetPitchNPC(Vector2 input)
+    {
+        npcPitch = input;
+        pitchBounds = npcPitch;
     }
 }
