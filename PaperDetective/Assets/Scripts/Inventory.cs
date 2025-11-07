@@ -9,15 +9,42 @@ using Yarn.Unity;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField] Sprite square;
     SortedList<string, Item> inventory = new SortedList<string, Item>();
     [SerializeField] private List<Item> itemsInInv;
     Vector2[] invPos = new Vector2[10];
+    [SerializeField] SpriteRenderer[] invSquares = new SpriteRenderer[10];
     Camera cam;
 
     [SerializeField] private GameObject newItemPrefab;
     public GameObject NewItemPrefab { get { return newItemPrefab; } }
 
     private DialogueRunner dialogue;
+
+    public static Inventory instance;
+
+    /// <summary>
+    /// This determines the singular instance of GameManager that will exist across all scenes.
+    /// </summary>
+    private void Awake()
+    {
+        //Check if there is no instance of this Inventory that exists.
+        if (instance == null)
+        {
+            //Set the gameObject this script is attached to as the single instance of the Inventory.
+            instance = this;
+
+            //This method informs Unity to retain the object this script is attached to when changing scenes.
+            DontDestroyOnLoad(this.gameObject);
+        }
+
+        else
+        {
+            //If there is already an instance of the Inventory, then delete the object this is attached to.
+            //This ensures that only one instance of the Inventory exists across all scenes.
+            Destroy(this.gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -42,6 +69,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Screen Width : " + Screen.width);
         Sort();
     }
 
@@ -60,10 +88,11 @@ public class Inventory : MonoBehaviour
                 // Item follows cursor
                 hit.collider.gameObject.GetComponent<Item>().mouseBound = true;
 
-                // Remove item from inventory
+                // Remove item from inventory and show on mouse
                 if (inventory.ContainsKey(hitItem.Template.id))
                 {
                     inventory.Remove(hitItem.Template.id);
+                    hitItem.GetComponent<SpriteRenderer>().color = Color.white;
                 }
             }
 
@@ -138,10 +167,20 @@ public class Inventory : MonoBehaviour
 
     public void Sort()
     {
+        int x = 0;
         for (int i = 0; i < inventory.Count; i++)
         {
+            invSquares[i].sprite = inventory.Values[i].Template.itemSprite;
+            invSquares[i].GetComponent<SpriteRenderer>().color = Color.white;
+            inventory.Values[i].GetComponent<SpriteRenderer>().color = Color.clear;
             inventory.Values[i].targetPos = new Vector2(invPos[i].x + cam.transform.position.x, -5.3f + cam.transform.position.y);
             //Debug.Log("sorting " + i + " " + inventory[i].name + " " + invPos[i]);
+            x++;
+        }
+        for (int i = x; i < 10; i++)
+        {
+            Debug.Log(x);
+            invSquares[i].color = Color.clear;
         }
     }
 
