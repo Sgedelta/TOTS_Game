@@ -6,6 +6,7 @@ using NUnit.Framework;
 using System.Linq;
 using Yarn;
 using Yarn.Unity;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -15,9 +16,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private float slotPaddingMin = 25;
     SortedList<string, Item> inventory = new SortedList<string, Item>();
     [SerializeField] private List<Item> itemsInInv;
-    Vector2[] invPos = new Vector2[10];
     private List<GameObject> invSlots = new List<GameObject>();
-    [SerializeField] SpriteRenderer[] invSquares = new SpriteRenderer[10];
     Camera cam;
 
     [SerializeField] private GameObject newItemPrefab;
@@ -74,19 +73,6 @@ public class Inventory : MonoBehaviour
 
         itemsInInv = GameManager.instance.items;
         cam = Camera.main;
-        float x = -10.5f;
-        for (int i = 0; i < 10; i++)
-        {
-            invPos[i] = new Vector3(x, -5.3f + cam.transform.position.y);
-            x += 2.4f;
-        }
-        if (itemsInInv != null)
-        {
-            foreach (Item item in itemsInInv)
-            {
-                inventory.Add(item.Template.id, item);
-            }
-        }
 
         dialogue = FindFirstObjectByType<DialogueRunner>();
     }
@@ -192,20 +178,26 @@ public class Inventory : MonoBehaviour
     public void Sort()
     {
         int x = 0;
-        for (int i = 0; i < inventory.Count; i++)
+
+        //note: a little quick and dirty, won't update things "outside" of inventory - should really handle this on inventory adding side\
+        //fill slots with images and position items into clickable location
+        for (int i = 0; i < Mathf.Min(capacity, inventory.Count); i++)
         {
-            invSquares[i].sprite = inventory.Values[i].Template.itemSprite;
-            invSquares[i].GetComponent<SpriteRenderer>().color = Color.white;
+            invSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = inventory.Values[i].Template.itemSprite;
+            invSlots[i].transform.GetChild(0).GetComponent<Image>().color = Color.white;
             inventory.Values[i].GetComponent<SpriteRenderer>().color = Color.clear;
-            inventory.Values[i].targetPos = new Vector2(invPos[i].x + cam.transform.position.x, -5.3f + cam.transform.position.y);
-            //Debug.Log("sorting " + i + " " + inventory[i].name + " " + invPos[i]);
+
+            inventory.Values[i].targetPos = invSlots[i].transform.position;
+
             x++;
         }
-        for (int i = x; i < 10; i++)
+        //make all unfilled slots empty
+        for(int i = x;  i < capacity; i++)
         {
-            Debug.Log(x);
-            invSquares[i].color = Color.clear;
+            invSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
+            invSlots[i].transform.GetChild(0).GetComponent<Image>().color = Color.clear;
         }
+        
     }
 
     public void TransformItem(Item existingItem, ItemTemplate newItem)
