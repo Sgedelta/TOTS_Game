@@ -5,15 +5,19 @@ using UnityEngine.Events;
 using UnityEngine.Audio;
 using NUnit.Framework;
 using System.Collections.Generic;
+using Yarn.Unity.Legacy;
+using TMPro;
 
 public class AudioManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private DialogueRunner dialogueRunner;
+    [SerializeField] private DialoguePresenter dialoguePresenter;
 
     [SerializeField] private List<AudioSource> audioSource;
     [SerializeField] private AudioSource speechPlayer;
 
+    private TMP_Text nameText;
 
 
     Vector2 tempPitchBounds = new Vector2(1.0f, 1.5f);
@@ -38,10 +42,11 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
+        nameText = dialoguePresenter.characterNameText;
     }
     void Start()
     {
-        dialogueRunner = GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>();
+        
     }
 
     // Update is called once per frame

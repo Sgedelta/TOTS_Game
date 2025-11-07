@@ -31,11 +31,10 @@ public class NPC : MonoBehaviour
     /// <summary>
     /// The range of the NPC's specific audio playback
     /// </summary>
-    [SerializeField] public Vector2 NPCAudioBounds;
+    [SerializeField] public Vector2 NPCAudioBounds = new Vector2(1.0f, 1.5f);
 
     private void Start()
     {
-        if (NPCAudioBounds == null) NPCAudioBounds = new Vector2(1.0f, 1.5f);
 
     }
 
