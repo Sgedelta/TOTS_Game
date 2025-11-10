@@ -39,6 +39,10 @@ title: ElderlyWoman
     You: Do you not know where he could be?
     Woman: No, he would’ve said something if he left. 
     Woman Please, dear, I hate to ask this, but could you find my son? I don’t want him to get hurt.
+
+    //Add note for player to find the son.
+    <<RevealNote MenuManager findSon>>
+
     <<set $elderlyWoman_afterDoor = true>>
     <<stop>>
 
@@ -61,6 +65,7 @@ You: Alright, I’ll help if I can.
 Woman: Oh, that’s so good to hear! See if the maid/butler can help you at all.
 
 // ---------- Add note for "Open the door" ---------------
+<<RevealNote MenuManager openDoor>>
 
 <<set $elderlyWoman_firstTalk = true>>
 ===

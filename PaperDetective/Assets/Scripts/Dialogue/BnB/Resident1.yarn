@@ -1,6 +1,6 @@
 ﻿title: Resident1Manager
 ---
-//Contain and record all the variables for the Worker NPC.
+//Contain and record all the variables for the Resident 1 NPC.
 
 //firstTalk determines if this is the first time the player has ever interacted with this NPC.
 <<declare $resident1_firstTalk = false>>
