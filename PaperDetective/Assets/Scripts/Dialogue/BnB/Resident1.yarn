@@ -1,0 +1,49 @@
+﻿title: Resident1Manager
+---
+//Contain and record all the variables for the Worker NPC.
+
+//firstTalk determines if this is the first time the player has ever interacted with this NPC.
+<<declare $resident1_firstTalk = false>>
+
+//beforeDoor determines if the NPC has been interacted with but the first door is not opened.
+<<declare $resident1_beforeDoor = false>>
+
+//afterDoor determines if this is the first interaction AFTER the door has been opened.
+<<declare $resident1_afterDoor = false>>
+===
+
+title: Resident1
+---
+//Play this the first time the player interacts with this NPC at all.
+<<if $resident1_firstTalk == false>>
+    Resident: Oh, hello. Here to stay for the night?
+    You: Yes, but do you know anything about a key to that room?
+    Resident: You mean the one where the music is coming from? I’m afraid not, but if I did I would’ve barged in there hours ago.
+    You: Has it been going on all day?
+    Resident: I’ve been here since yesterday, and it’s been awful.
+    Resident: It started fine early last night, but then it suddenly got very loud and hasn’t turned off since.
+    Resident: If you could turn off that music so I can get some sleep, I’d really appreciate it.
+    <<set $resident1_firstTalk = true>>
+    <<stop>>
+
+//Play this AFTER first interaction but BEFORE the first door opens.
+<<elseif $resident1_beforeDoor == false>>
+    Resident: If you could turn off that music so I can get some sleep, I’d really appreciate it.
+    <<stop>>
+
+//Play this the first time AFTER the first door opens up.
+<<elseif $resident1_afterDoor == false>>
+    Resident: Ah, thank you so much! That noise was unbearable!
+    You: Yes, but the son wasn’t in there. Do you know where he went?
+    Resident: I thought he was in the basement? I swear I heard a noise from down there just a little bit ago.
+
+    //Remember to enable the Worker to give the player the key.
+    <<set $worker_playerKnowsBasement = true>>
+    <<set $resident1_afterDoor = false>>
+    <<stop>>
+
+<<endif>>
+
+//Play this dialogue after all other options have been exhausted.
+Resident: The guy is probably in the basement, I thought I heard something from down there.
+===
