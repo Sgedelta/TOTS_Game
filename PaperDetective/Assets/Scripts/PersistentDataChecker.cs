@@ -9,7 +9,8 @@ public class PersistentDataChecker : MonoBehaviour
     /// <summary>
     /// A unique identifier for this object
     /// </summary>
-    [SerializeField] private string ObjectID = "";
+    [SerializeField] private string objectID = "";
+    public string ObjectID { get { return objectID; } }
 
     /// <summary>
     /// the data holder for this in game object
@@ -30,7 +31,7 @@ public class PersistentDataChecker : MonoBehaviour
     void Start()
     {
         //this is not set up correctly
-        if(ObjectID == null || ObjectID == "")
+        if(objectID == null || objectID == "")
         {
             Debug.LogError($"Game Object \"{gameObject.name}\" has a PersistentDataChecker but Object ID is not set correctly. Destroying the Persistent Data.");
             Destroy(this);
@@ -38,14 +39,14 @@ public class PersistentDataChecker : MonoBehaviour
         }
 
         //this is set up, but the persistent data does not already exist - we need to make sure we hook it up before going forward
-        if(!GameManager.instance.AllPersistentData.ContainsKey(ObjectID))
+        if(!GameManager.instance.AllPersistentData.ContainsKey(objectID))
         {
-            GameManager.instance.AllPersistentData.Add(ObjectID, data);
+            GameManager.instance.AllPersistentData.Add(objectID, data);
         } 
         else
         {
             //otherwise, use persistent data in loader
-            data = GameManager.instance.AllPersistentData[ObjectID];
+            data = GameManager.instance.AllPersistentData[objectID];
         }
 
         //finally, load data

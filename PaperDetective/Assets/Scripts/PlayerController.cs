@@ -43,9 +43,14 @@ public class PLayerController : MonoBehaviour
     /// </summary>
     [SerializeField] private NPC talkPartner;
 
+    private PersistentDataChecker pdChecker;
+
     private void Start()
     {
-       GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+        GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+        pdChecker = GetComponent<PersistentDataChecker>();
+
+        SetStartingPos();
     }
 
     // Update is called once per frame
@@ -60,6 +65,36 @@ public class PLayerController : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }    
     
+    }
+
+    private void SetStartingPos()
+    {
+        NamedLocation[] StartingPositions = FindObjectsByType<NamedLocation>(FindObjectsSortMode.InstanceID);
+        //if we don't find anything, default to the location the player is placed in the scene - this will happen if the entrance isn't hooked up correctly or we run the game from this scene
+        Vector3 pos = transform.position;
+
+        //read data - through GM because it is less error prone - something wrong there is a bigger issue and easier to track!
+        string playerState = GameManager.instance.AllPersistentData[pdChecker.ObjectID].CurrentObjectState;
+
+        //if we don't get a state, stop!
+        if(playerState == "")
+        {
+            return;
+        }
+
+        //most other solutions using persistent data can and should use dicts, but they normally store all data internally - we don't, so looping over arrays it is...
+        for (int i = 0; i < StartingPositions.Length; i++)
+        {
+            //check if our state is the name
+            if (StartingPositions[i].LocationName == playerState)
+            {
+                pos = StartingPositions[i].pos;
+            }
+        }
+
+        transform.position = pos;
+
+
     }
 
     /// <summary>
