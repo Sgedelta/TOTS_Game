@@ -19,8 +19,21 @@ public class Inventory : MonoBehaviour
 
     private DialogueRunner dialogue;
 
+    public bool canInteract = true;
+
+    public static Inventory instance;
     private void Start()
     {
+        if(instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
         itemsInInv = GameManager.instance.items;
         cam = Camera.main;
         float x = -10.5f;
@@ -47,6 +60,10 @@ public class Inventory : MonoBehaviour
 
     public void OnClick(InputAction.CallbackContext context)
     {
+        if (!canInteract)
+        {
+            return;
+        }
         //Debug.Log("click1");
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(0, 1), 0.01f);

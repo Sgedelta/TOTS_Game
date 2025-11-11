@@ -32,13 +32,20 @@ public class sceneManager : MonoBehaviour
     private bool fadeIn;
 
     private string nextScene;
-    
+
+    private bool debugMode = true;
+
     /// <summary>
     /// Singleton time
     /// </summary>
     public static sceneManager instance;
     public void Start()
     {
+        if(instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         SceneManager.sceneLoaded += FadeIn;
         DontDestroyOnLoad(this.gameObject);
     }
@@ -69,6 +76,11 @@ public class sceneManager : MonoBehaviour
         }
 
     }
+
+    /// <summary>
+    /// Begins the fade-out process and remembers the scene you want to transition to.
+    /// </summary>
+    /// <param name="sceneName">The name of the scene you want to transition into, as seen in the build profile</param>
     public void ChangeScene(string sceneName)
     {
         if(SceneManager.GetActiveScene().name != sceneName)
@@ -79,13 +91,30 @@ public class sceneManager : MonoBehaviour
             
     }
 
+    public void DebugSceneChange(string sceneName)
+    {
+        if(debugMode)
+        {
+            ChangeScene(sceneName);
+        }
+    }
+
+    /// <summary>
+    /// Makes the screen slowly fade to black
+    /// </summary>
     private void FadeOut()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PLayerController>().CanMove = false;
         fadePercentage += Time.deltaTime / fadeTime;
         fadeImage.gameObject.SetActive(true);
         fadeImage.color = Color.Lerp(new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0), new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1), fadePercentage);
     }
 
+    /// <summary>
+    /// Begins the process of fading in from black
+    /// </summary>
+    /// <param name="scene">Doesn't do anything, exists so method can be added to SceneManager.sceneLoaded</param>
+    /// <param name="mode">Doesn't do anything, exists so method can be added to SceneManager.sceneLoaded</param>
     private void FadeIn(Scene scene, LoadSceneMode mode)
     {
         fadeIn = true;
