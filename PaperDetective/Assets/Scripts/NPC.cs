@@ -31,12 +31,20 @@ public class NPC : MonoBehaviour
     /// </summary>
     [SerializeField] private string startNode;
 
-    [SerializeField] private Vector2 bitRange;
+    /// <summary>
+    /// The range of the NPC's specific audio playback
+    /// </summary>
+    [SerializeField] public Vector2 NPCAudioBounds = new Vector2(1.0f, 1.5f);
+
+    private void Start()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(moveTo.Count > 0 && moving)
+        if (moveTo.Count > 0 && moving)
         {
             rb.linearVelocity = (moveTo[0] - rb.position).normalized * speed;
 
@@ -49,6 +57,8 @@ public class NPC : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
         }
+
+
     }
 
     /// <summary>
@@ -62,6 +72,7 @@ public class NPC : MonoBehaviour
 
     public void Talk()
     {
+        AudioManager.instance.PitchBounds = NPCAudioBounds;
         if (!SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().IsDialogueRunning)
             SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().StartDialogue(startNode);
     }
