@@ -1,0 +1,13 @@
+﻿title: BnBSceneManager
+---
+//This script contains the variable declarations for all the NPCs in the BnB scene.
+
+//firstTalk determines if this is the first time the player has ever interacted with this NPC.
+<<declare $firstTalk = false>>
+
+//beforeDoor determines if the NPC has been interacted with but the first door is not opened.
+<<declare $beforeDoor = false>>
+
+//afterDoor determines if this is the first interaction AFTER the door has been opened.
+<<declare $afterDoor = false>>
+===
