@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVisible: 0
   isUsed: 0
-  noteID: 
-  noteContent: 
+  noteID: openDoor
+  noteContent: Open the door to the son's room
   parentInstance: {fileID: 0}
   noteOrder: 0
