@@ -281,6 +281,10 @@ namespace Yarn.Unity
                 else
                 {
                     characterNameText.text = line.CharacterName;
+                    if(characterNameText.text.Equals("Narrator"))
+                        AudioManager.instance.SetPitchNarrator();
+                    else
+                        AudioManager.instance.PitchBounds = AudioManager.instance.NpcPitch;
                 }
                 text = line.TextWithoutCharacterName;
 

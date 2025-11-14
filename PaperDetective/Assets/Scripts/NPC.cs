@@ -72,7 +72,7 @@ public class NPC : MonoBehaviour
 
     public void Talk()
     {
-        AudioManager.instance.PitchBounds = NPCAudioBounds;
+        AudioManager.instance.SetPitchNPC(NPCAudioBounds);
         if (!SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().IsDialogueRunning)
             SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().StartDialogue(startNode);
     }
