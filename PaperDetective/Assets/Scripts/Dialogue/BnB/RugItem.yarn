@@ -1,0 +1,16 @@
+﻿title: RugItem
+---
+<<declare $rugFirst = false>>
+
+<<if $rugFirst == false>>
+Narrator: The rug lies right before the door, folded uncomfortably on its sides.
+Narrator: You try to move it to the center of the room, where the space would allow it to stretch out fully.
+Narrator: However, as you do, you realize the rug is covering several large scratch marks next to the door…
+<<set $rugFirst = true>>
+<<stop>>
+
+<<else>>
+Narrator: The scratch marks under the rug are huge, and made with two pairs of five fingers…
+
+<<endif>>
+===
