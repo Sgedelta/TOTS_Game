@@ -22,11 +22,13 @@ public class AudioManager : MonoBehaviour
     public Vector2 NpcPitch
     {
         get { return npcPitch; }
-    }   
+    }
     private TMP_Text nameText;
-
-
-
+    public TMP_Text NameText
+    {
+        get { return nameText; }
+        set { nameText = value; }
+    }
     private Vector2 pitchBounds;
     public Vector2 PitchBounds
     {
@@ -47,11 +49,11 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
-        nameText = dialoguePresenter.characterNameText;
+        //nameText = dialoguePresenter.characterNameText;
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
