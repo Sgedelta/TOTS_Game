@@ -45,5 +45,5 @@ title: Resident1
 <<endif>>
 
 //Play this dialogue after all other options have been exhausted.
-Resident: The guy is probably in the basement, I thought I heard something from down there.
+Resident: I think I heard a noise coming from the basement...
 ===
