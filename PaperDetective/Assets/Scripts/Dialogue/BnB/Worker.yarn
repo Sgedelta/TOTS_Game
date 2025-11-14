@@ -24,15 +24,16 @@ title: Worker
     You: Yes, I was told to ask you where the key to that loud room is.
     Worker: Ah, I’m terribly sorry, I can’t quite remember where I placed it.
     Worker: I never get to clean that room, as the hosts’ son is almost always in there.
-    Worker: I left the key somewhere since I wasn’t able to use it, but I forgot where that was.
-    You: Well, does anyone else know where it might be?
-    Worker: You’re free to ask, but I doubt they would know anything. 
+    Worker: I dropped the key somewhere, but now I don’t know how to get it back.
+    You: Well, does anyone else have anything to help?
+    Worker: You’re free to ask, but I doubt they would have anything. 
     <<set $worker_firstTalk = true>>
     <<stop>>
 
 //Play AFTER the first interaction but BEFORE the first door is opened.
 <<elseif $worker_beforeDoor == false>>
-    Worker: If you could help me find the key, I’d greatly appreciate it!
+    Worker: If you could help me get the key, I’d greatly appreciate it!
+    Worker: I know I dropped it somewhere I can’t reach…
     <<stop>>
 
 //Play the first time AFTER the first door is opened.

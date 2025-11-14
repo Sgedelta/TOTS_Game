@@ -19,25 +19,22 @@ title: Resident2
     Resident: Hi, you a guest too?
     You: Yes, do you know where the key to the room with the music is?
     Resident: Sorry, I don’t know where it might be. 
-    Resident: Although…
-    You: What?
-    Resident: Do you know how to pick locks, by any chance?
-    You: …I have some experience, stuff I needed to know for my job.
-    Resident: Good! That music has been driving me crazy, but I didn’t want to make the hostess mad.
-    Resident: Here’s a pick you can use, just don’t tell them I gave it to you, ok?
-    You: Sure thing, this’ll probably work just fine.
-    <<AddItem Inventory Lockpick>>
+    Resident: But hey, if you need something to deal with the music, I’m happy to help.
+    Resident: Here, you can have some of my equipment if you need it.
+    You: I’ll take that screwdriver off your hands, then.
+    Resident: Sure thing! Good luck!
+    <<AddItem Inventory Screwdriver>>
     <<set $resident2_firstTalk = true>>
     <<stop>>
 
 //Play this AFTER first interaction but BEFORE the first door opens.
 <<elseif $resident2_beforeDoor == false>>
-    Resident: If you get caught, don’t tell them I gave you that pick, alright?
+    Resident: Hopefully that screwdriver comes in handy!
     <<stop>>
 
 //Play this the first time AFTER the first door opens up.
 <<elseif $resident2_afterDoor == false>>
-    Resident: I see that pick was helpful after all! Thanks, mate!
+    Resident: I see that screwdriver was helpful after all! Thanks, mate!
     You: Thanks, and no problem, but do you know where the guy from that room is?
     Resident: Sorry, I have no idea. Maybe someone else might know?
     <<set $resident2_afterDoor = false>>
