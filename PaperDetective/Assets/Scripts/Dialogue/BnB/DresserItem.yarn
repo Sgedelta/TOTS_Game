@@ -1,15 +1,12 @@
 ﻿title: DresserItem
 ---
-<<declare $dresserFirst = false>>
-
-<<if $dresserFirst == false>>
+<<once>>
 Narrator: The dresser drawer is slightly open, as though something is blocking it.
 Narrator: You open the drawer slightly, and find a small trophy inside, dented slightly and covered in a small amount of blood…
 <<set $dresserFirst = true>>
+<<endonce>>
 <<stop>>
 
-<<else>>
 Narrator: There’s a small trophy in the drawer, dented and covered in blood…
 
-<<endif>>
 ===

@@ -1,22 +1,7 @@
-﻿title: ElderlyManManager
----
-//Contain and record all the variables for the Elderly Man NPC.
-
-//firstTalk determines if this is the first time the player has ever interacted with this NPC.
-<<declare $elderlyMan_firstTalk = false>>
-
-//beforeDoor determines if the NPC has been interacted with but the first door is not opened.
-<<declare $elderlyMan_beforeDoor = false>>
-
-//afterDoor determines if this is the first interaction AFTER the door has been opened.
-<<declare $elderlyMan_afterDoor = false>>
-
-===
-
-title: ElderlyMan
+﻿title: ElderlyMan
 ---
 //Play this section the first time the player interacts with this NPC at all.
-<<if $elderlyMan_firstTalk == false>>
+<<once>>
     Man: Ah, you must be the new guest for the night. Well, come on in, it's nice and cool here.
     You: Hello, do you know anything about the boy’s room where the music is coming from?
     Man: Oh, you mean my son? Yes, he's been going through a “rock and roll” phase recently.
@@ -25,25 +10,28 @@ title: ElderlyMan
     Man: I wish I could help with that, but I’ve not found the key anywhere in this house, and my back ain’t what it used to be, boy. 
     Man: Tell you what, so long as my property ain’t damaged, you get in that room however you want.
     <<set $elderlyMan_firstTalk = true>>
+    <<endonce>>
     <<stop>>
 
 //Play this section AFTER first interaction but BEFORE the first door opens.
-<<elseif $elderlyMan_beforeDoor == false>>
+<<if $sonRoomOpen == false>>
     Man: Just get into that boy’s room however you can, but please don’t break my property.
     <<stop>>
 
 //Play this section the first time AFTER the door opens.
-<<elseif $elderlyMan_afterDoor == false>>
+<<else>>
+    <<once>>
     You: I got into the room, but your son wasn’t anywhere in there.
     Man: Oh, he probably just ran off with his friends and forgot to turn off the music.
     You: I also found some scratch marks along the floor, I think something might’ve happened.
     Man: Huh, that’s odd. The cat leaves scratches on the basement door all the time, but it never goes into his room…
     Man: Oh well, thank you for turning off the noise, he’ll probably come back in the morning.
     <<set $elderlyMan_afterDoor = true>>
+    <<endonce>>
     <<stop>>
 
-<<endif>>
+    //Play this dialogue after all other interactions are exhausted.
+    Man: I’ll be heading to bed here soon, my son will probably be back from wherever he ran off to in the morning.
 
-//Play this dialogue after all other interactions are exhausted.
-Man: I’ll be heading to bed here soon, my son will probably be back from wherever he ran off to in the morning.
+<<endif>>
 ===

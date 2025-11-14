@@ -1,21 +1,7 @@
-﻿title: Resident2Manager
----
-//Contain and record all the variables for the Resident 2 NPC.
-
-//firstTalk determines if this is the first time the player has ever interacted with this NPC.
-<<declare $resident2_firstTalk = false>>
-
-//beforeDoor determines if the NPC has been interacted with but the first door is not opened.
-<<declare $resident2_beforeDoor = false>>
-
-//afterDoor determines if this is the first interaction AFTER the door has been opened.
-<<declare $resident2_afterDoor = false>>
-===
-
-title: Resident2
+﻿title: Resident2
 ---
 //Play this the first time the player interacts with this NPC at all.
-<<if $resident2_firstTalk == false>>
+<<once>>
     Resident: Hi, you a guest too?
     You: Yes, do you know where the key to the room with the music is?
     Resident: Sorry, I don’t know where it might be. 
@@ -25,23 +11,26 @@ title: Resident2
     Resident: Sure thing! Good luck!
     <<AddItem Inventory Screwdriver>>
     <<set $resident2_firstTalk = true>>
+    <<endonce>>
     <<stop>>
 
 //Play this AFTER first interaction but BEFORE the first door opens.
-<<elseif $resident2_beforeDoor == false>>
+<<if $sonRoomOpen == false>>
     Resident: Hopefully that screwdriver comes in handy!
     <<stop>>
 
 //Play this the first time AFTER the first door opens up.
-<<elseif $resident2_afterDoor == false>>
+<<else>>
+    <<once>>
     Resident: I see that screwdriver was helpful after all! Thanks, mate!
     You: Thanks, and no problem, but do you know where the guy from that room is?
     Resident: Sorry, I have no idea. Maybe someone else might know?
     <<set $resident2_afterDoor = false>>
+    <<endonce>>
     <<stop>>
 
-<<endif>>
+    //Play this dialogue after all other options have been exhausted.
+    Resident: Someone else might know where the guy is, I’m just gonna get to bed now.
 
-//Play this dialogue after all other options have been exhausted.
-Resident: Someone else might know where the guy is, I’m just gonna get to bed now.
+<<endif>>
 ===

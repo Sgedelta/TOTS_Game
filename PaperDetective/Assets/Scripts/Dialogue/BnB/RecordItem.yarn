@@ -1,17 +1,14 @@
 ﻿title: RecordItem
 ---
-<<declare $recordFirst = false>>
-
-<<if $recordFirst == false>>
+<<once>>
 Narrator: The music box is lying on the floor, as though it had been kicked over.
 Narrator: All the dials are set to maximum, as though someone wanted the music to be overwhelming…
 Narrator: You reach down and turn the unfortunate object off, wondering why its owner may have treated it so carelessly…
 <<set $recordFirst = true>>
+<<endonce>>
 <<stop>>
 
-<<else>>
 Narrator: The music box lays silent, tossed onto the floor before you arrived.
 Narrator: If only the one who owned it could tell you why it was like that…
 
-<<endif>>
 ===
