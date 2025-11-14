@@ -7,11 +7,12 @@ TagManager:
   - Item
   - Inventory
   - FileManager
+  - Item Trigger
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Item Trigger
   - Water
   - UI
   - Item
