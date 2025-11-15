@@ -2,12 +2,12 @@
 ---
 //Play this section the first time the player interacts with this NPC at all.
 <<once>>
-    Man: Ah, you must be the new guest for the night. Well, come on in, it's nice and cool here.
-    You: Hello, do you know anything about the boy’s room where the music is coming from?
-    Man: Oh, you mean my son? Yes, he's been going through a “rock and roll” phase recently.
-    Man: I don’t mind it much, so long as it stays in that room. It's been a bit too loud today though.
+    Man: Ah, you must be a new guest. Well, come on in, it's nice and cool here.
+    You: Hello, do you know anything about the key to the boy’s room where the music is coming from?
+    Man: Oh, you mean my son’s room? Yes, he's been going through a “rock and roll” phase recently. He even got a tattoo of that darn “Shadow Sabbath” band on his forearm.
+    Man: I don’t mind it much, so long as it stays in there. It's been a bit too loud today though.
     You: If you can tell me where the key is I’d be happy to go talk to him for you.
-    Man: I wish I could, but I’ve not found the key anywhere in this house. It used to always hang on the same key behind the front desk, I don’t know where it got to. 
+    Man: I wish I could, but I’ve not found the key anywhere in this house. It used to always hang on the same hook behind the front desk, I don’t know where it got to.
     Man: If I were a more suspicious man I’d say it’s almost like it wanted to be lost.
     <<stop>>
     <<endonce>>
