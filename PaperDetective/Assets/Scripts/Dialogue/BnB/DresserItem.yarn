@@ -2,11 +2,10 @@
 ---
 <<once>>
 Narrator: The dresser drawer is slightly open, as though something is blocking it.
-Narrator: You open the drawer slightly, and find a small trophy inside, dented slightly and covered in a small amount of blood…
-<<set $dresserFirst = true>>
-<<endonce>>
+Narrator: You open the drawer slightly, and find a small trophy inside, dented slightly and with a small amount of what appears to be blood…
 <<stop>>
+<<endonce>>
 
-Narrator: There’s a small trophy in the drawer, dented and covered in blood…
+Narrator: There’s a small trophy in the drawer, dented and splashed with blood…
 
 ===
