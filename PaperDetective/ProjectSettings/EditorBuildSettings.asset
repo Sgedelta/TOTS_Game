@@ -23,6 +23,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Airport.unity
     guid: f1c62f7f1fe8f8e45a32b6f79c43b3a9
+  - enabled: 1
+    path: Assets/Scenes/BedNBreakfast/Basement.unity
+    guid: e017967cf2ed4d2488f0ffec30a95855
+  - enabled: 1
+    path: Assets/Scenes/BedNBreakfast/LivingRoom.unity
+    guid: c5ee88f4f2acf6a4d85ec9603fecbec2
+  - enabled: 1
+    path: Assets/Scenes/BedNBreakfast/LowerHallway.unity
+    guid: 6ed8428fef70c32478fac1543136af56
+  - enabled: 1
+    path: Assets/Scenes/BedNBreakfast/MansRoom.unity
+    guid: 88ef9d75fd522f14b942c9ef6c1d98e8
+  - enabled: 1
+    path: Assets/Scenes/BedNBreakfast/UpperHallway.unity
+    guid: e0bb35a6f340b5d40a9b2bbc133f3e5f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
