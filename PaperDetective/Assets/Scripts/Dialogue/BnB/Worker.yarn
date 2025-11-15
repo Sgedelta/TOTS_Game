@@ -1,5 +1,9 @@
 ﻿title: Worker
 ---
+
+//Check if the player has talked to Resident 1 to learn about the noise from the basement.
+<<declare $worker_playerKnowsBasement = false>>
+
 //Play this section the first time the player interacts with this NPC at all.
 <<once>>
     Worker: Hello, are you a guest here by any chance?
@@ -8,8 +12,7 @@
     Worker: I never get to clean that room, as the hosts’ son is almost always in there.
     Worker: I dropped the key somewhere, but now I don’t know how to get it back.
     You: Well, does anyone else have anything to help?
-    Worker: You’re free to ask, but I doubt they would have anything. 
-    <<set $worker_firstTalk = true>>
+    Worker: You’re free to ask, but I doubt they would have anything.
     <<endonce>>
     <<stop>>
 
@@ -27,25 +30,25 @@
     You: Do you know where he is?
     Worker: No, I’m not too familiar with his habits, but he does normally turn everything off before leaving the house.
     Worker: Thank you for your help though, I’ll see what I can fix up in here before his return.
-    <<set $worker_afterDoor = true>>
     <<endonce>>
     <<stop>>
 
     //Play this if the player learns about the noise coming from the basement(from Resident 1).
-    <<if $worker_playerKnowsBasement == true && $worker_keyGiven == false>>
+    <<if $worker_playerKnowsBasement == true>>
+        <<once>>
         Worker: Ah, I’m just about wrapped up here. Is there anything you need?
         You: Yes, someone said there was a noise coming from the basement. Do you have a way in there?
         Worker: Ah, yes, I actually have that key with me!
         Worker: I’ll just be finishing up here before I head down there. You can have the key if you’d like to check it out first.
         You: Thank you, I’ll be right back then.
         <<Add Inventory BasementKey>>
-        <<set $worker_keyGiven = true>>
+        <<endonce>>
         <<stop>>
 
     //Play this final chunk after all other dialogue has been exhausted.
-    <<else>>
-        Worker: Just use that key to get into the basement, I’ll be right after you.
-        <<stop>>
+    Worker: Just use that key to get into the basement, I’ll be right after you.
+    <<stop>>
+
     <<endif>>
 
 <<endif>>

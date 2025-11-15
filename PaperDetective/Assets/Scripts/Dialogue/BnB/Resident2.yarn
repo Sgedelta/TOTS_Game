@@ -10,7 +10,6 @@
     You: I’ll take that screwdriver off your hands, then.
     Resident: Sure thing! Good luck!
     <<AddItem Inventory Screwdriver>>
-    <<set $resident2_firstTalk = true>>
     <<endonce>>
     <<stop>>
 
@@ -25,7 +24,6 @@
     Resident: I see that screwdriver was helpful after all! Thanks, mate!
     You: Thanks, and no problem, but do you know where the guy from that room is?
     Resident: Sorry, I have no idea. Maybe someone else might know?
-    <<set $resident2_afterDoor = false>>
     <<endonce>>
     <<stop>>
 

@@ -9,7 +9,6 @@
     Resident: I’ve been here since yesterday, and it’s been awful.
     Resident: It started fine early last night, but then it suddenly got very loud and hasn’t turned off since.
     Resident: If you could turn off that music so I can get some sleep, I’d really appreciate it.
-    <<set $resident1_firstTalk = true>>
     <<endonce>>
     <<stop>>
 
@@ -27,7 +26,6 @@
 
     //Remember to enable the Worker to give the player the key.
     <<set $worker_playerKnowsBasement = true>>
-    <<set $resident1_afterDoor = false>>
     <<endonce>>
     <<stop>>
 

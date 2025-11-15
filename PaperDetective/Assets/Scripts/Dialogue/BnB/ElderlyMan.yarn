@@ -9,7 +9,6 @@
     You: I’d actually like to get into that room, the hostess asked me to get him to turn it down.
     Man: I wish I could help with that, but I’ve not found the key anywhere in this house, and my back ain’t what it used to be, boy. 
     Man: Tell you what, so long as my property ain’t damaged, you get in that room however you want.
-    <<set $elderlyMan_firstTalk = true>>
     <<endonce>>
     <<stop>>
 
@@ -26,7 +25,6 @@
     You: I also found some scratch marks along the floor, I think something might’ve happened.
     Man: Huh, that’s odd. The cat leaves scratches on the basement door all the time, but it never goes into his room…
     Man: Oh well, thank you for turning off the noise, he’ll probably come back in the morning.
-    <<set $elderlyMan_afterDoor = true>>
     <<endonce>>
     <<stop>>
 
