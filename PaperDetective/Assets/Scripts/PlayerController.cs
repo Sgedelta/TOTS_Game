@@ -16,6 +16,17 @@ public class PLayerController : MonoBehaviour
     [SerializeField] private float speed;
 
     [SerializeField] private bool canMove = true;
+    public bool CanMove { 
+        get { return canMove; } 
+        set { canMove = value; }
+    }
+
+    [SerializeField] private bool canInteract = true;
+    public bool CanInteract
+    {
+        get { return canInteract; }
+        set { canInteract = value; }
+    }
 
     [SerializeField] private Rigidbody2D rb;
     private float horizontal;
@@ -64,7 +75,8 @@ public class PLayerController : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-        Debug.Log("interact");
+        if(!canInteract)
+            return;
         List<Collider2D> colliders = new List<Collider2D>();
         ContactFilter2D contactFilter = new ContactFilter2D();
         contactFilter.layerMask = LayerMask.GetMask("Talk");
