@@ -25,7 +25,8 @@ public class Inventory : MonoBehaviour
     private DialogueRunner dialogue;
 
     public static Inventory instance;
-
+    public bool canInteract = true;
+    
     /// <summary>
     /// This determines the singular instance of GameManager that will exist across all scenes.
     /// </summary>
