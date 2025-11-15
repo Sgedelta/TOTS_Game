@@ -6,11 +6,11 @@
     You: Hello, do you know anything about the boy’s room where the music is coming from?
     Man: Oh, you mean my son? Yes, he's been going through a “rock and roll” phase recently.
     Man: I don’t mind it much, so long as it stays in that room. It's been a bit too loud today though.
-    You: I’d actually like to get into that room, the hostess asked me to get him to turn it down.
-    Man: I wish I could help with that, but I’ve not found the key anywhere in this house, and my back ain’t what it used to be, boy. 
-    Man: Tell you what, so long as my property ain’t damaged, you get in that room however you want.
-    <<endonce>>
+    You: If you can tell me where the key is I’d be happy to go talk to him for you.
+    Man: I wish I could, but I’ve not found the key anywhere in this house. It used to always hang on the same key behind the front desk, I don’t know where it got to. 
+    Man: If I were a more suspicious man I’d say it’s almost like it wanted to be lost.
     <<stop>>
+    <<endonce>>
 
 //Play this section AFTER first interaction but BEFORE the first door opens.
 <<if $sonRoomOpen == false>>
@@ -23,10 +23,10 @@
     You: I got into the room, but your son wasn’t anywhere in there.
     Man: Oh, he probably just ran off with his friends and forgot to turn off the music.
     You: I also found some scratch marks along the floor, I think something might’ve happened.
-    Man: Huh, that’s odd. The cat leaves scratches on the basement door all the time, but it never goes into his room…
+    Man: Huh, that’s odd. It was probably just the cat. Damn thing’s so anxious that it keeps scratching everything.
     Man: Oh well, thank you for turning off the noise, he’ll probably come back in the morning.
-    <<endonce>>
     <<stop>>
+    <<endonce>>
 
     //Play this dialogue after all other interactions are exhausted.
     Man: I’ll be heading to bed here soon, my son will probably be back from wherever he ran off to in the morning.

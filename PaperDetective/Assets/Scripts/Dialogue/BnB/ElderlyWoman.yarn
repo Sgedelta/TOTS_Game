@@ -5,17 +5,20 @@
     Woman: Oh, hello! Will you be staying with us tonight?
     You: Yes, please, I just need a place to stay tonight and I’ll be out of your hair. My name is Jeff.
     Woman: Jeff?! Oh, dear goodness, I had no idea such a famous international detective was here tonight!
-        -> No, I’m afraid that name is just a coincidence.
+    No, I’m afraid that name is just a coincidence.
     Woman: Oh, there’s no need to worry, I’m a big fan of police stories and such, I’ve heard so much about you!
-    <<jump ElderlyWomanQuest>>
-        -> Sure thing.
-    <<jump ElderlyWomanQuest>>
-    <<endonce>>
+    Woman: Say, could I ask you to do something for me? 
+    Woman: My son has been holed up in his room, and his music is disturbing some of the guests. We’ve tried knocking on the door, but he just won’t answer. 
+    Woman: We used to have a key around here somewhere, but it appears it ran off somewhere. Would you be so kind as to find it and ask my son to turn down the music?
+    Woman: It should be a trivial task for a detective of your quality, and you can have a room for free.
+    You: …I guess I have enough time to look into it.
+    Woman: Oh, that’s so good to hear! See if the handyman can help you at all. My son’s room is the first door after you get up the stairs
+    <<RevealNote MenuManager openDoor>>
     <<stop>>
+    <<endonce>>
 
 //This chunk plays after the first interaction and BEFORE the first door is opened.
 <<if $sonRoomOpen == false>>
-    Woman: I wish I could help more, sir, but I’m just so darn tired.
     Woman: If you can get my son to turn down his music for the guests, you can have a room free of charge tonight.
     <<stop>>
 
@@ -27,12 +30,13 @@
     You: Do you not know where he could be?
     Woman: No, he would’ve said something if he left. 
     Woman Please, dear, I hate to ask this, but could you find my son? I don’t want him to get hurt.
+    Woman: I’ll throw in a free breakfast on top of your room if you find him.
 
     //Add note for player to find the son.
     <<RevealNote MenuManager findSon>>
 
-    <<endonce>>
     <<stop>>
+    <<endonce>>
 
     //Play these lines only after all other dialogues have been exhausted.
     Woman: Have you found my son yet?
@@ -40,19 +44,4 @@
     Woman: Dear, oh dear, where could he be?
 
 <<endif>>
-===
-
-title: ElderlyWomanQuest
----
-Woman: Say, could I ask you to do something for me? I promise, it's nothing too difficult, and you can have a room for free.
-You: …I guess I have enough time, what is it?
-Woman: Thank you very much, dear! 
-Woman: My son is holed up in his room, and his music is a little too loud for the guests.
-Woman: My husband and I haven’t been able to find the key, could you please help find it and ask him to turn down the music?
-You: Alright, I’ll help if I can.
-Woman: Oh, that’s so good to hear! See if the maid/butler can help you at all.
-
-// ---------- Add note for "Open the door" ---------------
-<<RevealNote MenuManager openDoor>>
-
 ===
