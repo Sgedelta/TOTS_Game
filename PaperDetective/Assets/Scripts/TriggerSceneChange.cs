@@ -16,17 +16,23 @@ public class TriggerSceneChange : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<PLayerController>())
+        PLayerController pc = collision.gameObject.GetComponent<PLayerController>();
+        if (pc)
         {
-            //get the player's persistent data - will need an idField and more logic to do any item, for now only setting player locations
-            //  if this isn't working, check the Persistent Data Checker ID on the player is set correctly
-            GameManager.instance.AllPersistentData[collision.gameObject.GetComponent<PersistentDataChecker>().ObjectID].CurrentObjectState =
-                entranceName; // note: Update if player object state ever gets more complex...
-
-
-
-            //load the next scene
-            sceneManager.ChangeScene(sceneName);
+            GoToScene(pc);
         }
+    }
+
+    public void GoToScene(PLayerController pc)
+    {
+        //get the player's persistent data - will need an idField and more logic to do any item, for now only setting player locations
+        //  if this isn't working, check the Persistent Data Checker ID on the player is set correctly
+        GameManager.instance.AllPersistentData[pc.gameObject.GetComponent<PersistentDataChecker>().ObjectID].CurrentObjectState =
+            entranceName; // note: Update if player object state ever gets more complex...
+
+
+
+        //load the next scene
+        sceneManager.ChangeScene(sceneName);
     }
 }

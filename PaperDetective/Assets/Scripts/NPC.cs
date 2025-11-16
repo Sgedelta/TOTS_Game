@@ -38,9 +38,10 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
-
+        float minRange = Random.Range(0.2f, 1.8f);
+        if (NPCAudioBounds == Vector2.zero) NPCAudioBounds = new Vector2(minRange, minRange + 0.5f);
     }
-    [SerializeField] private Vector2 bitRange;
+    //[SerializeField] private Vector2 bitRange;
 
 
     // Update is called once per frame
@@ -73,7 +74,7 @@ public class NPC : MonoBehaviour
 
     public void Talk()
     {
-        AudioManager.instance.PitchBounds = NPCAudioBounds;
+        AudioManager.instance.SetPitchNPC(NPCAudioBounds);
         if (!SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().IsDialogueRunning)
             SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().StartDialogue(startNode);
     }
