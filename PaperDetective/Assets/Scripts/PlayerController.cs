@@ -47,6 +47,8 @@ public class PLayerController : MonoBehaviour
     private void Start()
     {
         GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+
+        GetComponent<PlayerInput>().actions.FindAction("attack").performed += Inventory.instance.OnClick;
     }
 
     // Update is called once per frame

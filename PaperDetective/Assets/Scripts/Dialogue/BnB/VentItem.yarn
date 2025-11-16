@@ -1,10 +1,10 @@
 ﻿title: VentItem
 ---
-<<declare $hasStringScrewdriver = false>>
+<<declare $hasBnBStringScrewdriver = false>>
 
-<<Check Inventory "StringScrewdriver">>
+<<Check Inventory "BnBStringScrewdriver">>
 
-<<if $hasStringScrewdriver == false>>
+<<if $hasBnBStringScrewdriver == false>>
     Narrator: There seems to be something glinting within the vent.
     Narrator: If only you had something to reach into the vent…
     <<stop>>
@@ -13,7 +13,7 @@
     <<once>>
         Narrator: You lower the screwdriver into the vent, and the key slides onto the magnetic screwdriver.
         Narrator: You manage to pull the key to the son’s room out of the vent.
-        <<AddItem Inventory BnBBeedroomKey>>
+        <<AddItem Inventory BnBBedroomKey>>
     <<stop>>
     <<endonce>>
 

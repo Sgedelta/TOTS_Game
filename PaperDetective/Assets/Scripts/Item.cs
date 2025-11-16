@@ -22,7 +22,7 @@ public class Item : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        inventory = Inventory.instance;
         sourcePos = transform.position;
         targetPos = transform.position;
         itemMask = LayerMask.GetMask("Item");

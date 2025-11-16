@@ -13,7 +13,7 @@
     Woman: It should be a trivial task for a detective of your caliber, and you can have a room for free in return.
     You: …I guess I have enough time to look into it.
     Woman: Oh, that’s so good to hear! See if the handyman can help you at all. My son’s room is the first door after you get up the stairs
-    <<RevealNote MenuManager openDoor>>
+    <<RevealNote MenuManager BnBOpenDoor>>
     <<stop>>
     <<endonce>>
 
@@ -33,7 +33,7 @@
     Woman: I’ll throw in a free breakfast on top of your room if you find him.
 
     //Add note for player to find the son.
-    <<RevealNote MenuManager findSon>>
+    <<RevealNote MenuManager BnBFindSon>>
 
     <<stop>>
     <<endonce>>

@@ -8,11 +8,12 @@ public class SingletonComponent : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         if(Instances.TryGetValue(gameObject.name, out GameObject instance) && instance != null && instance != this.gameObject)
         {
-            Destroy(this);
+            Debug.Log($"Destroying {gameObject.name} because something already exists at key {gameObject.name}!");
+            Destroy(this.gameObject);
             return;
         }
 

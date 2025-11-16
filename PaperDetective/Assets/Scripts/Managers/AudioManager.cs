@@ -76,6 +76,13 @@ public class AudioManager : MonoBehaviour
 
     public void SpeechCharacterTyped()
     {
+        if(speechPlayer == null)
+        {
+            Debug.LogError("speechPlayer is Null!");
+            return;
+        }
+
+
         speechPlayer.pitch = Random.Range(pitchBounds.x, pitchBounds.y);
         speechPlayer.Play();
     }

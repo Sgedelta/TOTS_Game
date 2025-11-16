@@ -39,38 +39,22 @@ public class Inventory : MonoBehaviour
             instance = this;
 
             //This method informs Unity to retain the object this script is attached to when changing scenes.
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(this.transform.parent.gameObject);
         }
 
         else
         {
             //If there is already an instance of the Inventory, then delete the object this is attached to.
             //This ensures that only one instance of the Inventory exists across all scenes.
-            Destroy(this.gameObject);
+            Destroy(this.transform.parent.gameObject);
         }
     }
 
     private void Start()
     {
-        RectTransform trans = GetComponent<RectTransform>();
-
-        //clamp capacity
-        capacity = (int)Mathf.Clamp(capacity, 0, trans.rect.width / (slotPrefab.GetComponent<RectTransform>().rect.width + slotPaddingMin * 2));
-
-        //calculate box width
-        float boxWidth = trans.rect.width / capacity;
-
 
         //create slots
-        for(int i = 0; i < capacity; i++)
-        {
-            GameObject slot = Instantiate(slotPrefab, trans);
-            
-            invSlots.Add(slot);
-
-            slot.GetComponent<RectTransform>().localPosition = new Vector3(boxWidth * (i - (capacity / 2) + 0.5f), 0, 0); //note: might have to update z for order
-
-        }
+        ResetAllInventorySlots();  
 
         itemsInInv = GameManager.instance.items;
         cam = Camera.main;
@@ -84,13 +68,40 @@ public class Inventory : MonoBehaviour
         Sort();
     }
 
+    private void ResetAllInventorySlots()
+    {
+        while (invSlots.Count > 0)
+        {
+            GameObject slot = invSlots[0];
+            invSlots.RemoveAt(0);
+            Destroy(slot);
+        }
+
+        RectTransform trans = GetComponent<RectTransform>();
+
+        //clamp capacity
+        capacity = (int)Mathf.Clamp(capacity, 0, trans.rect.width / (slotPrefab.GetComponent<RectTransform>().rect.width + slotPaddingMin * 2));
+
+        //calculate box width
+        float boxWidth = trans.rect.width / capacity;
+
+        for (int i = 0; i < capacity; i++)
+        {
+            GameObject slot = Instantiate(slotPrefab, trans);
+
+            invSlots.Add(slot);
+
+            slot.GetComponent<RectTransform>().localPosition = new Vector3(boxWidth * (i - (capacity / 2) + 0.5f), 0, 0); //note: might have to update z for order
+
+        }
+    }
+
     public void OnClick(InputAction.CallbackContext context)
     {
         if (!canInteract)
         {
             return;
         }
-        //Debug.Log("click1");
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(0, 1), 0.01f, LayerMask.GetMask("Item"));
 
@@ -125,6 +136,7 @@ public class Inventory : MonoBehaviour
                     if (inventory.Count < 10)
                     {
                         inventory.Add(hitItem.Template.id, hitItem);
+                        Debug.Log($"Added {hitItem.Template.id}");
                     }
                     // if there are none, return it to where it was
                     else
@@ -137,7 +149,7 @@ public class Inventory : MonoBehaviour
                     inventory.Add(hitItem.Template.id, hitItem);
                 }
             }
-            Sort();
+            //Sort();
         }
 
     }
@@ -148,7 +160,7 @@ public class Inventory : MonoBehaviour
         inventory.Add(item.Template.id, item);
         itemsInInv.Add(item);
         GameManager.instance.items = itemsInInv;
-        Sort();
+        //Sort();
     }
 
 
@@ -161,7 +173,7 @@ public class Inventory : MonoBehaviour
             inventory.Remove(item.Template.id);
         else
             Debug.Log("That item doesn't exist in inventory");
-        Sort();
+        //Sort();
     }
 
     [YarnCommand("RemoveItem")]
@@ -178,12 +190,13 @@ public class Inventory : MonoBehaviour
 
         item.amount = 0;
 
-        Sort();
+        //Sort();
     }
 
     public void Sort()
     {
         int x = 0;
+
 
         //note: a little quick and dirty, won't update things "outside" of inventory - should really handle this on inventory adding side\
         //fill slots with images and position items into clickable location
@@ -200,6 +213,8 @@ public class Inventory : MonoBehaviour
         //make all unfilled slots empty
         for(int i = x;  i < capacity; i++)
         {
+            Debug.Log($"{i}: Capacity is {capacity}");
+            Debug.Log($"{i}: {invSlots[i].transform}");
             invSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
             invSlots[i].transform.GetChild(0).GetComponent<Image>().color = Color.clear;
         }

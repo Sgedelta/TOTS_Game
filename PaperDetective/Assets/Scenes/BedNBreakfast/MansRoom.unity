@@ -377,7 +377,7 @@ Transform:
   m_GameObject: {fileID: 57887476}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1088815, y: -2.874052, z: 0.73}
+  m_LocalPosition: {x: 4.1088815, y: -1.5249119, z: 0.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -407,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713521548945097669, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.601384
+      value: -6.252244
       objectReference: {fileID: 0}
     - target: {fileID: 5713521548945097669, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1036,7 +1036,7 @@ Transform:
   m_GameObject: {fileID: 388711167}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.10372916, w: 0.9946056}
-  m_LocalPosition: {x: 4.5, y: -9.46, z: -3.27}
+  m_LocalPosition: {x: 4.5, y: -8.11086, z: -3.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   speed: 0
   moveTo: []
   moving: 0
-  closeEnoughRadius: 0
+  closeEnoughRadius: 0.5
   startNode: RecordItem
   NPCAudioBounds: {x: 1, y: 1.5}
   bitRange: {x: 0, y: 0}
@@ -1348,7 +1348,7 @@ Transform:
   m_GameObject: {fileID: 422326192}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.68, y: -8.01, z: -0.36}
+  m_LocalPosition: {x: 2.68, y: -6.66086, z: -0.36}
   m_LocalScale: {x: 0.61109, y: 0.61109, z: 0.61109}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1370,7 +1370,7 @@ MonoBehaviour:
   speed: 0
   moveTo: []
   moving: 0
-  closeEnoughRadius: 0
+  closeEnoughRadius: 0.5
   startNode: BedItem
   NPCAudioBounds: {x: 1, y: 1.5}
   bitRange: {x: 0, y: 0}
@@ -1408,7 +1408,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422326192}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1528,7 +1528,7 @@ Transform:
   m_GameObject: {fileID: 519030862}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.66, y: -6.69, z: -1.09}
+  m_LocalPosition: {x: -5.66, y: -5.34086, z: -1.09}
   m_LocalScale: {x: 0.79671, y: 0.79671, z: 0.79671}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1705,7 +1705,7 @@ Transform:
   m_GameObject: {fileID: 618147978}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.3, y: -9.03, z: -1.21}
+  m_LocalPosition: {x: 7.3, y: -7.6808596, z: -1.21}
   m_LocalScale: {x: 0.81438, y: 0.81438, z: 0.81438}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1727,7 +1727,7 @@ MonoBehaviour:
   speed: 0
   moveTo: []
   moving: 0
-  closeEnoughRadius: 0
+  closeEnoughRadius: 0.5
   startNode: BnBDesk
   NPCAudioBounds: {x: 1, y: 1.5}
   bitRange: {x: 0, y: 0}
@@ -2636,7 +2636,7 @@ Transform:
   m_GameObject: {fileID: 1093730312}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.84, y: -7.81, z: -0.54}
+  m_LocalPosition: {x: -2.84, y: -6.46086, z: -0.54}
   m_LocalScale: {x: 0.62877, y: 0.62877, z: 0.62877}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2658,7 +2658,7 @@ MonoBehaviour:
   speed: 0
   moveTo: []
   moving: 0
-  closeEnoughRadius: 0
+  closeEnoughRadius: 0.5
   startNode: DresserItem
   NPCAudioBounds: {x: 1, y: 1.5}
   bitRange: {x: 0, y: 0}
@@ -3049,7 +3049,7 @@ Transform:
   m_GameObject: {fileID: 1544591701}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.833664, y: 20.85086, z: -0.9799852}
+  m_LocalPosition: {x: 49.833664, y: 22.2, z: -0.9799852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3400,7 +3400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735989715174338578, guid: f8d35b216917f7146a39da3390e5b06b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.98
+      value: -4.63086
       objectReference: {fileID: 0}
     - target: {fileID: 4735989715174338578, guid: f8d35b216917f7146a39da3390e5b06b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3531,7 +3531,7 @@ Transform:
   m_GameObject: {fileID: 1872382579}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: -9.38, z: 0}
+  m_LocalPosition: {x: 0.05, y: -8.03086, z: 0}
   m_LocalScale: {x: 0.82322, y: 0.82322, z: 0.82322}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3553,7 +3553,7 @@ MonoBehaviour:
   speed: 0
   moveTo: []
   moving: 0
-  closeEnoughRadius: 0
+  closeEnoughRadius: 0.5
   startNode: RugItem
   NPCAudioBounds: {x: 1, y: 1.5}
   bitRange: {x: 0, y: 0}
