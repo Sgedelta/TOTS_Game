@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b0926bca2b59f49a0fe06644c75234, type: 3}
+  m_Name: BnBScrewdriver
+  m_EditorClassIdentifier: 
+  itemSprite: {fileID: -2138590708647353672, guid: fe83db5d0d768b94894bce99cd1cfb88, type: 3}
+  id: BnBScrewdriver
+  displayName: A Screwdriver with a Magnetic Tip
+  defaultAmount: 1
+  madeFromItems: []
+  madeFromAmounts: []
+  usedIn:
+  - {fileID: 11400000, guid: de9f69bc872d9734e82ccd997ab65c9a, type: 2}
