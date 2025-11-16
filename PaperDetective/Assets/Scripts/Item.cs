@@ -1,6 +1,3 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -41,8 +38,6 @@ public class Item : MonoBehaviour
         {
             transform.position = targetPos;
         }
-
-        Debug.Log($"{template.id}: {Inventory.instance.CheckItem(template.id)}");
 
         /*
         if (targetPos != transform.position)

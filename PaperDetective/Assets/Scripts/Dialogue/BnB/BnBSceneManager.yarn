@@ -4,4 +4,5 @@
 
 //Universal bool that checks if the door is open or not.
 <<declare $sonRoomOpen = false>>
+<<declare $basementDoorOpen = false>>
 ===

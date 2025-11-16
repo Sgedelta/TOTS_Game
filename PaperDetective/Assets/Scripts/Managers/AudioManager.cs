@@ -50,7 +50,6 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
-        nameText = dialoguePresenter.characterNameText;
     }
     void Start()
     {

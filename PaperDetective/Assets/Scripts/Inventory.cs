@@ -145,7 +145,10 @@ public class Inventory : MonoBehaviour
                     {
                         Inventory.instance.inventory.Add(hitItem.Template.id, hitItem);
                         DontDestroyOnLoad(hitItem.gameObject);
-                        //Debug.Log($"Added {hitItem.Template.id}");
+                        if(GameManager.instance.AllPersistentData.ContainsKey(hitItem.Template.id))
+                        {
+                            GameManager.instance.AllPersistentData[hitItem.Template.id].KeepOnLoad = false;
+                        }
                     }
                     // if there are none, return it to where it was
                     else
@@ -157,7 +160,10 @@ public class Inventory : MonoBehaviour
                 {
                     Inventory.instance.inventory.Add(hitItem.Template.id, hitItem);
                     DontDestroyOnLoad(hitItem.gameObject);
-                    //Debug.Log($"Added {hitItem.Template.id} from failed interaction call");
+                    if (GameManager.instance.AllPersistentData.ContainsKey(hitItem.Template.id))
+                    {
+                        GameManager.instance.AllPersistentData[hitItem.Template.id].KeepOnLoad = false;
+                    }
                 }
             }
             //Sort();
@@ -168,6 +174,13 @@ public class Inventory : MonoBehaviour
     [YarnCommand("AddItem")]
     public void Add(Item item)
     {
+        if(Inventory.instance.inventory.ContainsKey(item.Template.id))
+        {
+            Inventory.instance.inventory[item.Template.id].amount += item.amount;
+            return;
+        }
+
+
         Inventory.instance.inventory.Add(item.Template.id, item);
         DontDestroyOnLoad(item.gameObject);
         itemsInInv.Add(item);
