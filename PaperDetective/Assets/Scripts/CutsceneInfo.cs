@@ -1,6 +1,7 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
+
 /// <summary>
 /// Author: Carl Browning
 /// Purpose: This class holds all the info related to a cutscene and the methods Yarn needs to advance it
@@ -13,7 +14,7 @@ public class CutsceneInfo : MonoBehaviour
     /// If an object is panned to multiple times, it should appear multiple times in this list.
     /// </summary>
     public List<Transform> speakers;
-
+    [YarnCommand("changeSpeaker")]
     public void ChangeSpeaker()
     {
         CutsceneManager.instance.SwapTarget(speakers[0]);

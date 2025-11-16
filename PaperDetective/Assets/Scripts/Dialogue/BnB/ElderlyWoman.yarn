@@ -9,8 +9,8 @@
     Woman: Oh, there’s no need to worry, I’m a big fan of police stories and such, I’ve heard so much about you!
     Woman: Say, could I ask you to do something for me? 
     Woman: My son has been holed up in his room, and his music is disturbing some of the guests. We’ve tried knocking on the door, but he just won’t answer. 
-    Woman: We used to have a key around here somewhere, but it appears it ran off somewhere. Would you be so kind as to find it and ask my son to turn down the music?
-    Woman: It should be a trivial task for a detective of your quality, and you can have a room for free.
+    Woman: We used to have a key around here, but it appears to have run off somewhere. Would you be so kind as to find it and ask my son to turn down the music?
+    Woman: It should be a trivial task for a detective of your caliber, and you can have a room for free in return.
     You: …I guess I have enough time to look into it.
     Woman: Oh, that’s so good to hear! See if the handyman can help you at all. My son’s room is the first door after you get up the stairs
     <<RevealNote MenuManager openDoor>>
@@ -25,11 +25,11 @@
 //Plays during the FIRST interaction AFTER the door is opened.
 <<else>>
     <<once>>
-    You: Hello, ma’am. I got into the room to turn off the music, but your son wasn’t in there.
+    You: Hello, ma’am. I got into the room to turn off the music, but your son wasn’t there.
     Woman: Really? Oh, dear, where could he be?
-    You: Do you not know where he could be?
-    Woman: No, he would’ve said something if he left. 
-    Woman Please, dear, I hate to ask this, but could you find my son? I don’t want him to get hurt.
+    You: Do you have any ideas?
+    Woman: No, he would’ve said something if he left…
+    Woman: Please, dear, I hate to ask this, but could you find my son? I worry for his safety, especially with all the recent talk of murders.
     Woman: I’ll throw in a free breakfast on top of your room if you find him.
 
     //Add note for player to find the son.
