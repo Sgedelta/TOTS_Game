@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVisible: 0
   isUsed: 0
-  noteID: findSon
+  noteID: BnBFindSon
   noteContent: Find where the son went
   parentInstance: {fileID: 11400000, guid: 04b80e7d06f5bb042b0832574017af57, type: 2}
   noteOrder: 0

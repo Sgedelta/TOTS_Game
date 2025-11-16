@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private int capacity;
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private float slotPaddingMin = 25;
-    SortedList<string, Item> inventory = new SortedList<string, Item>();
+    private SortedList<string, Item> inventory;
     [SerializeField] private List<Item> itemsInInv;
     private List<GameObject> invSlots = new List<GameObject>();
     Camera cam;
@@ -40,18 +40,21 @@ public class Inventory : MonoBehaviour
 
             //This method informs Unity to retain the object this script is attached to when changing scenes.
             DontDestroyOnLoad(this.transform.parent.gameObject);
+            Debug.Log("Keeping the inventory " + this.transform.parent.gameObject.name);
         }
-
         else
         {
+            Debug.Log("Removing the inventory " + this.transform.parent.gameObject.name);
             //If there is already an instance of the Inventory, then delete the object this is attached to.
             //This ensures that only one instance of the Inventory exists across all scenes.
             Destroy(this.transform.parent.gameObject);
+
         }
     }
 
     private void Start()
     {
+        inventory = new SortedList<string, Item>();
 
         //create slots
         ResetAllInventorySlots();  
@@ -116,9 +119,10 @@ public class Inventory : MonoBehaviour
                 hit.collider.gameObject.GetComponent<Item>().mouseBound = true;
 
                 // Remove item from inventory and show on mouse
-                if (inventory.ContainsKey(hitItem.Template.id))
+                if (Inventory.instance.inventory.ContainsKey(hitItem.Template.id))
                 {
-                    inventory.Remove(hitItem.Template.id);
+                    Inventory.instance.inventory.Remove(hitItem.Template.id);
+                    Debug.Log($"Removing {hitItem.Template.id} and putting it in mouse");
                     hitItem.GetComponent<SpriteRenderer>().color = Color.white;
                 }
             }
@@ -133,9 +137,9 @@ public class Inventory : MonoBehaviour
                 {
                     // Flash red to suggest failed interaction?
 
-                    if (inventory.Count < 10)
+                    if (Inventory.instance.inventory.Count < 10)
                     {
-                        inventory.Add(hitItem.Template.id, hitItem);
+                        Inventory.instance.inventory.Add(hitItem.Template.id, hitItem);
                         Debug.Log($"Added {hitItem.Template.id}");
                     }
                     // if there are none, return it to where it was
@@ -146,7 +150,8 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    inventory.Add(hitItem.Template.id, hitItem);
+                    Inventory.instance.inventory.Add(hitItem.Template.id, hitItem);
+                    Debug.Log($"Added {hitItem.Template.id} from failed interaction call");
                 }
             }
             //Sort();
@@ -157,7 +162,7 @@ public class Inventory : MonoBehaviour
     [YarnCommand("AddItem")]
     public void Add(Item item)
     {
-        inventory.Add(item.Template.id, item);
+        Inventory.instance.inventory.Add(item.Template.id, item);
         itemsInInv.Add(item);
         GameManager.instance.items = itemsInInv;
         //Sort();
@@ -166,27 +171,28 @@ public class Inventory : MonoBehaviour
 
     public void Remove(Item item)
     {
-        if (itemsInInv.Contains(item)) { itemsInInv.Remove(item); }
-        GameManager.instance.items = itemsInInv;
+        if (itemsInInv.Contains(item)) 
+        { 
+            itemsInInv.Remove(item); 
+            GameManager.instance.items = itemsInInv;
+        }
 
-        if (inventory.ContainsKey(item.Template.id))
-            inventory.Remove(item.Template.id);
+        if (Inventory.instance.inventory.ContainsKey(item.Template.id))
+        {
+            Inventory.instance.inventory.Remove(item.Template.id);
+
+        }
         else
+        {
             Debug.Log("That item doesn't exist in inventory");
+        }
         //Sort();
     }
 
     [YarnCommand("RemoveItem")]
     public void RemoveAndDestroy(Item item)
     {
-        if (itemsInInv.Contains(item)) { itemsInInv.Remove(item); }
-        GameManager.instance.items = itemsInInv;
-
-        if (inventory.ContainsKey(item.Template.id))
-            inventory.Remove(item.Template.id);
-        else
-            Debug.Log("That item doesn't exist in inventory");
-
+        Remove(item);
 
         item.amount = 0;
 
@@ -200,13 +206,13 @@ public class Inventory : MonoBehaviour
 
         //note: a little quick and dirty, won't update things "outside" of inventory - should really handle this on inventory adding side\
         //fill slots with images and position items into clickable location
-        for (int i = 0; i < Mathf.Min(capacity, inventory.Count); i++)
+        for (int i = 0; i < Mathf.Min(capacity, Inventory.instance.inventory.Count); i++)
         {
-            invSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = inventory.Values[i].Template.itemSprite;
+            invSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = Inventory.instance.inventory.Values[i].Template.itemSprite;
             invSlots[i].transform.GetChild(0).GetComponent<Image>().color = Color.white;
-            inventory.Values[i].GetComponent<SpriteRenderer>().color = Color.clear;
+            Inventory.instance.inventory.Values[i].GetComponent<SpriteRenderer>().color = Color.clear;
 
-            inventory.Values[i].targetPos = invSlots[i].transform.position;
+            Inventory.instance.inventory.Values[i].targetPos = invSlots[i].transform.position;
 
             x++;
         }
@@ -223,9 +229,9 @@ public class Inventory : MonoBehaviour
 
     public void TransformItem(Item existingItem, ItemTemplate newItem)
     {
-        inventory.Remove(existingItem.Template.id);
+        Inventory.instance.inventory.Remove(existingItem.Template.id);
         existingItem.InitAs(newItem, 1);
-        inventory.Add(existingItem.Template.id, existingItem);
+        Inventory.instance.inventory.Add(existingItem.Template.id, existingItem);
         Sort();
     }
 
@@ -249,7 +255,15 @@ public class Inventory : MonoBehaviour
     [YarnCommand("Check")]
     public bool CheckItem(string itemName)
     {
-        if (inventory.ContainsKey(itemName))
+        string db = $"{itemName} in the inventory of size {Inventory.instance.inventory.Count}: ";
+        foreach(Item i in Inventory.instance.inventory.Values)
+        {
+            db += i.Template.id + ", ";
+        }
+        Debug.Log(db);
+
+
+        if (Inventory.instance.inventory.ContainsKey(itemName))
         {
             dialogue.VariableStorage.SetValue($"$has{itemName}", true);
         }
