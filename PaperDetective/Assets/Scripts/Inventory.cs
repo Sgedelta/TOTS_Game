@@ -67,6 +67,10 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
+        if(transform.parent.GetComponent<Canvas>().worldCamera != Camera.main)
+        {
+            transform.parent.GetComponent<Canvas> ().worldCamera = Camera.main;
+        }
         Debug.Log("Screen Width : " + Screen.width);
         Sort();
     }
@@ -140,7 +144,8 @@ public class Inventory : MonoBehaviour
                     if (Inventory.instance.inventory.Count < 10)
                     {
                         Inventory.instance.inventory.Add(hitItem.Template.id, hitItem);
-                        Debug.Log($"Added {hitItem.Template.id}");
+                        DontDestroyOnLoad(hitItem.gameObject);
+                        //Debug.Log($"Added {hitItem.Template.id}");
                     }
                     // if there are none, return it to where it was
                     else
@@ -151,7 +156,8 @@ public class Inventory : MonoBehaviour
                 else
                 {
                     Inventory.instance.inventory.Add(hitItem.Template.id, hitItem);
-                    Debug.Log($"Added {hitItem.Template.id} from failed interaction call");
+                    DontDestroyOnLoad(hitItem.gameObject);
+                    //Debug.Log($"Added {hitItem.Template.id} from failed interaction call");
                 }
             }
             //Sort();
@@ -163,6 +169,7 @@ public class Inventory : MonoBehaviour
     public void Add(Item item)
     {
         Inventory.instance.inventory.Add(item.Template.id, item);
+        DontDestroyOnLoad(item.gameObject);
         itemsInInv.Add(item);
         GameManager.instance.items = itemsInInv;
         //Sort();
@@ -219,8 +226,8 @@ public class Inventory : MonoBehaviour
         //make all unfilled slots empty
         for(int i = x;  i < capacity; i++)
         {
-            Debug.Log($"{i}: Capacity is {capacity}");
-            Debug.Log($"{i}: {invSlots[i].transform}");
+            //Debug.Log($"{i}: Capacity is {capacity}");
+            //Debug.Log($"{i}: {invSlots[i].transform}");
             invSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
             invSlots[i].transform.GetChild(0).GetComponent<Image>().color = Color.clear;
         }
@@ -232,6 +239,7 @@ public class Inventory : MonoBehaviour
         Inventory.instance.inventory.Remove(existingItem.Template.id);
         existingItem.InitAs(newItem, 1);
         Inventory.instance.inventory.Add(existingItem.Template.id, existingItem);
+
         Sort();
     }
 
@@ -255,12 +263,14 @@ public class Inventory : MonoBehaviour
     [YarnCommand("Check")]
     public bool CheckItem(string itemName)
     {
+        /*
         string db = $"{itemName} in the inventory of size {Inventory.instance.inventory.Count}: ";
         foreach(Item i in Inventory.instance.inventory.Values)
         {
             db += i.Template.id + ", ";
         }
         Debug.Log(db);
+        */
 
 
         if (Inventory.instance.inventory.ContainsKey(itemName))

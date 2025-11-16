@@ -109,8 +109,10 @@ public class GameManager : MonoBehaviour
     {
         //Get the scene that we start off with.
         currentScene = SceneManager.GetActiveScene();
+        DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+        DialogueSystem.GetComponent<DialogueRunner>().onDialogueStart.AddListener(StartDialogue);
 
-        
+
     }
 
     // Update is called once per frame
@@ -207,5 +209,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("Interacted with " + npc);
         npcList[currentNPC] = npc;
         currentNPC++;
+    }
+
+    public void EndDialogue()
+    {
+        DialogueSystem.GetComponentInChildren<Canvas>().sortingOrder = -1;
+    }
+    
+    public void StartDialogue()
+    {
+        DialogueSystem.GetComponentInChildren<Canvas>().sortingOrder = 3;
     }
 }

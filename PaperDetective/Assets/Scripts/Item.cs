@@ -91,22 +91,19 @@ public class Item : MonoBehaviour
             float distance = 100000;
             Collider2D hitItem = null;
 
-            // Find which object the Item is closest to
-            if (hitColliders.Length > 2)
+            // Find which object the Item is closest to 
+            for (int i = 0; i < hitColliders.Length; i++)
             {
-                for (int i = 0; i < hitColliders.Length; i++)
+                if (hitColliders[i].gameObject == this.gameObject)
                 {
-                    if ((GetComponent<Collider2D>().transform.position - gameObject.transform.position).magnitude < distance)
-                    {
-                        distance = (GetComponent<Collider2D>().transform.position - gameObject.transform.position).magnitude;
-                        hitItem = GetComponent<Collider2D>();
-                    }
+                    continue;
                 }
-            }
-            // if there's only two hitcolliders then take the second one (the first one is a self-report)
-            else if (hitColliders.Length == 2)
-            {
-                hitItem = hitColliders[1];
+
+                if ((hitColliders[i].transform.position - gameObject.transform.position).magnitude < distance)
+                {
+                    distance = (hitColliders[i].transform.position - gameObject.transform.position).magnitude;
+                    hitItem = hitColliders[i];
+                }
             }
             // check the item combinability with that
             if (hitColliders.Length > 1 && hitItem)
@@ -207,7 +204,7 @@ public class Item : MonoBehaviour
         {
             for (int i = 0; i < result.madeFromItems.Length; i++)
             {
-                if (result.madeFromItems[i] == template)
+                if (result.madeFromItems[i].id == template.id)
                 {
                     amount -= amountToMake * result.madeFromAmounts[i];
                     Debug.Log(name + " amount is " + amount);

@@ -48,7 +48,10 @@ public class PLayerController : MonoBehaviour
     {
         GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
 
-        GetComponent<PlayerInput>().actions.FindAction("attack").performed += Inventory.instance.OnClick;
+        GetComponent<PlayerInput>().currentActionMap.FindAction("Attack", true).performed += Inventory.instance.OnClick;
+        GetComponent<PlayerInput>().currentActionMap.FindAction("Attack", true).canceled += Inventory.instance.OnClick;
+
+        Debug.Log("Rebound Attack");
     }
 
     // Update is called once per frame
