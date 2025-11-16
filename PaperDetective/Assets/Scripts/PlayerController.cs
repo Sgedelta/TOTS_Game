@@ -32,20 +32,20 @@ public class PLayerController : MonoBehaviour
     private float horizontal;
     private float vertical;
 
-
-    /// <summary>
-    /// How close the player has to be to an NPC to talk to them
-    /// </summary>
-    [SerializeField] private float talkRadius;
-
     /// <summary>
     /// The NPC you are currently talking to.
     /// </summary>
     [SerializeField] private NPC talkPartner;
 
+
     private void Start()
     {
-       GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+        GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+
+        GetComponent<PlayerInput>().currentActionMap.FindAction("Attack", true).performed += Inventory.instance.OnClick;
+        GetComponent<PlayerInput>().currentActionMap.FindAction("Attack", true).canceled += Inventory.instance.OnClick;
+
+        Debug.Log("Rebound Attack");
     }
 
     // Update is called once per frame
@@ -61,6 +61,8 @@ public class PLayerController : MonoBehaviour
         }    
     
     }
+
+   
 
     /// <summary>
     /// Whenever the player presses a WASD key, this method updates the direction they move accordingly
@@ -78,36 +80,29 @@ public class PLayerController : MonoBehaviour
         if(!canInteract)
             return;
         List<Collider2D> colliders = new List<Collider2D>();
-        ContactFilter2D contactFilter = new ContactFilter2D();
-        contactFilter.layerMask = LayerMask.GetMask("Talk");
-        contactFilter.useLayerMask = true;
 
-        //Get all the things you can talk to within talkRadius
-        Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), talkRadius, contactFilter, colliders);
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (colliders.Count == 0)
-            return;
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(0, 1), 0.01f, LayerMask.GetMask("Talk"));
 
-        //Find the closest NPC
-        Collider2D closest = colliders[0];
-        float closestDistance = Mathf.Abs((transform.position - colliders[0].transform.position).magnitude);
-        for (int i = 1; i < colliders.Count; i++)
+        if (!hit)
         {
-            if (Mathf.Abs((transform.position - colliders[i].transform.position).magnitude) < closestDistance)
+            hit = Physics2D.Raycast(mousePosition, new Vector2(0, 1), 0.01f, LayerMask.GetMask("Door"));
+            Debug.Log(hit.collider);
+
+            if (hit)
             {
-                closest = colliders[i];
-                closestDistance = Mathf.Abs((transform.position - colliders[i].transform.position).magnitude);
+                hit.collider.gameObject.GetComponent<TriggerSceneChange>().GoToScene(this);
             }
         }
-
-        //Talk to said closest NPC
-        if (closest != null)
+        else
         {
-            talkPartner = closest.gameObject.GetComponent<NPC>();
+            talkPartner = hit.collider.gameObject.GetComponent<NPC>();
             talkPartner.Talk();
-            
+
             canMove = false;
         }
+
     }
 
     public void EndDialogue()

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb433bd5773ac14cae93feeb06e546a, type: 3}
+  m_Name: VendTrigger2
+  m_EditorClassIdentifier: 
+  id: Vend2
+  triggerItem: {fileID: 11400000, guid: 028547b08811d0c4dafa0e2c74e0e8fe, type: 2}
+  madeItem: {fileID: 11400000, guid: e1620ed5057183241b302a625d315e44, type: 2}
+  dialogueNode: HookDictionary
+  deleteHeld: 1

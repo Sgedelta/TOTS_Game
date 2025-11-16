@@ -1,0 +1,11 @@
+﻿title: DresserItem
+---
+<<once>>
+Narrator: The dresser drawer is slightly open, as though something is blocking it.
+Narrator: You cautiously open the drawer and find a small trophy inside, dented slightly and flecked with what appears to be blood.
+<<stop>>
+<<endonce>>
+
+Narrator: There’s a small trophy in the drawer, dented and splashed with blood…
+
+===

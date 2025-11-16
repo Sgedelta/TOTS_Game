@@ -1,0 +1,27 @@
+﻿title: DoorToMansRoom
+---
+
+<<if $sonRoomOpen == true>>
+
+Narrator: You swing the door open and enter the room.
+<<TriggerSceneChange SceneChangeToRoom>>
+
+<<else>>
+
+Narrator: A locked door. Music pounds through the walls from inside.
+
+<<endif>>
+
+
+
+===
+
+
+title: BnBMansDoorOpen
+---
+<<set $sonRoomOpen = true>>
+
+Narrator: You insert the key into the lock and turn it with a satisfying click. The door swings open.
+<<TriggerSceneChange SceneChangeToRoom>>
+
+===

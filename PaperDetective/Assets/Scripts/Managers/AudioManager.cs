@@ -18,9 +18,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource speechPlayer;
 
     private TMP_Text nameText;
-
-
-    Vector2 tempPitchBounds = new Vector2(1.0f, 1.5f);
+    public TMP_Text NameText
+    {
+        get { return nameText; }
+        set { nameText = value; }
+    }
+    Vector2 narratorPitch = new Vector2(1.0f, 1.5f);
 
     private Vector2 pitchBounds;
     public Vector2 PitchBounds
@@ -28,7 +31,12 @@ public class AudioManager : MonoBehaviour
         get { return pitchBounds; }
         set { pitchBounds = value; }
     }
-
+    private Vector2 npcPitch = new Vector2(1.0f, 1.5f);
+    public Vector2 NpcPitch
+    {
+        get { return npcPitch; }
+        set { npcPitch = value; }
+    }
     public static AudioManager instance;
 
     private void OnEnable()
@@ -42,7 +50,6 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
-        nameText = dialoguePresenter.characterNameText;
     }
     void Start()
     {
@@ -76,6 +83,13 @@ public class AudioManager : MonoBehaviour
 
     public void SpeechCharacterTyped()
     {
+        if(speechPlayer == null)
+        {
+            Debug.LogError("speechPlayer is Null!");
+            return;
+        }
+
+
         speechPlayer.pitch = Random.Range(pitchBounds.x, pitchBounds.y);
         speechPlayer.Play();
     }
@@ -89,5 +103,15 @@ public class AudioManager : MonoBehaviour
                 source.Play();
             }
         }
+    }
+
+    public void SetPitchNarrator()
+    {
+        pitchBounds = narratorPitch;
+    }
+    public void SetPitchNPC(Vector2 input)
+    {
+        npcPitch = input;
+        pitchBounds = npcPitch;
     }
 }
