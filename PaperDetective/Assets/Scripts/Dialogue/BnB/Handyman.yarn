@@ -13,7 +13,7 @@
     Handyman: Here, you can have some of my equipment if you need it.
     You: I’ll take that screwdriver off your hands, then.
     Handyman: Sure thing! Good luck!
-    <<AddItem Inventory Screwdriver>>
+    <<AddItem Inventory BnBScrewdriver>>
     <<stop>>
     <<endonce>>
 
@@ -37,7 +37,7 @@
         You: Yes, someone said there was a noise coming from the basement. Do you have a way in there?
         Handyman: Ah, yes, I actually have that key with me! I’ll lend it to you if you promise to give it back when you’re done.
         You: Thank you, I’ll be right back then.
-        <<AddItem Inventory BasementKey>>
+        <<AddItem Inventory BnBBasementKey>>
         <<stop>>
         <<endonce>>
 

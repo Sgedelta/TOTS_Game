@@ -6,7 +6,6 @@ using Yarn.Unity;
 
 public class Item : MonoBehaviour
 {
-    Inventory inventory;
     [SerializeField] private ItemTemplate template;
     public ItemTemplate Template { get { return template; } } //getter because we don't want other things overwriting what item this is
 
@@ -22,7 +21,6 @@ public class Item : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        inventory = Inventory.instance;
         sourcePos = transform.position;
         targetPos = transform.position;
         itemMask = LayerMask.GetMask("Item");
@@ -39,10 +37,12 @@ public class Item : MonoBehaviour
         {
             /*targetPos*/ transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-        else if (inventory.CheckItem(template.id))
+        else if (Inventory.instance.CheckItem(template.id))
         {
             transform.position = targetPos;
         }
+
+        Debug.Log($"{template.id}: {Inventory.instance.CheckItem(template.id)}");
 
         /*
         if (targetPos != transform.position)
@@ -56,8 +56,8 @@ public class Item : MonoBehaviour
 
         if (amount <= 0)
         {
-            inventory.Remove(this);
-            inventory.Sort();
+            Inventory.instance.Remove(this);
+            Inventory.instance.Sort();
             Debug.Log("GET REKT SCRUB: " + this.name);
             Destroy(this.gameObject);
         }
@@ -76,7 +76,7 @@ public class Item : MonoBehaviour
         amount = template.defaultAmount * amountToMake;
         if (template.itemSprite)
             GetComponent<SpriteRenderer>().sprite = GetComponent<Item>().template.itemSprite;
-        gameObject.name = template.displayName;
+        gameObject.name = template.id;
     }
 
     public bool CheckInteraction()
@@ -229,11 +229,11 @@ public class Item : MonoBehaviour
     public void CreateItem(ItemTemplate temp, int amount)
     {
         // Instantiate new Item (in the proper amount) and place into inventory.
-        GameObject madeItem = Instantiate(inventory.NewItemPrefab);
+        GameObject madeItem = Instantiate(Inventory.instance.NewItemPrefab);
         Debug.Log("New Item is: " + madeItem.name);
         madeItem.GetComponent<Item>().InitAs(temp, amount);
-        inventory.Add(madeItem.GetComponent<Item>());
-        inventory.Sort();
+        Inventory.instance.Add(madeItem.GetComponent<Item>());
+        Inventory.instance.Sort();
     }
 
     /// <summary>
