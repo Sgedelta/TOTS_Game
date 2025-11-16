@@ -48,6 +48,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private string currentSceneID;
 
+    private Dictionary<string, PersistentData> allPersistentData;
+    public Dictionary<string, PersistentData> AllPersistentData {  get { return allPersistentData; } }  
+
+
     //Keep track of the player's objective across scenes.
     private string currentObjective;
 
@@ -95,6 +99,9 @@ public class GameManager : MonoBehaviour
             //This ensures that only one instance of the GameManager exists across all scenes.
             Destroy(this.gameObject);
         }
+
+        //this needs to exist for other Start methods (persistentDataCheckers)
+        allPersistentData = new Dictionary<string, PersistentData>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -102,6 +109,8 @@ public class GameManager : MonoBehaviour
     {
         //Get the scene that we start off with.
         currentScene = SceneManager.GetActiveScene();
+
+        
     }
 
     // Update is called once per frame

@@ -43,9 +43,10 @@ public class PLayerController : MonoBehaviour
     /// </summary>
     [SerializeField] private NPC talkPartner;
 
+
     private void Start()
     {
-       GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
+        GameManager.instance.DialogueSystem.GetComponent<DialogueRunner>().onDialogueComplete.AddListener(EndDialogue);
     }
 
     // Update is called once per frame
@@ -61,6 +62,8 @@ public class PLayerController : MonoBehaviour
         }    
     
     }
+
+   
 
     /// <summary>
     /// Whenever the player presses a WASD key, this method updates the direction they move accordingly
