@@ -3,7 +3,7 @@
 <<once>>
 Narrator: The rug lies unevenly in front of the door, bunched up oddly.
 Narrator: You try to straighten it out with your foot by dragging it to one side.
-Narrator: As you do, you realize the rug is covering several large scratch marks on the floor in front of the door.
+Narrator: As you do, you realize the rug is covering several <color="blue">large scratch marks</color> on the floor in front of the door.
 <<stop>>
 <<endonce>>
 
