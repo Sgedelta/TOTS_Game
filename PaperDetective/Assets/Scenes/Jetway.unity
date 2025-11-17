@@ -857,6 +857,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1206419146954201489, guid: 253cc92a5ac5eab40984c9b0d74ee4ce, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206419146954201489, guid: 253cc92a5ac5eab40984c9b0d74ee4ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 58
+      objectReference: {fileID: 0}
     - target: {fileID: 1570938066801129616, guid: 253cc92a5ac5eab40984c9b0d74ee4ce, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -936,6 +944,14 @@ PrefabInstance:
     - target: {fileID: 1570938066801129616, guid: 253cc92a5ac5eab40984c9b0d74ee4ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725482947454940244, guid: 253cc92a5ac5eab40984c9b0d74ee4ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2963187150524250855, guid: f8a4e40f168464f43a5357b92f2eb00a, type: 3}
+    - target: {fileID: 3725482947454940244, guid: 253cc92a5ac5eab40984c9b0d74ee4ce, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3890867677304564090, guid: 253cc92a5ac5eab40984c9b0d74ee4ce, type: 3}
       propertyPath: m_Camera
@@ -1325,7 +1341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8705239283756223563, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -31.88086
+      value: -30.39
       objectReference: {fileID: 0}
     - target: {fileID: 8705239283756223563, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2196,7 +2212,7 @@ Transform:
   m_GameObject: {fileID: 2029915544}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.3887706, y: -5.6388803, z: -11}
+  m_LocalPosition: {x: 7.3421683, y: -5.63888, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

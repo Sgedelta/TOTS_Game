@@ -15,7 +15,7 @@
     Handyman: Sure thing! Good luck!
     <<AddItem Inventory BnBScrewdriver>>
     <<stop>>
-    <<endonce>>
+<<endonce>>
 
 //Play this AFTER first interaction but BEFORE the first door opens.
 <<if $sonRoomOpen == false>>
@@ -24,27 +24,26 @@
 
 //Play this the first time AFTER the first door opens up.
 <<else>>
-    <<once>>
-    Handyman: I see that screwdriver was helpful after all!
-    You: Yeah thanks for the assist! While you’re here, do you happen to know where the guy from that room might be?
-    Handyman: Sorry, I have no idea. Someone else might know?
-    <<stop>>
-    <<endonce>>
 
-    <<if $playerKnowsBasement == true>>
+    <<if $playerKnowsBasement == false>>
         <<once>>
-        Handyman: Ah, I’m just about wrapped up here. Is there anything you need?
-        You: Yes, someone said there was a noise coming from the basement. Do you have a way in there?
-        Handyman: Ah, yes, I actually have that key with me! I’ll lend it to you if you promise to give it back when you’re done.
-        You: Thank you, I’ll be right back then.
-        <<AddItem Inventory BnBBasementKey>>
+            Handyman: I see that screwdriver was helpful after all!
+            You: Yeah thanks for the assist! While you’re here, do you happen to know where the guy from that room might be?
+            Handyman: Sorry, I have no idea. Someone else might know?
+        <<stop>>
+        <<endonce>>
+    <<else>>
+        <<once>>
+            Handyman: Ah, I’m just about wrapped up here. Is there anything you need?
+            You: Yes, someone said there was a noise coming from the basement. Do you have a way in there?
+            Handyman: Ah, yes, I actually have that key with me! I’ll lend it to you if you promise to give it back when you’re done.
+            You: Thank you, I’ll be right back then.
+            <<AddItem Inventory BnBBasementKey>>
         <<stop>>
         <<endonce>>
 
         //Play this dialogue after all other options have been exhausted.
         Handyman: Just use that key to get into the basement. Make sure to give it back when you’re done!
-
-        <<endif>>
-
+    <<endif>>
 <<endif>>
 ===
