@@ -1,8 +1,8 @@
 ﻿title: RecordItem
 ---
 <<once>>
-Narrator: The record player is lying on the floor, as though it had been kicked off of the nearby stand.
-Narrator: All the dials are set to maximum, like someone wanted the music to be overwhelming.
+Narrator: The record player is lying on the floor, as though it had been <color="blue">kicked off</color> of the nearby stand.
+Narrator: All the dials are set to maximum, like <color="blue">someone wanted the music to be overwhelming</color>.
 Narrator: You reach down and turn the unfortunate object off, wondering why its owner treated it so carelessly.
 <<stop>>
 <<endonce>>
