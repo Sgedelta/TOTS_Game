@@ -15,7 +15,7 @@
     Handyman: Sure thing! Good luck!
     <<AddItem Inventory BnBScrewdriver>>
     <<stop>>
-    <<endonce>>
+<<endonce>>
 
 //Play this AFTER first interaction but BEFORE the first door opens.
 <<if $sonRoomOpen == false>>
@@ -31,7 +31,14 @@
     <<stop>>
     <<endonce>>
 
-    <<if $playerKnowsBasement == true>>
+    <<if $playerKnowsBasement == false>>
+        <<once>>
+            Handyman: I see that screwdriver was helpful after all!
+            You: Yeah thanks for the assist! While you’re here, do you happen to know where the guy from that room might be?
+            Handyman: Sorry, I have no idea. Someone else might know?
+        <<stop>>
+        <<endonce>>
+    <<else>>
         <<once>>
         Handyman: Ah, I’m just about wrapped up here. Is there anything you need?
         You: Yes, someone said there was a noise coming from the basement. Do you have a way in there?
