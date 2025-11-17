@@ -17,6 +17,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private List<AudioSource> audioSource;
     [SerializeField] private AudioSource speechPlayer;
 
+    [SerializeField] private Vector2 narratorPitch = new Vector2(1.0f, 1.5f);
+    [SerializeField] private Vector2 npcPitch = new Vector2(1.0f, 1.5f);
+    public Vector2 NpcPitch
+    {
+        get { return npcPitch; }
+    }   
     private TMP_Text nameText;
     public TMP_Text NameText
     {
@@ -109,6 +115,7 @@ public class AudioManager : MonoBehaviour
     {
         pitchBounds = narratorPitch;
     }
+
     public void SetPitchNPC(Vector2 input)
     {
         npcPitch = input;

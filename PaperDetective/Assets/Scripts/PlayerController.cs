@@ -15,6 +15,8 @@ public class PLayerController : MonoBehaviour
     /// </summary>
     [SerializeField] private float speed;
 
+    [SerializeField] private float sprintSpeed;
+
     [SerializeField] private bool canMove = true;
     public bool CanMove { 
         get { return canMove; } 
@@ -72,6 +74,18 @@ public class PLayerController : MonoBehaviour
     {
         horizontal = context.ReadValue<Vector2>().x;
         vertical = context.ReadValue<Vector2>().y;
+    }
+
+    public void Sprint(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            speed += sprintSpeed;
+        }
+        else if(context.canceled)
+        {
+            speed -= sprintSpeed;
+        }
     }
 
 
