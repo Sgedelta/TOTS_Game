@@ -1,9 +1,9 @@
 ﻿title: UmbrellaVendor
 ---
 <<once>>
-Vendor: Oh, hello. Name of yore self?
+Vendor: Oh, hello. Name of yourself?
 You: Good afternoon, I'm Jeff.
-Vendor: Ooh, you must be internationally worldwide detective, Jeff!
+Vendor: Ooh, internationally worldwide detective is you, Jeff!
 You: No, that's not-
 Vendor: Worry not! Please, umbrella take good sir!
 You: ...uh, thank you?
@@ -11,7 +11,7 @@ Narrator: Out of the naive kindness of some random Frantch folksman, you got you
 <<AddItem Inventory Umbrella>>
 
 <<else>>
-Vendor: Oh, sorry, cannot give umbrella more.
+Vendor: Oh, sorry, umbrella cannot give more.
 Vendor: Have good day, please!
 
 <<endonce>>

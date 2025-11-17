@@ -1,10 +1,8 @@
-using NUnit.Framework;
-using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class Item : MonoBehaviour
 {
-    Inventory inventory;
     [SerializeField] private ItemTemplate template;
     public ItemTemplate Template { get { return template; } } //getter because we don't want other things overwriting what item this is
 
@@ -13,16 +11,17 @@ public class Item : MonoBehaviour
     public bool mouseBound;
     public Vector3 sourcePos;
     public Vector3 targetPos;
-    LayerMask mask;
+    LayerMask itemMask;
+    LayerMask triggerMask;
     float time;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         sourcePos = transform.position;
         targetPos = transform.position;
-        mask = LayerMask.GetMask("Item");
+        itemMask = LayerMask.GetMask("Item");
+        triggerMask = LayerMask.GetMask("Item Trigger");
         InitAs(template, 1);
         if (worldAmount > 0)
             amount = worldAmount;
@@ -35,7 +34,7 @@ public class Item : MonoBehaviour
         {
             /*targetPos*/ transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-        else if (inventory.CheckItem(template.id))
+        else if (Inventory.instance.CheckItem(template.id))
         {
             transform.position = targetPos;
         }
@@ -52,8 +51,8 @@ public class Item : MonoBehaviour
 
         if (amount <= 0)
         {
-            inventory.Remove(this);
-            inventory.Sort();
+            Inventory.instance.Remove(this);
+            Inventory.instance.Sort();
             Debug.Log("GET REKT SCRUB: " + this.name);
             Destroy(this.gameObject);
         }
@@ -72,38 +71,34 @@ public class Item : MonoBehaviour
         amount = template.defaultAmount * amountToMake;
         if (template.itemSprite)
             GetComponent<SpriteRenderer>().sprite = GetComponent<Item>().template.itemSprite;
-        gameObject.name = template.displayName;
+        gameObject.name = template.id;
     }
 
     public bool CheckInteraction()
     {
-        //Debug.Log(mask);
         // Check if the item is touching another item
-        if (this.gameObject.GetComponent<BoxCollider2D>().IsTouchingLayers(mask))
+        if (this.gameObject.GetComponent<BoxCollider2D>().IsTouchingLayers(itemMask))
         {
-            //Debug.Log("Layers check successful");
             // Find the object that is closest to the item and return whether a combination was successful
 
             // Get an array of all objects the item is overlapping
-            Collider2D[] hitColliders = Physics2D.OverlapBoxAll(gameObject.transform.position, transform.localScale, mask);
+            Collider2D[] hitColliders = Physics2D.OverlapBoxAll(gameObject.transform.position, transform.localScale, itemMask);
             float distance = 100000;
             Collider2D hitItem = null;
 
-            // Find which object the Item is closest to
-            if (hitColliders.Length > 2)
+            // Find which object the Item is closest to 
+            for (int i = 0; i < hitColliders.Length; i++)
             {
-                for (int i = 0; i < hitColliders.Length; i++)
+                if (hitColliders[i].gameObject == this.gameObject)
                 {
-                    if ((GetComponent<Collider2D>().transform.position - gameObject.transform.position).magnitude < distance)
-                    {
-                        distance = (GetComponent<Collider2D>().transform.position - gameObject.transform.position).magnitude;
-                        hitItem = GetComponent<Collider2D>();
-                    }
+                    continue;
                 }
-            }
-            else if (hitColliders.Length == 2)
-            {
-                hitItem = hitColliders[1];
+
+                if ((hitColliders[i].transform.position - gameObject.transform.position).magnitude < distance)
+                {
+                    distance = (hitColliders[i].transform.position - gameObject.transform.position).magnitude;
+                    hitItem = hitColliders[i];
+                }
             }
             // check the item combinability with that
             if (hitColliders.Length > 1 && hitItem)
@@ -114,6 +109,41 @@ public class Item : MonoBehaviour
                     return false;
                 else
                     return true;
+            }
+        }
+        // Trigger an event because item got dropped onto a trigger box
+        else if (this.gameObject.GetComponent<BoxCollider2D>().IsTouchingLayers(triggerMask))
+        {
+            // Get the trigger template
+            Collider2D trigger = Physics2D.OverlapBox(gameObject.transform.position, transform.localScale, triggerMask);
+            TriggerTemplate trigTemp = trigger.GetComponent<Trigger>().template;
+            Debug.Log(trigTemp.triggerItem.id + " " + template.id);
+            if (trigTemp.triggerItem == template)
+            {
+                if (trigTemp.madeItem && trigTemp.deleteHeld)
+                {
+                    Debug.Log("switching");
+                    InitAs(trigTemp.madeItem, 1);
+                }
+                else if (trigTemp.madeItem && !trigTemp.deleteHeld)
+                {
+                    Debug.Log("making");
+                    CreateItem(trigTemp.madeItem, 1);
+                }
+                else if (trigTemp.deleteHeld)
+                {
+                    Debug.Log("deleting");
+                    amount = 0;
+                }
+                // Prompt Dialogue
+                if (!SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().IsDialogueRunning)
+                    SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().StartDialogue(trigTemp.dialogueNode);
+                
+                Destroy(trigger.gameObject);
+            }
+            else
+            {
+                Debug.Log("Nothing Happens");
             }
         }
         return false;
@@ -169,7 +199,7 @@ public class Item : MonoBehaviour
         {
             for (int i = 0; i < result.madeFromItems.Length; i++)
             {
-                if (result.madeFromItems[i] == template)
+                if (result.madeFromItems[i].id == template.id)
                 {
                     amount -= amountToMake * result.madeFromAmounts[i];
                     Debug.Log(name + " amount is " + amount);
@@ -183,15 +213,20 @@ public class Item : MonoBehaviour
         }
 
         // Instantiate new Item (in the proper amount) and place into inventory.
-        GameObject madeItem = Instantiate(inventory.NewItemPrefab);
-        Debug.Log("New Item is: " + madeItem.name);
-        madeItem.GetComponent<Item>().InitAs(result, amountToMake);
-        inventory.Add(madeItem.GetComponent<Item>());
-        inventory.Sort();
+        CreateItem(result, amountToMake);
 
         return 1;
     }
 
+    public void CreateItem(ItemTemplate temp, int amount)
+    {
+        // Instantiate new Item (in the proper amount) and place into inventory.
+        GameObject madeItem = Instantiate(Inventory.instance.NewItemPrefab);
+        Debug.Log("New Item is: " + madeItem.name);
+        madeItem.GetComponent<Item>().InitAs(temp, amount);
+        Inventory.instance.Add(madeItem.GetComponent<Item>());
+        Inventory.instance.Sort();
+    }
 
     /// <summary>
     /// checks if this item can combine with another given item template. Does NOT check if there are the correct amounts of each item, just if a valid recipe exists

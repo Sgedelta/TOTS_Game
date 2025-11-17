@@ -1,71 +1,47 @@
-﻿title: ElderlyWomanManager
----
-//Contain and record all the variables for the Elderly Woman NPC.
-
-//firstTalk determines if this is the first time the player has ever interacted with this NPC.
-<<declare $elderlyWoman_firstTalk = false>>
-
-//beforeDoor determines if the NPC has been interacted with but the first door is not opened.
-<<declare $elderlyWoman_beforeDoor = false>>
-
-//afterDoor determines if this is the first interaction AFTER the door has been opened.
-<<declare $elderlyWoman_afterDoor = false>>
-===
-
-title: ElderlyWoman
+﻿title: ElderlyWoman
 ---
 //Play this chunk if this is the first time the player interacts with this NPC.
-<<if $elderlyWoman_firstTalk == false>>
+<<once>>
     Woman: Oh, hello! Will you be staying with us tonight?
     You: Yes, please, I just need a place to stay tonight and I’ll be out of your hair. My name is Jeff.
     Woman: Jeff?! Oh, dear goodness, I had no idea such a famous international detective was here tonight!
-        -> No, I’m afraid that name is just a coincidence.
+    You: No, I’m afraid that name is just a coincidence.
     Woman: Oh, there’s no need to worry, I’m a big fan of police stories and such, I’ve heard so much about you!
-    <<jump ElderlyWomanQuest>>
-        -> Sure thing.
-    <<jump ElderlyWomanQuest>>
+    Woman: Say, could I ask you to do something for me? 
+    Woman: My son has been holed up in his room, and his music is disturbing some of the guests. We’ve tried knocking on the door, but he just won’t answer. 
+    Woman: We used to have a key around here, but it appears to have run off somewhere. Would you be so kind as to find it and ask my son to turn down the music?
+    Woman: It should be a trivial task for a detective of your caliber, and you can have a room for free in return.
+    You: …I guess I have enough time to look into it.
+    Woman: Oh, that’s so good to hear! See if the handyman can help you at all. My son’s room is the first door after you get up the stairs
+    <<RevealNote MenuManager BnBOpenDoor>>
     <<stop>>
+    <<endonce>>
 
 //This chunk plays after the first interaction and BEFORE the first door is opened.
-<<elseif $elderlyWoman_beforeDoor == false>>
-    Woman: I wish I could help more, sir, but I’m just so darn tired.
+<<if $sonRoomOpen == false>>
     Woman: If you can get my son to turn down his music for the guests, you can have a room free of charge tonight.
     <<stop>>
 
 //Plays during the FIRST interaction AFTER the door is opened.
-<<elseif $elderlyWoman_afterDoor == false>>
-    You: Hello, ma’am. I got into the room to turn off the music, but your son wasn’t in there.
+<<else>>
+    <<once>>
+    You: Hello, ma’am. I got into the room to turn off the music, but your son wasn’t there.
     Woman: Really? Oh, dear, where could he be?
-    You: Do you not know where he could be?
-    Woman: No, he would’ve said something if he left. 
-    Woman Please, dear, I hate to ask this, but could you find my son? I don’t want him to get hurt.
+    You: Do you have any ideas?
+    Woman: No, he would’ve said something if he left…
+    Woman: Please, dear, I hate to ask this, but could you find my son? I worry for his safety, especially with all the recent talk of murders.
+    Woman: I’ll throw in a free breakfast on top of your room if you find him.
 
     //Add note for player to find the son.
-    <<RevealNote MenuManager findSon>>
+    <<RevealNote MenuManager BnBFindSon>>
 
-    <<set $elderlyWoman_afterDoor = true>>
     <<stop>>
+    <<endonce>>
+
+    //Play these lines only after all other dialogues have been exhausted.
+    Woman: Have you found my son yet?
+    You: No, I’m still looking at the moment. I’ll let you know when I find him.
+    Woman: Dear, oh dear, where could he be?
 
 <<endif>>
-
-//Play these lines only after all other dialogues have been exhausted.
-Woman: Have you found my son yet?
-You: No, I’m still looking at the moment. I’ll let you know when I find him.
-Woman: Dear, oh dear, where could he be?
-===
-
-title: ElderlyWomanQuest
----
-Woman: Say, could I ask you to do something for me? I promise, it's nothing too difficult, and you can have a room for free.
-You: …I guess I have enough time, what is it?
-Woman: Thank you very much, dear! 
-Woman: My son is holed up in his room, and his music is a little too loud for the guests.
-Woman: My husband and I haven’t been able to find the key, could you please help find it and ask him to turn down the music?
-You: Alright, I’ll help if I can.
-Woman: Oh, that’s so good to hear! See if the maid/butler can help you at all.
-
-// ---------- Add note for "Open the door" ---------------
-<<RevealNote MenuManager openDoor>>
-
-<<set $elderlyWoman_firstTalk = true>>
 ===

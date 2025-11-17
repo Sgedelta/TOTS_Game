@@ -6,12 +6,17 @@ using NUnit.Framework;
 using System.Linq;
 using Yarn;
 using Yarn.Unity;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    SortedList<string, Item> inventory = new SortedList<string, Item>();
+    [SerializeField] Sprite square;
+    [SerializeField] private int capacity;
+    [SerializeField] private GameObject slotPrefab;
+    [SerializeField] private float slotPaddingMin = 25;
+    private SortedList<string, Item> inventory;
     [SerializeField] private List<Item> itemsInInv;
-    Vector2[] invPos = new Vector2[10];
+    private List<GameObject> invSlots = new List<GameObject>();
     Camera cam;
 
     [SerializeField] private GameObject newItemPrefab;
@@ -19,43 +24,83 @@ public class Inventory : MonoBehaviour
 
     private DialogueRunner dialogue;
 
-    public bool canInteract = true;
-
     public static Inventory instance;
-    private void Start()
+    public bool canInteract = true;
+    
+    /// <summary>
+    /// This determines the singular instance of GameManager that will exist across all scenes.
+    /// </summary>
+    private void Awake()
     {
-        if(instance != null && instance != this)
+        //Check if there is no instance of this Inventory that exists.
+        if (instance == null)
         {
-            Destroy(this.gameObject);
-            return;
+            //Set the gameObject this script is attached to as the single instance of the Inventory.
+            instance = this;
+
+            //This method informs Unity to retain the object this script is attached to when changing scenes.
+            DontDestroyOnLoad(this.transform.parent.gameObject);
+            Debug.Log("Keeping the inventory " + this.transform.parent.gameObject.name);
         }
         else
         {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            Debug.Log("Removing the inventory " + this.transform.parent.gameObject.name);
+            //If there is already an instance of the Inventory, then delete the object this is attached to.
+            //This ensures that only one instance of the Inventory exists across all scenes.
+            Destroy(this.transform.parent.gameObject);
+
         }
+    }
+
+    private void Start()
+    {
+        inventory = new SortedList<string, Item>();
+
+        //create slots
+        ResetAllInventorySlots();  
+
         itemsInInv = GameManager.instance.items;
         cam = Camera.main;
-        float x = -10.5f;
-        for (int i = 0; i < 10; i++)
-        {
-            invPos[i] = new Vector3(x, -5.3f + cam.transform.position.y);
-            x += 2.4f;
-        }
-        if (itemsInInv != null)
-        {
-            foreach (Item item in itemsInInv)
-            {
-                inventory.Add(item.Template.id, item);
-            }
-        }
 
         dialogue = FindFirstObjectByType<DialogueRunner>();
     }
 
     void Update()
     {
+        if(transform.parent.GetComponent<Canvas>().worldCamera != Camera.main)
+        {
+            transform.parent.GetComponent<Canvas> ().worldCamera = Camera.main;
+        }
+        Debug.Log("Screen Width : " + Screen.width);
         Sort();
+    }
+
+    private void ResetAllInventorySlots()
+    {
+        while (invSlots.Count > 0)
+        {
+            GameObject slot = invSlots[0];
+            invSlots.RemoveAt(0);
+            Destroy(slot);
+        }
+
+        RectTransform trans = GetComponent<RectTransform>();
+
+        //clamp capacity
+        capacity = (int)Mathf.Clamp(capacity, 0, trans.rect.width / (slotPrefab.GetComponent<RectTransform>().rect.width + slotPaddingMin * 2));
+
+        //calculate box width
+        float boxWidth = trans.rect.width / capacity;
+
+        for (int i = 0; i < capacity; i++)
+        {
+            GameObject slot = Instantiate(slotPrefab, trans);
+
+            invSlots.Add(slot);
+
+            slot.GetComponent<RectTransform>().localPosition = new Vector3(boxWidth * (i - (capacity / 2) + 0.5f), 0, 0); //note: might have to update z for order
+
+        }
     }
 
     public void OnClick(InputAction.CallbackContext context)
@@ -64,42 +109,46 @@ public class Inventory : MonoBehaviour
         {
             return;
         }
-        //Debug.Log("click1");
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(0, 1), 0.01f);
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, new Vector2(0, 1), 0.01f, LayerMask.GetMask("Item"));
 
         // if player clicked on an item
         if (hit && hit.collider.gameObject.CompareTag("Item"))
         {
-            Debug.Log("CHACHA REAL SMOOTH");
             Item hitItem = hit.collider.gameObject.GetComponent<Item>();
             // if the left mouse button is clicked
             if (context.performed)
             {
-                Debug.Log("Tap dat");
                 // Item follows cursor
                 hit.collider.gameObject.GetComponent<Item>().mouseBound = true;
 
-                // Remove item from inventory
-                if (inventory.ContainsKey(hitItem.Template.id))
+                // Remove item from inventory and show on mouse
+                if (Inventory.instance.inventory.ContainsKey(hitItem.Template.id))
                 {
-                    inventory.Remove(hitItem.Template.id);
+                    Inventory.instance.inventory.Remove(hitItem.Template.id);
+                    Debug.Log($"Removing {hitItem.Template.id} and putting it in mouse");
+                    hitItem.GetComponent<SpriteRenderer>().color = Color.white;
                 }
             }
 
             // if left mouse button is released
             else if (context.canceled)
             {
-                Debug.Log("gtfo");
+                Debug.Log("unclick");
                 // item stops following cursor and returns to the inventory box if the interaction failed
                 hitItem.mouseBound = false;
                 if (!hitItem.CheckInteraction())
                 {
                     // Flash red to suggest failed interaction?
 
-                    if (inventory.Count < 10)
+                    if (Inventory.instance.inventory.Count < 10)
                     {
-                        inventory.Add(hitItem.Template.id, hitItem);
+                        Inventory.instance.inventory.Add(hitItem.Template.id, hitItem);
+                        DontDestroyOnLoad(hitItem.gameObject);
+                        if(GameManager.instance.AllPersistentData.ContainsKey(hitItem.Template.id))
+                        {
+                            GameManager.instance.AllPersistentData[hitItem.Template.id].KeepOnLoad = false;
+                        }
                     }
                     // if there are none, return it to where it was
                     else
@@ -109,10 +158,15 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    inventory.Add(hitItem.Template.id, hitItem);
+                    Inventory.instance.inventory.Add(hitItem.Template.id, hitItem);
+                    DontDestroyOnLoad(hitItem.gameObject);
+                    if (GameManager.instance.AllPersistentData.ContainsKey(hitItem.Template.id))
+                    {
+                        GameManager.instance.AllPersistentData[hitItem.Template.id].KeepOnLoad = false;
+                    }
                 }
             }
-            Sort();
+            //Sort();
         }
 
     }
@@ -120,56 +174,85 @@ public class Inventory : MonoBehaviour
     [YarnCommand("AddItem")]
     public void Add(Item item)
     {
-        inventory.Add(item.Template.id, item);
+        if(Inventory.instance.inventory.ContainsKey(item.Template.id))
+        {
+            Inventory.instance.inventory[item.Template.id].amount += item.amount;
+            return;
+        }
+
+
+        Inventory.instance.inventory.Add(item.Template.id, item);
+        DontDestroyOnLoad(item.gameObject);
         itemsInInv.Add(item);
         GameManager.instance.items = itemsInInv;
-        Sort();
+        //Sort();
     }
 
 
     public void Remove(Item item)
     {
-        if (itemsInInv.Contains(item)) { itemsInInv.Remove(item); }
-        GameManager.instance.items = itemsInInv;
+        if (itemsInInv.Contains(item)) 
+        { 
+            itemsInInv.Remove(item); 
+            GameManager.instance.items = itemsInInv;
+        }
 
-        if (inventory.ContainsKey(item.Template.id))
-            inventory.Remove(item.Template.id);
+        if (Inventory.instance.inventory.ContainsKey(item.Template.id))
+        {
+            Inventory.instance.inventory.Remove(item.Template.id);
+
+        }
         else
+        {
             Debug.Log("That item doesn't exist in inventory");
-        Sort();
+        }
+        //Sort();
     }
 
     [YarnCommand("RemoveItem")]
     public void RemoveAndDestroy(Item item)
     {
-        if (itemsInInv.Contains(item)) { itemsInInv.Remove(item); }
-        GameManager.instance.items = itemsInInv;
-
-        if (inventory.ContainsKey(item.Template.id))
-            inventory.Remove(item.Template.id);
-        else
-            Debug.Log("That item doesn't exist in inventory");
-
+        Remove(item);
 
         item.amount = 0;
 
-        Sort();
+        //Sort();
     }
 
     public void Sort()
     {
-        for (int i = 0; i < inventory.Count; i++)
+        int x = 0;
+
+
+        //note: a little quick and dirty, won't update things "outside" of inventory - should really handle this on inventory adding side\
+        //fill slots with images and position items into clickable location
+        for (int i = 0; i < Mathf.Min(capacity, Inventory.instance.inventory.Count); i++)
         {
-            inventory.Values[i].targetPos = new Vector2(invPos[i].x + cam.transform.position.x, -5.3f + cam.transform.position.y);
-            //Debug.Log("sorting " + i + " " + inventory[i].name + " " + invPos[i]);
+            invSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = Inventory.instance.inventory.Values[i].Template.itemSprite;
+            invSlots[i].transform.GetChild(0).GetComponent<Image>().color = Color.white;
+            Inventory.instance.inventory.Values[i].GetComponent<SpriteRenderer>().color = Color.clear;
+
+            Inventory.instance.inventory.Values[i].targetPos = invSlots[i].transform.position;
+
+            x++;
         }
+        //make all unfilled slots empty
+        for(int i = x;  i < capacity; i++)
+        {
+            //Debug.Log($"{i}: Capacity is {capacity}");
+            //Debug.Log($"{i}: {invSlots[i].transform}");
+            invSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
+            invSlots[i].transform.GetChild(0).GetComponent<Image>().color = Color.clear;
+        }
+        
     }
 
     public void TransformItem(Item existingItem, ItemTemplate newItem)
     {
-        inventory.Remove(existingItem.Template.id);
+        Inventory.instance.inventory.Remove(existingItem.Template.id);
         existingItem.InitAs(newItem, 1);
-        inventory.Add(existingItem.Template.id, existingItem);
+        Inventory.instance.inventory.Add(existingItem.Template.id, existingItem);
+
         Sort();
     }
 
@@ -193,7 +276,17 @@ public class Inventory : MonoBehaviour
     [YarnCommand("Check")]
     public bool CheckItem(string itemName)
     {
-        if (inventory.ContainsKey(itemName))
+        /*
+        string db = $"{itemName} in the inventory of size {Inventory.instance.inventory.Count}: ";
+        foreach(Item i in Inventory.instance.inventory.Values)
+        {
+            db += i.Template.id + ", ";
+        }
+        Debug.Log(db);
+        */
+
+
+        if (Inventory.instance.inventory.ContainsKey(itemName))
         {
             dialogue.VariableStorage.SetValue($"$has{itemName}", true);
         }

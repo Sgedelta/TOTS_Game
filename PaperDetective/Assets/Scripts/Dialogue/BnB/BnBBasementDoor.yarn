@@ -1,0 +1,29 @@
+﻿title: BnBBasementDoor
+---
+
+
+
+<<if $basementDoorOpen == true>>
+
+Narrator: You swing the door open and enter the basement.
+<<TriggerSceneChange BasementDoorSceneChanger>>
+
+<<else>>
+
+Narrator: A locked door. It leads to the basement.
+
+<<endif>>
+
+
+===
+
+title: BnBOpenBasementDoor
+---
+<<set $basementDoorOpen = true>>
+
+Narrator: You insert the key into the lock and turn it with a satisfying click. The door swings open.
+<<TriggerSceneChange BasementDoorSceneChanger>>
+
+
+
+===

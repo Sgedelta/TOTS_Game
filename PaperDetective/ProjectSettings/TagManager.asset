@@ -7,18 +7,19 @@ TagManager:
   - Item
   - Inventory
   - FileManager
+  - Item Trigger
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Item Trigger
   - Water
   - UI
   - Item
   - Talk
   - Player
   - Prop
-  - 
+  - Door
   - 
   - 
   - 
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Inventory
     uniqueID: 1149323245
+    locked: 0
+  - name: World_Foreground
+    uniqueID: 755825227
     locked: 0
   m_RenderingLayers:
   - Default

@@ -1,0 +1,50 @@
+﻿title: Handyman
+---
+
+//Check if the player knows to go to the basement at the end
+<<declare $playerKnowsBasement = false>>
+
+//Play this the first time the player interacts with this NPC at all.
+<<once>>
+    Handyman: Hello!
+    You: Hi, do you know where the key to the room with the music is?
+    Handyman: Sorry, I don’t know where it might be. 
+    Handyman: But hey, if you need something to deal with the music, I’m happy to help.
+    Handyman: Here, you can have some of my equipment if you need it.
+    You: I’ll take that screwdriver off your hands, then.
+    Handyman: Sure thing! Good luck!
+    <<AddItem Inventory BnBScrewdriver>>
+    <<stop>>
+    <<endonce>>
+
+//Play this AFTER first interaction but BEFORE the first door opens.
+<<if $sonRoomOpen == false>>
+    Handyman: Hopefully that screwdriver comes in handy!
+    <<stop>>
+
+//Play this the first time AFTER the first door opens up.
+<<else>>
+    <<once>>
+    Handyman: I see that screwdriver was helpful after all!
+    You: Yeah thanks for the assist! While you’re here, do you happen to know where the guy from that room might be?
+    Handyman: Sorry, I have no idea. Someone else might know?
+    <<stop>>
+    <<endonce>>
+
+    <<if $playerKnowsBasement == true>>
+        <<once>>
+        Handyman: Ah, I’m just about wrapped up here. Is there anything you need?
+        You: Yes, someone said there was a noise coming from the basement. Do you have a way in there?
+        Handyman: Ah, yes, I actually have that key with me! I’ll lend it to you if you promise to give it back when you’re done.
+        You: Thank you, I’ll be right back then.
+        <<AddItem Inventory BnBBasementKey>>
+        <<stop>>
+        <<endonce>>
+
+        //Play this dialogue after all other options have been exhausted.
+        Handyman: Just use that key to get into the basement. Make sure to give it back when you’re done!
+
+        <<endif>>
+
+<<endif>>
+===
