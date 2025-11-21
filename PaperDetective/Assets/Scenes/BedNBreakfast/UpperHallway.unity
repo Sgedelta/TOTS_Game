@@ -867,6 +867,8 @@ MonoBehaviour:
   audioSource:
   - {fileID: 986573574}
   speechPlayer: {fileID: 417007242}
+  narratorPitch: {x: 1, y: 1.5}
+  npcPitch: {x: 1, y: 1.5}
 --- !u!4 &343365280
 Transform:
   m_ObjectHideFlags: 0
@@ -1392,6 +1394,7 @@ GameObject:
   - component: {fileID: 982627879}
   - component: {fileID: 982627878}
   - component: {fileID: 982627877}
+  - component: {fileID: 982627880}
   m_Layer: 7
   m_Name: DoorToMansRoom
   m_TagString: Untagged
@@ -1561,6 +1564,19 @@ MonoBehaviour:
   closeEnoughRadius: 0
   startNode: DoorToMansRoom
   NPCAudioBounds: {x: 1, y: 1.5}
+--- !u!114 &982627880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982627874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50cfd787eb630fa4194137a8454e8e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  template: {fileID: 11400000, guid: 22c74b1db10a92a49a43f8283f9fcf9a, type: 2}
 --- !u!1 &986573572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,9 +1722,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 5547107509856847810, guid: 9d7bed2c37b44b64bace82035e1f804c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7549215781106032160, guid: 9d7bed2c37b44b64bace82035e1f804c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.69
+      value: 18.97
       objectReference: {fileID: 0}
     - target: {fileID: 7549215781106032160, guid: 9d7bed2c37b44b64bace82035e1f804c, type: 3}
       propertyPath: m_LocalPosition.y

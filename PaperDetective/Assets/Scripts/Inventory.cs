@@ -71,7 +71,6 @@ public class Inventory : MonoBehaviour
         {
             transform.parent.GetComponent<Canvas> ().worldCamera = Camera.main;
         }
-        Debug.Log("Screen Width : " + Screen.width);
         Sort();
     }
 
