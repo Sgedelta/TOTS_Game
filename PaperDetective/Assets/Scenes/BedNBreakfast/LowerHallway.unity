@@ -1218,11 +1218,11 @@ PrefabInstance:
       objectReference: {fileID: -8835231773570367472, guid: 50bc1881f4fd9684988661c61dedfafa, type: 3}
     - target: {fileID: 220210420427715653, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 220210420427715653, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_SortingLayerID
-      value: 755825227
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1622393730212551130, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_LocalPosition.x
