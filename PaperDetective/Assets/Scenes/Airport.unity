@@ -780,7 +780,7 @@ PrefabInstance:
       objectReference: {fileID: 6521114685714831718, guid: 0296eca1f8b424f4ebc0f4a70d5ed183, type: 3}
     - target: {fileID: 6506172132233869710, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1514,7 +1514,7 @@ PrefabInstance:
       objectReference: {fileID: 4883336943506043419, guid: e493caf8738b5f74fb18d87d959c9d3a, type: 3}
     - target: {fileID: 6506172132233869710, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4215,6 +4215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Playtest1Scene
+  entranceName: 
+  clickEnabled: 0
+  enterEnabled: 1
 --- !u!1 &1433563173
 GameObject:
   m_ObjectHideFlags: 0
@@ -5064,7 +5067,7 @@ PrefabInstance:
       objectReference: {fileID: -2628553720767682227, guid: 56e99609d9186384f9e911703d5cd62a, type: 3}
     - target: {fileID: 6506172132233869710, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5555,7 +5558,7 @@ PrefabInstance:
       objectReference: {fileID: 9064496728675099545, guid: 0515acb198af9fb43aac5123447a4bc3, type: 3}
     - target: {fileID: 6506172132233869710, guid: 612dc8169752ab84ebd26e9bf6eca438, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
