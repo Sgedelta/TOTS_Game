@@ -14,11 +14,44 @@ public class CutsceneInfo : MonoBehaviour
     /// If an object is panned to multiple times, it should appear multiple times in this list.
     /// </summary>
     public List<Transform> speakers;
+
+    public List<float> cameraZooms;
+
+    bool cutsceneStarted = false;
+
+    [YarnCommand("changeZoom")]
+    public void ChangeZoom()
+    {
+        if(cameraZooms.Count == 0)
+        {
+            Debug.LogError("Attempted to change camera zoom but no zooms were left in the list");
+            return;
+        }
+            
+        CutsceneManager.instance.ChangeZoom(cameraZooms[0]);
+        speakers.RemoveAt(0);
+    }
+
     [YarnCommand("changeSpeaker")]
     public void ChangeSpeaker()
     {
-        CutsceneManager.instance.SwapTarget(speakers[0]);
-        speakers.RemoveAt(0);
+        
+        if (speakers.Count == 0)
+        {
+            Debug.LogError("Attempted to change speaker but no speakers were left in the list");
+            return;
+        }
+        if (cutsceneStarted)
+        {
+            CutsceneManager.instance.SwapTarget(speakers[0]);
+        }
+        else
+        {
+            CutsceneManager.instance.StartCutscene(speakers[0]);
+            cutsceneStarted = true;
+        }
+
+            speakers.RemoveAt(0);
     }
 
 }

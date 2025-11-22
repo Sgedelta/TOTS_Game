@@ -31,6 +31,10 @@ public class CutsceneManager : MonoBehaviour
     /// <param name="newTarget">The new transform the camera is meant to follow</param>
     public void StartCutscene(Transform newTarget)
     {
+        if(cinemachineCamera == null)
+        {
+            cinemachineCamera = FindFirstObjectByType<CinemachineCamera>();
+        }
         cinemachineCamera.Follow = newTarget;
         playerController.CanMove = false;
         playerController.CanInteract = false;
@@ -44,6 +48,11 @@ public class CutsceneManager : MonoBehaviour
     public void SwapTarget(Transform newTarget)
     {
         cinemachineCamera.Follow = newTarget;
+    }
+
+    public void ChangeZoom(float newZoom)
+    {
+         cinemachineCamera.Lens.FieldOfView = newZoom;
     }
     /// <summary>
     /// Ends the cutscene by setting the camera to follow the player and enabling player movement

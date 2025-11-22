@@ -10,6 +10,7 @@ WARNING: Graphic descriptions ahead. Please proceed with caution:
 title: Censored
 ---
 Narrator: You enter into the dimly lit basement. At first, you can only see the crowd of hooded figures standing in a circle in the center of the room. After a quick flip through your dictionary, you recognize their chanting is in neither English nor Frantch, but something far more insidious.
+<<changeSpeaker>>
 Narrator: As you stare on, the chanting begins to swell, growing louder and louder. It begins to resonate within your skull, bouncing inside your very mind. You realize that you can almost understand those terrible words, their meanings on the very tip of your tongue, but to do so would be to lose yourself to madness entirely.
 Narrator: And then the worst of all. The cultists step back, widening their circle and creating a gap large enough for you to see the focus of their worship. Sat atop a ritual circle carved into the floor, a lifeless body with a Shadow Sabbath tattoo on the forearm.
 Narrator: The revelation that this is the hostess’s son comes just as the chanting reaches its peak and the sigils along the wall begin to glow, then burst into flames. Then, for a merciful moment, there is silence. You hear your heart pounding in your chest as you pray to any god that may be listening that the cultists’ call goes unanswered. Then, the nightmare truly begins.
@@ -24,7 +25,9 @@ title: Uncensored
 Narrator: You enter into the dimly lit room, the scent of blood so strong in the air you can taste the iron on your tongue. You take a few moments to let your eyesight adjust.
 Narrator: The first thing you notice is the sigils on the wall. Daubed in blood and impossibly complex, it feels like they’re burning into your brain as it makes its feeble attempts to comprehend them.
 Narrator: You instinctually shift your gaze to the center of the room to escape the pain, only to find that something even more terrible awaits you.
+<<changeZoom CultCutscene>>
 Narrator: At first you can only see the circle of hooded figures standing in the center of the room. After a quick flip through your dictionary, you realize their chanting is in neither English nor Frantch, but something far more insidious.
+<<changeSpeaker CultCutscene>>
 Narrator: As you stare on, the chanting begins to swell, resonating within your skull, bouncing inside your very mind. You realize that you can almost understand those terrible words, their meanings on the very tip of your tongue, but to do so would be to lose yourself to madness entirely.
 Narrator: And then the worst of all. The cultists step back, widening their circle and creating a gap large enough for you to see the focus of their worship. 
 Narrator: Within the ritual circle lies what can only be described as a pile of flesh and bone. The skin lays upon the floor like a rug, flayed, brutalized, and sliced in a thousand cruel and creative ways. The bones form a pyramid cage around the now formless flesh, broken and warped to fit their new, grisly purpose.
