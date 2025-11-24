@@ -5,4 +5,7 @@
 //Universal bool that checks if the door is open or not.
 <<declare $sonRoomOpen = false>>
 <<declare $basementDoorOpen = false>>
+
+//Universal check if the music has been turned off
+<<declare $musicOn = true>>
 ===
