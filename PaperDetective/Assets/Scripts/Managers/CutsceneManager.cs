@@ -139,9 +139,10 @@ public class CutsceneManager : MonoBehaviour
     [YarnCommand("StopCutscene")]
     public void StopCutscene()
     {
-        cinemachineCamera.Follow = playerController.gameObject.transform;
+        SwapTarget(GameObject.FindGameObjectWithTag("Player"));
         playerController.CanMove = true;
         playerController.CanInteract = true;
         Inventory.instance.canInteract = true;
+        cutsceneActive = false;
     }
 }

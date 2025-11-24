@@ -28,9 +28,10 @@ Narrator: You enter into the dimly lit room, the scent of blood so strong in the
 <<swapTarget CutsceneManager SigilsPOV>>
 Narrator: The first thing you notice is the sigils on the wall. Daubed in blood and impossibly complex, it feels like they’re burning into your brain as it makes its feeble attempts to comprehend them.
 Narrator: You instinctually shift your gaze to the center of the room to escape the pain, only to find that something even more terrible awaits you.
+<<swapTarget CutsceneManager CultistPOV>>
+Narrator: At first you can only see the circle of hooded figures standing in the center of the room. After a quick flip through your dictionary, you realize their chanting is in neither English nor Frantch, but something far more insidious.
 <<swapTarget CutsceneManager Player>>
 <<changeTilt CutsceneManager 15 600>>
-Narrator: At first you can only see the circle of hooded figures standing in the center of the room. After a quick flip through your dictionary, you realize their chanting is in neither English nor Frantch, but something far more insidious.
 Narrator: As you stare on, the chanting begins to swell, resonating within your skull, bouncing inside your very mind. You realize that you can almost understand those terrible words, their meanings on the very tip of your tongue, but to do so would be to lose yourself to madness entirely.
 <<changeTilt CutsceneManager 0 0.00000001>>
 <<swapTarget CutsceneManager CultistPOV>>
@@ -48,5 +49,7 @@ Narrator: The pressure rises in time with the newly formed tentacles, a few of t
 <<swapTarget CutsceneManager Player>>
 <<changeZoom CutsceneManager 2>>
 Narrator: Finally, mercifully, the pressure is too much for your psyche and you fall into unconsciousness.
+<<StopCutscene CutsceneManager>>
+<<changeScene SceneManager Jetway>>
 <<stop>>
 ===
