@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1162010789533298291, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 136
+      value: 264
       objectReference: {fileID: 0}
     - target: {fileID: 1513477518467513696, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
       propertyPath: m_Name
@@ -392,6 +392,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1544591702}
     m_Modifications:
+    - target: {fileID: 1162010789533298291, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 264
+      objectReference: {fileID: 0}
     - target: {fileID: 1513477518467513696, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
       propertyPath: m_Name
       value: IW-West
@@ -688,11 +692,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
---- !u!4 &253985066 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7518581930985206041, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
-  m_PrefabInstance: {fileID: 1862969809}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &648861801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1295,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1544591702}
     m_Modifications:
+    - target: {fileID: 1162010789533298291, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 264
+      objectReference: {fileID: 0}
     - target: {fileID: 1513477518467513696, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
       propertyPath: m_Name
       value: IW-South
@@ -1515,7 +1518,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
---- !u!1 &1286078898
+--- !u!1 &1266885151
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1523,44 +1526,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1286078900}
-  - component: {fileID: 1286078899}
+  - component: {fileID: 1266885152}
   m_Layer: 0
-  m_Name: CultCutscene
+  m_Name: SigilsPOV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1286078899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286078898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36c7d7d93a861a543a95667e7e122514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakers:
-  - {fileID: 961185339}
-  - {fileID: 253985066}
-  - {fileID: 253985066}
-  cameraZooms:
-  - 5
-  - 90
---- !u!4 &1286078900
+--- !u!4 &1266885152
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286078898}
+  m_GameObject: {fileID: 1266885151}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.890572, y: 1.7192845, z: -0.14466964}
+  m_LocalPosition: {x: 18.03, y: -4.76, z: -0.3881049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1574,6 +1557,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1544591702}
     m_Modifications:
+    - target: {fileID: 1162010789533298291, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 264
+      objectReference: {fileID: 0}
     - target: {fileID: 1513477518467513696, guid: ae9abb2260281c44f84586430fac75bb, type: 3}
       propertyPath: m_Name
       value: IW-East
@@ -2245,13 +2232,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8493384463771419391, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: m_Name
-      value: NPC (3)
+      value: CultistPOV
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
+--- !u!1 &1913436646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913436647}
+  m_Layer: 0
+  m_Name: RoomPOV
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1913436647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913436646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.152573, y: -5.6914816, z: -0.3881049}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2000238562 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5794366781868672482, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
@@ -2320,7 +2338,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2345,7 +2363,7 @@ Transform:
   m_GameObject: {fileID: 2029915544}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.603233, y: -5.63888, z: -10}
+  m_LocalPosition: {x: 29.392128, y: -4.695036, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2592,12 +2610,12 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 253985066}
+    TrackingTarget: {fileID: 961185339}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 40
-    OrthographicSize: 5
+    OrthographicSize: 2
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -2624,7 +2642,7 @@ Transform:
   m_GameObject: {fileID: 2116158663}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.603241, y: -8.9, z: -10}
+  m_LocalPosition: {x: 29.392126, y: -4.695036, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2639,7 +2657,6 @@ SceneRoots:
   - {fileID: 1075989687}
   - {fileID: 736253390}
   - {fileID: 800361529}
-  - {fileID: 1286078900}
   - {fileID: 1603248183}
   - {fileID: 1544591702}
   - {fileID: 1788052035}
@@ -2656,3 +2673,5 @@ SceneRoots:
   - {fileID: 1862969809}
   - {fileID: 961185338}
   - {fileID: 1170076005}
+  - {fileID: 1266885152}
+  - {fileID: 1913436647}
