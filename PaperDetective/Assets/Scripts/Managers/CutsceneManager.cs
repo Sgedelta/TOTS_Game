@@ -28,6 +28,8 @@ public class CutsceneManager : MonoBehaviour
 
     private bool cutsceneActive = false;
 
+    [SerializeField] private NoiseSettings shakeSettings;
+
     public static CutsceneManager instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -117,6 +119,19 @@ public class CutsceneManager : MonoBehaviour
         tiltPercentage = 0;
         tiltAmount = newTilt;
         tiltTime = time;
+    }
+
+    [YarnCommand("changeShake")]
+    public void ChangeShake()
+    {
+        if (cinemachineCamera.GetComponent<CinemachineBasicMultiChannelPerlin>().NoiseProfile)
+        {
+            cinemachineCamera.GetComponent<CinemachineBasicMultiChannelPerlin>().NoiseProfile = null;
+        }
+        else
+        {
+            cinemachineCamera.GetComponent<CinemachineBasicMultiChannelPerlin>().NoiseProfile = shakeSettings;
+        }
     }
     /// <summary>
     /// Ends the cutscene by setting the camera to follow the player and enabling player movement

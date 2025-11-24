@@ -42,6 +42,7 @@ Narrator: It’s only then that you finally recognize one of the sigils in the r
 <<swapTarget CutsceneManager RoomPOV>>
 <<changeZoom CutsceneManager 5>>
 Narrator: This revelation comes just as the chanting reaches its peak and the sigils along the wall begin to glow before bursting into flames. For a merciful moment, there is silence. You hear your heart pounding in your chest and pray to any god listening that the cultists’ call goes unanswered. Then, the nightmare truly begins.
+<<changeShake CutsceneManager>>
 Narrator: Your mind and soul strain as its presence enters the room. It’s old. Older than you can imagine, and incomprehensibly vast. The offering is the first to go, the chunks of flesh warping and fusing until they explode out of their cage. 
 Narrator: The pressure rises in time with the newly formed tentacles, a few of the cultists exploding into showers of gore. Those who remain have less than a second before the tentacles begin whipping around, smashing and crushing whatever they make contact with.
 <<swapTarget CutsceneManager Player>>
