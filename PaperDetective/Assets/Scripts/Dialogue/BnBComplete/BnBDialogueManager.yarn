@@ -1,0 +1,10 @@
+﻿title: BnBDialogueManager
+---
+//This script holds universal variables that the dialogue in this scene runs off of.
+
+//Check if the music in the son's room is active or not.
+<<declare $musicOn = true>>
+
+//Check if the player has heard the noise coming from the vent.
+<<declare $ventNoise = false>>
+===

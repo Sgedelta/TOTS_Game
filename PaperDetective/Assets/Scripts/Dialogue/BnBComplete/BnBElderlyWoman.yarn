@@ -1,0 +1,58 @@
+﻿title: BnBElderlyWoman
+---
+//Play this piece of dialogue at the very beginning, when the player first interacts with this NPC.
+<<once>>
+    <<jump BnBElderlyWomanStart>>
+    <<stop>>
+<<endonce>>
+
+//After first interaction, if the player has yet to turn off the music,
+//play this chunk of dialogue.
+<<if $musicOn == true>>
+    Woman: If you can get my son to <color=blue>turn down his music</color> for the guests, you can have a room free of charge tonight.
+<<endif>>
+
+//After music is turned off, move to the next set of dialogue.
+<<if $musicOn == false>>
+    //This piece will play only the first time the player interacts with this NPC
+    //after the music is turned off.
+    <<once>>
+        <<jump BnBElderlyWomanFinal>>
+        <<stop>>
+    <<endonce>>
+
+    //This is the final piece of dialogue, which will play after the music is turned off
+    //and after all other dialogue has been exhausted.
+    Woman: Have you found my son yet?
+    You: No, I’m still looking at the moment. I’ll let you know when I find him.
+    Woman: Dear, oh dear, where could he be?
+<<endif>>
+
+===
+
+title: BnBElderlyWomanStart
+---
+Woman: Oh, hello! Will you be staying with us tonight?
+You: Yes, please, I just need a place to stay tonight and I’ll be out of your hair. 
+Woman: Oh, you must be that famous detective! Dear goodness, I had no idea such a famous international detective was here tonight!
+You: No, I’m afraid that name is just a coincidence.
+Woman: Oh, there’s no need to worry, I’m a big fan of police stories and such, I’ve heard so much about you!
+Woman: Say, could I ask you to do something for me? It should be a trivial task for a detective of your caliber, and you can have a room for free in return.
+Woman: My son has been holed up in his room, and his <color=blue>music</color> is disturbing some of the guests. We’ve tried knocking on the door, but he just won’t answer. 
+Woman: We used to have a <color=blue>key</color> around here, but it appears to have run off somewhere. Would you be so kind as to <color=blue>find it and ask my son to turn down the music</color>?
+You: …I guess I have enough time to look into it.
+Woman: Oh, that’s so good to hear! See if the <color=blue>handyman can help</color> you at all. My son’s room is the <color=blue>first door after you get up the stairs</color>.
+<<RevealNote MenuManager BnBTurnMusicOff>>
+<<RevealNote MenuManager BnBOpenSonDoor>>
+===
+
+title: BnBElderlyWomanFinal
+---
+You: Hello, ma’am. I got into the room to turn off the music, but your son wasn’t there.
+Woman: Really? Oh, dear, where could he be?
+You: Do you have any ideas?
+Woman: No, he would’ve said something if he left…
+Woman: Please, dear, I hate to ask this, but could you <color=blue>find my son</color>? I worry for his safety, especially with all the recent talk of murders.
+Woman: I’ll throw in a free breakfast on top of your room if you find him.
+<<RevealNote MenuManager BnBFindSon>>
+===
