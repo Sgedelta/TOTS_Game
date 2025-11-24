@@ -13,6 +13,20 @@ public class CutsceneManager : MonoBehaviour
     private float tiltTime;
 
     private float tiltAmount;
+    
+    private float zoomPercentage;
+
+    private float zoomTime;
+
+    private float zoomAmount = 5;
+
+    private float movePercentage;
+
+    private float moveTime;
+
+    private Vector2 moveAmount;
+
+    private bool cutsceneActive = false;
 
     public static CutsceneManager instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,10 +47,29 @@ public class CutsceneManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Mathf.Abs(cinemachineCamera.Lens.Dutch - tiltAmount) > .5)
+        if(!cutsceneActive)
+        {
+            return;
+        }
+
+        if (Mathf.Abs(cinemachineCamera.Lens.Dutch - tiltAmount) > .5)
         {
             tiltPercentage += Time.deltaTime / tiltTime;
             cinemachineCamera.Lens.Dutch = Mathf.Lerp(cinemachineCamera.Lens.Dutch, tiltAmount, tiltPercentage);
+        }
+
+        if (Mathf.Abs(cinemachineCamera.Lens.OrthographicSize - zoomAmount) > .5)
+        {
+            zoomPercentage += Time.deltaTime / zoomTime;
+            cinemachineCamera.Lens.OrthographicSize = Mathf.Lerp(cinemachineCamera.Lens.OrthographicSize, zoomAmount, zoomPercentage);
+        }
+
+        if(Mathf.Abs(cinemachineCamera.gameObject.transform.position.x - moveAmount.x) > .1 || Mathf.Abs(cinemachineCamera.gameObject.transform.position.y - moveAmount.y) > .1)
+        {
+            movePercentage += Time.deltaTime / moveTime;
+            cinemachineCamera.Follow.position = new Vector3(Mathf.Lerp(cinemachineCamera.Follow.position.x, moveAmount.x, movePercentage),
+                                                           Mathf.Lerp(cinemachineCamera.Follow.position.y, moveAmount.y, movePercentage),
+                                                           cinemachineCamera.Follow.position.z);
         }
     }
 
@@ -51,10 +84,11 @@ public class CutsceneManager : MonoBehaviour
         {
             cinemachineCamera = FindFirstObjectByType<CinemachineCamera>();
         }
-        cinemachineCamera.Follow = newTarget.transform;
+        SwapTarget(newTarget);
         playerController.CanMove = false;
         playerController.CanInteract = false;
         Inventory.instance.canInteract = false;
+        cutsceneActive = true;
     }
 
     [YarnCommand("swapTarget")]
@@ -62,15 +96,19 @@ public class CutsceneManager : MonoBehaviour
     /// Changes the target the camera is following during a cutscene
     /// </summary>
     /// <param name="newTarget">The new transform the camera is meant to follow</param>
-    public void SwapTarget(GameObject newTarget)
+    public void SwapTarget(GameObject newTarget, float time = 30)
     {
-        cinemachineCamera.Follow = newTarget.transform;
+        moveAmount = new Vector2(newTarget.transform.position.x, newTarget.transform.position.y);
+        movePercentage = 0;
+        moveTime = time;
     }
 
     [YarnCommand("changeZoom")]
-    public void ChangeZoom(float newZoom)
+    public void ChangeZoom(float newZoom, float time = 30)
     {
-         cinemachineCamera.Lens.OrthographicSize = newZoom;
+        zoomPercentage = 0;
+        zoomAmount = newZoom;
+        zoomTime = time;
     }
 
     [YarnCommand("changeTilt")]
