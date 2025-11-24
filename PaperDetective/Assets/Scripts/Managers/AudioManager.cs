@@ -22,14 +22,14 @@ public class AudioManager : MonoBehaviour
     public Vector2 NpcPitch
     {
         get { return npcPitch; }
-    }   
+        set { npcPitch = value; }
+    }
     private TMP_Text nameText;
     public TMP_Text NameText
     {
         get { return nameText; }
         set { nameText = value; }
     }
-    Vector2 narratorPitch = new Vector2(1.0f, 1.5f);
 
     private Vector2 pitchBounds;
     public Vector2 PitchBounds
@@ -37,12 +37,7 @@ public class AudioManager : MonoBehaviour
         get { return pitchBounds; }
         set { pitchBounds = value; }
     }
-    private Vector2 npcPitch = new Vector2(1.0f, 1.5f);
-    public Vector2 NpcPitch
-    {
-        get { return npcPitch; }
-        set { npcPitch = value; }
-    }
+
     public static AudioManager instance;
 
     private void OnEnable()

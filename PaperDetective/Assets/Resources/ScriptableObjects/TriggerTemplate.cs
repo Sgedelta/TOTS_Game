@@ -17,7 +17,14 @@ public class TriggerTemplate : ScriptableObject
     public ItemTemplate madeItem;
 
     // what dialogue to prompt
-    public string dialogueNode;
+    public string successDialogNode;
+
+    // default failure dialog node
+    public string failureDialogNode;
+
+    // lists of Items and the specific failure nodes associated with them
+    public List<ItemTemplate> failureItems;
+    public List<string> failureNodes;
 
     // do you remove the object that triggered this event
     public bool deleteHeld;
