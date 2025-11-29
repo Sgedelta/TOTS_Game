@@ -20,7 +20,7 @@ Narrator: Maybe a long object could knock the book free?
 <<stop>>
 
 <<elseif $hasUmbrella == false && $hasDictionary == true>>
-Narrator: The Vending Machine sits, waiting for another weary soul to do business with.
+Narrator: The Vending Machine sits, waiting to be restocked.
 Narrator: You decide to leave it be, it has nothing else useful for you.
 <<stop>>
 
@@ -31,7 +31,6 @@ title: BuyDictionary
 ---
 
 <<if $purchased == false>>
-Vending Machine: Sufficient Frencs deposited. Enjoy!
 <<set $purchased = true>>
 Narrator: As the machine whirs to give you your purchase, the book leans forward and hits the glass with a thunderous [b]donk[/b].
 Narrator: The <color="blue">dictionary is now stuck</color>, no matter how much you curse or shake the machine.
@@ -51,4 +50,5 @@ Narrator: You lean in with the umbrella and bat at the book. Eventually, it fall
 Narrator: You now have the <color="blue">dictionary</color>. Now you will be able to understand the Frantch people and vice versa!
 <<set $hasUmbrella = false>>
 <<set $hasDictionary = true>>
+<<UseNote MenuManager airportUnderstand>>
 ===
