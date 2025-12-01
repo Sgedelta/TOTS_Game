@@ -673,10 +673,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 49685466}
-  dialoguePresenter: {fileID: 409930525}
-  audioSource:
-  - {fileID: 986573574}
+  dialoguePresenter: {fileID: 0}
+  audioSource: []
   speechPlayer: {fileID: 417007242}
+  narratorPitch: {x: 1, y: 1.5}
+  npcPitch: {x: 1, y: 1.5}
 --- !u!4 &343365280
 Transform:
   m_ObjectHideFlags: 0
@@ -703,17 +704,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97a849d16f1e4654a981e539881c5de1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &409930525 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9151751074658877522, guid: 7622dca4f4f110542b733439554149c1, type: 3}
-  m_PrefabInstance: {fileID: 49685458}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f167f985e49a847a3ba6d9a3b54a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &417007240
@@ -1645,6 +1635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d88e2cf692032345956ef242fd2336d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeSettings: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
 --- !u!4 &1320689275
 Transform:
   m_ObjectHideFlags: 0
@@ -1848,7 +1839,7 @@ PrefabInstance:
     - target: {fileID: 3641459093785799600, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: anim
       value: 
-      objectReference: {fileID: 2000238562}
+      objectReference: {fileID: 0}
     - target: {fileID: 3675746467028819174, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
       propertyPath: moving
       value: 1
@@ -2119,11 +2110,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 57887477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2000238562 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5794366781868672482, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
-  m_PrefabInstance: {fileID: 1788052035}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2029915544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,7 +2624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5846627255533441173, guid: f8d35b216917f7146a39da3390e5b06b, type: 3}
       propertyPath: sceneName
-      value: LivingRoom
+      value: Basement
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
