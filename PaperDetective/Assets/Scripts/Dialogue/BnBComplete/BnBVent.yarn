@@ -1,9 +1,9 @@
 ﻿title: BnBVent
 ---
 //Check if the player grabbed the fragment.
-<<declare $hasFragment = false>>
+<<declare $hasVentKeyFragment = false>>
 
-<<if $hasFragment == false>>
+<<if $hasVentKeyFragment == false>>
     Narrator: There seems to be a broken key fragment glinting within the vent.
     Narrator: If only you had something to reach into the vent…
     <<once>>
@@ -22,7 +22,7 @@
 
 title: BnBVent_Screwdriver
 ---
-<<if $hasFragment == false>>
+<<if $hasVentKeyFragment == false>>
     Narrator: The screwdriver manages to pass through the vent, but it just barely can’t reach the item within.
     Narrator: If only you could reach a little farther with it…
     <<once>>
@@ -38,7 +38,8 @@ title: BnBVent_StringScrewdriver
 <<once>>
     Narrator: You lower the screwdriver into the vent, and the key slides onto the magnetic screwdriver.
     Narrator: You manage to pull the key fragment out of the vent.
-    <<set $hasFragment = true>>
+    <<AddItem Inventory VentKeyFragment>>
+    <<set $hasVentKeyFragment = true>>
     <<stop>>
 <<endonce>>
 
@@ -47,7 +48,7 @@ Narrator: You fail to notice anything else of interest in the vent.
 
 title: BnBVent_Wrong
 ---
-<<if $hasFragment == false>>
+<<if $hasVentKeyFragment == false>>
     Narrator: You try to use this item to get through the vent, but it fails to reach the glistening object within.
     Narrator: If only you had a thinner object to reach in…
 <<else>>

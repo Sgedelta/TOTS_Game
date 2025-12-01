@@ -1,0 +1,43 @@
+﻿title: BnBSonDoor
+---
+<<declare $hasDoorKeyFragment = false>>
+
+<<if $hasDoorKeyFragment == false>>
+    Narrator: This particular door has a poster for a Frantch band, Shadow Sabbath. 
+    Narrator: Incredibly loud music can be heard playing on the other side, but unfortunately the door is locked.
+    Narrator: Part of a key seems to be lodged into the door lock. You might be able to get it out with something sticky…
+    <<once>>
+        <<RevealNote MenuManager BnBFragmentSticky>>
+    <<endonce>>
+<<endif>>
+===
+
+title: BnBSonDoor_Wrong
+---
+Narrator: This item seems to have little effect on the door or its lock.
+===
+
+title: BnBSonDoor_Gum
+---
+<<once>>
+    Narrator: The gum sticks onto the key fragment, and pulling it back brings the piece to your hands.
+    Narrator: You now have the key fragment, but it’s too small to use properly.
+    <<AddItem Inventory DoorKeyFragment>>
+    <<set $hasDoorKeyFragment = true>>
+    <<stop>>
+<<endonce>>
+===
+
+title: BnBSonDoor_BrokenKey
+---
+Narrator: This particular door has a poster for a Frantch band, Shadow Sabbath. 
+Narrator: Incredibly loud music can be heard playing on the other side, but unfortunately the door is locked.
+Narrator: The key piece isn’t enough to open the door, unless you could repair the whole key…
+===
+
+title: BnBSonDoor_FixedKey
+---
+Narrator: You slide the fixed key into the door lock, and turn it gently.
+Narrator: Thankfully, the old man’s locksmithing skills weren’t just for some strange show.
+Narrator: The lock clicks into place, as you turn the handle and push the door open.
+===
