@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVisible: 0
   isUsed: 0
-  noteID: 
-  noteContent: 
-  parentInstance: {fileID: 0}
-  noteOrder: 0
+  noteID: BnBFixKey
+  noteContent: Find a way to repair the broken key.
+  parentInstance: {fileID: 11400000, guid: 50ce302195ab659468c7fe7faa45aa89, type: 2}
+  noteOrder: 2

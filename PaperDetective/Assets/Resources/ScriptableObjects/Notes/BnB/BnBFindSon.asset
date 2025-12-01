@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVisible: 0
   isUsed: 0
-  noteID: 
-  noteContent: 
+  noteID: BnBFindSon
+  noteContent: Find where the son disappeared to.
   parentInstance: {fileID: 0}
-  noteOrder: 0
+  noteOrder: 4

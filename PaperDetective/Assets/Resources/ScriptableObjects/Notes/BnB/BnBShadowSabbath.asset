@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVisible: 0
   isUsed: 0
-  noteID: 
-  noteContent: 
+  noteID: BnBShadowSabbath
+  noteContent: The son has a tattoo of the band "Shadow Sabbath".
   parentInstance: {fileID: 0}
-  noteOrder: 0
+  noteOrder: 1

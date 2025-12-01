@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVisible: 0
   isUsed: 0
-  noteID: 
-  noteContent: 
+  noteID: BnBTrophy
+  noteContent: You found a heavy trophy with some blood on it.
   parentInstance: {fileID: 0}
-  noteOrder: 0
+  noteOrder: 3
