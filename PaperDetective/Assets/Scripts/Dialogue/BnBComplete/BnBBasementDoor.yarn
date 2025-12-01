@@ -35,4 +35,7 @@ title: BnBBasementDoor_BothItems
 Narrator: You put the screwdriver into place, as if you were to try prying it off, and bash it into the lock with the trophy.
 Narrator: After a few strikes, the mechanism cracks off of the door, which slightly turns towards you, far enough that it is clearly unlocked and opened.
 Narrator: You pull the door completely open, and make your way into the basement.
+<<UseNote MenuManager BnBBasementLock>>
+<<UseNote MenuManager BnBOpenBasementDoor>>
+<<UseNote MenuManager BnBVentSound>>
 ===

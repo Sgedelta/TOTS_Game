@@ -26,6 +26,7 @@ title: BnBVent_Screwdriver
     Narrator: The screwdriver manages to pass through the vent, but it just barely can’t reach the item within.
     Narrator: If only you could reach a little farther with it…
     <<once>>
+        <<UseNote MenuManager BnBFragmentLong>>
         <<RevealNote MenuManager BnBFragmentLonger>>
     <<endonce>>
 <<else>>
@@ -40,6 +41,7 @@ title: BnBVent_StringScrewdriver
     Narrator: You manage to pull the key fragment out of the vent.
     <<AddItem Inventory VentKeyFragment>>
     <<set $hasVentKeyFragment = true>>
+    <<UseNote MenuManager BnBFragmentLonger>>
     <<stop>>
 <<endonce>>
 

@@ -67,4 +67,6 @@ Narrator: After a few moments, the proprietor puts his glowing tool away, and lo
 Man: There we go! I still have my old touch when it comes to locksmithing!
 Man: Here’s the key, <color=blue>it should get you into that room now!</color>
 You: Uhh, yea. Thanks.
+<<UseNote MenuManager BnBSonDoorKey>>
+<<UseNote MenuManager BnBFixKey>>
 ===

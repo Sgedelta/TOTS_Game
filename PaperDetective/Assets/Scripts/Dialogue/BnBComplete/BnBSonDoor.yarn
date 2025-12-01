@@ -24,6 +24,7 @@ title: BnBSonDoor_Gum
     Narrator: You now have the key fragment, but it’s too small to use properly.
     <<AddItem Inventory DoorKeyFragment>>
     <<set $hasDoorKeyFragment = true>>
+    <<UseNote MenuManager BnBFragmentSticky>>
     <<stop>>
 <<endonce>>
 ===
@@ -40,4 +41,5 @@ title: BnBSonDoor_FixedKey
 Narrator: You slide the fixed key into the door lock, and turn it gently.
 Narrator: Thankfully, the old man’s locksmithing skills weren’t just for some strange show.
 Narrator: The lock clicks into place, as you turn the handle and push the door open.
+<<UseNote MenuManager BnBOpenSonDoor>>
 ===
