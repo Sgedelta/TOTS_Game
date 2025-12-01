@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -571598397
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 1172264859769714759, guid: 8f429ae8dbe5c15499308bf1fba8afa6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -456,7 +456,6 @@ MonoBehaviour:
   canMove: 1
   canInteract: 1
   rb: {fileID: 346672412732654398}
-  talkRadius: 2
   talkPartner: {fileID: 0}
 --- !u!114 &6109371150928402377
 MonoBehaviour:
