@@ -44,4 +44,5 @@ Resident: Ah, thank you so much! That noise was unbearable!
 You: Yes, but the occupant wasn’t in there. Do you know where he went?
 Resident: No, I’m afraid I have no clue.
 Resident: By the way, have you heard that weird noise coming from the vent?
+<<set $playerKnowsVent = true>>
 ===

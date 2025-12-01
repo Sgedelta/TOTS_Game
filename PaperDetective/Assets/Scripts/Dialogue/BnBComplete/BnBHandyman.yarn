@@ -1,0 +1,75 @@
+﻿title: BnBHandyman
+---
+//Check if the player knows about the noise coming from the vent.
+<<declare $playerKnowsVent = false>>
+
+//Play this piece of dialogue at the very beginning, when the player first interacts with this NPC.
+<<once>>
+    <<jump BnBHandymanStart>>
+    <<stop>>
+<<endonce>>
+
+//After first interaction, if the player has yet to turn off the music,
+//play this chunk of dialogue.
+<<if $musicOn == true>>
+    Handyman: Hopefully that screwdriver comes in handy!
+<<endif>>
+
+//After music is turned off, move to the next set of dialogue.
+<<if $musicOn == false>>
+    //This piece will play only the first time the player interacts with this NPC
+    //after the music is turned off.
+    <<once>>
+        <<jump BnBHandymanFinal>>
+        <<stop>>
+    <<endonce>>
+
+    //Play this if the player knows about the noise coming from the vent.
+    //This is true if the player interacts with the Resident or the vent AFTER the music box is turned off.
+    <<if $playerKnowsVent == true>>
+        <<once>>
+            <<jump BnBHandyman_Noise>>
+            <<stop>>
+        <<endonce>>
+    <<endif>>
+
+    //This is the final piece of dialogue, which will play after the music is turned off
+    //and after all other dialogue has been exhausted.
+    Handyman: I wish I could help you find the guy, but I have no clue where he could be.
+<<endif>>
+===
+
+title: BnBHandymanStart
+---
+Handyman: Hello!
+You: Hi, do you know where the key to the room with the music is?
+Handyman: Sorry, I don’t know where it might be. 
+Handyman: But hey, if you need something to deal with the music, I’m happy to help.
+Handyman: Here, you can have some of my equipment if you need it.
+You: I’ll take that screwdriver off your hands, then.
+Handyman: Sure thing! Good luck!
+<<AddItem Inventory BnBScrewdriver>>
+===
+
+title: BnBHandymanFinal
+---
+Handyman: I see that screwdriver was helpful after all!
+You: Yeah thanks for the assist! While you’re here, do you happen to know where the guy from that room might be?
+Handyman: Sorry, I have no idea. Someone else might know?
+===
+
+title: BnBHandymanFragments
+---
+Handyman: How’s it going, friend?
+You: I found this key fragment, would you be able to fix it?
+Handyman: Sorry, man, I don’t have anything to weld metal.
+Handyman: Maybe <color=blue>somebody else</color> could help with that?
+===
+
+title: BnBHandyman_Noise
+---
+Handyman: Ah, I’m just about wrapped up here. Is there anything you need?
+You: Yes, I heard a noise coming from the vents. Do you know where it might be coming from?
+Handyman: Huh, that's probably coming from the basement. I haven’t been able to get in there, the key seems to be lost.
+You: Not again. I’ll see what I can do.
+===
