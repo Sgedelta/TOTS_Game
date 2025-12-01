@@ -36,6 +36,8 @@ Man: I don’t mind it much, so long as it stays in there. It's been a <color=bl
 You: If you can tell me where the key is I’d be happy to go talk to him for you.
 Man: I wish I could, but I’ve <color=blue>not found the key anywhere in this house</color>. It used to always hang on the same hook behind the front desk, I don’t know where it got to.
 Man: If I were a more suspicious man I’d say it’s almost like it wanted to be lost.
+<<RevealNote MenuManager BnBShadowSabbath>>
+<<RevealNote MenuManager BnBSonDoorKey>>
 ===
 
 title: BnBElderlyManFinal
