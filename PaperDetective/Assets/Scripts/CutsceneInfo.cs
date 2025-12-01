@@ -14,11 +14,9 @@ public class CutsceneInfo : MonoBehaviour
     /// If an object is panned to multiple times, it should appear multiple times in this list.
     /// </summary>
     public List<Transform> speakers;
-    [YarnCommand("changeSpeaker")]
-    public void ChangeSpeaker()
-    {
-        CutsceneManager.instance.SwapTarget(speakers[0]);
-        speakers.RemoveAt(0);
-    }
+
+    bool cutsceneStarted = false;
+
+
 
 }

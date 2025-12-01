@@ -71,7 +71,6 @@ public class Inventory : MonoBehaviour
         {
             transform.parent.GetComponent<Canvas> ().worldCamera = Camera.main;
         }
-        Debug.Log("Screen Width : " + Screen.width);
         Sort();
     }
 
@@ -115,6 +114,8 @@ public class Inventory : MonoBehaviour
         // if player clicked on an item
         if (hit && hit.collider.gameObject.CompareTag("Item"))
         {
+            hit.collider.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 12;
+
             Item hitItem = hit.collider.gameObject.GetComponent<Item>();
             // if the left mouse button is clicked
             if (context.performed)
@@ -174,12 +175,12 @@ public class Inventory : MonoBehaviour
     [YarnCommand("AddItem")]
     public void Add(Item item)
     {
+        Debug.Log("Here");
         if(Inventory.instance.inventory.ContainsKey(item.Template.id))
         {
             Inventory.instance.inventory[item.Template.id].amount += item.amount;
             return;
         }
-
 
         Inventory.instance.inventory.Add(item.Template.id, item);
         DontDestroyOnLoad(item.gameObject);
