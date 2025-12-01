@@ -13,6 +13,7 @@
     Narrator: You wonder the damage it could do, or perhaps the damage it has already done.
     <<AddItem Inventory Trophy>>
     <<set $hasTrophy = true>>
+    <<RevealNote MenuManager BnBTrophy>>
     <<stop>>
 <<else>>
     Narrator: Apart from the trophy you retrieved, there is little of interest in the drawers.
