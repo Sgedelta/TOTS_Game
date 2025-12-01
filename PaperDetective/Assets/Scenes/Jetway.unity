@@ -1635,7 +1635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d88e2cf692032345956ef242fd2336d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeSettings: {fileID: 0}
+  shakeSettings: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
 --- !u!4 &1320689275
 Transform:
   m_ObjectHideFlags: 0
@@ -2624,7 +2624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5846627255533441173, guid: f8d35b216917f7146a39da3390e5b06b, type: 3}
       propertyPath: sceneName
-      value: LivingRoom
+      value: Basement
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

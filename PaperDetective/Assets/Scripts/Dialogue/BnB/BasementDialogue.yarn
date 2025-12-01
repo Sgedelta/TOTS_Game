@@ -27,8 +27,8 @@ title: Uncensored
 Narrator: You enter into the dimly lit room, the scent of blood so strong in the air you can taste the iron on your tongue. You take a few moments to let your eyesight adjust.
 <<swapTarget CutsceneManager SigilsPOV>>
 Narrator: The first thing you notice is the sigils on the wall. Daubed in blood and impossibly complex, it feels like they’re burning into your brain as it makes its feeble attempts to comprehend them.
-Narrator: You instinctually shift your gaze to the center of the room to escape the pain, only to find that something even more terrible awaits you.
 <<swapTarget CutsceneManager CultistPOV>>
+Narrator: You instinctually shift your gaze to the center of the room to escape the pain, only to find that something even more terrible awaits you.
 Narrator: At first you can only see the circle of hooded figures standing in the center of the room. After a quick flip through your dictionary, you realize their chanting is in neither English nor Frantch, but something far more insidious.
 <<swapTarget CutsceneManager Player>>
 <<changeTilt CutsceneManager 15 600>>
