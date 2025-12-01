@@ -8,7 +8,7 @@ Narrator: You swing the door open and enter the room.
 
 <<else>>
 
-Narrator: A locked door. Music pounds through the walls from inside.
+Narrator: A locked door. <color="blue">Music</color> pounds through the walls from inside.
 
 <<endif>>
 

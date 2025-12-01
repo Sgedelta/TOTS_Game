@@ -1,0 +1,11 @@
+﻿title: BnBRug
+---
+<<once>>
+    Narrator: The rug lies unevenly in front of the door, bunched up oddly.
+    Narrator: You try to straighten it out with your foot by dragging it to one side.
+    Narrator: As you do, you realize the rug is covering several <color=blue>large scratch marks</color> on the floor in front of the door.
+    Narrator: The scratch marks under the rug are long and in sets of four, spaced about a foot apart.
+    <<stop>>
+<<endonce>>
+Narrator: The cat must have gotten really anxious here.
+===

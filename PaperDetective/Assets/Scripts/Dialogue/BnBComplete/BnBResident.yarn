@@ -1,0 +1,49 @@
+﻿title: BnBResident
+---
+//Play this piece of dialogue at the very beginning, when the player first interacts with this NPC.
+<<once>>
+    <<jump BnBResidentStart>>
+    <<stop>>
+<<endonce>>
+
+//After first interaction, if the player has yet to turn off the music,
+//play this chunk of dialogue.
+<<if $musicOn == true>>
+    Resident: If you could turn off that music so I can get some sleep, I’d really appreciate it.
+<<endif>>
+
+//After music is turned off, move to the next set of dialogue.
+<<if $musicOn == false>>
+    //This piece will play only the first time the player interacts with this NPC
+    //after the music is turned off.
+    <<once>>
+        <<jump BnBResidentFinal>>
+        <<stop>>
+    <<endonce>>
+
+    //This is the final piece of dialogue, which will play after the music is turned off
+    //and after all other dialogue has been exhausted.
+    Resident: There’s a weird noise coming from the vent.
+<<endif>>
+===
+
+title: BnBResidentStart
+---
+Resident: Oh, hello. Here to stay for the night?
+You: Hello there, I’m trying to help out the hostess. Do you know anything about a key to that room?
+Resident: You mean the one where the music is coming from? I’m afraid not, but if I did I would’ve barged in there hours ago.
+You: How long has it been going on?
+Resident: I’ve been here <color=blue>since yesterday</color>, and it’s been awful.
+Resident: It was fine earlier last night, but then it <color=blue>suddenly got very loud</color> and hasn’t turned off since.
+Resident: If you could turn off that music so I can get some sleep, I’d really appreciate it.
+===
+
+title: BnBResidentFinal
+---
+Resident: Ah, thank you so much! That noise was unbearable!
+You: Yes, but the occupant wasn’t in there. Do you know where he went?
+Resident: No, I’m afraid I have no clue.
+Resident: By the way, have you heard that weird noise coming from the vent?
+<<set $playerKnowsVent = true>>
+<<RevealNote MenuManager BnBVentSound>>
+===

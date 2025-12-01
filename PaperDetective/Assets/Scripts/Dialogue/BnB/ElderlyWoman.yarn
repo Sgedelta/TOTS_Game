@@ -8,18 +8,18 @@
     You: No, I’m afraid that name is just a coincidence.
     Woman: Oh, there’s no need to worry, I’m a big fan of police stories and such, I’ve heard so much about you!
     Woman: Say, could I ask you to do something for me? 
-    Woman: My son has been holed up in his room, and his music is disturbing some of the guests. We’ve tried knocking on the door, but he just won’t answer. 
-    Woman: We used to have a key around here, but it appears to have run off somewhere. Would you be so kind as to find it and ask my son to turn down the music?
+    Woman: My son has been holed up in his room, and his <color="blue">music</color> is disturbing some of the guests. We’ve tried knocking on the door, but he just won’t answer. 
+    Woman: We used to have a <color="blue">key</color> around here, but it appears to have run off somewhere. Would you be so kind as to <color="blue">find it and ask my son to turn down the music</color>?
     Woman: It should be a trivial task for a detective of your caliber, and you can have a room for free in return.
     You: …I guess I have enough time to look into it.
-    Woman: Oh, that’s so good to hear! See if the handyman can help you at all. My son’s room is the first door after you get up the stairs
+    Woman: Oh, that’s so good to hear! See if <color="blue">the handyman can help</color> you at all. My son’s room is the <color="blue">first door after you get up the stairs</color>
     <<RevealNote MenuManager BnBOpenDoor>>
     <<stop>>
     <<endonce>>
 
 //This chunk plays after the first interaction and BEFORE the first door is opened.
 <<if $sonRoomOpen == false>>
-    Woman: If you can get my son to turn down his music for the guests, you can have a room free of charge tonight.
+    Woman: If you can <color="blue">get my son to turn down his music</color> for the guests, you can have a room free of charge tonight.
     <<stop>>
 
 //Plays during the FIRST interaction AFTER the door is opened.
@@ -29,7 +29,7 @@
     Woman: Really? Oh, dear, where could he be?
     You: Do you have any ideas?
     Woman: No, he would’ve said something if he left…
-    Woman: Please, dear, I hate to ask this, but could you find my son? I worry for his safety, especially with all the recent talk of murders.
+    Woman: Please, dear, I hate to ask this, but could you <color="blue">find my son</color>? I worry for his safety, especially with all the <color="blue">recent talk of murders</color>.
     Woman: I’ll throw in a free breakfast on top of your room if you find him.
 
     //Add note for player to find the son.
@@ -39,7 +39,7 @@
     <<endonce>>
 
     //Play these lines only after all other dialogues have been exhausted.
-    Woman: Have you found my son yet?
+    Woman: Have you <color="blue">found my son</color> yet?
     You: No, I’m still looking at the moment. I’ll let you know when I find him.
     Woman: Dear, oh dear, where could he be?
 
