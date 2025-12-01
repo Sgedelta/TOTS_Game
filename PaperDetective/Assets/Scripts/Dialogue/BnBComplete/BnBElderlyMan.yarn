@@ -1,0 +1,68 @@
+﻿title: BnBElderlyMan
+---
+//Play this piece of dialogue at the very beginning, when the player first interacts with this NPC.
+<<once>>
+    <<jump BnBElderlyManStart>>
+    <<stop>>
+<<endonce>>
+
+//After first interaction, if the player has yet to turn off the music,
+//play this chunk of dialogue.
+<<if $musicOn == true>>
+    Man: Just get into that boy’s room however you can, but please don’t break my property.
+<<endif>>
+
+//After music is turned off, move to the next set of dialogue.
+<<if $musicOn == false>>
+    //This piece will play only the first time the player interacts with this NPC
+    //after the music is turned off.
+    <<once>>
+        <<jump BnBElderlyManFinal>>
+        <<stop>>
+    <<endonce>>
+
+    //This is the final piece of dialogue, which will play after the music is turned off
+    //and after all other dialogue has been exhausted.
+    Man: Sometimes I wish I could just break that darn lock off the basement door, the little thing is just so finicky. 
+<<endif>>
+===
+
+title: BnBElderlyManStart
+---
+Man: Ah, you must be a new guest. Well, come on in, it's nice and cool here.
+You: Hello, do you know anything about the key to the boy’s room where the music is coming from?
+Man: Oh, you mean my son’s room? Yes, he's been going through a “rock and roll” phase recently. He even got <color=blue>a tattoo</color> of that darn <color=blue>“Shadow Sabbath”</color> band on his forearm.
+Man: I don’t mind it much, so long as it stays in there. It's been a <color=blue>bit too loud</color> today though.
+You: If you can tell me where the key is I’d be happy to go talk to him for you.
+Man: I wish I could, but I’ve <color=blue>not found the key anywhere in this house</color>. It used to always hang on the same hook behind the front desk, I don’t know where it got to.
+Man: If I were a more suspicious man I’d say it’s almost like it wanted to be lost.
+===
+
+title: BnBElderlyManFinal
+---
+You: I got into the room, but your son wasn’t anywhere in there.
+Man: Oh, he probably just <color=blue>ran off</color> with his friends and forgot to turn off the music.
+You: I also found some scratch marks along the floor, I think something might’ve happened.
+Man: Huh, that’s odd. It was probably just the cat. Poor fella’s so <color=blue>anxious</color> that it keeps scratching everything, especially that old basement door.
+Man: Not that that door’s doing much, what with the lock acting up and the key getting lost.
+Man: I swear I’m just going to break off that darn lock one of these days.
+===
+
+title: BnBElderlyMan_OneFragment
+---
+Man: Hey, is that part of a key you got there?
+Man: <color=blue>If you can get me the other half, I can fix it up!</color>
+===
+
+title: BnBElderlyMan_BothFragments
+---
+Man: Hey, where’d you get that broken key, buddy?
+You: I found half in a vent, and this other half stuck in the door to your son’s room.
+Man: Oh, I see. Would you mind letting me see those?
+You: Sure, I suppose.
+Narrator: You watch as the old man grabs a previously unnoticed welding torch and the room flashes without warning.
+Narrator: After a few moments, the proprietor puts his glowing tool away, and looks back at you with your prize in hand.
+Man: There we go! I still have my old touch when it comes to locksmithing!
+Man: Here’s the key, <color=blue>it should get you into that room now!</color>
+You: Uhh, yea. Thanks.
+===
