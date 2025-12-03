@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b0926bca2b59f49a0fe06644c75234, type: 3}
-  m_Name: key
+  m_Name: BnBLockpick
   m_EditorClassIdentifier: 
-  id: key1
-  displayName: I unlock things
+  itemSprite: {fileID: -1193307888093939537, guid: eedb7284eb7ff7d41bbf789420a4dfc1, type: 3}
+  id: BnBLockpick
+  displayName: Lockpick
   defaultAmount: 1
   madeFromItems:
-  - {fileID: 11400000, guid: 2b74239851953aa4db8fffe21f3440bb, type: 2}
-  - {fileID: 11400000, guid: 07f0c110649f9ae46a0b51b7dc80a767, type: 2}
+  - {fileID: 11400000, guid: de9f69bc872d9734e82ccd997ab65c9a, type: 2}
+  - {fileID: 11400000, guid: 7057343fab665b14c8213d79b3f0f502, type: 2}
   madeFromAmounts:
-  - 5
+  - 1
   - 1
   usedIn: []

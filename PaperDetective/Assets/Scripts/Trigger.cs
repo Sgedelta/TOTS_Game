@@ -50,10 +50,5 @@ public class Trigger : MonoBehaviour
 
         }
 
-
-     
-
-
-
     }
 }

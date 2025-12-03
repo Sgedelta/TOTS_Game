@@ -10,16 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b0926bca2b59f49a0fe06644c75234, type: 3}
-  m_Name: BnBBedroomKey
+  m_Name: BnBBedroomKeyGum
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 8994428779495873435, guid: eedb7284eb7ff7d41bbf789420a4dfc1, type: 3}
+  itemSprite: {fileID: -8450676498533464285, guid: eedb7284eb7ff7d41bbf789420a4dfc1, type: 3}
   id: BnBBedroomKey
   displayName: A Key to a Bedroom
   defaultAmount: 1
-  madeFromItems:
-  - {fileID: 11400000, guid: 391504377e831a64cb2c21fad062adb6, type: 2}
-  - {fileID: 11400000, guid: e8f9cb7a5cec30147acdb60454f65659, type: 2}
-  madeFromAmounts:
-  - 1
-  - 1
-  usedIn: []
+  madeFromItems: []
+  madeFromAmounts: []
+  usedIn:
+  - {fileID: 11400000, guid: d76760e6a4dde61478b2b1cf74631a7c, type: 2}

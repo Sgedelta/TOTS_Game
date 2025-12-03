@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b0926bca2b59f49a0fe06644c75234, type: 3}
-  m_Name: TestResult
+  m_Name: BnBGum
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 8203965518831835111, guid: c1b7f28324b872b46bd468f68f7484f5, type: 3}
-  id: res1
-  displayName: I'm a resulting item!
-  defaultAmount: 3
-  madeFromItems:
-  - {fileID: 11400000, guid: 2b74239851953aa4db8fffe21f3440bb, type: 2}
-  - {fileID: 11400000, guid: 400d5ed967f996349adfe665c439df82, type: 2}
-  madeFromAmounts:
-  - 1
-  - 1
+  itemSprite: {fileID: 2327777078310983751, guid: eedb7284eb7ff7d41bbf789420a4dfc1, type: 3}
+  id: BnBGum
+  displayName: Gum
+  defaultAmount: 1
+  madeFromItems: []
+  madeFromAmounts: []
   usedIn: []
