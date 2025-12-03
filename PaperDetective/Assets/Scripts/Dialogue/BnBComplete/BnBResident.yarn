@@ -1,5 +1,7 @@
 ﻿title: BnBResident
 ---
+<<declare $hasGum = false>>
+
 //Play this piece of dialogue at the very beginning, when the player first interacts with this NPC.
 <<once>>
     <<jump BnBResidentStart>>
@@ -10,6 +12,16 @@
 //play this chunk of dialogue.
 <<if $musicOn == true>>
     Resident: If you could turn off that music so I can get some sleep, I’d really appreciate it.
+
+    <<if $hasGum == false>>
+        You: Speaking of loud noises...
+        -> I'll get right to that music.
+            <<stop>>
+        -> Can you stop chewing that gum?
+            Resident: Sure, but you have to throw it away for me.
+            <<AddItem Inventory BnBGum>>
+            <<set $hasGum = true>>
+    <<endif>>
 <<endif>>
 
 //After music is turned off, move to the next set of dialogue.
@@ -29,6 +41,8 @@
 
 title: BnBResidentStart
 ---
+Narrator: Another Resident of the Bed and Breakfast. She's loudly smacking on some <color=blue>gum</color>.
+Narrator: It's almost as bad as the music pounding through the nearby door.
 Resident: Oh, hello. Here to stay for the night?
 You: Hello there, I’m trying to help out the hostess. Do you know anything about a key to that room?
 Resident: You mean the one where the music is coming from? I’m afraid not, but if I did I would’ve barged in there hours ago.
