@@ -15,8 +15,10 @@ MonoBehaviour:
   id: BrokenKeyTrigger
   triggerItem: {fileID: 11400000, guid: bb8eedab475489a48b41dbee010ceed1, type: 2}
   madeItem: {fileID: 11400000, guid: 391504377e831a64cb2c21fad062adb6, type: 2}
-  successDialogNode: 
-  failureDialogNode: 
-  failureItems: []
-  failureNodes: []
+  successDialogNode: BnBSonDoor_Gum
+  failureDialogNode: BnBSonDoor_Wrong
+  failureItems:
+  - {fileID: 11400000, guid: e8f9cb7a5cec30147acdb60454f65659, type: 2}
+  failureNodes:
+  - BnBSonDoor_BrokenKey
   deleteHeld: 1

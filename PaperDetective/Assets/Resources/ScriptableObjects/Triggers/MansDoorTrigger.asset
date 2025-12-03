@@ -15,8 +15,12 @@ MonoBehaviour:
   id: MansDoorTrigger
   triggerItem: {fileID: 11400000, guid: d76760e6a4dde61478b2b1cf74631a7c, type: 2}
   madeItem: {fileID: 0}
-  successDialogNode: 
-  failureDialogNode: 
-  failureItems: []
-  failureNodes: []
+  successDialogNode: BnBSonDoor_FixedKey
+  failureDialogNode: BnBSonDoor_Wrong
+  failureItems:
+  - {fileID: 11400000, guid: e8f9cb7a5cec30147acdb60454f65659, type: 2}
+  - {fileID: 11400000, guid: 391504377e831a64cb2c21fad062adb6, type: 2}
+  failureNodes:
+  - BnBSonDoor_BrokenKey
+  - BnBSonDoor_BrokenKey
   deleteHeld: 1

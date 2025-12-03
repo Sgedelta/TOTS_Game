@@ -15,8 +15,10 @@ MonoBehaviour:
   id: BnBVentKeyTrigger
   triggerItem: {fileID: 11400000, guid: de9f69bc872d9734e82ccd997ab65c9a, type: 2}
   madeItem: {fileID: 11400000, guid: e8f9cb7a5cec30147acdb60454f65659, type: 2}
-  successDialogNode: 
-  failureDialogNode: 
-  failureItems: []
-  failureNodes: []
-  deleteHeld: 1
+  successDialogNode: BnBVent_StringScrewdriver
+  failureDialogNode: BnBVent_Wrong
+  failureItems:
+  - {fileID: 11400000, guid: df8f91e0756cd9e4eb98b3d80aa457f8, type: 2}
+  failureNodes:
+  - BnBVent_Screwdriver
+  deleteHeld: 0
