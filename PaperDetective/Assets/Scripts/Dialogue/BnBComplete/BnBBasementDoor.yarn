@@ -1,0 +1,41 @@
+﻿title: BnBBasementDoor
+---
+Narrator: This door is completely locked, with seemingly no way to open it.
+<<once>>
+    <<RevealNote MenuManager BnBBasementLock>>
+<<endonce>>
+===
+
+title: BnBBasementDoor_Wrong
+---
+Narrator: Despite your best efforts, this item is ill-equipped to open the door.
+Narrator: If only you could get through the lock…
+===
+
+title: BnBBasementDoor_SonKey
+---
+Narrator: Unfortunately, this is no master key, and cannot be used to unlock this door.
+Narrator: If only you could get through the lock…
+===
+
+title: BnBBasementDoor_Screwdriver
+---
+Narrator: You try to pry open the door lock with the screwdriver, but you can’t quite put in the strength to pop it off.
+Narrator: If only you could put more force into the screwdriver…
+===
+
+title: BnBBasementDoor_Trophy
+---
+Narrator: You try to hit the door lock with the trophy, but it just seems to bounce right off.
+Narrator: If only you could concentrate the force of the trophy…
+===
+
+title: BnBBasementDoor_BothItems
+---
+Narrator: You put the screwdriver into place, as if you were to try prying it off, and bash it into the lock with the trophy.
+Narrator: After a few strikes, the mechanism cracks off of the door, which slightly turns towards you, far enough that it is clearly unlocked and opened.
+Narrator: You pull the door completely open, and make your way into the basement.
+<<UseNote MenuManager BnBBasementLock>>
+<<UseNote MenuManager BnBOpenBasementDoor>>
+<<UseNote MenuManager BnBVentSound>>
+===

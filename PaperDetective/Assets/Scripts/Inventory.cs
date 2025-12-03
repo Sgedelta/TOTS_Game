@@ -7,9 +7,12 @@ using System.Linq;
 using Yarn;
 using Yarn.Unity;
 using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField] bool inventoryHide;
     [SerializeField] Sprite square;
     [SerializeField] private int capacity;
     [SerializeField] private GameObject slotPrefab;
@@ -23,6 +26,7 @@ public class Inventory : MonoBehaviour
     public GameObject NewItemPrefab { get { return newItemPrefab; } }
 
     private DialogueRunner dialogue;
+    List<TextMeshProUGUI> itemNames;
 
     public static Inventory instance;
     public bool canInteract = true;
@@ -41,19 +45,33 @@ public class Inventory : MonoBehaviour
             //This method informs Unity to retain the object this script is attached to when changing scenes.
             DontDestroyOnLoad(this.transform.parent.gameObject);
             Debug.Log("Keeping the inventory " + this.transform.parent.gameObject.name);
+
+            if (inventoryHide)
+            {
+                this.transform.parent.gameObject.SetActive(false);
+            }
         }
         else
         {
             Debug.Log("Removing the inventory " + this.transform.parent.gameObject.name);
             //If there is already an instance of the Inventory, then delete the object this is attached to.
             //This ensures that only one instance of the Inventory exists across all scenes.
-            Destroy(this.transform.parent.gameObject);
 
+            if (inventoryHide)
+            {
+                this.transform.parent.gameObject.SetActive(false);
+            }
+            else
+            {
+                Inventory.instance.transform.parent.gameObject.SetActive(true);
+            }
+            Destroy(this.transform.parent.gameObject);
         }
     }
 
     private void Start()
     {
+        itemNames = new List<TextMeshProUGUI>();
         inventory = new SortedList<string, Item>();
 
         //create slots
@@ -71,6 +89,7 @@ public class Inventory : MonoBehaviour
         {
             transform.parent.GetComponent<Canvas> ().worldCamera = Camera.main;
         }
+        //Debug.Log("Screen Width : " + Screen.width);
         Sort();
     }
 
@@ -96,9 +115,10 @@ public class Inventory : MonoBehaviour
             GameObject slot = Instantiate(slotPrefab, trans);
 
             invSlots.Add(slot);
+            itemNames.Add(slot.GetComponentInChildren<TextMeshProUGUI>());
+            itemNames[i].color = Color.clear;
 
-            slot.GetComponent<RectTransform>().localPosition = new Vector3(boxWidth * (i - (capacity / 2) + 0.5f), 0, 0); //note: might have to update z for order
-
+            slot.GetComponent<RectTransform>().localPosition = new Vector3(boxWidth * (i - (capacity / 2) + 0.5f), 0, 0); //note: might have to update z for 
         }
     }
 
@@ -227,13 +247,21 @@ public class Inventory : MonoBehaviour
 
         //note: a little quick and dirty, won't update things "outside" of inventory - should really handle this on inventory adding side\
         //fill slots with images and position items into clickable location
-        for (int i = 0; i < Mathf.Min(capacity, Inventory.instance.inventory.Count); i++)
+        for (int i = 0; i < Mathf.Min(capacity, instance.inventory.Count); i++)
         {
-            invSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = Inventory.instance.inventory.Values[i].Template.itemSprite;
-            invSlots[i].transform.GetChild(0).GetComponent<Image>().color = Color.white;
-            Inventory.instance.inventory.Values[i].GetComponent<SpriteRenderer>().color = Color.clear;
+            invSlots[i].GetComponentsInChildren<Image>()[1].sprite = instance.inventory.Values[i].Template.itemSprite;
+            invSlots[i].GetComponentsInChildren<Image>()[1].color = Color.white;
 
-            Inventory.instance.inventory.Values[i].targetPos = invSlots[i].transform.position;
+            instance.inventory.Values[i].GetComponent<SpriteRenderer>().color = Color.clear;
+            instance.inventory.Values[i].targetPos = invSlots[i].transform.position;
+
+            if (i >= itemNames.Count)
+            {
+                itemNames.Add(instance.invSlots[i].GetComponentInChildren<TextMeshProUGUI>());
+                itemNames[i].color = Color.clear;
+                Debug.Log(instance.invSlots[i].GetComponentInChildren<TextMeshProUGUI>());
+            }
+            itemNames[i].text = instance.inventory.Values[i].Template.id;
 
             x++;
         }
@@ -242,10 +270,11 @@ public class Inventory : MonoBehaviour
         {
             //Debug.Log($"{i}: Capacity is {capacity}");
             //Debug.Log($"{i}: {invSlots[i].transform}");
-            invSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-            invSlots[i].transform.GetChild(0).GetComponent<Image>().color = Color.clear;
+            invSlots[i].GetComponentsInChildren<Image>()[1].sprite = null;
+            invSlots[i].GetComponentsInChildren<Image>()[1].color = Color.clear;
+            itemNames[i].color = Color.clear;
+            itemNames[i].text = "";
         }
-        
     }
 
     public void TransformItem(Item existingItem, ItemTemplate newItem)
@@ -273,8 +302,29 @@ public class Inventory : MonoBehaviour
         TransformItem(i, it);
     }
 
+    public void DisplayName(bool display, GameObject slot)
+    {
+        if (invSlots.Contains(slot))
+        {
+            int slotI = invSlots.IndexOf(slot);
+            if (itemNames[slotI])
+            {
+                if (display)
+                {
+                    itemNames[slotI].color = Color.white;
+                    itemNames[slotI].outlineColor = Color.black;
+                    itemNames[slotI].faceColor = Color.white;
+                }
+                else
+                {
+                    itemNames[slotI].color = Color.clear;
+                }
+            }
+        }
+    }
 
-    [YarnCommand("Check")]
+
+        [YarnCommand("Check")]
     public bool CheckItem(string itemName)
     {
         /*
