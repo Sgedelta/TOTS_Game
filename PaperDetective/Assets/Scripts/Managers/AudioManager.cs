@@ -19,11 +19,6 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private Vector2 narratorPitch = new Vector2(1.0f, 1.5f);
     [SerializeField] private Vector2 npcPitch = new Vector2(1.0f, 1.5f);
-    public Vector2 NpcPitch
-    {
-        get { return npcPitch; }
-        set { npcPitch = value; }
-    }
     private TMP_Text nameText;
     public TMP_Text NameText
     {
@@ -37,7 +32,11 @@ public class AudioManager : MonoBehaviour
         get { return pitchBounds; }
         set { pitchBounds = value; }
     }
-
+    public Vector2 NpcPitch
+    {
+        get { return npcPitch; }
+        set { npcPitch = value; }
+    }
     public static AudioManager instance;
 
     private void OnEnable()
@@ -46,11 +45,16 @@ public class AudioManager : MonoBehaviour
     }
     void Awake()
     {
-        if (instance == null)
+        if (instance == null && instance != this)
         {
             DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        npcPitch = new Vector2(1.0f, 1.5f);
     }
     void Start()
     {

@@ -4,10 +4,10 @@
 <<once>>
     Man: Ah, you must be a new guest. Well, come on in, it's nice and cool here.
     You: Hello, do you know anything about the key to the boy’s room where the music is coming from?
-    Man: Oh, you mean my son’s room? Yes, he's been going through a “rock and roll” phase recently. He even got a tattoo of that darn “Shadow Sabbath” band on his forearm.
-    Man: I don’t mind it much, so long as it stays in there. It's been a bit too loud today though.
+    Man: Oh, you mean my son’s room? Yes, he's been going through a “rock and roll” phase recently. He even got a <color="blue">tattoo of that darn “Shadow Sabbath” band</color> on his forearm.
+    Man: I don’t mind it much, so long as it stays in there. It's been a bit <color="blue">too loud</color> today though.
     You: If you can tell me where the key is I’d be happy to go talk to him for you.
-    Man: I wish I could, but I’ve not found the key anywhere in this house. It used to always hang on the same hook behind the front desk, I don’t know where it got to.
+    Man: I wish I could, but I’ve <color="blue">not found the key anywhere on this floor</color>. It used to always hang on the same hook behind the front desk, I don’t know where it got to.
     Man: If I were a more suspicious man I’d say it’s almost like it wanted to be lost.
     <<stop>>
     <<endonce>>
@@ -21,9 +21,9 @@
 <<else>>
     <<once>>
     You: I got into the room, but your son wasn’t anywhere in there.
-    Man: Oh, he probably just ran off with his friends and forgot to turn off the music.
+    Man: Oh, he probably just <color="blue">ran off</color> with his friends and forgot to turn off the music.
     You: I also found some scratch marks along the floor, I think something might’ve happened.
-    Man: Huh, that’s odd. It was probably just the cat. Damn thing’s so anxious that it keeps scratching everything.
+    Man: Huh, that’s odd. It was probably just the cat. Damn thing’s so <color="blue">anxious</color> that it keeps scratching everything.
     Man: Oh well, thank you for turning off the noise, he’ll probably come back in the morning.
     <<stop>>
     <<endonce>>

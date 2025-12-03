@@ -1,33 +1,26 @@
 ﻿title: VentItem
 ---
-<<declare $hasBnBStringScrewdriver = false>>
+<<declare $tookKey = false>>
 
 <<Check Inventory "BnBStringScrewdriver">>
 
 <<if $hasBnBStringScrewdriver == false>>
-    Narrator: There seems to be something glinting within the vent.
-    Narrator: If only you had something to reach into the vent…
+    Narrator: There seems to be something <color="blue">glinting within the vent</color>.
+    Narrator: If only you had <color="blue">something to reach</color> into the vent…
 <<stop>>
 
 <<else>>
-    
-    <<jump BnBVentScrewdriver>>
-
+Narrator: The vent sits silent, its treasures emptied.
 <<endif>>
+<<stop>>
 ===
 
 title: BnBVentScrewdriver
 ---
-
     <<once>>
         Narrator: You lower the screwdriver into the vent, and the key slides onto the magnetic screwdriver.
-        Narrator: You manage to pull the key to the son’s room out of the vent.
+        Narrator: You manage to pull the <color="blue">key to the son’s room</color> out of the vent.
         <<AddItem Inventory BnBBedroomKey>>
     <<stop>>
     <<endonce>>
-
-    Narrator: The vent sits silent, its treasures emptied.
-
-
-
 ===

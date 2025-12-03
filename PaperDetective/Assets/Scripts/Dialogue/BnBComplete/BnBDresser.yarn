@@ -1,0 +1,21 @@
+﻿title: BnBDresser
+---
+<<declare $hasTrophy = false>>
+
+<<if $hasTrophy == false>>
+    Narrator: You can make out an oddly sharp extrusion beneath the contents of this dresser drawer. Do you wish to dig deeper?
+    -> No
+    Narrator: You decide to leave the dresser alone, fearful of upsetting its owner or the hostess.
+    -> Yes
+    Narrator: You move aside some socks and underwear and notice something.
+    Narrator: A small trophy lies crookedly in the pile, with spots of blood covering its dull surface.
+    Narrator: As you lift the trophy out of the drawer, you notice how heavy and solid the base is.
+    Narrator: You wonder the damage it could do, or perhaps the damage it has already done.
+    <<AddItem Inventory Trophy>>
+    <<set $hasTrophy = true>>
+    <<RevealNote MenuManager BnBTrophy>>
+    <<stop>>
+<<else>>
+    Narrator: Apart from the trophy you retrieved, there is little of interest in the drawers.
+<<endif>>
+===

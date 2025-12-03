@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Splines.Interpolators;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public class sceneManager : MonoBehaviour
 {
@@ -77,6 +78,7 @@ public class sceneManager : MonoBehaviour
 
     }
 
+    [YarnCommand("changeScene")]
     /// <summary>
     /// Begins the fade-out process and remembers the scene you want to transition to.
     /// </summary>
