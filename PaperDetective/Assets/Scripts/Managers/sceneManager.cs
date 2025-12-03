@@ -101,6 +101,11 @@ public class sceneManager : MonoBehaviour
         }
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     /// <summary>
     /// Makes the screen slowly fade to black
     /// </summary>
