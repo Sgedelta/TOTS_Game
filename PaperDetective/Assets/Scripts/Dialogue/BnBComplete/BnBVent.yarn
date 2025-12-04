@@ -23,8 +23,8 @@
 title: BnBVent_Screwdriver
 ---
 <<if $hasVentKeyFragment == false>>
-    Narrator: The screwdriver manages to pass through the vent, but it just barely can’t reach the item within.
-    Narrator: If only you could reach a little farther with it…
+    Narrator: You try to unscrew the vent, but notice that the screwdriver has a star-tipped bit.
+    Narrator: How useless. Though the tip seems to be magnetic, it likely won't be unscrewing anything.
     <<once>>
         <<UseNote MenuManager BnBFragmentLong>>
         <<RevealNote MenuManager BnBFragmentLonger>>
@@ -51,7 +51,7 @@ Narrator: You fail to notice anything else of interest in the vent.
 title: BnBVent_Wrong
 ---
 <<if $hasVentKeyFragment == false>>
-    Narrator: You try to use this item to get through the vent, but it fails to reach the glistening object within.
+    Narrator: You try to use this item to get through the vent, but it fails to reach the glinting object within.
     Narrator: If only you had a thinner object to reach in…
 <<else>>
     Narrator: You fail to notice anything else of interest in the vent.

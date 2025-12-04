@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class Walk : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Walk : MonoBehaviour
     void FixedUpdate()
     {
         //If player is moving, do the rotation
+        Console.WriteLine("Velocity: " + rb.linearVelocity.magnitude);
         anim.SetFloat("Velocity", rb.linearVelocity.magnitude);
         anim.SetFloat("HorizontalVelocity", rb.linearVelocity.x);
     }

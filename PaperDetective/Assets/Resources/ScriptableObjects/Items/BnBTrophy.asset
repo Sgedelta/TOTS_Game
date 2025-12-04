@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b0926bca2b59f49a0fe06644c75234, type: 3}
-  m_Name: key
+  m_Name: BnBTrophy
   m_EditorClassIdentifier: 
-  id: key1
-  displayName: I unlock things
+  itemSprite: {fileID: -4292754059205561749, guid: eedb7284eb7ff7d41bbf789420a4dfc1, type: 3}
+  id: BnBTrophy
+  displayName: Trophy
   defaultAmount: 1
-  madeFromItems:
-  - {fileID: 11400000, guid: 2b74239851953aa4db8fffe21f3440bb, type: 2}
-  - {fileID: 11400000, guid: 07f0c110649f9ae46a0b51b7dc80a767, type: 2}
-  madeFromAmounts:
-  - 5
-  - 1
-  usedIn: []
+  madeFromItems: []
+  madeFromAmounts: []
+  usedIn:
+  - {fileID: 0}

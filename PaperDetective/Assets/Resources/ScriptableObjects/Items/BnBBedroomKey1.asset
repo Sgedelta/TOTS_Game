@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b0926bca2b59f49a0fe06644c75234, type: 3}
-  m_Name: TestIngreidient2
+  m_Name: BnBBedroomKey1
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 0}
-  id: ing2
-  displayName: I'm another ingredient!
+  itemSprite: {fileID: -144260995782478740, guid: eedb7284eb7ff7d41bbf789420a4dfc1, type: 3}
+  id: BnBBedroomKeyPart
+  displayName: A Key to a Bedroom
   defaultAmount: 1
-  madeFromItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  madeFromAmounts:
-  - 0
-  - 0
+  madeFromItems: []
+  madeFromAmounts: []
   usedIn:
-  - {fileID: 11400000, guid: 07f0c110649f9ae46a0b51b7dc80a767, type: 2}
+  - {fileID: 11400000, guid: d76760e6a4dde61478b2b1cf74631a7c, type: 2}
