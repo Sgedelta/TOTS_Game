@@ -714,11 +714,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Jazz Music -- jazz_music_loop.mp3 by NikoSardas -- https://freesound.org/s/456797/
-    -- License: Attribution 4.0 \r\nPlayer Footsteps -- Footsteps_Mountain_Boots_Rock_Sequence_Mono.wav
-    by Nox_Sound -- https://freesound.org/s/558812/ -- License: Creative Commons
-    0\nDialogue -- meep meep.wav by pierrecartoons1979 -- https://freesound.org/s/88781/
-    -- License: Attribution NonCommercial 3.0"
+  m_text: "Main Menu & Credits Music -- Sneaky Mystery Jazz by Sonican -- https://pixabay.com/music/traditional-jazz-sneaky-mystery-jazz-249801/\nJetway
+    & Bus Level Music -- jazz_music_loop.mp3 by NikoSardas -- https://freesound.org/s/456797/
+    -- License: Attribution 4.0 \nAirport Music -- Jazz Background Music Loop by
+    Migfus20 -- https://freesound.org/s/559850/ -- License: Attribution 4.0\nB&B
+    Music -- SHADY by MadGravityStudio -- https://freesound.org/s/789664/ -- License:
+    Creative Commons 0\nBasement Music -- Orchestral Rising Horror #7 by M-Murray
+    -- https://freesound.org/s/788116/ -- License: Attribution 4.0\r\nPlayer Footsteps
+    -- Footsteps_Mountain_Boots_Rock_Sequence_Mono.wav by Nox_Sound -- https://freesound.org/s/558812/
+    -- License: Creative Commons 0\nDialogue -- meep meep.wav by pierrecartoons1979
+    -- https://freesound.org/s/88781/ -- License: Attribution NonCommercial 3.0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -745,8 +750,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -783,7 +788,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -456.6072, y: 0, z: -686.13794, w: 0}
+  m_margin: {x: -456.6072, y: 0, z: -916.9629, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -897,7 +902,7 @@ Transform:
   m_GameObject: {fileID: 915188639}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66.33306, y: 8.702721, z: 0}
+  m_LocalPosition: {x: -66.33306, y: 238, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1746,8 +1751,8 @@ Transform:
   m_GameObject: {fileID: 1898038580}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66.33306, y: 8.702721, z: -27758.047}
-  m_LocalScale: {x: 107.94286, y: 107.94286, z: 107.94286}
+  m_LocalPosition: {x: -43.346, y: 160, z: -19502}
+  m_LocalScale: {x: 69.0165, y: 69.0165, z: 69.0165}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1919560710}
