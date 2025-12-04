@@ -29,6 +29,9 @@ public class script : MonoBehaviour
     /// </summary>
     public void ToggleMenu()
     {
+        //Sets player movement and interaction to the opposite of the menu state. If the menu is active, player cannot move or interact and vice versa
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PLayerController>().CanMove = menu.activeSelf;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PLayerController>().CanInteract = menu.activeSelf;
         menu.SetActive(!menu.activeSelf);
         SwitchPage(currentTab);
     }

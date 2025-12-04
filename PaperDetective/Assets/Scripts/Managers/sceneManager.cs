@@ -101,12 +101,19 @@ public class sceneManager : MonoBehaviour
         }
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     /// <summary>
     /// Makes the screen slowly fade to black
     /// </summary>
     private void FadeOut()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PLayerController>().CanMove = false;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player)
+            player.GetComponent<PLayerController>().CanMove = false;
         fadePercentage += Time.deltaTime / fadeTime;
         fadeImage.gameObject.SetActive(true);
         fadeImage.color = Color.Lerp(new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0), new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1), fadePercentage);

@@ -44,6 +44,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BedNBreakfast/UpperHallway.unity
     guid: e0bb35a6f340b5d40a9b2bbc133f3e5f
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7f3897eeb46e1b04292cef635d1047ba
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 7536b34e58e45e246a871b4de77e225d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

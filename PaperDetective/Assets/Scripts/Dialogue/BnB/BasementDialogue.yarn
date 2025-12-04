@@ -50,6 +50,6 @@ Narrator: The pressure rises in time with the newly formed tentacles, a few of t
 <<changeZoom CutsceneManager 2>>
 Narrator: Finally, mercifully, the pressure is too much for your psyche and you fall into unconsciousness.
 <<StopCutscene CutsceneManager>>
-<<changeScene SceneManager Jetway>>
+<<changeScene SceneManager Credits>>
 <<stop>>
 ===

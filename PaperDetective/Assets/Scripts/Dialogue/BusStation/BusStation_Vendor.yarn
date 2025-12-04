@@ -26,7 +26,7 @@ Terminal Employee: What line?
             Resolution: You selected the wrong answer and ended up in a different country somehow... You can always try again though!
         -> 6: Whiterun
             Resolution: You've selected the correct answer! Congrats and thank you for playtesting! :3
-            <<EndTest GameManager true>>
+            <<changeScene SceneManager LivingRoom>>
         -> 7: The Yellow Comet
             Resolution: You selected the wrong answer and ended up in a different country somehow... You can always try again though!
         -> 8: Fantrak
