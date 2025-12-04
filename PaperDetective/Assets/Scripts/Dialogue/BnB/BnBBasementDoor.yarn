@@ -22,6 +22,7 @@ title: BnBOpenBasementDoor
 <<set $basementDoorOpen = true>>
 
 Narrator: You insert the key into the lock and turn it with a satisfying click. The door swings open.
+<<killThis Music>>
 <<TriggerSceneChange BasementDoorSceneChanger>>
 
 
