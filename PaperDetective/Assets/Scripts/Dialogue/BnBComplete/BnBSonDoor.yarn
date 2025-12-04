@@ -9,6 +9,10 @@
     <<once>>
         <<RevealNote MenuManager BnBFragmentSticky>>
     <<endonce>>
+<<else>>
+    Narrator: This particular door has a poster for a Frantch band, Shadow Sabbath. 
+    Narrator: Incredibly loud music can be heard playing on the other side, but unfortunately the door is locked.
+    Narrator: The key fragment has been removed from the lock.
 <<endif>>
 ===
 
@@ -31,8 +35,6 @@ title: BnBSonDoor_Gum
 
 title: BnBSonDoor_BrokenKey
 ---
-Narrator: This particular door has a poster for a Frantch band, Shadow Sabbath. 
-Narrator: Incredibly loud music can be heard playing on the other side, but unfortunately the door is locked.
 Narrator: The key piece isn’t enough to open the door, unless you could repair the whole key…
 ===
 

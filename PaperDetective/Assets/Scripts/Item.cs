@@ -116,36 +116,13 @@ public class Item : MonoBehaviour
         else if (this.gameObject.GetComponent<BoxCollider2D>().IsTouchingLayers(triggerMask))
         {
             // Get the trigger template
-            Collider2D trigger = Physics2D.OverlapBox(gameObject.transform.position, transform.localScale, triggerMask);
-            TriggerTemplate trigTemp = trigger.GetComponent<Trigger>().template;
-            Debug.Log(trigTemp.triggerItem.id + " " + template.id);
-            if (trigTemp.triggerItem == template)
+            Trigger trigger = Physics2D.OverlapBox(gameObject.transform.position, transform.localScale, triggerMask).GetComponent<Trigger>();
+
+            if (trigger != null)
             {
-                if (trigTemp.madeItem && trigTemp.deleteHeld)
-                {
-                    Debug.Log("switching");
-                    InitAs(trigTemp.madeItem, 1);
-                }
-                else if (trigTemp.madeItem && !trigTemp.deleteHeld)
-                {
-                    Debug.Log("making");
-                    CreateItem(trigTemp.madeItem, 1);
-                }
-                else if (trigTemp.deleteHeld)
-                {
-                    Debug.Log("deleting");
-                    amount = 0;
-                }
-                // Prompt Dialogue
-                if (!SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().IsDialogueRunning)
-                    SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().StartDialogue(trigTemp.dialogueNode);
-                
-                Destroy(trigger.gameObject);
+                trigger.InteractWithItem(this);
             }
-            else
-            {
-                Debug.Log("Nothing Happens");
-            }
+
         }
         return false;
     }

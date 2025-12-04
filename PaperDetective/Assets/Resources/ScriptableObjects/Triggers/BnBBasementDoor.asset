@@ -13,7 +13,18 @@ MonoBehaviour:
   m_Name: BnBBasementDoor
   m_EditorClassIdentifier: 
   id: BnBBasementDoorTrigger
-  triggerItem: {fileID: 11400000, guid: f9c5fd836a814794e880eb789c0af922, type: 2}
+  triggerItem: {fileID: 11400000, guid: de2196bd38c823a408e9d091287147af, type: 2}
   madeItem: {fileID: 0}
-  dialogueNode: BnBOpenBasementDoor
+  successDialogNode: BnBBasementDoor_BothItems
+  failureDialogNode: BnBBasementDoor_Wrong
+  failureItems:
+  - {fileID: 11400000, guid: d76760e6a4dde61478b2b1cf74631a7c, type: 2}
+  - {fileID: 11400000, guid: df8f91e0756cd9e4eb98b3d80aa457f8, type: 2}
+  - {fileID: 11400000, guid: de9f69bc872d9734e82ccd997ab65c9a, type: 2}
+  - {fileID: 11400000, guid: 7057343fab665b14c8213d79b3f0f502, type: 2}
+  failureNodes:
+  - BnBBasementDoor_SonKey
+  - BnBBasementDoor_Screwdriver
+  - BnBBasementDoor_Screwdriver
+  - BnBBasementDoor_Trophy
   deleteHeld: 1
