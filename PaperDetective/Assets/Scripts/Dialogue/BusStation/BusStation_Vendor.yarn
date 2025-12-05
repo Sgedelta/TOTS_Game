@@ -17,22 +17,23 @@ title: BusStation_BuyingTicket
 <<Interact GameManager Ticket_Attempt>>
 Terminal Employee: What line?
         -> 1: Goldfish
-            Resolution: You selected the wrong answer and ended up in a different country somehow... You can always try again though!
+            Narrator: You get a feeling something might be wrong. Perhaps you should ask around to double check...
         -> 3: Nightrunner
-            Resolution: You selected the wrong answer and ended up in a different country somehow... You can always try again though!
+            Narrator: You get a feeling something might be wrong. Perhaps you should ask around to double check...
         -> 4: Grayhound
-            Resolution: You selected the wrong answer and ended up in a different country somehow... You can always try again though!
+            Narrator: You get a feeling something might be wrong. Perhaps you should ask around to double check...
         -> 5: Rusty Badger
-            Resolution: You selected the wrong answer and ended up in a different country somehow... You can always try again though!
+            Narrator: You get a feeling something might be wrong. Perhaps you should ask around to double check...
         -> 6: Whiterun
-            Resolution: You've selected the correct answer! Congrats and thank you for playtesting! :3
+            Terminal Employee: Sure thing, here you go. Please be careful getting on.
+            Narrator: You take your ticket and hop onto the bus.
             <<changeScene SceneManager LivingRoom>>
         -> 7: The Yellow Comet
-            Resolution: You selected the wrong answer and ended up in a different country somehow... You can always try again though!
+            Narrator: You get a feeling something might be wrong. Perhaps you should ask around to double check...
         -> 8: Fantrak
-            Resolution: You selected the wrong answer and ended up in a different country somehow... You can always try again though!  
+            Narrator: You get a feeling something might be wrong. Perhaps you should ask around to double check...  
         -> 10: Bronze Beetle
-            Resolution: You selected the wrong answer and ended up in a different country somehow... You can always try again though!
+            Narrator: You get a feeling something might be wrong. Perhaps you should ask around to double check...
         -> You: Actually, I changed my mind.
             Terminal Employee: Please step out of line then.
 ===
