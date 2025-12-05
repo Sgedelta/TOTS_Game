@@ -50,5 +50,18 @@ Narrator: You lean in with the umbrella and bat at the book. Eventually, it fall
 Narrator: You now have the <color="blue">dictionary</color>. Now you will be able to understand the Frantch people and vice versa!
 <<set $hasUmbrella = false>>
 <<set $hasDictionary = true>>
+<<KillWall MaxWalkLength>>
 <<UseNote MenuManager airportUnderstand>>
+===
+
+title: VendFail
+---
+Narrator: The Vending Machine accepts the item into it's slot.
+Narrator: After a brief moment of hope, it then spits it back out, slightly worse for wear.
+===
+
+title: Vend2Fail
+---
+Narrator: What item could you possibly have at this moment?
+Narrator: ... Fine, whatever, you wave it in front of the machine and it does nothing. You scrub.
 ===

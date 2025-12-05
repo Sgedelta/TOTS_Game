@@ -1,7 +1,9 @@
 ﻿title: BnBVent
 ---
 //Check if the player grabbed the fragment.
-<<declare $hasVentKeyFragment = false>>
+<<once>>
+    <<declare $hasVentKeyFragment = false>>
+<<endonce>>
 
 <<if $hasVentKeyFragment == false>>
     Narrator: There seems to be a broken key fragment glinting within the vent.

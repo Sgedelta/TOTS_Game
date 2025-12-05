@@ -195,7 +195,12 @@ public class Inventory : MonoBehaviour
     [YarnCommand("AddItem")]
     public void Add(Item item)
     {
-        Debug.Log("Here");
+        if(item == null)
+        {
+            return;
+        }
+
+
         if(Inventory.instance.inventory.ContainsKey(item.Template.id))
         {
             Inventory.instance.inventory[item.Template.id].amount += item.amount;
