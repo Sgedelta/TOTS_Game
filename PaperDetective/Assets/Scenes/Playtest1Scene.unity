@@ -1790,6 +1790,7 @@ GameObject:
   - component: {fileID: 694642549}
   - component: {fileID: 694642548}
   - component: {fileID: 694642547}
+  - component: {fileID: 694642552}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1941,12 +1942,28 @@ Transform:
   m_GameObject: {fileID: 694642546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -8.059999, z: -10}
+  m_LocalPosition: {x: -3.5763302, y: -8.818478, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &694642552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694642546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &695352774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2882,7 +2899,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 1935684861}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -2914,7 +2931,7 @@ Transform:
   m_GameObject: {fileID: 1366015674}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: -8.06, z: -10}
+  m_LocalPosition: {x: -3.5763302, y: -8.818478, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4155,6 +4172,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
+--- !u!4 &1935684861 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5713521548945097669, guid: e8da5d4b00ec4a64d9346dc9363797e0, type: 3}
+  m_PrefabInstance: {fileID: 1935684860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1994362860
 GameObject:
   m_ObjectHideFlags: 0
