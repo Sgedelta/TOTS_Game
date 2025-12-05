@@ -23,7 +23,7 @@ public class EntryDialogue : MonoBehaviour
         {
             runner.StartDialogue(node);
             firstRun = false;
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
