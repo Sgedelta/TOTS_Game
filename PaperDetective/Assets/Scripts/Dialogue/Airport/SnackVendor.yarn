@@ -10,8 +10,9 @@ Narrator: If only you had a way to <color="blue">translate Frantch</color>...
 
 <<else>>
 Snacks Vendor: Hello! Would you like to buy some snacks?
-Narrator: You decide to pass on the snacks, instead asking how to find your luggage.
-Snacks Vendor: Ah, just head down to the sign <color="blue">near the terminal entrance</color>.
+Narrator: You decide to pass on the snacks, instead asking about the local hotels.
+Snacks Vendor: Ah, just head down to the sign <color="blue">near the terminal entrance</color> and you'll find a bus station.
+Snacks Vendor: Closest hotels are in <color=blue>Connerie</color>, make sure to take that bus.
 <<KillWall MaxWalkLength>>
 
 <<endif>>
