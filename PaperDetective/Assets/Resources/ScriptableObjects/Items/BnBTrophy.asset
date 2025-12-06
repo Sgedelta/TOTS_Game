@@ -19,4 +19,4 @@ MonoBehaviour:
   madeFromItems: []
   madeFromAmounts: []
   usedIn:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: de2196bd38c823a408e9d091287147af, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: -3389036196405561083, guid: fe83db5d0d768b94894bce99cd1cfb88, type: 3}
   id: BnBScrewString
-  displayName: String tied to a Screwdriver
+  displayName: Screwdriver on a string
   defaultAmount: 1
   madeFromItems:
   - {fileID: 11400000, guid: df8f91e0756cd9e4eb98b3d80aa457f8, type: 2}
@@ -22,4 +22,5 @@ MonoBehaviour:
   madeFromAmounts:
   - 1
   - 1
-  usedIn: []
+  usedIn:
+  - {fileID: 11400000, guid: de2196bd38c823a408e9d091287147af, type: 2}

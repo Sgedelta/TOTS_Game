@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 913733112691782889, guid: fe83db5d0d768b94894bce99cd1cfb88, type: 3}
   id: BnBBasementKey
-  displayName: A Key to the Basement
+  displayName: Basement Key
   defaultAmount: 1
   madeFromItems: []
   madeFromAmounts: []

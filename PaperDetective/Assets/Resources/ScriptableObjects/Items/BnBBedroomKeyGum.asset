@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: -8450676498533464285, guid: eedb7284eb7ff7d41bbf789420a4dfc1, type: 3}
   id: BnBBedroomKeyGum
-  displayName: A Key to a Bedroom
+  displayName: Gummy Key Part
   defaultAmount: 1
   madeFromItems: []
   madeFromAmounts: []
-  usedIn:
-  - {fileID: 11400000, guid: d76760e6a4dde61478b2b1cf74631a7c, type: 2}
+  usedIn: []

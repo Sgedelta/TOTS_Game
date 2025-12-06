@@ -15,5 +15,8 @@ MonoBehaviour:
   id: Vend2
   triggerItem: {fileID: 11400000, guid: 028547b08811d0c4dafa0e2c74e0e8fe, type: 2}
   madeItem: {fileID: 11400000, guid: e1620ed5057183241b302a625d315e44, type: 2}
-  dialogueNode: HookDictionary
+  successDialogNode: HookDictionary
+  failureDialogNode: Vend2Fail
+  failureItems: []
+  failureNodes: []
   deleteHeld: 1

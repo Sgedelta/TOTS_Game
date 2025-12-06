@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 2002708480242808941, guid: fe83db5d0d768b94894bce99cd1cfb88, type: 3}
   id: BnBString
-  displayName: A loose pile of string
+  displayName: pile of string
   defaultAmount: 1
   madeFromItems: []
   madeFromAmounts: []

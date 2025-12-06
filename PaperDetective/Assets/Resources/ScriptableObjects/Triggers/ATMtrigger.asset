@@ -15,5 +15,8 @@ MonoBehaviour:
   id: ATM
   triggerItem: {fileID: 11400000, guid: acda9fdf4aca9f7418648bc183d46a3d, type: 2}
   madeItem: {fileID: 11400000, guid: 0585df2464986d241b2f040d4d82cac5, type: 2}
-  dialogueNode: Exchange
+  successDialogNode: Exchange
+  failureDialogNode: ATMFailure
+  failureItems: []
+  failureNodes: []
   deleteHeld: 1

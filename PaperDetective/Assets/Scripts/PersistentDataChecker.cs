@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Yarn.Unity;
+
 
 //Author: Sam Easton
 
@@ -76,6 +78,13 @@ public class PersistentDataChecker : MonoBehaviour
         }
 
 
+    }
+
+
+    [YarnCommand("SetPersistence")]
+    public void SetPersistence(bool newState)
+    {
+        data.KeepOnLoad = newState;
     }
 
 }
