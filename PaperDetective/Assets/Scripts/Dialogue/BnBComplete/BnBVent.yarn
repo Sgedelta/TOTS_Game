@@ -2,23 +2,23 @@
 ---
 //Check if the player grabbed the fragment.
 <<once>>
-    <<declare $hasVentKeyFragment = false>>
+<<declare $hasVentKeyFragment = false>>
 <<endonce>>
 
-<<if $hasVentKeyFragment == false>>
-    Narrator: There seems to be a broken key fragment glinting within the vent.
-    Narrator: If only you had something to reach into the vent…
-    <<once>>
-        <<RevealNote MenuManager BnBFragmentLong>>
-    <<endonce>>
-<<else>>
-    <<if $musicOn == true>>
+<<if $musicOn == true>>
+    <<if $hasVentKeyFragment == false>>
+        Narrator: There seems to be a broken key fragment glinting within the vent.
+        Narrator: If only you had something to reach into the vent…
+        <<once>>
+            <<RevealNote MenuManager BnBFragmentLong>>
+        <<endonce>>
+    <<else>>
         Narrator: As you put your ear to the vent, a whisper seems to reach your ears.
         Narrator: However, it's impossible to make out the sound with the music playing.
-    <<else>>
-        Narrator: Listening to the vent once again, a whimpering sound can be heard somewhere in the darkness.
-        Narrator: There also seems to be something else, almost like a low humming, distinct from the sound of machinery
     <<endif>>
+<<else>>
+    Narrator: Listening to the vent once again, a whimpering sound can be heard somewhere in the darkness.
+    Narrator: There also seems to be something else, almost like a low humming, distinct from the sound of machinery
 <<endif>>
 ===
 
@@ -39,10 +39,10 @@ title: BnBVent_Screwdriver
 title: BnBVent_StringScrewdriver
 ---
 <<once>>
+    <<set $hasVentKeyFragment = true>>
     Narrator: You lower the screwdriver into the vent, and the key slides onto the magnetic screwdriver.
     Narrator: You manage to pull the key fragment out of the vent.
     <<AddItem Inventory VentKeyFragment>>
-    <<set $hasVentKeyFragment = true>>
     <<UseNote MenuManager BnBFragmentLonger>>
     <<stop>>
 <<endonce>>
