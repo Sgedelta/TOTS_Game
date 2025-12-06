@@ -1,20 +1,18 @@
 ﻿title: ATMMachine
 ---
-<<declare $firstATM = false>>
 <<declare $hasFrencs = false>>
 <<declare $hasDollars = false>>
 
 
 
-<<if $firstATM == false>>
-Narrator: An ATM, it has a built-in currency converter.
-<<RevealNote MenuManager airportExchange>>
-<<set $firstATM = true>>
+<<once>>
+    Narrator: An ATM, it has a built-in currency converter.
+    <<RevealNote MenuManager airportExchange>>
+    <<stop>>
+<<endonce>>
 
-<<else>>
 Narrator: The ATM sits quietly, waiting for currency.
 
-<<endif>>
 ===
 
 title: Exchange

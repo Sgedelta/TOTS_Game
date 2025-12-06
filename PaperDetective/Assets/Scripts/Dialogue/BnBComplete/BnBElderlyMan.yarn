@@ -10,7 +10,10 @@
 //play this chunk of dialogue.
 <<if $musicOn == true>>
     <<if $hasDoorKeyFragment == true && $hasVentKeyFragment == true>>
+        <<once>>
         <<jump BnBElderlyMan_BothFragments>>
+        <<endonce>>
+        Man: Just get into that boy’s room however you can, but please don’t break my property.
     
     <<elseif $hasDoorKeyFragment == false && $hasVentKeyFragment == true || $hasDoorKeyFragment == true && $hasVentKeyFragment == false>>
         <<jump BnBElderlyMan_OneFragment>>
@@ -80,4 +83,5 @@ You: Uhh, yea. Thanks.
 <<TransformItem Inventory "BnBBedroomKeyGum" "BnBBedroomKey">>
 <<UseNote MenuManager BnBSonDoorKey>>
 <<UseNote MenuManager BnBFixKey>>
+<<stop>>
 ===
