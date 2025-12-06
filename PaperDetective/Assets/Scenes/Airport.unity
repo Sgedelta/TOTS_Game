@@ -459,11 +459,68 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8493384463771419391, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 49147691}
+    - targetCorrespondingSourceObject: {fileID: 8493384463771419391, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 49147692}
   m_SourcePrefab: {fileID: 100100000, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
 --- !u!4 &49147689 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7518581930985206041, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
+  m_PrefabInstance: {fileID: 49147688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &49147690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8493384463771419391, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
+  m_PrefabInstance: {fileID: 49147688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &49147691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49147690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d19701f1a2edcf4ca8208dae9fd1c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: AirportVendingMachine
+  data:
+    KeepOnLoad: 1
+    CurrentObjectState: Full
+  LoadState:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &49147692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49147690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5653c1bab03231a4899c37dc7471deee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states:
+  - Full
+  - Stuck
+  - Empty
+  sprites:
+  - {fileID: 6315226147305372938, guid: 3228383d2f6b10c4183c161de7e2f99a, type: 3}
+  - {fileID: -498565627634074309, guid: ef99baf924fc441409a933f50f392dd3, type: 3}
+  - {fileID: 7160831675725967907, guid: 081261dcc1917b747b9229623b6033b2, type: 3}
+  sr: {fileID: 49147693}
+  PersistentDataID: AirportVendingMachine
+--- !u!212 &49147693 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 220210420427715653, guid: ee4c0ffa2f0b67644b7b8f4fbfcee2c2, type: 3}
   m_PrefabInstance: {fileID: 49147688}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &92508696
