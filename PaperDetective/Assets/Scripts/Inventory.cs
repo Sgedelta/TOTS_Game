@@ -266,7 +266,7 @@ public class Inventory : MonoBehaviour
                 itemNames[i].color = Color.clear;
                 Debug.Log(instance.invSlots[i].GetComponentInChildren<TextMeshProUGUI>());
             }
-            itemNames[i].text = instance.inventory.Values[i].Template.id;
+            itemNames[i].text = instance.inventory.Values[i].Template.displayName;
 
             x++;
         }
