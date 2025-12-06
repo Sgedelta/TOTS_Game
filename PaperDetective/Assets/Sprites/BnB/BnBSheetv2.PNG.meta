@@ -1,0 +1,884 @@
+fileFormatVersion: 2
+guid: c5d19a4a1dee85a41a66b8554a0b76dc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2018756052535084254
+    second: BnBSheetv2_0
+  - first:
+      213: 7207089588392351697
+    second: BnBSheetv2_1
+  - first:
+      213: -7715204766295374032
+    second: BnBSheetv2_2
+  - first:
+      213: -7681477647937046063
+    second: BnBSheetv2_3
+  - first:
+      213: 4064690100387875161
+    second: BnBSheetv2_4
+  - first:
+      213: -4134290050376328457
+    second: BnBSheetv2_5
+  - first:
+      213: -7696912807845026378
+    second: BnBSheetv2_6
+  - first:
+      213: -2246855111723693422
+    second: BnBSheetv2_7
+  - first:
+      213: -1442087999460155298
+    second: BnBSheetv2_8
+  - first:
+      213: 7823257378820414016
+    second: BnBSheetv2_9
+  - first:
+      213: -8217516747644208531
+    second: BnBSheetv2_10
+  - first:
+      213: -5970429318392637334
+    second: BnBSheetv2_11
+  - first:
+      213: -7457359301118403342
+    second: BnBSheetv2_12
+  - first:
+      213: 7890338239340891313
+    second: BnBSheetv2_13
+  - first:
+      213: 3588332370135059289
+    second: BnBSheetv2_14
+  - first:
+      213: -542593160361462014
+    second: BnBSheetv2_15
+  - first:
+      213: 594929073120145292
+    second: BnBSheetv2_16
+  - first:
+      213: 2494550975106065927
+    second: BnBSheetv2_17
+  - first:
+      213: -4058004619569459586
+    second: BnBSheetv2_18
+  - first:
+      213: -6305006619746635912
+    second: BnBSheetv2_19
+  - first:
+      213: 6237626131996768651
+    second: BnBSheetv2_20
+  - first:
+      213: 5738834711981330817
+    second: BnBSheetv2_21
+  - first:
+      213: 5397011521923602305
+    second: BnBSheetv2_22
+  - first:
+      213: 9204517113118722095
+    second: BnBSheetv2_23
+  - first:
+      213: 4265117714231500414
+    second: BnBSheetv2_24
+  - first:
+      213: 2800921244963828821
+    second: BnBSheetv2_25
+  - first:
+      213: -4754287401910783460
+    second: BnBSheetv2_26
+  - first:
+      213: 8235711260174562960
+    second: BnBSheetv2_27
+  - first:
+      213: -4531029960864932654
+    second: BnBSheetv2_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BnBSheetv2_0
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 2589
+        width: 1054
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed406871fef040c10800000000000000
+      internalID: 2018756052535084254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_1
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 2571
+        width: 635
+        height: 479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7da8cbbc9b40460800000000000000
+      internalID: 7207089588392351697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_2
+      rect:
+        serializedVersion: 2
+        x: 2071
+        y: 2583
+        width: 916
+        height: 461
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 037409754261ee490800000000000000
+      internalID: -7715204766295374032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_3
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 1969
+        width: 361
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d9fb9407c8e56590800000000000000
+      internalID: -7681477647937046063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_4
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 1948
+        width: 460
+        height: 631
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9598aa35c1ea86830800000000000000
+      internalID: 4064690100387875161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_5
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 2053
+        width: 796
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa13e48a1d00a6c0800000000000000
+      internalID: -4134290050376328457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_6
+      rect:
+        serializedVersion: 2
+        x: 2547
+        y: 2050
+        width: 419
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b52e3dc4921f2590800000000000000
+      internalID: -7696912807845026378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_7
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1619
+        width: 662
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29a40f32e2191d0e0800000000000000
+      internalID: -2246855111723693422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_8
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1524
+        width: 480
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e50e251ea9cacfbe0800000000000000
+      internalID: -1442087999460155298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_9
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 1509
+        width: 480
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a5b0bf22bc19c60800000000000000
+      internalID: 7823257378820414016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_10
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 959
+        width: 834
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6af7d86e0485fd80800000000000000
+      internalID: -8217516747644208531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_11
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 1020
+        width: 237
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6811a8ea26c42da0800000000000000
+      internalID: -5970429318392637334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_12
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 1096
+        width: 320
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fcd166f933228890800000000000000
+      internalID: -7457359301118403342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_13
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 1132
+        width: 235
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bc4899e2dc108d60800000000000000
+      internalID: 7890338239340891313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_14
+      rect:
+        serializedVersion: 2
+        x: 2481
+        y: 1132
+        width: 194
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b8fe167415cc130800000000000000
+      internalID: 3588332370135059289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_15
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 1108
+        width: 209
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207391b35625878f0800000000000000
+      internalID: -542593160361462014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_16
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 111
+        width: 291
+        height: 807
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8fe0e507dc914800800000000000000
+      internalID: 594929073120145292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_17
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 449
+        width: 128
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7062d4925ec6e9220800000000000000
+      internalID: 2494550975106065927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_18
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 463
+        width: 123
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e0ba97c421fa7c0800000000000000
+      internalID: -4058004619569459586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_19
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 453
+        width: 124
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87fe38b72ed1088a0800000000000000
+      internalID: -6305006619746635912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_20
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 786
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b897c5f2bef709650800000000000000
+      internalID: 6237626131996768651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_21
+      rect:
+        serializedVersion: 2
+        x: 2526
+        y: 785
+        width: 335
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1811450d3cf64af40800000000000000
+      internalID: 5738834711981330817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_22
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 439
+        width: 174
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18752f4726906ea40800000000000000
+      internalID: 5397011521923602305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_23
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 368
+        width: 250
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f280278fb830dbf70800000000000000
+      internalID: 9204517113118722095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_24
+      rect:
+        serializedVersion: 2
+        x: 2709
+        y: 374
+        width: 233
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e9ef9a6fdb03b30800000000000000
+      internalID: 4265117714231500414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_25
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 109
+        width: 149
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 554f9e9480fded620800000000000000
+      internalID: 2800921244963828821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_26
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 101
+        width: 164
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c123ef81cc0650eb0800000000000000
+      internalID: -4754287401910783460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_27
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 95
+        width: 149
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 096b367a1cf1b4270800000000000000
+      internalID: 8235711260174562960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BnBSheetv2_28
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 109
+        width: 1063
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc5efbc14c8e11c0800000000000000
+      internalID: -4531029960864932654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BnBSheetv2_0: 2018756052535084254
+      BnBSheetv2_1: 7207089588392351697
+      BnBSheetv2_10: -8217516747644208531
+      BnBSheetv2_11: -5970429318392637334
+      BnBSheetv2_12: -7457359301118403342
+      BnBSheetv2_13: 7890338239340891313
+      BnBSheetv2_14: 3588332370135059289
+      BnBSheetv2_15: -542593160361462014
+      BnBSheetv2_16: 594929073120145292
+      BnBSheetv2_17: 2494550975106065927
+      BnBSheetv2_18: -4058004619569459586
+      BnBSheetv2_19: -6305006619746635912
+      BnBSheetv2_2: -7715204766295374032
+      BnBSheetv2_20: 6237626131996768651
+      BnBSheetv2_21: 5738834711981330817
+      BnBSheetv2_22: 5397011521923602305
+      BnBSheetv2_23: 9204517113118722095
+      BnBSheetv2_24: 4265117714231500414
+      BnBSheetv2_25: 2800921244963828821
+      BnBSheetv2_26: -4754287401910783460
+      BnBSheetv2_27: 8235711260174562960
+      BnBSheetv2_28: -4531029960864932654
+      BnBSheetv2_3: -7681477647937046063
+      BnBSheetv2_4: 4064690100387875161
+      BnBSheetv2_5: -4134290050376328457
+      BnBSheetv2_6: -7696912807845026378
+      BnBSheetv2_7: -2246855111723693422
+      BnBSheetv2_8: -1442087999460155298
+      BnBSheetv2_9: 7823257378820414016
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

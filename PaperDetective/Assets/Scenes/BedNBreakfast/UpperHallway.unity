@@ -2050,7 +2050,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b5309080b34e3b14abf6cea464c73378, type: 2}
     - target: {fileID: 5547107509856847810, guid: 9d7bed2c37b44b64bace82035e1f804c, type: 3}
       propertyPath: m_Name
-      value: DoorTrigger (1)
+      value: GumTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 5547107509856847810, guid: 9d7bed2c37b44b64bace82035e1f804c, type: 3}
       propertyPath: m_IsActive
@@ -2099,8 +2099,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5547107509856847810, guid: 9d7bed2c37b44b64bace82035e1f804c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1475483791}
   m_SourcePrefab: {fileID: 100100000, guid: 9d7bed2c37b44b64bace82035e1f804c, type: 3}
+--- !u!1 &1475483790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5547107509856847810, guid: 9d7bed2c37b44b64bace82035e1f804c, type: 3}
+  m_PrefabInstance: {fileID: 1475483789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1475483791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475483790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d19701f1a2edcf4ca8208dae9fd1c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: GumTrigger
+  data:
+    KeepOnLoad: 1
+    CurrentObjectState: 
+  LoadState:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1508887965
 PrefabInstance:
   m_ObjectHideFlags: 0

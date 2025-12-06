@@ -1176,12 +1176,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8396671292074018075, guid: 62c203c5b60c0a24ab63325740ec273e, type: 3}
+  m_Sprite: {fileID: 5764871142167007254, guid: e5f46d751a2dce2448e1f1e1cead80bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.0400004, y: 7.26}
+  m_Size: {x: 5.03, y: 7.26}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1694,12 +1694,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6118639489092584010, guid: 62c203c5b60c0a24ab63325740ec273e, type: 3}
+  m_Sprite: {fileID: -4568667650086751669, guid: e5f46d751a2dce2448e1f1e1cead80bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.05, y: 7.26}
+  m_Size: {x: 5.0400004, y: 7.26}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2437,12 +2437,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 41822598316815527, guid: 62c203c5b60c0a24ab63325740ec273e, type: 3}
+  m_Sprite: {fileID: -6735531826756815900, guid: e5f46d751a2dce2448e1f1e1cead80bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.0400004, y: 7.26}
+  m_Size: {x: 1.6766667, y: 2.42}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2705,7 +2705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5846627255533441173, guid: f8d35b216917f7146a39da3390e5b06b, type: 3}
       propertyPath: sceneName
-      value: LivingRoom
+      value: Airport
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

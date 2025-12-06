@@ -1,6 +1,11 @@
 ﻿title: BnBBasementDoor
 ---
+<<declare $unlock = false>>
+<<if $unlock == false>>
 Narrator: This door is completely locked, with seemingly no way to open it.
+<<else>>
+    <<TriggerSceneChange BasementDoorSceneChanger>>
+<<endif>>
 <<once>>
     <<RevealNote MenuManager BnBBasementLock>>
 <<endonce>>
@@ -38,4 +43,6 @@ Narrator: You pull the door completely open, and make your way into the basement
 <<UseNote MenuManager BnBBasementLock>>
 <<UseNote MenuManager BnBOpenBasementDoor>>
 <<UseNote MenuManager BnBVentSound>>
+<<TriggerSceneChange BasementDoorSceneChanger>>
+<<set $unlock = true>>
 ===

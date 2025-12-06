@@ -858,7 +858,7 @@ GameObject:
   - component: {fileID: 388711170}
   - component: {fileID: 388711171}
   - component: {fileID: 388711172}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: RecordPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 422326195}
   - component: {fileID: 422326196}
   - component: {fileID: 422326197}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1396,7 @@ GameObject:
   - component: {fileID: 618147981}
   - component: {fileID: 618147982}
   - component: {fileID: 618147983}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2284,7 +2284,7 @@ GameObject:
   - component: {fileID: 1093730315}
   - component: {fileID: 1093730316}
   - component: {fileID: 1093730317}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Dresser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3212,7 +3212,7 @@ GameObject:
   - component: {fileID: 1872382582}
   - component: {fileID: 1872382583}
   - component: {fileID: 1872382584}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Rug
   m_TagString: Untagged
   m_Icon: {fileID: 0}

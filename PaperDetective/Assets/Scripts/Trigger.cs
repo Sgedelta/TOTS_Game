@@ -31,6 +31,9 @@ public class Trigger : MonoBehaviour
             {
                 SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().StartDialogue(template.successDialogNode);
             }
+            this.gameObject.TryGetComponent<PersistentDataChecker>(out PersistentDataChecker boole);
+            if (boole)
+                GetComponent<PersistentDataChecker>().SetPersistence(false);
             Destroy(this.gameObject);
         }
         else

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 8994428779495873435, guid: eedb7284eb7ff7d41bbf789420a4dfc1, type: 3}
   id: BnBBedroomKey
-  displayName: A Key to a Bedroom
+  displayName: Bedroom Key
   defaultAmount: 1
   madeFromItems:
   - {fileID: 11400000, guid: 391504377e831a64cb2c21fad062adb6, type: 2}

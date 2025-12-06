@@ -9,9 +9,18 @@
 //After first interaction, if the player has yet to turn off the music,
 //play this chunk of dialogue.
 <<if $musicOn == true>>
-    Man: Just get into that boy’s room however you can, but please don’t break my property.
-<<endif>>
+    <<if $hasDoorKeyFragment == true && $hasVentKeyFragment == true>>
+        <<jump BnBElderlyMan_BothFragments>>
+    
+    <<elseif $hasDoorKeyFragment == false && $hasVentKeyFragment == true || $hasDoorKeyFragment == true && $hasVentKeyFragment == false>>
+        <<jump BnBElderlyMan_OneFragment>>
 
+    <<else>>
+        Man: Just get into that boy’s room however you can, but please don’t break my property.
+    <<endif>>
+
+<<endif>>
+ 
 //After music is turned off, move to the next set of dialogue.
 <<if $musicOn == false>>
     //This piece will play only the first time the player interacts with this NPC
@@ -25,7 +34,7 @@
     //and after all other dialogue has been exhausted.
     Man: Sometimes I wish I could just break that darn lock off the basement door, the little thing is just so finicky. 
 <<endif>>
-===
+=== 
 
 title: BnBElderlyManStart
 ---
@@ -67,6 +76,8 @@ Narrator: After a few moments, the proprietor puts his glowing tool away, and lo
 Man: There we go! I still have my old touch when it comes to locksmithing!
 Man: Here’s the key, <color=blue>it should get you into that room now!</color>
 You: Uhh, yea. Thanks.
+<<RemoveItem Inventory "BnBBedroomKeyPart">>
+<<TransformItem Inventory "BnBBedroomKeyGum" "BnBBedroomKey">>
 <<UseNote MenuManager BnBSonDoorKey>>
 <<UseNote MenuManager BnBFixKey>>
 ===

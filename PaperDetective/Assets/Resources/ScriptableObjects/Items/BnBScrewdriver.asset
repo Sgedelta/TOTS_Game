@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: -2138590708647353672, guid: fe83db5d0d768b94894bce99cd1cfb88, type: 3}
   id: BnBScrewdriver
-  displayName: A Screwdriver with a Magnetic Tip
+  displayName: Screwdriver
   defaultAmount: 1
   madeFromItems: []
   madeFromAmounts: []
