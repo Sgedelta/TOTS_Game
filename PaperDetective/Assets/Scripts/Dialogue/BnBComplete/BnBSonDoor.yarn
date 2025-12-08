@@ -1,6 +1,7 @@
 ﻿title: BnBSonDoor
 ---
 <<declare $hasDoorKeyFragment = false>>
+<<declare $doorUnlocked = false>>
 
 <<if $hasDoorKeyFragment == false>>
     Narrator: This particular door has a poster for a Frantch band, Shadow Sabbath. 
@@ -9,10 +10,12 @@
     <<once>>
         <<RevealNote MenuManager BnBFragmentSticky>>
     <<endonce>>
-<<else>>
+<<elseif $doorUnlocked == false>>
     Narrator: This particular door has a poster for a Frantch band, Shadow Sabbath. 
     Narrator: Incredibly loud music can be heard playing on the other side, but unfortunately the door is locked.
     Narrator: The key fragment has been removed from the lock.
+<<else>>
+    <<TriggerSceneChange SceneChangeToRoom>>
 <<endif>>
 ===
 
@@ -29,7 +32,7 @@ title: BnBSonDoor_Gum
     <<AddItem Inventory DoorKeyFragment>>
     <<set $hasDoorKeyFragment = true>>
     <<UseNote MenuManager BnBFragmentSticky>>
-    <<stop>>
+    <<stop>> 
 <<endonce>>
 ===
 
@@ -44,4 +47,6 @@ Narrator: You slide the fixed key into the door lock, and turn it gently.
 Narrator: Thankfully, the old man’s locksmithing skills weren’t just for some strange show.
 Narrator: The lock clicks into place, as you turn the handle and push the door open.
 <<UseNote MenuManager BnBOpenSonDoor>>
+<<TriggerSceneChange SceneChangeToRoom>>
+<<set $doorUnlocked = true>>
 ===

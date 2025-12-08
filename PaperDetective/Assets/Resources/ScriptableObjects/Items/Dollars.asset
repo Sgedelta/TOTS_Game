@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 9064496728675099545, guid: 0515acb198af9fb43aac5123447a4bc3, type: 3}
   id: Dollars
-  displayName: Dollars
+  displayName: 5 Dollars
   defaultAmount: 5
   madeFromItems:
   - {fileID: 0}

@@ -195,7 +195,12 @@ public class Inventory : MonoBehaviour
     [YarnCommand("AddItem")]
     public void Add(Item item)
     {
-        Debug.Log("Here");
+        if(item == null)
+        {
+            return;
+        }
+
+
         if(Inventory.instance.inventory.ContainsKey(item.Template.id))
         {
             Inventory.instance.inventory[item.Template.id].amount += item.amount;
@@ -261,7 +266,7 @@ public class Inventory : MonoBehaviour
                 itemNames[i].color = Color.clear;
                 Debug.Log(instance.invSlots[i].GetComponentInChildren<TextMeshProUGUI>());
             }
-            itemNames[i].text = instance.inventory.Values[i].Template.id;
+            itemNames[i].text = instance.inventory.Values[i].Template.displayName;
 
             x++;
         }

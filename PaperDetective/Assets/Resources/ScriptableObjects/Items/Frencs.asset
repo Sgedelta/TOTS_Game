@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: -2628553720767682227, guid: 56e99609d9186384f9e911703d5cd62a, type: 3}
   id: Frencs
-  displayName: Frencs
+  displayName: 5 Frencs
   defaultAmount: 4
   madeFromItems:
   - {fileID: 0}

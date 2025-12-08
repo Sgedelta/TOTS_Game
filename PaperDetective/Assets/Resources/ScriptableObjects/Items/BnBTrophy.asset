@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: -4292754059205561749, guid: eedb7284eb7ff7d41bbf789420a4dfc1, type: 3}
   id: BnBTrophy
-  displayName: Trophy
+  displayName: Solid Looking Trophy
   defaultAmount: 1
   madeFromItems: []
   madeFromAmounts: []
   usedIn:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: de2196bd38c823a408e9d091287147af, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 2327777078310983751, guid: eedb7284eb7ff7d41bbf789420a4dfc1, type: 3}
   id: BnBGum
-  displayName: Gum
+  displayName: Chewed Gum
   defaultAmount: 1
   madeFromItems: []
   madeFromAmounts: []

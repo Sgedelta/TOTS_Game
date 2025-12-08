@@ -8,7 +8,8 @@ public class Trigger : MonoBehaviour
 
     public void InteractWithItem(Item other)
     {
-        if (template == other.Template)
+        Debug.Log(other.name);
+        if (template.triggerItem == other.Template)
         {
             //check if we should just switch this item to be the newly made item
             if(template.madeItem && template.deleteHeld)
@@ -30,7 +31,10 @@ public class Trigger : MonoBehaviour
             {
                 SingletonComponent.Instances["Dialogue System Variant"].GetComponent<DialogueRunner>().StartDialogue(template.successDialogNode);
             }
-
+            this.gameObject.TryGetComponent<PersistentDataChecker>(out PersistentDataChecker boole);
+            if (boole)
+                GetComponent<PersistentDataChecker>().SetPersistence(false);
+            Destroy(this.gameObject);
         }
         else
         {
