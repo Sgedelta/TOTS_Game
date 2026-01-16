@@ -54,8 +54,13 @@ title: BnBVent_Wrong
 ---
 <<if $hasVentKeyFragment == false>>
     Narrator: You try to use this item to get through the vent, but it fails to reach the glinting object within.
-    Narrator: If only you had a thinner object to reach in…
+    Narrator: If only you had a better object to reach in…
 <<else>>
     Narrator: You fail to notice anything else of interest in the vent.
 <<endif>>
+===
+
+title: BnBStringFail
+---
+Narrator: The string slips through the vent cracks and brushes against the key. No way to get it to pull the key up, though.
 ===

@@ -19,6 +19,8 @@ MonoBehaviour:
   failureDialogNode: BnBVent_Wrong
   failureItems:
   - {fileID: 11400000, guid: df8f91e0756cd9e4eb98b3d80aa457f8, type: 2}
+  - {fileID: 11400000, guid: df8f91e0756cd9e4eb98b3d80aa457f8, type: 2}
   failureNodes:
   - BnBVent_Screwdriver
+  - BnBStringFail
   deleteHeld: 0
