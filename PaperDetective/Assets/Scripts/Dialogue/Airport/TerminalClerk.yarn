@@ -2,8 +2,8 @@
 ---
 <<if $hasDictionary == false>>
 Clerk: lorem ipsum gibberish
-Narrator: The clerk also speaks in Frantch, his words sliding together in an inconceivable manner.
-Narrator: If only you had a way to <color="blue">translate Frantch</color>...
+Narrator: The clerk also speaks in Franch, his words sliding together in an inconceivable manner.
+Narrator: If only you had a way to <color=black>translate Franch</color>...
 <<stop>>
 
 <<else>>

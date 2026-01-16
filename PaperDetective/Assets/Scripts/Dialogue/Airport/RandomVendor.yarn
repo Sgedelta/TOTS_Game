@@ -3,13 +3,13 @@
 <<Check Inventory "Dictionary">>
 
 <<if $hasDictionary == true>>
-Frantch Person: It seems it's going to rain today. Perfect weather to take these kites for a spin, only 9 Frencs!
+Franch Person: It seems it's going to rain today. Perfect weather to take these kites for a spin, only 9 Frencs!
 Narrator: People never cease to amaze you, but the words of the foolish are unimportant right now.
 Narrator: You leave this person alone so you can find your luggage.
 
 <<else>>
-Frantch Person: lorem ipsum gibberish
-Narrator: The Frantch language is a vile tounge, hence its incomprehensibility to any rational person.
+Franch Person: lorem ipsum gibberish
+Narrator: The Franch language is a vile tounge, hence its incomprehensibility to any rational person.
 -> Stare into his eyes.
     <<jump Vendor_TheHorrors>>
 -> Leave.
