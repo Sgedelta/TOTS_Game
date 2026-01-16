@@ -63,7 +63,7 @@ title: BnBHandymanFragments
 Handyman: How’s it going, friend?
 You: I found this key fragment, would you be able to fix it?
 Handyman: Sorry, man, I don’t have anything to weld metal.
-Handyman: Maybe <color=blue>somebody else</color> could help with that?
+Handyman: Maybe <color=black>somebody else</color> could help with that?
 <<once>>
     <<RevealNote MenuManager BnBFixKey>>
 <<endonce>>

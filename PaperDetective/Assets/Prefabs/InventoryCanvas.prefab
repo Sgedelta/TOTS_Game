@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 3890867677304564090}
   - component: {fileID: 5820639483378689845}
   - component: {fileID: 2939130215184145729}
+  - component: {fileID: 8247442836685768551}
   m_Layer: 5
   m_Name: InventoryCanvas
   m_TagString: Untagged
@@ -177,6 +178,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8247442836685768551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756750009604063998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a3b85aeaf28f946bca807fbeb0f567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2306544125967264083
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a6c279fd7581a4e9c4413cff92a51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryHide: 0
   square: {fileID: -2963187150524250855, guid: f8a4e40f168464f43a5357b92f2eb00a, type: 3}
   capacity: 10
   slotPrefab: {fileID: 3421829005716976263, guid: 5632a9a9a1b2d5c4f95df095c07be741, type: 3}

@@ -41,14 +41,14 @@
 
 title: BnBResidentStart
 ---
-Narrator: Another Resident of the Bed and Breakfast. She's loudly smacking on some <color=blue>gum</color>.
+Narrator: Another Resident of the Bed and Breakfast. She's loudly smacking on some <color=black>gum</color>.
 Narrator: It's almost as bad as the music pounding through the nearby door.
 Resident: Oh, hello. Here to stay for the night?
 You: Hello there, I’m trying to help out the hostess. Do you know anything about a key to that room?
 Resident: You mean the one where the music is coming from? I’m afraid not, but if I did I would’ve barged in there hours ago.
 You: How long has it been going on?
-Resident: I’ve been here <color=blue>since yesterday</color>, and it’s been awful.
-Resident: It was fine earlier last night, but then it <color=blue>suddenly got very loud</color> and hasn’t turned off since.
+Resident: I’ve been here <color=black>since yesterday</color>, and it’s been awful.
+Resident: It was fine earlier last night, but then it <color=black>suddenly got very loud</color> and hasn’t turned off since.
 Resident: If you could turn off that music so I can get some sleep, I’d really appreciate it.
 ===
 
