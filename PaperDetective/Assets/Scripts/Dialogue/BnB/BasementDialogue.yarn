@@ -3,6 +3,7 @@
 <<startCutscene CutsceneManager Player>>
 <<changeZoom CutsceneManager 2>>
 <<killThis Music>>
+<<killThis InventoryCanvas>>
 WARNING: Graphic descriptions ahead. Please proceed with caution:
 -> Censored version
     <<jump Censored>>
