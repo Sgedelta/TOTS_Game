@@ -2,6 +2,6 @@
 ---
 Narrator: You emerge off the plane into the dull Frants scenery.
 Narrator: As you take in the sounds, you realize that you have no concept of the language.
-Narrator: Perhaps you should try to find a way to translate before you get to a hotel.
+Narrator: Perhaps you should <color=blue>try to find a way to translate</color> before you get to a hotel.
 <<RevealNote MenuManager airportUnderstand>>
 ===
