@@ -6,7 +6,7 @@
 
 <<if $purchased == false>>
 Narrator: A Vending Machine, holding a lone book, the other shelves having been long since cleared out.
-Narrator: There is a <color="blue">Frantch-to-English Dictionary</color> available for only <color="blue">5 Frencs</color>.
+Narrator: There is a <color=black>Franch-to-English Dictionary</color> available for only <color=black>5 Frencs</color>.
 <<RevealNote MenuManager airportNeedMoney>>
 
 <<Check Inventory "Umbrella">>
@@ -33,12 +33,11 @@ title: BuyDictionary
 <<if $purchased == false>>
 <<set $purchased = true>>
 Narrator: As the machine whirs to give you your purchase, the book leans forward and hits the glass with a thunderous [b]donk[/b].
-<<UpdateSprite VendingMachine Stuck>>
-Narrator: The <color="blue">dictionary is now stuck</color>, no matter how much you curse or shake the machine.
+Narrator: The <color=black>dictionary is now stuck</color>, no matter how much you curse or shake the machine.
 Narrator: Your arm isnt long enough to dislodge it either. You have no choice but to leave, temporarily defeated.
 
 <<else>>
-Vending Machine: Please deposit <color="blue">5 Frencs</color>.
+Vending Machine: Please deposit <color=black>5 Frencs</color>.
 Narrator: You scavenge your pockets, but only find dollars and some loose lint, neither of which the machine accepts.
 Narrator: With your head held low, you leave the book behind for now in search of local currency.
 
@@ -48,8 +47,7 @@ Narrator: With your head held low, you leave the book behind for now in search o
 title: HookDictionary
 ---
 Narrator: You lean in with the umbrella and bat at the book. Eventually, it falls down, allowing you to take it out.
-<<UpdateSprite VendingMachine Empty>>
-Narrator: You now have the <color="blue">dictionary</color>. Now you will be able to understand the Frantch people and vice versa!
+Narrator: You now have the <color=black>dictionary</color>. Now you will be able to understand the Franch people and vice versa!
 <<set $hasUmbrella = false>>
 <<set $hasDictionary = true>>
 <<KillWall MaxWalkLength>>

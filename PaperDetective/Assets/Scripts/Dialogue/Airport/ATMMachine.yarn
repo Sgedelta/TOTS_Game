@@ -18,7 +18,7 @@ Narrator: The ATM sits quietly, waiting for currency.
 title: Exchange
 ---
     Narrator: You select the option to convert from USD and discover there's a perfect 1:1 exchange rate right now.
-    Narrator: After entering 5 dollars, the machine spits out your <color="blue">5 Frencs</color>.
+    Narrator: After entering 5 dollars, the machine spits out your <color=black>5 Frencs</color>.
     <<set $firstATM = true>>
 ===
 

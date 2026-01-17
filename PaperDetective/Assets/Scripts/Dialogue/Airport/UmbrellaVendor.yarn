@@ -7,7 +7,7 @@ Vendor: Ooh, internationally worldwide detective is you, Jeff!
 You: No, that's not-
 Vendor: Worry not! Please, umbrella take good sir!
 You: ...uh, thank you?
-Narrator: Out of the naive kindness of some random Frantch folksman, you got yourself an umbrella.
+Narrator: Out of the naive kindness of some random Franch folksman, you got yourself an umbrella.
 <<AddItem Inventory Umbrella>>
 
 <<else>>

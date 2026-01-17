@@ -4,15 +4,15 @@
 
 <<if $hasDictionary == false>>
 Snacks Vendor: lorem ipsum gibberish.
-Narrator: The vendor speaks to you in Frantch, which sounds like auditory chicken scratch.
-Narrator: If only you had a way to <color="blue">translate Frantch</color>...
+Narrator: The vendor speaks to you in Franch, which sounds like auditory chicken scratch.
+Narrator: If only you had a way to <color=black>translate Franch</color>...
 <<stop>>
 
 <<else>>
 Snacks Vendor: Hello! Would you like to buy some snacks?
 Narrator: You decide to pass on the snacks, instead asking about the local hotels.
-Snacks Vendor: Ah, just head down to the sign <color="blue">near the terminal entrance</color> and you'll find a bus station.
-Snacks Vendor: Closest hotels are in <color=blue>Connerie</color>, make sure to take that bus.
+Snacks Vendor: Ah, just head down to the sign <color=black>near the terminal entrance</color> and you'll find a bus station.
+Snacks Vendor: Closest hotels are in <color=black>Connerie</color>, make sure to take that bus.
 
 <<endif>>
 ===

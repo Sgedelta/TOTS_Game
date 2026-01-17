@@ -4,14 +4,14 @@
 <<declare $doorUnlocked = false>>
 
 <<if $hasDoorKeyFragment == false>>
-    Narrator: This particular door has a poster for a Frantch band, Shadow Sabbath. 
+    Narrator: This particular door has a poster for a Franch band, Shadow Sabbath. 
     Narrator: Incredibly loud music can be heard playing on the other side, but unfortunately the door is locked.
     Narrator: Part of a key seems to be lodged into the door lock. You might be able to get it out with something sticky…
     <<once>>
         <<RevealNote MenuManager BnBFragmentSticky>>
     <<endonce>>
 <<elseif $doorUnlocked == false>>
-    Narrator: This particular door has a poster for a Frantch band, Shadow Sabbath. 
+    Narrator: This particular door has a poster for a Franch band, Shadow Sabbath. 
     Narrator: Incredibly loud music can be heard playing on the other side, but unfortunately the door is locked.
     Narrator: The key fragment has been removed from the lock.
 <<else>>
