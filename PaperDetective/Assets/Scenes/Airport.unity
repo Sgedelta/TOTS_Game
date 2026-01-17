@@ -1840,6 +1840,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: NotesButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7347280988207731869, guid: 82cbb33d7c5a5bd49967117488c05ad1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347280988207731869, guid: 82cbb33d7c5a5bd49967117488c05ad1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347280988207731869, guid: 82cbb33d7c5a5bd49967117488c05ad1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 528636859}
+    - target: {fileID: 7347280988207731869, guid: 82cbb33d7c5a5bd49967117488c05ad1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347280988207731869, guid: 82cbb33d7c5a5bd49967117488c05ad1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347280988207731869, guid: 82cbb33d7c5a5bd49967117488c05ad1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: script, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347280988207731869, guid: 82cbb33d7c5a5bd49967117488c05ad1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7533884685727618343, guid: 82cbb33d7c5a5bd49967117488c05ad1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1891,6 +1919,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82cbb33d7c5a5bd49967117488c05ad1, type: 3}
+--- !u!114 &528636859 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7650327783197992859, guid: 82cbb33d7c5a5bd49967117488c05ad1, type: 3}
+  m_PrefabInstance: {fileID: 528636858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44339654bc1b4ef459245aa87be843cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &580657943
 GameObject:
   m_ObjectHideFlags: 0
